@@ -33,12 +33,9 @@ a {
     background: url(../img/logohover.png) no-repeat center; }
 
 .facecircle {
-  position: absolute;
-  top: 480px;
-  left: 50%;
-  margin-left: -85px;
   height: 170px;
   width: 170px;
+  margin: 20px auto;
   border-radius: 1000px;
   background: url(../img/facecircle.jpg) no-repeat center #171925;
   background-size: cover; }
