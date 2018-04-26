@@ -31,6 +31,29 @@ a
   background: $extra
 
 
+span
+  .icon
+    position: relative
+    padding-left: 20px
+    &::before
+      content: ''
+      position: absolute
+      left: 0
+      top: 3px
+      height: 13px
+      width: 15px
+      background-size: cover!important
+  >:nth-child(1)
+    &::before
+      background: url(../img/mail-ic.png) no-repeat center
+  >:nth-child(2)
+    &::before
+      background: url(../img/mail-ic.png) no-repeat center
+  >:nth-child(3)
+    &::before
+      background: url(../img/mail-ic.png) no-repeat center
+
+
 
 
 
@@ -98,11 +121,13 @@ a
         float: left
         text-align: right
         padding: 0 10px 0 0
-        border-right: 1px solid $rare
+        border-right: 2px dotted $rare
         span
           display: inline-block
           h3
             font-size: 20px!important
+            color: $font
+            margin: -5px 0 0 0
       &--right
         height: 100%
         width: 465px
@@ -128,6 +153,8 @@ a
       span
         font: normal 12px/1.5  'Open Sans', sans-serif
         font-weight: 400
+
+
 
 .experience
   &__row
@@ -161,7 +188,44 @@ a
       float: left
       font-weight: 400
     .progress__wrap, .progress__wrap > div
-      height: 22px
+      height: 20px
+
+.language
+  display: inline-block
+  &__wrap
+    width: 300px
+    height: 8px
+    margin-top: 8px
+    background-color: $rare
+    & > div
+      height: 8px
+      background-color: $font
+      margin: 0
+  &--lg
+    .language__title
+      width: 100px
+      padding: 5px 0 0 10px
+      font-weight: 400
+    .language__wrap, .language__wrap > div
+      height: 10px
+
+.aboutme__row--left
+  .language
+    &__wrap
+      float: left
+      & > div
+        float: right
+    &--lg
+      .language__title
+        float: right
+
+.aboutme__row--right
+  .language
+    &__wrap
+      float: right
+    &--lg
+      .language__title
+        float: left
 
 
 /* 4. works

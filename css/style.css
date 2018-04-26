@@ -23,6 +23,27 @@ a {
   width: 990px;
   background: #e4e4e4; }
 
+span .icon {
+  position: relative;
+  padding-left: 20px; }
+  span .icon::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 3px;
+    height: 13px;
+    width: 15px;
+    background-size: cover !important; }
+
+span > :nth-child(1)::before {
+  background: url(../img/mail-ic.png) no-repeat center; }
+
+span > :nth-child(2)::before {
+  background: url(../img/mail-ic.png) no-repeat center; }
+
+span > :nth-child(3)::before {
+  background: url(../img/mail-ic.png) no-repeat center; }
+
 /* 2. header
      @mixin =============================================== */
 .logo {
@@ -87,11 +108,13 @@ a {
       float: left;
       text-align: right;
       padding: 0 10px 0 0;
-      border-right: 1px solid #c0c0c0; }
+      border-right: 2px dotted #c0c0c0; }
       .aboutme__row--left span {
         display: inline-block; }
         .aboutme__row--left span h3 {
-          font-size: 20px !important; }
+          font-size: 20px !important;
+          color: #b83406;
+          margin: -5px 0 0 0; }
     .aboutme__row--right {
       height: 100%;
       width: 465px;
@@ -152,7 +175,39 @@ a {
     float: left;
     font-weight: 400; }
   .progress--lg .progress__wrap, .progress--lg .progress__wrap > div {
-    height: 22px; }
+    height: 20px; }
+
+.language {
+  display: inline-block; }
+  .language__wrap {
+    width: 300px;
+    height: 8px;
+    margin-top: 8px;
+    background-color: #c0c0c0; }
+    .language__wrap > div {
+      height: 8px;
+      background-color: #b83406;
+      margin: 0; }
+  .language--lg .language__title {
+    width: 100px;
+    padding: 5px 0 0 10px;
+    font-weight: 400; }
+  .language--lg .language__wrap, .language--lg .language__wrap > div {
+    height: 10px; }
+
+.aboutme__row--left .language__wrap {
+  float: left; }
+  .aboutme__row--left .language__wrap > div {
+    float: right; }
+
+.aboutme__row--left .language--lg .language__title {
+  float: right; }
+
+.aboutme__row--right .language__wrap {
+  float: right; }
+
+.aboutme__row--right .language--lg .language__title {
+  float: left; }
 
 /* 4. works
      @mixin =============================================== */
