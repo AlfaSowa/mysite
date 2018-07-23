@@ -235,7 +235,7 @@ span
   width: 237.5px
   margin: 5px
   height: 300px
-  background: url(../img/facecircle.jpg) no-repeat center $rare
+  background: $rare
   background-size: cover
   &:hover
     cursor: pointer
@@ -245,6 +245,7 @@ span
     padding: 20px 0
     background: darken($rare,70%)
     opacity: 0.9
+    color: #ffffff
   &--content
   .fulldes
     display: none
@@ -253,6 +254,12 @@ span
     padding: 10px
     span
       text-align: left
+      color: #ffffff
+
+
+
+/* 5. work
+     ================================================ */
 
 .work
   width: 100%
@@ -270,10 +277,25 @@ span
       > div
         width: 460px
         height: 500px
-        background: url(../img/facecircle.jpg) no-repeat center $rare
+        background: $rare
         background-size: cover
         float: left
         margin: 0 20px
     &--description
       padding: 40px 20px
 
+.gallery
+
+  div
+    width: 25%
+    a
+      width: 100%
+      height: 100px
+      background: yellow
+
+
+  /* 5. fonts
+     ================================================ */
+
+.red_text
+  color: $font
