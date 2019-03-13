@@ -81,24 +81,27 @@ li {
       padding: 0 0 0 20px; }
 
 .logo {
+  border: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: relative;
+  position: absolute;
   cursor: pointer;
   color: #1cbfe5;
   font-size: 20px;
   text-transform: uppercase;
-  -webkit-transition: .3s;
-  transition: .3s;
-  height: 100%;
+  -webkit-transition: .5s;
+  transition: .5s;
   margin: 0 10px;
   padding: 0 10px;
   z-index: 10;
+  height: 100%;
   background: #17181a; }
+  .logo span {
+    line-height: 1; }
   .logo:before {
     position: absolute;
     display: none;
@@ -113,12 +116,13 @@ li {
     border-radius: 100%; }
   @media all and (min-width: 768px) {
     .logo:hover {
-      padding: 0 10px 0 40px;
-      -webkit-transition: .3s;
-      transition: .3s; }
+      padding: 0 10px 0 40px; }
       .logo:hover:before {
         display: block;
-        left: 10px; } }
+        left: 10px; }
+      .logo:hover .logo__under {
+        margin-left: -5px;
+        color: #f92844; } }
   .logo.active .logo__info {
     -webkit-transition: .1s;
     transition: .1s;
@@ -136,6 +140,14 @@ li {
     z-index: 10;
     -webkit-transition: .1s;
     transition: .1s; }
+  .logo__under {
+    position: absolute;
+    color: #17181a;
+    font-size: 8px;
+    top: calc(100% - 17px);
+    margin-left: 50px;
+    -webkit-transition: .5s;
+    transition: .5s; }
 
 @media all and (max-width: 768px) {
   .header {

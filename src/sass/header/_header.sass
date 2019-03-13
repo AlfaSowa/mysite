@@ -20,19 +20,22 @@
 			align-items: center
 			padding: 0 0 0 20px
 .logo
+	border: none
 	display: flex
 	align-items: center
-	position: relative
+	position: absolute
 	cursor: pointer
 	color: $secondclr
 	font-size: 20px
 	text-transform: uppercase
-	transition: .3s
-	height: 100%
+	transition: .5s
 	margin: 0 10px
 	padding: 0 10px
 	z-index: 10
+	height: 100%
 	background: $mainclr
+	span
+		line-height: 1
 	&:before
 		position: absolute
 		display: none
@@ -47,10 +50,12 @@
 	@media all and (min-width: 768px)
 		&:hover
 			padding: 0 10px 0 40px
-			transition: .3s
 			&:before
 				display: block
 				left: 10px
+			.logo__under
+				margin-left: -5px
+				color: #f92844
 	&.active
 		.logo__info
 			transition: .1s
@@ -68,6 +73,13 @@
 		left: 50px
 		z-index: 10
 		transition: .1s
+	&__under
+		position: absolute
+		color: $mainclr
+		font-size: 8px
+		top: calc(100% - 17px)
+		margin-left: 50px
+		transition: .5s
 
 //МОБИЛКА
 @media all and (max-width: 768px)
