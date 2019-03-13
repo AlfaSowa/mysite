@@ -1,6 +1,6 @@
 /node_modules
 /dist
-/.idea
+.idea/*
 .git/*
 .babelrc
 package-lock.json
