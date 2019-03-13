@@ -1,0 +1,9 @@
+/node_modules
+/dist
+/.idea
+.git/*
+.babelrc
+package-lock.json
+package.json
+postcss.config.js
+webpack.config.js
