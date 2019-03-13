@@ -13,25 +13,12 @@
 		height: 100%
 		position: relative
 		&_line
-			height: 1px
+			height: 2px
 			width: 100%
 			background: $secondclr
-		&:after,
-		&:before
-			content: ''
-			position: absolute
-			top: 50%
-			transform: translateY(-50%)
-			height: 45px
-			width: 45px
-			border-radius: 45px
-		&:after
-			right: -45px
-			border-left: 3px solid $secondclr
-		&:before
-			left: -45px
-			border-right: 3px solid $secondclr
-
+			display: flex
+			align-items: center
+			padding: 0 0 0 20px
 .logo
 	display: flex
 	align-items: center
@@ -43,13 +30,15 @@
 	transition: .3s
 	height: 100%
 	margin: 0 10px
+	padding: 0 10px
 	z-index: 10
+	background: $mainclr
 	&:before
 		position: absolute
 		display: none
 		transform: translateY(-50%)
 		top: 50%
-		left: 0
+		left: 10px
 		content: ''
 		height: 25px
 		width: 25px
@@ -57,11 +46,11 @@
 		border-radius: 100%
 	@media all and (min-width: 768px)
 		&:hover
-			padding: 0 0 0 30px
+			padding: 0 10px 0 40px
 			transition: .3s
 			&:before
 				display: block
-				left: 0
+				left: 10px
 	&.active
 		.logo__info
 			transition: .1s

@@ -8,14 +8,14 @@ function toggleActiveThis() {
     this.classList.toggle('active')
 }
 //удаление класса ACTIVE при клике за пределами элемента с этим классом
-function removeActive(e) {
+/*function removeActive(e) {
     let that = document.querySelector('.active')
     let eventTarget = e.target.matches('.active *')
     if (!eventTarget) {
         that.classList.remove('active');
     }
-};
-window.addEventListener('click', removeActive);
+};*/
+//window.addEventListener('click', removeActive);
 //вызов информации обо мне при клике на логотип
 logo.addEventListener('click', toggleActiveThis, false);
 //появление опций в минипрофиле при клике

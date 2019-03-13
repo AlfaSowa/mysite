@@ -10,7 +10,32 @@ body
 	background: $mainclr
 	font-weight: normal
 	color: $secondclr
+
 button
 	outline: none
 li
 	list-style: none
+.desk
+	&__toggle
+		background: $secondclr
+		width: 30px
+		height: 30px
+		border-radius: 50%
+		cursor: pointer
+		margin: 0 10px
+		position: relative
+		&:hover
+			color: #fff
+		&:before,
+		&:after
+			position: absolute
+			content: ''
+			width: 10px
+			height: 2px
+			background: $mainclr
+			top: 50%
+			left: 50%
+		&:before
+			transform: translate(-50%)
+		&:after
+			transform: translate(-50%)

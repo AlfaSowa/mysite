@@ -26,4 +26,14 @@ export default class DeskArr extends Component {
             </ul>
         );
     }
+
+    /*let boardsItem = document.querySelector('.boards__item');
+    //увелечение (раскрытие) доски в sidebar
+    boardsItem.addEventListener('mouseover', function(){
+        this.classList.add('active');
+    })
+
+    boardsItem.addEventListener('mouseout', function(){
+        this.classList.remove('active');
+    })*/
 }

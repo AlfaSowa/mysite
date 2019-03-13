@@ -2,7 +2,7 @@ let windowWidth = $(window).width()
 
 $(function() {
     //появление/скрытие sidebar
-    $('.main__toogler').on('click', function(){
+    $('.desk__toogler').on('click', function(){
         $('.sidebar__content').toggleClass('sidebar__content--active');
         $('.sidebar__colapse').toggleClass('sidebar__colapse--active');
         $('.myboards').toggleClass('myboards--hide');
