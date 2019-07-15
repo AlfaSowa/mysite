@@ -4,8 +4,7 @@ import './sass/style.sass';
 import React from 'react';
 import ReactDOM from 'react-dom';
 //components
-//import ProfileMini from './components/ProfileMini';
-import CreateList from './components/Desk';
+import Datepicker from "./components/datepicker/Datepicker";
 //js
 require('./js/header'); //js для header
 require('./js/app');
@@ -13,9 +12,8 @@ require('./js/sidebar');
 require('./js/sw-main-js');
 require('./js/slider');
 require('./js/Desk');
+//datepicker
+require('./js/vendor/airdatepicker');
+require('./js/datepicker');
 
-
-
-//ReactDOM.render(<ProfileMini />, document.getElementById('profilemini'));
-ReactDOM.render(<CreateList />, document.getElementById('myboards'));
-//12312
+ReactDOM.render(<Datepicker />, document.getElementById('sw__datepicker'));

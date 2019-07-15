@@ -1,0 +1,326 @@
+.datepicker
+	width: 100%
+	background: #fff
+	border: 1px solid #dbdbdb
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15)
+	border-radius: 4px
+	box-sizing: content-box
+	font-family: Tahoma, sans-serif
+	font-size: 14px
+	color: #4a4a4a
+	position: absolute
+	left: -100000px
+	opacity: 0
+	transition: opacity 0.3s ease, transform 0.3s ease, left 0s 0.3s
+	z-index: 100
+	&--content
+		box-sizing: content-box
+		padding: 4px
+	&s-container
+		position: absolute
+		left: 0
+		top: 0
+	&--buttons
+		display: flex
+		padding: 4px
+		border-top: 1px solid #efefef
+	&--button
+		color: #4EB5E6
+		cursor: pointer
+		border-radius: 4px
+		flex: 1
+		display: inline-flex
+		justify-content: center
+		align-items: center
+		height: 32px
+		&:hover
+			color: #4a4a4a
+			background: #f0f0f0
+	//---------------------------------------------
+	// Navigation
+	//---------------------------------------------
+	&--nav
+		display: flex
+		justify-content: space-between
+		border-bottom: 1px solid #efefef
+		min-height: 32px
+		padding: 4px
+		&-title,
+		&-action
+			display: flex
+			cursor: pointer
+			align-items: center
+			justify-content: center
+		&-action
+			width: 32px
+			border-radius: 4px
+			user-select: none
+			&:hover
+				background: #f0f0f0
+			&.-disabled-
+				visibility: hidden
+			svg
+				width: 32px
+				height: 32px
+			path
+				fill: none
+				stroke: #9c9c9c
+				stroke-width: 2px
+		&-title
+			border-radius: 4px
+			padding: 0 8px
+			&:hover
+				background: #f0f0f0
+			&.-disabled-
+				cursor: default
+				background: none
+			i
+				font-style: normal
+				color: #9c9c9c
+				margin-left: 5px
+	//---------------------------------------------
+	// Timepicker
+	//---------------------------------------------
+	&--time
+		border-top: 1px solid #efefef
+		display: flex
+		align-items: center
+		padding: 4px
+		position: relative
+		&-sliders
+			flex: 0 1 153px
+			margin-right: 10px
+			max-width: 153px
+		&-label
+			display: none
+			font-size: 12px
+		&-current
+			display: flex
+			align-items: center
+			flex: 1
+			font-size: 14px
+			text-align: center
+			margin: 0 0 0 10px
+			&-colon
+				margin: 0 2px 3px
+				line-height: 1
+			&-hours,
+			&-minutes
+				line-height: 1
+				font-size: 19px
+				font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif
+				position: relative
+				z-index: 1
+				&:after
+					content: ''
+					background: #f0f0f0
+					border-radius: 4px
+					position: absolute
+					left: -2px
+					top: -3px
+					right: -2px
+					bottom: -2px
+					z-index: -1
+					opacity: 0
+				&.-focus-:after
+					opacity: 1
+			&-ampm
+				text-transform: uppercase
+				align-self: flex-end
+				color: #9c9c9c
+				margin-left: 6px
+				font-size: 11px
+				margin-bottom: 1px
+		&-row
+			display: flex
+			align-items: center
+			font-size: 11px
+			height: 17px
+			background: linear-gradient(to right, #dedede, #dedede) left 50%/100% 1px no-repeat
+			&:first-child
+				margin-bottom: 4px
+			input[type='range']
+				background: none
+				cursor: pointer
+				flex: 1
+				height: 100%
+				padding: 0
+				margin: 0
+				-webkit-appearance: none
+				&::-webkit-slider-thumb
+					-webkit-appearance: none
+				&::-ms-tooltip
+					display: none
+				&::-webkit-slider-thumb
+					+thumb
+				&::-moz-range-thumb
+					+thumb
+				&::-ms-thumb
+					+thumb
+				&:hover
+					&::-webkit-slider-thumb
+						border-color: #b8b8b8
+					&::-moz-range-thumb
+						border-color: #b8b8b8
+					&::-ms-thumb
+						border-color: #b8b8b8
+				&:focus
+					outline: none
+					&::-webkit-slider-thumb
+						background: #5cc4ef
+						border-color: #5cc4ef
+					&::-moz-range-thumb
+						background: #5cc4ef
+						border-color: #5cc4ef
+					&::-ms-thumb
+						background: #5cc4ef
+						border-color: #5cc4ef
+				&::-webkit-slider-thumb
+					margin-top: -6px
+				&::-webkit-slider-runnable-track
+					+track
+				&::-moz-range-track
+					+track
+				&::-ms-track
+					+track
+				&::-ms-fill-lower
+					background: transparent
+				&::-ms-fill-upper
+					background: transparent
+			span
+				padding: 0 12px
+		&-icon
+			color: #9c9c9c
+			border: 1px solid
+			border-radius: 50%
+			font-size: 16px
+			position: relative
+			margin: 0 5px -1px 0
+			width: 1em
+			height: 1em
+			&:after,
+			&:before
+				content: ''
+				background: currentColor
+				position: absolute
+			&:after
+				height: .4em
+				width: 1px
+				left: calc(50% - 1px)
+				top: calc(50% + 1px)
+				transform: translateY(-100%)
+			&:before
+				height: 1px
+				width: .4em
+				left: calc(50% - 1px)
+				top: calc(50% + 1px)
+	//-------------------------------------------------
+	// Datepicker cells
+	//-------------------------------------------------
+	&--cells
+		display: flex
+		flex-wrap: wrap
+		&-months
+			height: 170px
+		&-years
+			height: 170px
+	&--cell
+		border-radius: 4px
+		box-sizing: border-box
+		cursor: pointer
+		display: flex
+		position: relative
+		align-items: center
+		justify-content: center
+		height: 32px
+		z-index: 1
+		&.-focus-
+			background: #f0f0f0
+		&.-current-
+			color: #4EB5E6
+			&.-focus-
+				color: #4a4a4a
+			&.-in-range-
+				color: #4EB5E6
+		&.-in-range-
+			background: rgba(92, 196, 239, 0.1)
+			color: #4a4a4a
+			border-radius: 0
+			&.-focus-
+				background-color: rgba(92, 196, 239, 0.2)
+		&.-disabled-
+			cursor: default
+			color: #aeaeae
+			&.-focus-
+				color: #aeaeae
+			&.-in-range-
+				color: #a1a1a1
+			&.-current-.-focus-
+				color: #aeaeae
+		&.-range-from-
+			border: 1px solid rgba(92, 196, 239, 0.5)
+			background-color: rgba(92, 196, 239, 0.1)
+			border-radius: 4px 0 0 4px
+			&.-range-to-
+				border-radius: 4px
+		&.-range-to-
+			border: 1px solid rgba(92, 196, 239, 0.5)
+			background-color: rgba(92, 196, 239, 0.1)
+			border-radius: 0 4px 4px 0
+		&.-selected-
+			color: #fff
+			border: none
+			background: #5cc4ef
+			&.-current-
+				color: #fff
+				background: #5cc4ef
+			&.-focus-
+				background: #45bced
+		&:empty
+			cursor: default
+		&-day
+			width: 14.28571%
+			&.-other-month-
+				color: #dedede
+				&:hover
+					color: #c5c5c5
+		&-month
+			width: 33.33%
+			height: 25%
+		&-year
+			width: 25%
+			height: 33.33%
+			&.-other-decade-
+				color: #dedede
+				&:hover
+					color: #c5c5c5
+	&--days-names
+		display: flex
+		flex-wrap: wrap
+		margin: 8px 0 3px
+	&--day-name
+		color: #FF9A19
+		display: flex
+		align-items: center
+		justify-content: center
+		flex: 1
+		text-align: center
+		text-transform: uppercase
+		font-size: .8em
+	&--years
+		height: 170px
+	//-------------------------------------------------
+	// Other
+	//-------------------------------------------------
+	&-inline
+		.datepicker
+			border-color: #d7d7d7
+			box-shadow: none
+			position: static
+			left: auto
+			right: auto
+			opacity: 1
+			-webkit-transform: none
+			transform: none
+			&--pointer
+				display: none
