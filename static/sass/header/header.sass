@@ -2,6 +2,7 @@
 	height: 50px
 	display: flex
 	align-items: center
+	padding: 0 10px
 	&__line
 		height: 2px
 		background: $secondclr
@@ -13,8 +14,7 @@
 	color: $secondclr
 	font-size: 1.25em
 	transition: .5s
-	margin: 0 10px
-	padding: 0 10px
+	padding-right: 10px
 	&:before,
 	&:after
 		opacity: 0
@@ -22,7 +22,7 @@
 	&:before
 		content: ''
 		top: 50%
-		left: 10px
+		left: 0
 		height: 25px
 		width: 25px
 		background: $rareclr
@@ -37,14 +37,12 @@
 		width: max-content
 		transition: .5s
 	&:hover
-		padding: 0 10px 0 40px
+		padding-left: 30px
 		&:before,
 		&:after
 			opacity: 1
-		&:before
-			left: 10px
 		&:after
-			left: 40px
+			left: 30px
 	&.active
 		.logo__info
 			transition: .1s
