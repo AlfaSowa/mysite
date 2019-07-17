@@ -1,0 +1,40 @@
+.info
+    padding: 60px 150px
+    display: flex
+    align-items: center
+    position: absolute
+    flex-wrap: wrap
+    top: -50px
+    transform: translateY(-100%)
+    left: 0
+    transition:  .5s
+    background: $mainclr
+    &--active
+        top: 50px
+        transform: translateY(0)
+    &__avatar
+        min-width: 200px
+        height: 200px
+        border-radius: 50%
+        border: 1px solid $secondclr
+        margin-right: 20px
+        background: #fff
+    &__txt
+        flex: 1
+        border-left: 2px solid $secondclr
+        color: $secondclr
+        padding: 5px 0 5px 20px
+        position: relative
+    &__bottom
+        min-width: 100%
+        padding: 20px 0 0 221px
+    &__btn
+        border: 1px solid $secondclr
+        border-radius: 20px
+        padding: 10px 30px
+        color: $secondclr
+        &:hover
+            color: #fff
+            border-color: #fff
+    &__title
+        margin: 0 0 20px 0 

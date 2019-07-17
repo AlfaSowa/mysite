@@ -1,5 +1,8 @@
 /node_modules/
 /.idea
+venv/
+requirements.txt
+manage.py
 .idea/*
 .idea
 .git/*
