@@ -2,7 +2,10 @@
 import './sass/style.sass'
 //js
 import './js/header'
-import './js/vendor/airdatepicker'
+import './components/datepicker/datepicker'
+import './components/datepicker/subdatepicker'
+
+
 
 
 

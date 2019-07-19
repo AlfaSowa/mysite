@@ -25,7 +25,7 @@ SECRET_KEY = 'wz^ky_h##u7=cecgx320ru39mr8lq62knp%wn1w%%24(xloynd'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['localhost', 'alfa-sowa.me']
 
 
 # Application definition
