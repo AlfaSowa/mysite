@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<title>sowa</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="theme-color" content="#17181a"/>
+<meta name="Description" content="Author: Alex Sowa, This site for my app">
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|PT+Sans:400,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Cabin:400,500,600,700&display=swap" rel="stylesheet">
+
+<!--<style>критический css</style>-->
+
+<link rel="stylesheet" type="text/css" href="{% static 'bundle/critical.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'bundle/main.css' %}">
+
+<body>
+    <div class="layout"></div>
+	<header class="header">
+		<div class="header__top">
+			<div class="logo"><a href="/">SOWA</a></div>
+            <div class="header__line"></div>
+            {% block header_menu %}{% include 'menus/header_menu.html' %}{% endblock %}
+		</div>
+		<div id="info" class="info">
+			<div class="info__avatar"></div>
+			<div class="info__txt">
+				<h2 class="info__title">Surname Name</h2>
+				<div class="info__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores perferendis libero voluptatibus dignissimos eligendi, perspiciatis odit placeat illo eaque numquam neque inventore, sunt tenetur quis laborum minima hic id iure animi doloribus? Distinctio, incidunt, quidem voluptas eveniet ab laboriosam soluta doloremque laborum iusto accusamus suscipit dicta natus recusandae magnam veniam, eum deleniti ad. Non excepturi temporibus laboriosam eius! Eaque, ab quos. Voluptatem consequatur vero aliquid laborum alias labore, ad eos libero quibusdam quos dolor veniam soluta dignissimos ratione fugiat. Delectus sunt maxime veritatis labore doloribus. Ut esse commodi enim reprehenderit magnam saepe doloremque vel in, nemo totam aliquam labore voluptates?</div>
+			</div>
+			<div class="info__bottom">
+				<button class="btn info__btn">contacts</button>
+			</div>
+		</div>
+	</header>
+	<main class="main">
+        <!--контент-->
+        <div class="module">
+            <div class="country">
+                <h1 class="country__title">England</h1>
+                <div class="country__main">
+                    <div class="country__sidebar">
+                        <ul class="country__list">
+                            <li class="country__list_item">названия достопримечательности</li>
+                            <li class="country__list_item">названия достопримечательности</li>
+                            <li class="country__list_item">названия достопримечательности</li>
+                            <li class="country__list_item">названия достопримечательности</li>
+                            <li class="country__list_item">названия достопримечательности</li>
+                            <li class="country__list_item">названия достопримечательности</li>
+                            <li class="country__list_item">названия достопримечательности</li>
+                        </ul>
+                    </div>
+                    <div class="country__img img" style="background-image:url('{% static 'img/1.jpg' %}');">
+                        <img src="{% static 'img/1.jpg' %}" alt="Image1">
+                    </div>
+                    <div class="country__description">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae molestiae vero sit sunt cumque sed aliquam, reiciendis nulla voluptas, iure doloremque velit saepe nobis. Incidunt natus delectus, voluptatum, unde excepturi nesciunt exercitationem ducimus voluptatibus modi molestias consequuntur impedit quisquam quia vitae! Totam atque consectetur quis cupiditate iusto nesciunt tenetur accusantium, soluta quasi delectus maxime exercitationem expedita ratione aliquam aut culpa deserunt quidem minima beatae cumque? Laudantium ducimus delectus, omnis praesentium corrupti dolorem fugit veniam neque rerum sed, quo perspiciatis magni modi repellendus a error vitae repudiandae soluta quisquam atque placeat cupiditate sequi veritatis? Quibusdam veniam repudiandae soluta mollitia iure. Libero assumenda atque cupiditate iste numquam, vero labore magni fugiat dolor modi provident. Dolorem temporibus similique ad magnam ex, accusantium dolores ab placeat sequi, aliquam hic assumenda fugit reprehenderit ullam itaque explicabo, praesentium maxime voluptas rem. Minus corporis cumque placeat, eaque aut possimus eius rem. Dicta possimus quisquam alias sequi reprehenderit voluptatem, distinctio sint neque dolorem nihil doloremque totam quas incidunt porro aut! Animi ipsum explicabo tenetur ea! Quasi nostrum laudantium amet facilis perferendis dicta vel fugit architecto a non atque corporis praesentium, molestias possimus consequatur id accusantium tempore nisi aspernatur cumque pariatur. Repudiandae illo, provident soluta dicta facilis sequi tenetur?</p>
+                    </div>
+                    <div class="country__info">
+                        <div class="country__info_item">1</div>
+                        <div class="country__info_item">2</div>
+                        <div class="country__info_item">3</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    {% block addsvg %}{% include 'add/svg.html' %}{% endblock %}
+	<script type="text/javascript" src="{% static 'bundle/main.js' %}"></script>
+</body>
+</html>

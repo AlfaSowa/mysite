@@ -1,0 +1,41 @@
+.menu
+    display: flex
+    position: absolute
+    left: 50%
+    transform: translateX(-50%)
+    height: 100%
+    @media all and (max-width: 768px)
+        display: none
+    &__item
+        margin: 0 20px
+        padding: 0 10px
+        background: $mainclr
+        color: $secondclr
+        text-transform: uppercase
+        font-size: 0.9em
+        position: relative
+        display: flex
+        align-items: center
+        a
+            color: inherit
+        &:hover
+            color: $rareclr
+            .submenu
+                display: flex
+.submenu
+    display: none
+    position: absolute
+    top: 100%
+    left: 20%
+    min-width: max-content
+    max-height: 60vh
+    border-left: 2px solid $rareclr
+    flex-direction: column
+    flex-wrap: wrap
+    color: $secondclr
+    &__item
+        a
+            padding: 3px 10px
+            font-size: 0.9em
+        &:hover
+            color: $rareclr

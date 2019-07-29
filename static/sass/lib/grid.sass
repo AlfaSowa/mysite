@@ -1,0 +1,59 @@
+$card-margin-bottom: 30px
+$card-margin-left-right: 15px
+$card-title-height: 50px
+.grid
+    display: flex
+    flex-wrap: wrap
+    margin: 0 #{-$card-margin-left-right} #{-$card-margin-bottom}
+    overflow: hidden
+    &__item
+        width: 33.33333333%
+    &__filter
+        margin-right: 15px
+        min-width: 100px
+        border-right: 2px solid $secondclr
+        overflow: hidden
+        &_list
+        &_item
+            padding: 5px 30px
+            color: #fff
+            display: flex
+            align-items: center
+            position: relative
+            justify-content: center
+            text-transform: uppercase
+            max-width: max-content
+            margin: 0 auto
+            &--active
+                &:after
+                    content: ''
+                    height: 2px
+                    width: 100px
+                    background: $secondclr
+                    position: absolute
+                    left: calc(100% - 20px)
+
+.card
+    text-decoration: none
+    height: 300px
+    display: block
+    margin: 0 $card-margin-left-right $card-margin-bottom
+    overflow: hidden
+    position: relative
+    color: #fff
+    &:hover
+        .card__content
+            top: 0
+    &__content
+        position: relative
+        top: calc(100% - #{$card-title-height})
+        transition: .3s
+        background: rgba(0, 0, 0, 0.5)
+        min-height: 100%
+    &__title
+        height: $card-title-height
+        line-height: $card-title-height
+        text-align: center
+        font-size: 1.8em
+    &__txt
+        padding: 10px
