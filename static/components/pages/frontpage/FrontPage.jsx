@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
-
-import Last from '../../Last/Last.jsx';
-import Welcome from '../../sidebar/Welcome.jsx'
-import Reg from '../../sidebar/Reg.jsx'
+import TabsComponent from '../../tabs/TabsComponent.jsx';
+import SearchPlace from './SearchPlace.jsx';
 
 export default class FrontPage extends Component {
     state = {
-        regestration: false
+        regestration: false,
+        tabtitle: ['Travel guide','Day plans'],
     }
 
     render() {
-        //const welcome = (this.state.regestration) ? <Welcome /> : <Reg />
         return (
             <div className='fp'>
-                <Last />
+                <div className='fp__content'>
+                    <SearchPlace />
+                    <TabsComponent tabTitle={this.state.tabtitle}/>
+                </div>
             </div>
         )
     }

@@ -1,0 +1,22 @@
+.filter
+    margin-right: 15px
+    min-width: 100px
+    border-right: 2px solid $secondclr
+    overflow: hidden
+    &_item
+        padding: 5px 30px
+        display: flex
+        align-items: center
+        position: relative
+        justify-content: center
+        text-transform: uppercase
+        max-width: max-content
+        margin: 0 auto
+        &--active
+            &:after
+                content: ''
+                height: 2px
+                width: 100px
+                background: $secondclr
+                position: absolute
+                left: calc(100% - 20px)
