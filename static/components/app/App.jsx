@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { BrowserRouter as Router, Route, Link, Switch, Redirect } from "react-router-dom"
 
 //pages
@@ -7,7 +7,7 @@ import Country from '../pages/country/Country.jsx'
 //other
 import AddSvgElements from '../add/AddSvgElements.jsx'
 
-export default  class App extends Component {
+export default  class App extends React.Component {
     render() {
         return (
             <Router>

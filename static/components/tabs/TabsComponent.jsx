@@ -1,11 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import shortid from 'shortid';
 import PropTypes from 'prop-types';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
-import TabsContent from './TabsContent.jsx';
+import Guides from '../content/Guides.jsx'
+import DayPlans from '../content/DayPlans.jsx'
 
-export default  class TabsComponent extends Component {
+export default  class TabsComponent extends React.Component {
 
     getDefaultIndex() {
         let defaultIndex = 0;
@@ -21,7 +22,7 @@ export default  class TabsComponent extends Component {
         return (
             <Tabs className='tabs' defaultIndex={this.getDefaultIndex()}>
                 <TabList className='tabs__list'>
-                    {this.props.tabs.map((tab, index) => (
+                    {this.props.tabs.map(tab => (
                         <Tab 
                             className='tabs__item'
                             selectedClassName="tabs__item--selected"
@@ -37,7 +38,18 @@ export default  class TabsComponent extends Component {
                         selectedClassName="tabs__panel--selected"
                         key={shortid.generate()}
                     >
-                        {tab.content}
+                        {(() => {
+                            switch(tab.title) {
+                                case 'Travel guide':
+                                    return <Guides 
+                                        name={this.props.name}
+                                        description={this.props.description}
+                                        image={this.props.image}
+                                    />
+                                case 'Day plans':
+                                    return <DayPlans />
+                            }
+                        })()}
                     </TabPanel>
                 ))}
             </Tabs>
@@ -47,13 +59,10 @@ export default  class TabsComponent extends Component {
 
 TabsComponent.defaultProps = {
     tabs: [
-        { 
-            title: 'Travel guide', 
-            content: <TabsContent tabContent={'Travel guide'} /> 
-        },
-        { 
-            title: 'Day plans',
-            content: <TabsContent tabContent={'Day plans'}/>
-        }
+        {title: 'Travel guide', content: null },
+        {title: 'Day plans', content: null }
     ]
+}
+TabsComponent.propTypes = {
+    tabs: PropTypes.array.isRequired
 };

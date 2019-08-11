@@ -1,14 +1,9 @@
 .git
 .idea
 .vscode
-appsowa
 node_modules
-venv
 .babelrc
 .browserslistrc
-db.sqlite3
-manage.py
 package-lock.json
 package.json
-requirements.txt
 webpack.config.js

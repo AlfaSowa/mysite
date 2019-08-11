@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export default  class CountryList extends Component {
+export default  class CountryList extends React.Component {
     render() {
         return (
             <div className="module">
