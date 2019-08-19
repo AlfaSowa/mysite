@@ -1,55 +1,49 @@
 import React from 'react';
 import regeneratorRuntime from "regenerator-runtime";
 
+import axios from 'axios'
+
 import TabsComponent from '../../tabs/TabsComponent.jsx';
 import SearchPlace from './SearchPlace.jsx';
-import FrontPageDescription from './FrontPageDescription.jsx';
 
-const API_KEY = '267157c446ce43c027b2866f93bd8d6e'
+
+
+const BASE_URL = 'https://maps.googleapis.com/maps/api/'
+const API_KEY = 'AIzaSyBovw29x8PcZQ9a7jY3zb9_zlB2MeUpZUk'
 
 export default class FrontPage extends React.Component {
+
     state = {
-        regestration: false,
-        name: undefined,
-        description: undefined,
-        image: undefined
+        name: undefined
     }
 
     gettingPlace = async (e) => {
         e.preventDefault()
-
         const place = e.target.elements.search.value
 
         const api_url = await 
-            fetch(`http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${place}&api_key=${API_KEY}&format=json`)
+            fetch(`${BASE_URL}place/findplacefromtext/json?input=${place}&inputtype=textquery&fields=photos,formatted_address,name,rating,opening_hours,geometry&key=${API_KEY}`, {
+                headers: {
+                    'accept': 'application/json',
+                    'Access-Control-Allow-Origin': '*'
+                }
+            })
 
         const info = await api_url.json()
-
-        console.log(this.state.name)
-
-        this.setState({
-            name: info.artist.name,
-            description: info.artist.bio.content,
-            image: info.artist.image[3]['#text'],
-        })
+        console.log(info)
     }
 
     render() {
         return (
-            <div className='fp'>
-                <div className='fp__content'>
-                    <div className={this.state.name !==undefined ? 'search search__mini' : 'search'}>
-                        <SearchPlace getPlace={this.gettingPlace} />
-                    </div>
-                    {this.state.name !== undefined
-                        ? <TabsComponent 
-                            name={this.state.name} 
-                            description={this.state.description}
-                            image={this.state.image}
-                        />
-                        : <FrontPageDescription />
-                    }
+            <div className='frontpage'>
+                <div className={this.state.name !==undefined ? 'search search__mini' : 'search'}>
+                    <SearchPlace getPlace={this.gettingPlace} />
                 </div>
+                
+                {this.state.name !== undefined
+                    ? <TabsComponent />
+                    : null
+                }
             </div>
         )
     }

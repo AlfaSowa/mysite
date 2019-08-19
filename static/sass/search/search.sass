@@ -1,13 +1,32 @@
 .search
-    padding: 100px 0
+    height: 200px
+    background: $mainclr
+    display: flex
+    align-items: center
     &__mini
-        padding: 0
+        position: fixed
+        width: 100%
+        height: 40px
+        margin-top: -40px
+        .search
+            &__input
+                height: 25px
+        .btn__search
+            width: 20px
+            height: 20px
     &__form
+        flex: 1
+        padding: 0 20px
         display: flex
         justify-content: center
-        margin-bottom: 20px
-    &_input
-        width: 500px
+    &__label
+        width: 100%
+        max-width: 500px
+        position: relative
+        display: flex
+        align-items: center
+    &__input
+        width: 100%
         border: 0
         background: #ffffff
         height: 35px

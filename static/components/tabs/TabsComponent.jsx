@@ -38,18 +38,11 @@ export default  class TabsComponent extends React.Component {
                         selectedClassName="tabs__panel--selected"
                         key={shortid.generate()}
                     >
-                        {(() => {
-                            switch(tab.title) {
-                                case 'Travel guide':
-                                    return <Guides 
-                                        name={this.props.name}
-                                        description={this.props.description}
-                                        image={this.props.image}
-                                    />
-                                case 'Day plans':
-                                    return <DayPlans />
-                            }
-                        })()}
+                        <Guides 
+                            name={this.props.name}
+                            description={this.props.description}
+                            image={this.props.image}
+                        />
                     </TabPanel>
                 ))}
             </Tabs>
@@ -59,8 +52,7 @@ export default  class TabsComponent extends React.Component {
 
 TabsComponent.defaultProps = {
     tabs: [
-        {title: 'Travel guide', content: null },
-        {title: 'Day plans', content: null }
+        {title: 'Travel guide', content: null }
     ]
 }
 TabsComponent.propTypes = {
