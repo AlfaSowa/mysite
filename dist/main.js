@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 58);
+/******/ 	return __webpack_require__(__webpack_require__.s = 60);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -92,7 +92,7 @@
 
 
 if (true) {
-  module.exports = __webpack_require__(23);
+  module.exports = __webpack_require__(25);
 } else {}
 
 /***/ }),
@@ -108,7 +108,7 @@ if (true) {
 if (false) { var throwOnDirectAccess, ReactIs; } else {
   // By explicitly using `prop-types` you are opting into new production behavior.
   // http://fb.me/prop-types-in-prod
-  module.exports = __webpack_require__(53)();
+  module.exports = __webpack_require__(55)();
 }
 
 /***/ }),
@@ -120,7 +120,7 @@ if (false) { var throwOnDirectAccess, ReactIs; } else {
 
 var bind = __webpack_require__(11);
 
-var isBuffer = __webpack_require__(29);
+var isBuffer = __webpack_require__(31);
 /*global toString:true*/
 // utils is a library of generic helper functions non-specific to axios
 
@@ -536,188 +536,6 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 /* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-
-
-var randomFromSeed = __webpack_require__(46);
-
-var ORIGINAL = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-';
-var alphabet;
-var previousSeed;
-var shuffled;
-
-function reset() {
-  shuffled = false;
-}
-
-function setCharacters(_alphabet_) {
-  if (!_alphabet_) {
-    if (alphabet !== ORIGINAL) {
-      alphabet = ORIGINAL;
-      reset();
-    }
-
-    return;
-  }
-
-  if (_alphabet_ === alphabet) {
-    return;
-  }
-
-  if (_alphabet_.length !== ORIGINAL.length) {
-    throw new Error('Custom alphabet for shortid must be ' + ORIGINAL.length + ' unique characters. You submitted ' + _alphabet_.length + ' characters: ' + _alphabet_);
-  }
-
-  var unique = _alphabet_.split('').filter(function (item, ind, arr) {
-    return ind !== arr.lastIndexOf(item);
-  });
-
-  if (unique.length) {
-    throw new Error('Custom alphabet for shortid must be ' + ORIGINAL.length + ' unique characters. These characters were not unique: ' + unique.join(', '));
-  }
-
-  alphabet = _alphabet_;
-  reset();
-}
-
-function characters(_alphabet_) {
-  setCharacters(_alphabet_);
-  return alphabet;
-}
-
-function setSeed(seed) {
-  randomFromSeed.seed(seed);
-
-  if (previousSeed !== seed) {
-    reset();
-    previousSeed = seed;
-  }
-}
-
-function shuffle() {
-  if (!alphabet) {
-    setCharacters(ORIGINAL);
-  }
-
-  var sourceArray = alphabet.split('');
-  var targetArray = [];
-  var r = randomFromSeed.nextValue();
-  var characterIndex;
-
-  while (sourceArray.length > 0) {
-    r = randomFromSeed.nextValue();
-    characterIndex = Math.floor(r * sourceArray.length);
-    targetArray.push(sourceArray.splice(characterIndex, 1)[0]);
-  }
-
-  return targetArray.join('');
-}
-
-function getShuffled() {
-  if (shuffled) {
-    return shuffled;
-  }
-
-  shuffled = shuffle();
-  return shuffled;
-}
-/**
- * lookup shuffled letter
- * @param index
- * @returns {string}
- */
-
-
-function lookup(index) {
-  var alphabetShuffled = getShuffled();
-  return alphabetShuffled[index];
-}
-
-function get() {
-  return alphabet || ORIGINAL;
-}
-
-module.exports = {
-  get: get,
-  characters: characters,
-  seed: setSeed,
-  lookup: lookup,
-  shuffled: getShuffled
-};
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/**
- * Copyright (c) 2014-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-/**
- * Similar to invariant but only logs a warning if the condition is not met.
- * This can be used to log issues in development environments in critical
- * paths. Removing the logging code for production environments will keep the
- * same logic and follow the same code paths.
- */
-
-var __DEV__ = "production" !== 'production';
-
-var warning = function () {};
-
-if (__DEV__) {
-  var printWarning = function printWarning(format, args) {
-    var len = arguments.length;
-    args = new Array(len > 1 ? len - 1 : 0);
-
-    for (var key = 1; key < len; key++) {
-      args[key - 1] = arguments[key];
-    }
-
-    var argIndex = 0;
-    var message = 'Warning: ' + format.replace(/%s/g, function () {
-      return args[argIndex++];
-    });
-
-    if (typeof console !== 'undefined') {
-      console.error(message);
-    }
-
-    try {
-      // --- Welcome to debugging React ---
-      // This error was thrown as a convenience so that you can use this stack
-      // to find the callsite that caused this warning to fire.
-      throw new Error(message);
-    } catch (x) {}
-  };
-
-  warning = function (condition, format, args) {
-    var len = arguments.length;
-    args = new Array(len > 2 ? len - 2 : 0);
-
-    for (var key = 2; key < len; key++) {
-      args[key - 2] = arguments[key];
-    }
-
-    if (format === undefined) {
-      throw new Error('`warning(condition, format, ...args)` requires a warning ' + 'message argument');
-    }
-
-    if (!condition) {
-      printWarning.apply(null, [format].concat(args));
-    }
-  };
-}
-
-module.exports = warning;
-
-/***/ }),
-/* 6 */
-/***/ (function(module, exports, __webpack_require__) {
-
 /*
 	MIT License http://www.opensource.org/licenses/mit-license.php
 	Author Tobias Koppers @sokra
@@ -784,7 +602,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(7);
+var	fixUrls = __webpack_require__(8);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -1117,7 +935,198 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var randomFromSeed = __webpack_require__(48);
+
+var ORIGINAL = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-';
+var alphabet;
+var previousSeed;
+var shuffled;
+
+function reset() {
+  shuffled = false;
+}
+
+function setCharacters(_alphabet_) {
+  if (!_alphabet_) {
+    if (alphabet !== ORIGINAL) {
+      alphabet = ORIGINAL;
+      reset();
+    }
+
+    return;
+  }
+
+  if (_alphabet_ === alphabet) {
+    return;
+  }
+
+  if (_alphabet_.length !== ORIGINAL.length) {
+    throw new Error('Custom alphabet for shortid must be ' + ORIGINAL.length + ' unique characters. You submitted ' + _alphabet_.length + ' characters: ' + _alphabet_);
+  }
+
+  var unique = _alphabet_.split('').filter(function (item, ind, arr) {
+    return ind !== arr.lastIndexOf(item);
+  });
+
+  if (unique.length) {
+    throw new Error('Custom alphabet for shortid must be ' + ORIGINAL.length + ' unique characters. These characters were not unique: ' + unique.join(', '));
+  }
+
+  alphabet = _alphabet_;
+  reset();
+}
+
+function characters(_alphabet_) {
+  setCharacters(_alphabet_);
+  return alphabet;
+}
+
+function setSeed(seed) {
+  randomFromSeed.seed(seed);
+
+  if (previousSeed !== seed) {
+    reset();
+    previousSeed = seed;
+  }
+}
+
+function shuffle() {
+  if (!alphabet) {
+    setCharacters(ORIGINAL);
+  }
+
+  var sourceArray = alphabet.split('');
+  var targetArray = [];
+  var r = randomFromSeed.nextValue();
+  var characterIndex;
+
+  while (sourceArray.length > 0) {
+    r = randomFromSeed.nextValue();
+    characterIndex = Math.floor(r * sourceArray.length);
+    targetArray.push(sourceArray.splice(characterIndex, 1)[0]);
+  }
+
+  return targetArray.join('');
+}
+
+function getShuffled() {
+  if (shuffled) {
+    return shuffled;
+  }
+
+  shuffled = shuffle();
+  return shuffled;
+}
+/**
+ * lookup shuffled letter
+ * @param index
+ * @returns {string}
+ */
+
+
+function lookup(index) {
+  var alphabetShuffled = getShuffled();
+  return alphabetShuffled[index];
+}
+
+function get() {
+  return alphabet || ORIGINAL;
+}
+
+module.exports = {
+  get: get,
+  characters: characters,
+  seed: setSeed,
+  lookup: lookup,
+  shuffled: getShuffled
+};
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = __webpack_require__(47);
+
+/***/ }),
 /* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Copyright (c) 2014-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/**
+ * Similar to invariant but only logs a warning if the condition is not met.
+ * This can be used to log issues in development environments in critical
+ * paths. Removing the logging code for production environments will keep the
+ * same logic and follow the same code paths.
+ */
+
+var __DEV__ = "production" !== 'production';
+
+var warning = function () {};
+
+if (__DEV__) {
+  var printWarning = function printWarning(format, args) {
+    var len = arguments.length;
+    args = new Array(len > 1 ? len - 1 : 0);
+
+    for (var key = 1; key < len; key++) {
+      args[key - 1] = arguments[key];
+    }
+
+    var argIndex = 0;
+    var message = 'Warning: ' + format.replace(/%s/g, function () {
+      return args[argIndex++];
+    });
+
+    if (typeof console !== 'undefined') {
+      console.error(message);
+    }
+
+    try {
+      // --- Welcome to debugging React ---
+      // This error was thrown as a convenience so that you can use this stack
+      // to find the callsite that caused this warning to fire.
+      throw new Error(message);
+    } catch (x) {}
+  };
+
+  warning = function (condition, format, args) {
+    var len = arguments.length;
+    args = new Array(len > 2 ? len - 2 : 0);
+
+    for (var key = 2; key < len; key++) {
+      args[key - 2] = arguments[key];
+    }
+
+    if (format === undefined) {
+      throw new Error('`warning(condition, format, ...args)` requires a warning ' + 'message argument');
+    }
+
+    if (!condition) {
+      printWarning.apply(null, [format].concat(args));
+    }
+  };
+}
+
+module.exports = warning;
+
+/***/ }),
+/* 8 */
 /***/ (function(module, exports) {
 
 /**
@@ -1206,7 +1215,7 @@ module.exports = function (css) {
 };
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -1916,15 +1925,6 @@ try {
 }
 
 /***/ }),
-/* 9 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = __webpack_require__(45);
-
-/***/ }),
 /* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2136,7 +2136,7 @@ module.exports = function isCancel(value) {
 
 var utils = __webpack_require__(2);
 
-var normalizeHeaderName = __webpack_require__(35);
+var normalizeHeaderName = __webpack_require__(37);
 
 var DEFAULT_CONTENT_TYPE = {
   'Content-Type': 'application/x-www-form-urlencoded'
@@ -2225,7 +2225,7 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
   defaults.headers[method] = utils.merge(DEFAULT_CONTENT_TYPE);
 });
 module.exports = defaults;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(34)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(36)))
 
 /***/ }),
 /* 15 */
@@ -2236,13 +2236,13 @@ module.exports = defaults;
 
 var utils = __webpack_require__(2);
 
-var settle = __webpack_require__(36);
+var settle = __webpack_require__(38);
 
 var buildURL = __webpack_require__(12);
 
-var parseHeaders = __webpack_require__(38);
+var parseHeaders = __webpack_require__(40);
 
-var isURLSameOrigin = __webpack_require__(39);
+var isURLSameOrigin = __webpack_require__(41);
 
 var createError = __webpack_require__(16);
 
@@ -2327,7 +2327,7 @@ module.exports = function xhrAdapter(config) {
 
 
     if (utils.isStandardBrowserEnv()) {
-      var cookies = __webpack_require__(40); // Add xsrf header
+      var cookies = __webpack_require__(42); // Add xsrf header
 
 
       var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ? cookies.read(config.xsrfCookieName) : undefined;
@@ -2408,7 +2408,7 @@ module.exports = function xhrAdapter(config) {
 "use strict";
 
 
-var enhanceError = __webpack_require__(37);
+var enhanceError = __webpack_require__(39);
 /**
  * Create an Error with the specified message, config, error code, request and response.
  *
@@ -2527,7 +2527,7 @@ if (true) {
   // DCE check should happen before ReactDOM bundle executes so that
   // DevTools can report bad minification during injection.
   checkDCE();
-  module.exports = __webpack_require__(24);
+  module.exports = __webpack_require__(26);
 } else {}
 
 /***/ }),
@@ -2597,7 +2597,7 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(6)(content, options);
+var update = __webpack_require__(4)(content, options);
 
 if(content.locals) module.exports = content.locals;
 
@@ -2611,6 +2611,37 @@ if(false) {}
 
 /***/ }),
 /* 23 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(24);
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(4)(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+/* 24 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3027,7 +3058,7 @@ var X = {
 module.exports = Z.default || Z;
 
 /***/ }),
-/* 24 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3047,7 +3078,7 @@ module.exports = Z.default || Z;
 
 var aa = __webpack_require__(0),
     n = __webpack_require__(10),
-    ba = __webpack_require__(25);
+    ba = __webpack_require__(27);
 
 function ca(a, b, c, d, e, f, g, h) {
   if (!a) {
@@ -8555,18 +8586,18 @@ var Nh = {
 module.exports = Oh.default || Oh;
 
 /***/ }),
-/* 25 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 if (true) {
-  module.exports = __webpack_require__(26);
+  module.exports = __webpack_require__(28);
 } else {}
 
 /***/ }),
-/* 26 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8796,13 +8827,13 @@ exports.unstable_cancelScheduledWork = function (a) {
 };
 
 /***/ }),
-/* 27 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(28);
+module.exports = __webpack_require__(30);
 
 /***/ }),
-/* 28 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8812,7 +8843,7 @@ var utils = __webpack_require__(2);
 
 var bind = __webpack_require__(11);
 
-var Axios = __webpack_require__(30);
+var Axios = __webpack_require__(32);
 
 var mergeConfig = __webpack_require__(17);
 
@@ -8846,20 +8877,20 @@ axios.create = function create(instanceConfig) {
 
 
 axios.Cancel = __webpack_require__(18);
-axios.CancelToken = __webpack_require__(43);
+axios.CancelToken = __webpack_require__(45);
 axios.isCancel = __webpack_require__(13); // Expose all/spread
 
 axios.all = function all(promises) {
   return Promise.all(promises);
 };
 
-axios.spread = __webpack_require__(44);
+axios.spread = __webpack_require__(46);
 module.exports = axios; // Allow use of default import syntax in TypeScript
 
 module.exports.default = axios;
 
 /***/ }),
-/* 29 */
+/* 31 */
 /***/ (function(module, exports) {
 
 /*!
@@ -8873,7 +8904,7 @@ module.exports = function isBuffer(obj) {
 };
 
 /***/ }),
-/* 30 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8883,9 +8914,9 @@ var utils = __webpack_require__(2);
 
 var buildURL = __webpack_require__(12);
 
-var InterceptorManager = __webpack_require__(31);
+var InterceptorManager = __webpack_require__(33);
 
-var dispatchRequest = __webpack_require__(32);
+var dispatchRequest = __webpack_require__(34);
 
 var mergeConfig = __webpack_require__(17);
 /**
@@ -8966,7 +8997,7 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 module.exports = Axios;
 
 /***/ }),
-/* 31 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9027,7 +9058,7 @@ InterceptorManager.prototype.forEach = function forEach(fn) {
 module.exports = InterceptorManager;
 
 /***/ }),
-/* 32 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9035,15 +9066,15 @@ module.exports = InterceptorManager;
 
 var utils = __webpack_require__(2);
 
-var transformData = __webpack_require__(33);
+var transformData = __webpack_require__(35);
 
 var isCancel = __webpack_require__(13);
 
 var defaults = __webpack_require__(14);
 
-var isAbsoluteURL = __webpack_require__(41);
+var isAbsoluteURL = __webpack_require__(43);
 
-var combineURLs = __webpack_require__(42);
+var combineURLs = __webpack_require__(44);
 /**
  * Throws a `Cancel` if cancellation has been requested.
  */
@@ -9098,7 +9129,7 @@ module.exports = function dispatchRequest(config) {
 };
 
 /***/ }),
-/* 33 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9124,7 +9155,7 @@ module.exports = function transformData(data, headers, fns) {
 };
 
 /***/ }),
-/* 34 */
+/* 36 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -9337,7 +9368,7 @@ process.umask = function () {
 };
 
 /***/ }),
-/* 35 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9355,7 +9386,7 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 };
 
 /***/ }),
-/* 36 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9382,7 +9413,7 @@ module.exports = function settle(resolve, reject, response) {
 };
 
 /***/ }),
-/* 37 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9432,7 +9463,7 @@ module.exports = function enhanceError(error, config, code, request, response) {
 };
 
 /***/ }),
-/* 38 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9488,7 +9519,7 @@ module.exports = function parseHeaders(headers) {
 };
 
 /***/ }),
-/* 39 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9552,7 +9583,7 @@ function nonStandardBrowserEnv() {
 }();
 
 /***/ }),
-/* 40 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9605,7 +9636,7 @@ function nonStandardBrowserEnv() {
 }();
 
 /***/ }),
-/* 41 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9625,7 +9656,7 @@ module.exports = function isAbsoluteURL(url) {
 };
 
 /***/ }),
-/* 42 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9643,7 +9674,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 };
 
 /***/ }),
-/* 43 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9708,7 +9739,7 @@ CancelToken.source = function source() {
 module.exports = CancelToken;
 
 /***/ }),
-/* 44 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9741,23 +9772,23 @@ module.exports = function spread(callback) {
 };
 
 /***/ }),
-/* 45 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var alphabet = __webpack_require__(4);
+var alphabet = __webpack_require__(5);
 
-var build = __webpack_require__(47);
+var build = __webpack_require__(49);
 
-var isValid = __webpack_require__(51); // if you are using cluster or multiple servers use this to make each instance
+var isValid = __webpack_require__(53); // if you are using cluster or multiple servers use this to make each instance
 // has a unique value for worker
 // Note: I don't know if this is automatically set when using third
 // party cluster solutions such as pm2.
 
 
-var clusterWorkerId = __webpack_require__(52) || 0;
+var clusterWorkerId = __webpack_require__(54) || 0;
 /**
  * Set the seed.
  * Highly recommended if you don't want people to try to figure out your id schema.
@@ -9814,7 +9845,7 @@ module.exports.characters = characters;
 module.exports.isValid = isValid;
 
 /***/ }),
-/* 46 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9843,15 +9874,15 @@ module.exports = {
 };
 
 /***/ }),
-/* 47 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var generate = __webpack_require__(48);
+var generate = __webpack_require__(50);
 
-var alphabet = __webpack_require__(4); // Ignore all milliseconds before a certain time to reduce the size of the date entropy without sacrificing uniqueness.
+var alphabet = __webpack_require__(5); // Ignore all milliseconds before a certain time to reduce the size of the date entropy without sacrificing uniqueness.
 // This number should be updated every year or so to keep the generated id short.
 // To regenerate `new Date() - 0` and bump the version. Always bump the version!
 
@@ -9894,17 +9925,17 @@ function build(clusterWorkerId) {
 module.exports = build;
 
 /***/ }),
-/* 48 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var alphabet = __webpack_require__(4);
+var alphabet = __webpack_require__(5);
 
-var random = __webpack_require__(49);
+var random = __webpack_require__(51);
 
-var format = __webpack_require__(50);
+var format = __webpack_require__(52);
 
 function generate(number) {
   var loopCounter = 0;
@@ -9923,7 +9954,7 @@ function generate(number) {
 module.exports = generate;
 
 /***/ }),
-/* 49 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9952,7 +9983,7 @@ if (!crypto || !crypto.getRandomValues) {
 module.exports = randomByte;
 
 /***/ }),
-/* 50 */
+/* 52 */
 /***/ (function(module, exports) {
 
 /**
@@ -10009,13 +10040,13 @@ module.exports = function (random, alphabet, size) {
  */
 
 /***/ }),
-/* 51 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var alphabet = __webpack_require__(4);
+var alphabet = __webpack_require__(5);
 
 function isShortId(id) {
   if (!id || typeof id !== 'string' || id.length < 6) {
@@ -10029,7 +10060,7 @@ function isShortId(id) {
 module.exports = isShortId;
 
 /***/ }),
-/* 52 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10038,7 +10069,7 @@ module.exports = isShortId;
 module.exports = 0;
 
 /***/ }),
-/* 53 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10050,7 +10081,7 @@ module.exports = 0;
  */
 
 
-var ReactPropTypesSecret = __webpack_require__(54);
+var ReactPropTypesSecret = __webpack_require__(56);
 
 function emptyFunction() {}
 
@@ -10107,7 +10138,7 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 54 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10123,17 +10154,20 @@ var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 module.exports = ReactPropTypesSecret;
 
 /***/ }),
-/* 55 */,
-/* 56 */,
 /* 57 */,
-/* 58 */
+/* 58 */,
+/* 59 */,
+/* 60 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
+// EXTERNAL MODULE: ./node_modules/normalize.css/normalize.css
+var normalize = __webpack_require__(21);
+
 // EXTERNAL MODULE: ./static/sass/style.sass
-var style = __webpack_require__(21);
+var style = __webpack_require__(23);
 
 // EXTERNAL MODULE: ./node_modules/react/index.js
 var react = __webpack_require__(0);
@@ -10144,7 +10178,7 @@ var react_dom = __webpack_require__(19);
 var react_dom_default = /*#__PURE__*/__webpack_require__.n(react_dom);
 
 // EXTERNAL MODULE: ./node_modules/warning/warning.js
-var warning = __webpack_require__(5);
+var warning = __webpack_require__(7);
 var warning_default = /*#__PURE__*/__webpack_require__.n(warning);
 
 // EXTERNAL MODULE: ./node_modules/prop-types/index.js
@@ -11429,14 +11463,14 @@ BrowserRouter_BrowserRouter.propTypes = {
 };
 /* harmony default export */ var es_BrowserRouter = (BrowserRouter_BrowserRouter);
 // EXTERNAL MODULE: ./node_modules/regenerator-runtime/runtime.js
-var runtime = __webpack_require__(8);
+var runtime = __webpack_require__(9);
 var runtime_default = /*#__PURE__*/__webpack_require__.n(runtime);
 
 // EXTERNAL MODULE: ./node_modules/axios/index.js
-var axios = __webpack_require__(27);
+var axios = __webpack_require__(29);
 
 // EXTERNAL MODULE: ./node_modules/shortid/index.js
-var shortid = __webpack_require__(9);
+var shortid = __webpack_require__(6);
 var shortid_default = /*#__PURE__*/__webpack_require__.n(shortid);
 
 // CONCATENATED MODULE: ./node_modules/react-tabs/esm/helpers/elementTypes.js
@@ -12439,7 +12473,7 @@ TabPanel_TabPanel.tabsRole = 'TabPanel';
 
 
 
-// CONCATENATED MODULE: ./static/components/content/modules/Weather.jsx
+// CONCATENATED MODULE: ./static/components/content/modules/placemodule/Weather.jsx
 function Weather_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { Weather_typeof = function _typeof(obj) { return typeof obj; }; } else { Weather_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return Weather_typeof(obj); }
 
 function Weather_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -12481,8 +12515,8 @@ function (_React$Component) {
     _this = Weather_possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Weather)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
     Weather_defineProperty(_assertThisInitialized(_this), "state", {
-      weatherMiddle: 25,
-      unitTemp: false
+      weatherMiddle: 17,
+      unitTemp: true
     });
 
     return _this;
@@ -12491,13 +12525,23 @@ function (_React$Component) {
   _createClass(Weather, [{
     key: "render",
     value: function render() {
+      var _this2 = this;
+
+      var title = 'weather';
       return react_default.a.createElement("div", {
+        onClick: function onClick() {
+          return _this2.props.showMore(title);
+        },
+        className: "place__module"
+      }, react_default.a.createElement("div", {
+        className: "place__module_item"
+      }, react_default.a.createElement("div", {
         className: "weather"
       }, react_default.a.createElement("div", {
         className: "weather__middle"
       }, react_default.a.createElement("span", {
         className: "weather__middle_number"
-      }, this.state.weatherMiddle), react_default.a.createElement("span", null, this.state.unitTemp ? 'celsius ' : 'fahrenheit ')), react_default.a.createElement("div", null, "weather"));
+      }, this.state.weatherMiddle), react_default.a.createElement("span", null, this.state.unitTemp ? 'celsius ' : 'fahrenheit')), react_default.a.createElement("div", null, title))));
     }
   }]);
 
@@ -12505,6 +12549,284 @@ function (_React$Component) {
 }(react_default.a.Component);
 
 
+// CONCATENATED MODULE: ./static/components/content/modules/placemodule/Tickets.jsx
+function Tickets_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { Tickets_typeof = function _typeof(obj) { return typeof obj; }; } else { Tickets_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return Tickets_typeof(obj); }
+
+function Tickets_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function Tickets_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function Tickets_createClass(Constructor, protoProps, staticProps) { if (protoProps) Tickets_defineProperties(Constructor.prototype, protoProps); if (staticProps) Tickets_defineProperties(Constructor, staticProps); return Constructor; }
+
+function Tickets_possibleConstructorReturn(self, call) { if (call && (Tickets_typeof(call) === "object" || typeof call === "function")) { return call; } return Tickets_assertThisInitialized(self); }
+
+function Tickets_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function Tickets_getPrototypeOf(o) { Tickets_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return Tickets_getPrototypeOf(o); }
+
+function Tickets_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) Tickets_setPrototypeOf(subClass, superClass); }
+
+function Tickets_setPrototypeOf(o, p) { Tickets_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return Tickets_setPrototypeOf(o, p); }
+
+
+
+var Tickets_Tickets =
+/*#__PURE__*/
+function (_React$Component) {
+  Tickets_inherits(Tickets, _React$Component);
+
+  function Tickets() {
+    Tickets_classCallCheck(this, Tickets);
+
+    return Tickets_possibleConstructorReturn(this, Tickets_getPrototypeOf(Tickets).apply(this, arguments));
+  }
+
+  Tickets_createClass(Tickets, [{
+    key: "render",
+    value: function render() {
+      var _this = this;
+
+      var title = 'tickets';
+      return react_default.a.createElement("div", {
+        onClick: function onClick() {
+          return _this.props.showMore(title);
+        },
+        className: "place__module"
+      }, react_default.a.createElement("div", {
+        className: "place__module_item"
+      }, react_default.a.createElement("div", {
+        className: "tickets"
+      }, react_default.a.createElement("div", null, title))));
+    }
+  }]);
+
+  return Tickets;
+}(react_default.a.Component);
+
+
+// CONCATENATED MODULE: ./static/components/content/modules/placemodule/People.jsx
+function People_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { People_typeof = function _typeof(obj) { return typeof obj; }; } else { People_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return People_typeof(obj); }
+
+function People_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function People_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function People_createClass(Constructor, protoProps, staticProps) { if (protoProps) People_defineProperties(Constructor.prototype, protoProps); if (staticProps) People_defineProperties(Constructor, staticProps); return Constructor; }
+
+function People_possibleConstructorReturn(self, call) { if (call && (People_typeof(call) === "object" || typeof call === "function")) { return call; } return People_assertThisInitialized(self); }
+
+function People_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function People_getPrototypeOf(o) { People_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return People_getPrototypeOf(o); }
+
+function People_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) People_setPrototypeOf(subClass, superClass); }
+
+function People_setPrototypeOf(o, p) { People_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return People_setPrototypeOf(o, p); }
+
+
+
+var People_People =
+/*#__PURE__*/
+function (_React$Component) {
+  People_inherits(People, _React$Component);
+
+  function People() {
+    People_classCallCheck(this, People);
+
+    return People_possibleConstructorReturn(this, People_getPrototypeOf(People).apply(this, arguments));
+  }
+
+  People_createClass(People, [{
+    key: "render",
+    value: function render() {
+      var _this = this;
+
+      var title = 'people';
+      return react_default.a.createElement("div", {
+        onClick: function onClick() {
+          return _this.props.showMore(title);
+        },
+        className: "place__module"
+      }, react_default.a.createElement("div", {
+        className: "place__module_item"
+      }, react_default.a.createElement("div", {
+        className: "people"
+      }, react_default.a.createElement("div", null, title))));
+    }
+  }]);
+
+  return People;
+}(react_default.a.Component);
+
+
+// CONCATENATED MODULE: ./static/components/content/modules/Place.jsx
+function Place_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { Place_typeof = function _typeof(obj) { return typeof obj; }; } else { Place_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return Place_typeof(obj); }
+
+function Place_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function Place_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function Place_createClass(Constructor, protoProps, staticProps) { if (protoProps) Place_defineProperties(Constructor.prototype, protoProps); if (staticProps) Place_defineProperties(Constructor, staticProps); return Constructor; }
+
+function Place_possibleConstructorReturn(self, call) { if (call && (Place_typeof(call) === "object" || typeof call === "function")) { return call; } return Place_assertThisInitialized(self); }
+
+function Place_getPrototypeOf(o) { Place_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return Place_getPrototypeOf(o); }
+
+function Place_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function Place_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) Place_setPrototypeOf(subClass, superClass); }
+
+function Place_setPrototypeOf(o, p) { Place_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return Place_setPrototypeOf(o, p); }
+
+function Place_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+var Place_Place =
+/*#__PURE__*/
+function (_React$Component) {
+  Place_inherits(Place, _React$Component);
+
+  function Place() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    Place_classCallCheck(this, Place);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = Place_possibleConstructorReturn(this, (_getPrototypeOf2 = Place_getPrototypeOf(Place)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    Place_defineProperty(Place_assertThisInitialized(_this), "state", {
+      placemodule: false,
+      title: '',
+      toggleWeather: true,
+      toggleTickets: true,
+      togglePeople: true
+    });
+
+    Place_defineProperty(Place_assertThisInitialized(_this), "showPlaceModule", function (title) {
+      _this.setState({
+        placemodule: !_this.state.placemodule,
+        title: title
+      });
+    });
+
+    Place_defineProperty(Place_assertThisInitialized(_this), "toggleWeather", function (e) {
+      _this.setState({
+        toggleWeather: !_this.state.toggleWeather
+      });
+    });
+
+    Place_defineProperty(Place_assertThisInitialized(_this), "toggleTickets", function (e) {
+      _this.setState({
+        toggleTickets: !_this.state.toggleTickets
+      });
+    });
+
+    Place_defineProperty(Place_assertThisInitialized(_this), "togglePeople", function (e) {
+      _this.setState({
+        togglePeople: !_this.state.togglePeople
+      });
+    });
+
+    return _this;
+  }
+
+  Place_createClass(Place, [{
+    key: "render",
+    value: function render() {
+      return react_default.a.createElement("div", {
+        className: "place"
+      }, react_default.a.createElement("div", {
+        className: "place__description"
+      }, "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam magnam molestiae soluta dolores repudiandae quasi odio dignissimos ea laborum molestias laboriosam unde obcaecati assumenda pariatur distinctio id voluptatem aperiam iure, harum similique! Ullam provident beatae saepe libero architecto laboriosam iste rerum sit repudiandae, hic aperiam tempora omnis, quam explicabo? Asperiores, earum, molestias maiores laudantium enim ipsa blanditiis corrupti placeat laborum sed nihil accusantium aperiam tempore beatae officiis inventore. At a asperiores tempore, dicta aspernatur sint. Debitis eius vero fugiat nemo, architecto laboriosam enim et, nam ad qui esse! Totam repudiandae consequuntur ea dolore natus pariatur at magnam dolorum magni quod."), react_default.a.createElement("div", {
+        className: "place__sidebar"
+      }, react_default.a.createElement("div", {
+        className: "place__sidebar_item"
+      }, react_default.a.createElement("div", {
+        className: "place__sidebar_toggler ".concat(this.state.toggleWeather ? 'place__sidebar_toggler--active' : ''),
+        onClick: this.toggleWeather
+      }, "weather"), react_default.a.createElement("div", {
+        className: "place__sidebar_toggler ".concat(this.state.toggleTickets ? 'place__sidebar_toggler--active' : ''),
+        onClick: this.toggleTickets
+      }, "tickets"), react_default.a.createElement("div", {
+        className: "place__sidebar_toggler ".concat(this.state.togglePeople ? 'place__sidebar_toggler--active' : ''),
+        onClick: this.togglePeople
+      }, "people")), react_default.a.createElement("div", {
+        className: "place__sidebar_item"
+      }, this.state.toggleWeather ? react_default.a.createElement(Weather_Weather, {
+        showMore: this.showPlaceModule
+      }) : null, this.state.toggleTickets ? react_default.a.createElement(Tickets_Tickets, {
+        showMore: this.showPlaceModule
+      }) : null, this.state.togglePeople ? react_default.a.createElement(People_People, {
+        showMore: this.showPlaceModule
+      }) : null)), this.state.placemodule ? react_default.a.createElement(Place_PlacePopup, {
+        title: this.state.title,
+        close: this.showPlaceModule
+      }) : null);
+    }
+  }]);
+
+  return Place;
+}(react_default.a.Component);
+
+
+
+var Place_PlacePopup =
+/*#__PURE__*/
+function (_Place) {
+  Place_inherits(PlacePopup, _Place);
+
+  function PlacePopup() {
+    var _getPrototypeOf3;
+
+    var _this2;
+
+    Place_classCallCheck(this, PlacePopup);
+
+    for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+      args[_key2] = arguments[_key2];
+    }
+
+    _this2 = Place_possibleConstructorReturn(this, (_getPrototypeOf3 = Place_getPrototypeOf(PlacePopup)).call.apply(_getPrototypeOf3, [this].concat(args)));
+
+    Place_defineProperty(Place_assertThisInitialized(_this2), "targetEvent", function (e) {
+      e.target.dataset.placePopup ? _this2.props.close() : null;
+    });
+
+    return _this2;
+  }
+
+  Place_createClass(PlacePopup, [{
+    key: "render",
+    value: function render() {
+      return react_default.a.createElement("div", {
+        "data-place-popup": true,
+        onClick: this.targetEvent,
+        className: "place__popup"
+      }, react_default.a.createElement("div", {
+        className: "place__popup_inner"
+      }, react_default.a.createElement("div", {
+        className: "place__popup_header"
+      }, react_default.a.createElement("div", {
+        className: "place__popup_title"
+      }, this.props.title), react_default.a.createElement("div", {
+        onClick: this.props.close,
+        className: "place__popup_close"
+      })), react_default.a.createElement("div", null, this.props.weather), react_default.a.createElement("div", null, this.props.graduse)));
+    }
+  }]);
+
+  return PlacePopup;
+}(Place_Place);
 // CONCATENATED MODULE: ./static/components/content/modules/social/Twitter.jsx
 function Twitter_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { Twitter_typeof = function _typeof(obj) { return typeof obj; }; } else { Twitter_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return Twitter_typeof(obj); }
 
@@ -12647,33 +12969,11 @@ function (_React$Component) {
       return react_default.a.createElement("div", {
         className: "guide"
       }, react_default.a.createElement("div", {
-        className: "module module__flex"
+        className: "module"
       }, react_default.a.createElement("h2", {
         style: placeNameStyle,
-        className: "place__name"
-      }, this.props.name), react_default.a.createElement("div", {
-        className: "place"
-      }, react_default.a.createElement("div", {
-        className: "place__description"
-      }, this.props.description)), react_default.a.createElement("div", {
-        className: "place__sidebar"
-      }, react_default.a.createElement("div", {
-        className: "place__module"
-      }, react_default.a.createElement("div", {
-        className: "place__module_item"
-      }, react_default.a.createElement(Weather_Weather, null))), react_default.a.createElement("div", {
-        className: "place__module"
-      }, react_default.a.createElement("div", {
-        className: "place__module_item"
-      }, "\u043D\u0430\u0441\u0435\u043B\u0435\u043D\u0438\u0435")), react_default.a.createElement("div", {
-        className: "place__module"
-      }, react_default.a.createElement("div", {
-        className: "place__module_item"
-      }, "\u0431\u0438\u043B\u0435\u0442\u044B")), react_default.a.createElement("div", {
-        className: "place__module"
-      }, react_default.a.createElement("div", {
-        className: "place__module_item"
-      }, "\u043F\u0440\u043E\u0436\u0438\u0432\u0430\u043D\u0438\u0435")))), react_default.a.createElement("div", {
+        className: "module__title_first"
+      }, "London"), react_default.a.createElement(Place_Place, null)), react_default.a.createElement("div", {
         className: "module"
       }, react_default.a.createElement("h2", {
         className: "module__title"
@@ -12963,7 +13263,7 @@ function (_React$Component) {
     _this = FrontPage_possibleConstructorReturn(this, (_getPrototypeOf2 = FrontPage_getPrototypeOf(FrontPage)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
     FrontPage_defineProperty(FrontPage_assertThisInitialized(_this), "state", {
-      name: undefined
+      name: !undefined
     });
 
     FrontPage_defineProperty(FrontPage_assertThisInitialized(_this), "gettingPlace",
@@ -12972,31 +13272,29 @@ function (_React$Component) {
       var _ref = _asyncToGenerator(
       /*#__PURE__*/
       runtime_default.a.mark(function _callee(e) {
-        var place, api_url, info;
+        var place;
         return runtime_default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
                 e.preventDefault();
                 place = e.target.elements.search.value;
-                _context.next = 4;
-                return fetch("".concat(BASE_URL, "place/findplacefromtext/json?input=").concat(place, "&inputtype=textquery&fields=photos,formatted_address,name,rating,opening_hours,geometry&key=").concat(API_KEY), {
-                  headers: {
-                    'accept': 'application/json',
-                    'Access-Control-Allow-Origin': '*'
-                  }
+                /*const apiPlace = await 
+                    fetch(`${BASE_URL}place/findplacefromtext/json?input=${place}&inputtype=textquery&fields=photos,formatted_address,name,rating,opening_hours,geometry&key=${API_KEY}`, {
+                        headers: {
+                            'accept': 'application/json',
+                            'Access-Control-Allow-Origin': '*'
+                        }
+                    })
+                  const info = await apiPlace.json()*/
+
+                console.log(e);
+
+                _this.setState({
+                  name: place
                 });
 
               case 4:
-                api_url = _context.sent;
-                _context.next = 7;
-                return api_url.json();
-
-              case 7:
-                info = _context.sent;
-                console.log(info);
-
-              case 9:
               case "end":
                 return _context.stop();
             }
@@ -13072,7 +13370,7 @@ function (_React$Component) {
       }, react_default.a.createElement("div", {
         className: "logo"
       }, react_default.a.createElement("a", {
-        href: "/"
+        href: "/dist"
       }, "SOWA")), react_default.a.createElement("div", {
         className: "header__line"
       }))), react_default.a.createElement("div", {
@@ -13087,6 +13385,7 @@ function (_React$Component) {
 
 // CONCATENATED MODULE: ./static/index.js
 //scss
+
  //js
 //import './js/header'
 //import './js/grid'

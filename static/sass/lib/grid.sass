@@ -1,0 +1,34 @@
+$card-margin-bottom: 30px
+$card-margin-left-right: 15px
+$card-title-height: 50px
+.grid
+    display: flex
+    flex-wrap: wrap
+    margin: 0 #{-$card-margin-left-right} #{-$card-margin-bottom}
+    overflow: hidden
+    &__item
+        width: 25%
+
+.card
+    text-decoration: none
+    height: 300px
+    display: block
+    margin: 0 $card-margin-left-right $card-margin-bottom
+    overflow: hidden
+    position: relative
+    &:hover
+        .card__content
+            top: 0
+    &__content
+        position: relative
+        top: calc(100% - #{$card-title-height})
+        transition: .3s
+        background: rgba(0, 0, 0, 0.5)
+        min-height: 100%
+    &__title
+        height: $card-title-height
+        line-height: $card-title-height
+        text-align: center
+        font-size: 1.8em
+    &__txt
+        padding: 10px

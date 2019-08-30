@@ -23,12 +23,23 @@ img {
 .module:not(:last-child) {
   margin-bottom: 20px; }
 
-.module__flex {
-  display: flex;
-  flex-wrap: wrap; }
-
 .module__title {
   margin-bottom: 5px; }
+  .module__title_first {
+    padding: 20px;
+    font-size: 1.3em;
+    color: #152127;
+    margin-bottom: 10px;
+    min-width: 100%;
+    background-color: #b3b3b3;
+    background-position: left;
+    background-size: cover;
+    background-repeat: no-repeat; }
+
+@media all and (max-width: 768px) {
+  .module__title_first {
+    padding: 10px;
+    font-size: 0.9em; } }
 
 .btn {
   background: none;
@@ -184,6 +195,8 @@ body {
   position: absolute;
   top: 100%;
   left: 20%;
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
   min-width: max-content;
   max-height: 60vh;
   border-left: 2px solid #2a73a9;

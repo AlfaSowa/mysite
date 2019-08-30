@@ -1,0 +1,36 @@
+$country-info-item-size: 180px
+$country-margin: 15px
+.country
+    padding: 0 $country-margin
+    &__title
+        text-align: center
+        color: #fff
+        margin: 15px 0
+    &__main
+        display: flex
+    &__sidebar
+        margin-right: $country-margin
+        min-width: 220px
+    &__list
+        padding: 0 $country-margin 0 0
+        &_item
+    &__img
+        min-width: 400px
+        height: 300px
+        margin-right: $country-margin
+        overflow: hidden
+        position: relative
+    &__description
+        color: #fff
+    &__info
+        display: flex
+        flex-direction: column
+        margin-left: $country-margin
+        &_item
+            flex: 1
+            background: #fff
+            width: $country-info-item-size
+            max-height: $country-info-item-size
+            min-height: $country-info-item-size
+            &:not(:last-child)
+                margin-bottom: $country-margin
