@@ -9,10 +9,7 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const TerserPlugin = require('terser-webpack-plugin');
 
 let conf = {
-    entry: {
-        main: './static/index.js',
-        critical: './static/critical.js'
-    },
+    entry: './static/index.js',
 
     output: {
         path: path.join(__dirname, './dist'),
@@ -24,7 +21,7 @@ let conf = {
     devServer: {
         contentBase: './dist',
         historyApiFallback: true,
-        port: 8080
+        port: 8181
     },
 
     stats: {

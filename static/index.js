@@ -1,10 +1,9 @@
-//scss
+//sass
 import 'normalize.css'
 import './sass/style.sass'
 //js
-//import './js/header'
-//import './js/grid'
-
+import './js/main'
+//react
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter } from "react-router-dom"
