@@ -11407,11 +11407,11 @@ function (_React$Component) {
     _this = Order_possibleConstructorReturn(this, (_getPrototypeOf2 = Order_getPrototypeOf(Order)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
     _defineProperty(Order_assertThisInitialized(_this), "state", {
+      sum: 0,
       name: typeof _this.props.basket[0].name !== 'undefined' ? _this.props.basket[0].name : '',
       img: typeof _this.props.basket[0].img !== 'undefined' ? _this.props.basket[0].img : '',
       description: typeof _this.props.basket[0].description !== 'undefined' ? _this.props.basket[0].description : '',
       price: typeof _this.props.basket[0].price !== 'undefined' ? _this.props.basket[0].price : '',
-      count: 1,
       composition: typeof _this.props.basket[0].composition !== 'undefined' ? _this.props.basket[0].composition : [],
       acute: typeof _this.props.basket[0].acute !== 'undefined' ? _this.props.basket[0].acute : ''
     });
@@ -11427,16 +11427,8 @@ function (_React$Component) {
       });
     });
 
-    _defineProperty(Order_assertThisInitialized(_this), "plusCount", function () {
-      _this.setState({
-        count: _this.state.count + 1
-      });
-    });
-
-    _defineProperty(Order_assertThisInitialized(_this), "minusCount", function () {
-      _this.setState({
-        count: _this.state.count - 1
-      });
+    _defineProperty(Order_assertThisInitialized(_this), "result", function (item) {
+      console.log(item);
     });
 
     return _this;
@@ -11461,7 +11453,7 @@ function (_React$Component) {
 
       return react_default.a.createElement("div", {
         className: "order"
-      }, react_default.a.createElement("div", {
+      }, react_default.a.createElement("h2", null, "\u0418\u0422\u041E\u0413\u041E\u0412\u0410\u042F \u0421\u0423\u041C\u041C\u0410 "), react_default.a.createElement("div", {
         className: "product"
       }, react_default.a.createElement("div", {
         className: "product__img",
@@ -11479,20 +11471,6 @@ function (_React$Component) {
       }, acute, " - \u0443\u0440\u043E\u0432\u0435\u043D\u044C \u043E\u0441\u0442\u0440\u043E\u0442\u044B")), react_default.a.createElement("div", {
         className: "product__description"
       }, this.state.description), react_default.a.createElement("div", {
-        className: "product__price"
-      }, react_default.a.createElement("div", {
-        className: "product__price_result"
-      }, this.state.price * this.state.count, "$"), react_default.a.createElement("div", {
-        className: "product__price_count"
-      }, react_default.a.createElement("button", {
-        className: "product__price_number",
-        onClick: this.minusCount
-      }, "-"), react_default.a.createElement("div", {
-        className: "product__price_quantity"
-      }, this.state.count), react_default.a.createElement("button", {
-        className: "product__price_number",
-        onClick: this.plusCount
-      }, "+"))), react_default.a.createElement("div", {
         className: "product__composition"
       }, this.state.composition.map(function (item) {
         return react_default.a.createElement("div", {
@@ -11504,24 +11482,15 @@ function (_React$Component) {
       }, react_default.a.createElement("div", {
         className: "basket__inner"
       }, this.props.basket.map(function (item) {
-        return react_default.a.createElement("div", {
-          onClick: function onClick() {
+        return react_default.a.createElement(Order_Product, {
+          info: function info() {
             return _this2.productInfo(item.name, item.img, item.description, item.price, item.composition, item.acute);
           },
-          key: shortid_default.a.generate(),
-          className: "basket__item"
-        }, react_default.a.createElement("div", {
-          className: "basket__card"
-        }, react_default.a.createElement("div", {
-          className: "basket__card_title"
-        }, item.name), react_default.a.createElement("div", {
-          className: "basket__card_img",
-          style: {
-            background: "url('./img/".concat(item.img, ".jpg') no-repeat 50% / cover")
-          }
-        }, react_default.a.createElement("img", {
-          src: "./img/".concat(item.img, ".jpg")
-        }))));
+          name: item.name,
+          img: item.img,
+          price: item.price,
+          key: shortid_default.a.generate()
+        });
       }))));
     }
   }]);
@@ -11530,8 +11499,102 @@ function (_React$Component) {
 }(react_default.a.Component);
 
 
+
+var Order_Product =
+/*#__PURE__*/
+function (_Order) {
+  Order_inherits(Product, _Order);
+
+  function Product() {
+    var _getPrototypeOf3;
+
+    var _this3;
+
+    Order_classCallCheck(this, Product);
+
+    for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+      args[_key2] = arguments[_key2];
+    }
+
+    _this3 = Order_possibleConstructorReturn(this, (_getPrototypeOf3 = Order_getPrototypeOf(Product)).call.apply(_getPrototypeOf3, [this].concat(args)));
+
+    _defineProperty(Order_assertThisInitialized(_this3), "state", {
+      count: 1,
+      price: 0
+    });
+
+    _defineProperty(Order_assertThisInitialized(_this3), "minusCount", function () {
+      if (_this3.state.count >= 1) {
+        _this3.setState({
+          count: _this3.state.count - 1,
+          price: _this3.props.price * (_this3.state.count - 1)
+        });
+      }
+    });
+
+    _defineProperty(Order_assertThisInitialized(_this3), "plusCount", function () {
+      _this3.setState({
+        count: _this3.state.count + 1,
+        price: _this3.props.price * (_this3.state.count + 1)
+      });
+    });
+
+    _defineProperty(Order_assertThisInitialized(_this3), "componentWillMount", function () {
+      _this3.setState({
+        price: _this3.props.price * _this3.state.count
+      });
+    });
+
+    return _this3;
+  }
+
+  Order_createClass(Product, [{
+    key: "render",
+    value: function render() {
+      var _this4 = this;
+
+      return react_default.a.createElement("div", {
+        className: "basket__item"
+      }, react_default.a.createElement("div", {
+        className: "basket__card"
+      }, react_default.a.createElement("div", {
+        className: "basket__card_title"
+      }, this.props.name), react_default.a.createElement("div", {
+        onClick: this.props.info,
+        className: "basket__card_img",
+        style: {
+          background: "url('./img/".concat(this.props.img, ".jpg') no-repeat 50% / cover")
+        }
+      }, react_default.a.createElement("img", {
+        src: "./img/".concat(this.props.img, ".jpg")
+      })), react_default.a.createElement("div", {
+        className: "basket__price"
+      }, react_default.a.createElement("div", {
+        className: "basket__price_result"
+      }, this.state.price, "$"), react_default.a.createElement("div", {
+        className: "basket__price_count"
+      }, react_default.a.createElement("button", {
+        className: "basket__price_number",
+        onClick: function onClick() {
+          return _this4.minusCount();
+        }
+      }, "-"), react_default.a.createElement("div", {
+        className: "basket__price_quantity"
+      }, this.state.count), react_default.a.createElement("button", {
+        className: "basket__price_number",
+        onClick: function onClick() {
+          return _this4.plusCount();
+        }
+      }, "+")))));
+    }
+  }]);
+
+  return Product;
+}(Order_Order);
+
 Order_Order.defaultProps = {
   basket: [{
+    count: 1,
     name: 'пицца',
     img: '1',
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore in itaque harum minima unde dolores repellendus. Saepe, unde, fugit id in illo, quo omnis minus veniam eos cumque ex nesciunt eius voluptatum expedita vitae? Libero quis voluptatibus commodi accusamus aliquid laboriosam, dolorem ipsa magni provident vero. Vitae voluptates architecto ratione.',
@@ -11539,6 +11602,7 @@ Order_Order.defaultProps = {
     composition: ['Mozzarella', 'Bacon', 'Ham'],
     acute: 1
   }, {
+    count: 1,
     name: 'суп',
     img: '2',
     description: 'Lorem ipsum dolor sit amet consectetur provident vero. Vitae voluptates architecto ratione.',
@@ -11546,6 +11610,7 @@ Order_Order.defaultProps = {
     composition: ['Bacon', 'Ham', 'Sausages'],
     acute: 3
   }, {
+    count: 1,
     name: 'каша',
     img: '3',
     description: 'adipisicing elit. Inventod in illo, quo omnis minus veniam eos cumque ex nesciunt eius voluptatum expedita vitae?',
@@ -11553,6 +11618,7 @@ Order_Order.defaultProps = {
     composition: ['Mozzarella', 'Bacon', 'Ham', 'Chicken Faillet'],
     acute: 2
   }, {
+    count: 1,
     name: 'пиво',
     img: '4',
     description: 'tatum expedita vitae? Libero quis voluptatibus commodi accusamus aliquid laboriosam, dolorem ipsa  tatum expedita vitae? Libero quis voluptatibus commodi accusamus aliquid laboriosam, dolorem ipsa Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore in itaque harum minima unde dolores repellendus. Saepe, unde, fugit id in illo, quo omnis minus veniam eos cumque ex nesciunt eius volupmagni provident vero. Vitae voluptates architecto ratione.',
@@ -11560,6 +11626,7 @@ Order_Order.defaultProps = {
     composition: ['Pizza Base', 'Bacon', 'Ham', 'Chicken Faillet', 'Sausages'],
     acute: 0
   }, {
+    count: 1,
     name: 'пицца',
     img: '1',
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore in itaque harum minima unde dolores repellendus. Saepe, unde, fugit id in illo, quo omnis minus veniam eos cumque ex nesciunt eius voluptatum expedita vitae? Libero quis voluptatibus commodi accusamus aliquid laboriosam, dolorem ipsa magni provident vero. Vitae voluptates architecto ratione.',
@@ -11567,6 +11634,7 @@ Order_Order.defaultProps = {
     composition: ['Mozzarella', 'Bacon', 'Ham'],
     acute: 1
   }, {
+    count: 1,
     name: 'суп',
     img: '2',
     description: 'Lorem ipsum dolor sit amet consectetur provident vero. Vitae voluptates architecto ratione.',
@@ -11574,6 +11642,7 @@ Order_Order.defaultProps = {
     composition: ['Bacon', 'Ham', 'Sausages'],
     acute: 3
   }, {
+    count: 1,
     name: 'каша',
     img: '3',
     description: 'adipisicing elit. Inventod in illo, quo omnis minus veniam eos cumque ex nesciunt eius voluptatum expedita vitae?',
@@ -11581,6 +11650,7 @@ Order_Order.defaultProps = {
     composition: ['Mozzarella', 'Bacon', 'Ham', 'Chicken Faillet'],
     acute: 2
   }, {
+    count: 1,
     name: 'пиво',
     img: '4',
     description: 'tatum expedita vitae? Libero quis voluptatibus commodi accusamus aliquid laboriosam, dolorem ipsa  tatum expedita vitae? Libero quis voluptatibus commodi accusamus aliquid laboriosam, dolorem ipsa Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore in itaque harum minima unde dolores repellendus. Saepe, unde, fugit id in illo, quo omnis minus veniam eos cumque ex nesciunt eius volupmagni provident vero. Vitae voluptates architecto ratione.',

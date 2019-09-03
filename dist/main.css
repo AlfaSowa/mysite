@@ -434,22 +434,6 @@ body {
   .product__description {
     margin-bottom: 20px;
     flex: 1; }
-  .product__price {
-    display: flex;
-    margin-bottom: 20px; }
-    .product__price_result {
-      margin-right: 10px;
-      width: 50px; }
-    .product__price_count {
-      display: flex; }
-    .product__price_number {
-      width: 20px;
-      height: 20px;
-      background: #f1f1f1;
-      cursor: pointer; }
-    .product__price_quantity {
-      width: 50px;
-      text-align: center; }
   .product__composition {
     background: #fff;
     border-radius: 5px;
@@ -492,4 +476,20 @@ body {
         position: absolute;
         left: 0;
         top: 0; }
+  .basket__price {
+    display: flex;
+    margin-bottom: 20px; }
+    .basket__price_result {
+      margin-right: 10px;
+      width: 50px; }
+    .basket__price_count {
+      display: flex; }
+    .basket__price_number {
+      width: 20px;
+      height: 20px;
+      background: #f1f1f1;
+      cursor: pointer; }
+    .basket__price_quantity {
+      width: 50px;
+      text-align: center; }
 
