@@ -95,7 +95,7 @@ class Product extends Order {
         })
     }
 
-    componentWillMount = () => {
+    componentDidMount = () => {
         this.setState({
             price: this.props.price * this.state.count
         })

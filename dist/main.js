@@ -11539,7 +11539,7 @@ function (_Order) {
       });
     });
 
-    _defineProperty(Order_assertThisInitialized(_this3), "componentWillMount", function () {
+    _defineProperty(Order_assertThisInitialized(_this3), "componentDidMount", function () {
       _this3.setState({
         price: _this3.props.price * _this3.state.count
       });
