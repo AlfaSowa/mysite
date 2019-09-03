@@ -1,8 +1,9 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 
-import Menu from '../main/Menu.jsx'
 import Home from '../main/Home.jsx'
+import Menu from '../main/Menu.jsx'
+import Order from '../main/Order.jsx'
 
 export default class App extends React.Component {
     render() {
@@ -17,22 +18,14 @@ export default class App extends React.Component {
                                     <Link to="/">Home</Link>
                                 </li>
                                 <li className='menu__item'>
-                                    <Link to="/menu/">Menu</Link>
-                                </li>
-                                <li className='menu__item'>
                                     <Link to="/order/">Order</Link>
-                                </li>
-                                <li className='menu__item'>
-                                    <Link to="/about/">About</Link>
                                 </li>
                             </ul>
                         </nav>
                     </header>
                     <div className='main'>
-                        <Route path="/" exact component={HomeRoute} />
-                        <Route path="/menu/" component={MenuRoute} />
-                        <Route path="/order/" component={OrderRoute} />
-                        <Route path="/about/" component={AboutRoute} />
+                        <Route path="/" exact component={OrderRoute} />
+                        <Route path="/order/" component={HomeRoute} />
                     </div>
 
                 </div>
@@ -58,7 +51,7 @@ class MenuRoute extends App {
 class OrderRoute extends App {
     render() {
         return (
-            <div>Order</div>
+            <Order />
         )
     }
 }

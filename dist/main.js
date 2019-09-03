@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 22);
+/******/ 	return __webpack_require__(__webpack_require__.s = 36);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -92,7 +92,7 @@
 
 
 if (true) {
-  module.exports = __webpack_require__(15);
+  module.exports = __webpack_require__(21);
 } else {}
 
 /***/ }),
@@ -108,7 +108,7 @@ if (true) {
 if (false) { var throwOnDirectAccess, ReactIs; } else {
   // By explicitly using `prop-types` you are opting into new production behavior.
   // http://fb.me/prop-types-in-prod
-  module.exports = __webpack_require__(19)();
+  module.exports = __webpack_require__(25)();
 }
 
 /***/ }),
@@ -232,6 +232,128 @@ module.exports = invariant;
 /* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
+"use strict";
+
+
+var randomFromSeed = __webpack_require__(28);
+
+var ORIGINAL = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-';
+var alphabet;
+var previousSeed;
+var shuffled;
+
+function reset() {
+  shuffled = false;
+}
+
+function setCharacters(_alphabet_) {
+  if (!_alphabet_) {
+    if (alphabet !== ORIGINAL) {
+      alphabet = ORIGINAL;
+      reset();
+    }
+
+    return;
+  }
+
+  if (_alphabet_ === alphabet) {
+    return;
+  }
+
+  if (_alphabet_.length !== ORIGINAL.length) {
+    throw new Error('Custom alphabet for shortid must be ' + ORIGINAL.length + ' unique characters. You submitted ' + _alphabet_.length + ' characters: ' + _alphabet_);
+  }
+
+  var unique = _alphabet_.split('').filter(function (item, ind, arr) {
+    return ind !== arr.lastIndexOf(item);
+  });
+
+  if (unique.length) {
+    throw new Error('Custom alphabet for shortid must be ' + ORIGINAL.length + ' unique characters. These characters were not unique: ' + unique.join(', '));
+  }
+
+  alphabet = _alphabet_;
+  reset();
+}
+
+function characters(_alphabet_) {
+  setCharacters(_alphabet_);
+  return alphabet;
+}
+
+function setSeed(seed) {
+  randomFromSeed.seed(seed);
+
+  if (previousSeed !== seed) {
+    reset();
+    previousSeed = seed;
+  }
+}
+
+function shuffle() {
+  if (!alphabet) {
+    setCharacters(ORIGINAL);
+  }
+
+  var sourceArray = alphabet.split('');
+  var targetArray = [];
+  var r = randomFromSeed.nextValue();
+  var characterIndex;
+
+  while (sourceArray.length > 0) {
+    r = randomFromSeed.nextValue();
+    characterIndex = Math.floor(r * sourceArray.length);
+    targetArray.push(sourceArray.splice(characterIndex, 1)[0]);
+  }
+
+  return targetArray.join('');
+}
+
+function getShuffled() {
+  if (shuffled) {
+    return shuffled;
+  }
+
+  shuffled = shuffle();
+  return shuffled;
+}
+/**
+ * lookup shuffled letter
+ * @param index
+ * @returns {string}
+ */
+
+
+function lookup(index) {
+  var alphabetShuffled = getShuffled();
+  return alphabetShuffled[index];
+}
+
+function get() {
+  return alphabet || ORIGINAL;
+}
+
+module.exports = {
+  get: get,
+  characters: characters,
+  seed: setSeed,
+  lookup: lookup,
+  shuffled: getShuffled
+};
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = __webpack_require__(27);
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
 /*
 	MIT License http://www.opensource.org/licenses/mit-license.php
 	Author Tobias Koppers @sokra
@@ -298,7 +420,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(11);
+var	fixUrls = __webpack_require__(13);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -633,7 +755,7 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 5 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -734,7 +856,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 };
 
 /***/ }),
-/* 6 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -762,14 +884,14 @@ if (true) {
   // DCE check should happen before ReactDOM bundle executes so that
   // DevTools can report bad minification during injection.
   checkDCE();
-  module.exports = __webpack_require__(16);
+  module.exports = __webpack_require__(22);
 } else {}
 
 /***/ }),
-/* 7 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isarray = __webpack_require__(21);
+var isarray = __webpack_require__(35);
 /**
  * Expose `pathToRegexp`.
  */
@@ -1212,12 +1334,12 @@ function pathToRegexp(path, keys, options) {
 }
 
 /***/ }),
-/* 8 */,
-/* 9 */
+/* 10 */,
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(10);
+var content = __webpack_require__(12);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -1231,20 +1353,20 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(4)(content, options);
+var update = __webpack_require__(6)(content, options);
 
 if(content.locals) module.exports = content.locals;
 
 if(false) {}
 
 /***/ }),
-/* 10 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
 
 /***/ }),
-/* 11 */
+/* 13 */
 /***/ (function(module, exports) {
 
 /**
@@ -1333,11 +1455,11 @@ module.exports = function (css) {
 };
 
 /***/ }),
-/* 12 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(13);
+var content = __webpack_require__(15);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -1351,26 +1473,50 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(4)(content, options);
+var update = __webpack_require__(6)(content, options);
 
 if(content.locals) module.exports = content.locals;
 
 if(false) {}
 
 /***/ }),
-/* 13 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
 
 /***/ }),
-/* 14 */
+/* 16 */
 /***/ (function(module, exports) {
 
 
 
 /***/ }),
-/* 15 */
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "./img/1.jpg";
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "./img/2.jpg";
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "./img/3.jpg";
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "./img/4.jpg";
+
+/***/ }),
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1384,7 +1530,7 @@ if(false) {}
  */
 
 
-var h = __webpack_require__(5),
+var h = __webpack_require__(7),
     n = "function" === typeof Symbol && Symbol.for,
     p = n ? Symbol.for("react.element") : 60103,
     q = n ? Symbol.for("react.portal") : 60106,
@@ -1792,7 +1938,7 @@ var X = {
 module.exports = Z.default || Z;
 
 /***/ }),
-/* 16 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1811,8 +1957,8 @@ module.exports = Z.default || Z;
 
 
 var aa = __webpack_require__(0),
-    m = __webpack_require__(5),
-    q = __webpack_require__(17);
+    m = __webpack_require__(7),
+    q = __webpack_require__(23);
 
 function t(a) {
   for (var b = a.message, c = "https://reactjs.org/docs/error-decoder.html?invariant=" + b, d = 1; d < arguments.length; d++) c += "&args[]=" + encodeURIComponent(arguments[d]);
@@ -8519,18 +8665,18 @@ var Oj = {
 module.exports = Pj.default || Pj;
 
 /***/ }),
-/* 17 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 if (true) {
-  module.exports = __webpack_require__(18);
+  module.exports = __webpack_require__(24);
 } else {}
 
 /***/ }),
-/* 18 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8990,7 +9136,7 @@ exports.unstable_getFirstCallbackNode = function () {
 };
 
 /***/ }),
-/* 19 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9002,7 +9148,7 @@ exports.unstable_getFirstCallbackNode = function () {
  */
 
 
-var ReactPropTypesSecret = __webpack_require__(20);
+var ReactPropTypesSecret = __webpack_require__(26);
 
 function emptyFunction() {}
 
@@ -9059,7 +9205,7 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 20 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9075,7 +9221,304 @@ var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 module.exports = ReactPropTypesSecret;
 
 /***/ }),
-/* 21 */
+/* 27 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var alphabet = __webpack_require__(4);
+
+var build = __webpack_require__(29);
+
+var isValid = __webpack_require__(33); // if you are using cluster or multiple servers use this to make each instance
+// has a unique value for worker
+// Note: I don't know if this is automatically set when using third
+// party cluster solutions such as pm2.
+
+
+var clusterWorkerId = __webpack_require__(34) || 0;
+/**
+ * Set the seed.
+ * Highly recommended if you don't want people to try to figure out your id schema.
+ * exposed as shortid.seed(int)
+ * @param seed Integer value to seed the random alphabet.  ALWAYS USE THE SAME SEED or you might get overlaps.
+ */
+
+function seed(seedValue) {
+  alphabet.seed(seedValue);
+  return module.exports;
+}
+/**
+ * Set the cluster worker or machine id
+ * exposed as shortid.worker(int)
+ * @param workerId worker must be positive integer.  Number less than 16 is recommended.
+ * returns shortid module so it can be chained.
+ */
+
+
+function worker(workerId) {
+  clusterWorkerId = workerId;
+  return module.exports;
+}
+/**
+ *
+ * sets new characters to use in the alphabet
+ * returns the shuffled alphabet
+ */
+
+
+function characters(newCharacters) {
+  if (newCharacters !== undefined) {
+    alphabet.characters(newCharacters);
+  }
+
+  return alphabet.shuffled();
+}
+/**
+ * Generate unique id
+ * Returns string id
+ */
+
+
+function generate() {
+  return build(clusterWorkerId);
+} // Export all other functions as properties of the generate function
+
+
+module.exports = generate;
+module.exports.generate = generate;
+module.exports.seed = seed;
+module.exports.worker = worker;
+module.exports.characters = characters;
+module.exports.isValid = isValid;
+
+/***/ }),
+/* 28 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+ // Found this seed-based random generator somewhere
+// Based on The Central Randomizer 1.3 (C) 1997 by Paul Houle (houle@msc.cornell.edu)
+
+var seed = 1;
+/**
+ * return a random number based on a seed
+ * @param seed
+ * @returns {number}
+ */
+
+function getNextValue() {
+  seed = (seed * 9301 + 49297) % 233280;
+  return seed / 233280.0;
+}
+
+function setSeed(_seed_) {
+  seed = _seed_;
+}
+
+module.exports = {
+  nextValue: getNextValue,
+  seed: setSeed
+};
+
+/***/ }),
+/* 29 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var generate = __webpack_require__(30);
+
+var alphabet = __webpack_require__(4); // Ignore all milliseconds before a certain time to reduce the size of the date entropy without sacrificing uniqueness.
+// This number should be updated every year or so to keep the generated id short.
+// To regenerate `new Date() - 0` and bump the version. Always bump the version!
+
+
+var REDUCE_TIME = 1459707606518; // don't change unless we change the algos or REDUCE_TIME
+// must be an integer and less than 16
+
+var version = 6; // Counter is used when shortid is called multiple times in one second.
+
+var counter; // Remember the last time shortid was called in case counter is needed.
+
+var previousSeconds;
+/**
+ * Generate unique id
+ * Returns string id
+ */
+
+function build(clusterWorkerId) {
+  var str = '';
+  var seconds = Math.floor((Date.now() - REDUCE_TIME) * 0.001);
+
+  if (seconds === previousSeconds) {
+    counter++;
+  } else {
+    counter = 0;
+    previousSeconds = seconds;
+  }
+
+  str = str + generate(version);
+  str = str + generate(clusterWorkerId);
+
+  if (counter > 0) {
+    str = str + generate(counter);
+  }
+
+  str = str + generate(seconds);
+  return str;
+}
+
+module.exports = build;
+
+/***/ }),
+/* 30 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var alphabet = __webpack_require__(4);
+
+var random = __webpack_require__(31);
+
+var format = __webpack_require__(32);
+
+function generate(number) {
+  var loopCounter = 0;
+  var done;
+  var str = '';
+
+  while (!done) {
+    str = str + format(random, alphabet.get(), 1);
+    done = number < Math.pow(16, loopCounter + 1);
+    loopCounter++;
+  }
+
+  return str;
+}
+
+module.exports = generate;
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var crypto = typeof window === 'object' && (window.crypto || window.msCrypto); // IE 11 uses window.msCrypto
+
+var randomByte;
+
+if (!crypto || !crypto.getRandomValues) {
+  randomByte = function (size) {
+    var bytes = [];
+
+    for (var i = 0; i < size; i++) {
+      bytes.push(Math.floor(Math.random() * 256));
+    }
+
+    return bytes;
+  };
+} else {
+  randomByte = function (size) {
+    return crypto.getRandomValues(new Uint8Array(size));
+  };
+}
+
+module.exports = randomByte;
+
+/***/ }),
+/* 32 */
+/***/ (function(module, exports) {
+
+/**
+ * Secure random string generator with custom alphabet.
+ *
+ * Alphabet must contain 256 symbols or less. Otherwise, the generator
+ * will not be secure.
+ *
+ * @param {generator} random The random bytes generator.
+ * @param {string} alphabet Symbols to be used in new random string.
+ * @param {size} size The number of symbols in new random string.
+ *
+ * @return {string} Random string.
+ *
+ * @example
+ * const format = require('nanoid/format')
+ *
+ * function random (size) {
+ *   const result = []
+ *   for (let i = 0; i < size; i++) {
+ *     result.push(randomByte())
+ *   }
+ *   return result
+ * }
+ *
+ * format(random, "abcdef", 5) //=> "fbaef"
+ *
+ * @name format
+ * @function
+ */
+module.exports = function (random, alphabet, size) {
+  var mask = (2 << Math.log(alphabet.length - 1) / Math.LN2) - 1;
+  var step = Math.ceil(1.6 * mask * size / alphabet.length);
+  size = +size;
+  var id = '';
+
+  while (true) {
+    var bytes = random(step);
+
+    for (var i = 0; i < step; i++) {
+      var byte = bytes[i] & mask;
+
+      if (alphabet[byte]) {
+        id += alphabet[byte];
+        if (id.length === size) return id;
+      }
+    }
+  }
+};
+/**
+ * @callback generator
+ * @param {number} bytes The number of bytes to generate.
+ * @return {number[]} Random bytes.
+ */
+
+/***/ }),
+/* 33 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var alphabet = __webpack_require__(4);
+
+function isShortId(id) {
+  if (!id || typeof id !== 'string' || id.length < 6) {
+    return false;
+  }
+
+  var nonAlphabetic = new RegExp('[^' + alphabet.get().replace(/[|\\{}()[\]^$+*?.-]/g, '\\$&') + ']');
+  return !nonAlphabetic.test(id);
+}
+
+module.exports = isShortId;
+
+/***/ }),
+/* 34 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = 0;
+
+/***/ }),
+/* 35 */
 /***/ (function(module, exports) {
 
 module.exports = Array.isArray || function (arr) {
@@ -9083,27 +9526,44 @@ module.exports = Array.isArray || function (arr) {
 };
 
 /***/ }),
-/* 22 */
+/* 36 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
 // EXTERNAL MODULE: ./node_modules/normalize.css/normalize.css
-var normalize = __webpack_require__(9);
+var normalize = __webpack_require__(11);
 
 // EXTERNAL MODULE: ./static/sass/style.sass
-var style = __webpack_require__(12);
+var style = __webpack_require__(14);
 
 // EXTERNAL MODULE: ./static/js/main.js
-var main = __webpack_require__(14);
+var main = __webpack_require__(16);
+
+// EXTERNAL MODULE: ./static/img/1.jpg
+var _1 = __webpack_require__(17);
+
+// EXTERNAL MODULE: ./static/img/2.jpg
+var _2 = __webpack_require__(18);
+
+// EXTERNAL MODULE: ./static/img/3.jpg
+var _3 = __webpack_require__(19);
+
+// EXTERNAL MODULE: ./static/img/4.jpg
+var _4 = __webpack_require__(20);
+
+// CONCATENATED MODULE: ./static/js/files.js
+
+
+
 
 // EXTERNAL MODULE: ./node_modules/react/index.js
 var react = __webpack_require__(0);
 var react_default = /*#__PURE__*/__webpack_require__.n(react);
 
 // EXTERNAL MODULE: ./node_modules/react-dom/index.js
-var react_dom = __webpack_require__(6);
+var react_dom = __webpack_require__(8);
 var react_dom_default = /*#__PURE__*/__webpack_require__.n(react_dom);
 
 // EXTERNAL MODULE: ./node_modules/warning/warning.js
@@ -10540,7 +11000,7 @@ Link_Link.contextTypes = {
 };
 /* harmony default export */ var es_Link = (Link_Link);
 // EXTERNAL MODULE: ./node_modules/path-to-regexp/index.js
-var path_to_regexp = __webpack_require__(7);
+var path_to_regexp = __webpack_require__(9);
 var path_to_regexp_default = /*#__PURE__*/__webpack_require__.n(path_to_regexp);
 
 // CONCATENATED MODULE: ./node_modules/react-router/es/matchPath.js
@@ -10792,67 +11252,24 @@ Route_Route.childContextTypes = {
 // Written in this round about way for babel-transform-imports
 
 /* harmony default export */ var react_router_dom_es_Route = (es_Route);
-// CONCATENATED MODULE: ./static/components/main/Menu.jsx
-function Menu_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { Menu_typeof = function _typeof(obj) { return typeof obj; }; } else { Menu_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return Menu_typeof(obj); }
-
-function Menu_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function Menu_possibleConstructorReturn(self, call) { if (call && (Menu_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function Menu_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
-var Menu_Menu =
-/*#__PURE__*/
-function (_React$Component) {
-  Menu_inherits(Menu, _React$Component);
-
-  function Menu() {
-    Menu_classCallCheck(this, Menu);
-
-    return Menu_possibleConstructorReturn(this, _getPrototypeOf(Menu).apply(this, arguments));
-  }
-
-  _createClass(Menu, [{
-    key: "render",
-    value: function render() {
-      return react_default.a.createElement("div", null, "12312312");
-    }
-  }]);
-
-  return Menu;
-}(react_default.a.Component);
-
-
 // CONCATENATED MODULE: ./static/components/main/Home.jsx
 function Home_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { Home_typeof = function _typeof(obj) { return typeof obj; }; } else { Home_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return Home_typeof(obj); }
 
 function Home_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function Home_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function Home_createClass(Constructor, protoProps, staticProps) { if (protoProps) Home_defineProperties(Constructor.prototype, protoProps); if (staticProps) Home_defineProperties(Constructor, staticProps); return Constructor; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-function Home_possibleConstructorReturn(self, call) { if (call && (Home_typeof(call) === "object" || typeof call === "function")) { return call; } return Home_assertThisInitialized(self); }
+function Home_possibleConstructorReturn(self, call) { if (call && (Home_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function Home_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
-function Home_getPrototypeOf(o) { Home_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return Home_getPrototypeOf(o); }
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-function Home_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) Home_setPrototypeOf(subClass, superClass); }
+function Home_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
-function Home_setPrototypeOf(o, p) { Home_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return Home_setPrototypeOf(o, p); }
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 
 
@@ -10864,10 +11281,10 @@ function (_React$Component) {
   function Home() {
     Home_classCallCheck(this, Home);
 
-    return Home_possibleConstructorReturn(this, Home_getPrototypeOf(Home).apply(this, arguments));
+    return Home_possibleConstructorReturn(this, _getPrototypeOf(Home).apply(this, arguments));
   }
 
-  Home_createClass(Home, [{
+  _createClass(Home, [{
     key: "render",
     value: function render() {
       return react_default.a.createElement("div", {
@@ -10899,6 +11316,279 @@ function (_React$Component) {
 }(react_default.a.Component);
 
 
+// CONCATENATED MODULE: ./static/components/main/Menu.jsx
+function Menu_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { Menu_typeof = function _typeof(obj) { return typeof obj; }; } else { Menu_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return Menu_typeof(obj); }
+
+function Menu_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function Menu_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function Menu_createClass(Constructor, protoProps, staticProps) { if (protoProps) Menu_defineProperties(Constructor.prototype, protoProps); if (staticProps) Menu_defineProperties(Constructor, staticProps); return Constructor; }
+
+function Menu_possibleConstructorReturn(self, call) { if (call && (Menu_typeof(call) === "object" || typeof call === "function")) { return call; } return Menu_assertThisInitialized(self); }
+
+function Menu_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function Menu_getPrototypeOf(o) { Menu_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return Menu_getPrototypeOf(o); }
+
+function Menu_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) Menu_setPrototypeOf(subClass, superClass); }
+
+function Menu_setPrototypeOf(o, p) { Menu_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return Menu_setPrototypeOf(o, p); }
+
+
+
+var Menu_Menu =
+/*#__PURE__*/
+function (_React$Component) {
+  Menu_inherits(Menu, _React$Component);
+
+  function Menu() {
+    Menu_classCallCheck(this, Menu);
+
+    return Menu_possibleConstructorReturn(this, Menu_getPrototypeOf(Menu).apply(this, arguments));
+  }
+
+  Menu_createClass(Menu, [{
+    key: "render",
+    value: function render() {
+      return react_default.a.createElement("div", null, "12312312");
+    }
+  }]);
+
+  return Menu;
+}(react_default.a.Component);
+
+
+// EXTERNAL MODULE: ./node_modules/shortid/index.js
+var shortid = __webpack_require__(5);
+var shortid_default = /*#__PURE__*/__webpack_require__.n(shortid);
+
+// CONCATENATED MODULE: ./static/components/main/Order.jsx
+function Order_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { Order_typeof = function _typeof(obj) { return typeof obj; }; } else { Order_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return Order_typeof(obj); }
+
+function Order_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function Order_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function Order_createClass(Constructor, protoProps, staticProps) { if (protoProps) Order_defineProperties(Constructor.prototype, protoProps); if (staticProps) Order_defineProperties(Constructor, staticProps); return Constructor; }
+
+function Order_possibleConstructorReturn(self, call) { if (call && (Order_typeof(call) === "object" || typeof call === "function")) { return call; } return Order_assertThisInitialized(self); }
+
+function Order_getPrototypeOf(o) { Order_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return Order_getPrototypeOf(o); }
+
+function Order_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function Order_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) Order_setPrototypeOf(subClass, superClass); }
+
+function Order_setPrototypeOf(o, p) { Order_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return Order_setPrototypeOf(o, p); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+var Order_Order =
+/*#__PURE__*/
+function (_React$Component) {
+  Order_inherits(Order, _React$Component);
+
+  function Order() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    Order_classCallCheck(this, Order);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = Order_possibleConstructorReturn(this, (_getPrototypeOf2 = Order_getPrototypeOf(Order)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    _defineProperty(Order_assertThisInitialized(_this), "state", {
+      name: typeof _this.props.basket[0].name !== 'undefined' ? _this.props.basket[0].name : '',
+      img: typeof _this.props.basket[0].img !== 'undefined' ? _this.props.basket[0].img : '',
+      description: typeof _this.props.basket[0].description !== 'undefined' ? _this.props.basket[0].description : '',
+      price: typeof _this.props.basket[0].price !== 'undefined' ? _this.props.basket[0].price : '',
+      count: 1,
+      composition: typeof _this.props.basket[0].composition !== 'undefined' ? _this.props.basket[0].composition : [],
+      acute: typeof _this.props.basket[0].acute !== 'undefined' ? _this.props.basket[0].acute : ''
+    });
+
+    _defineProperty(Order_assertThisInitialized(_this), "productInfo", function (name, img, description, price, composition, acute) {
+      _this.setState({
+        name: name,
+        img: img,
+        description: description,
+        price: price,
+        composition: composition,
+        acute: acute
+      });
+    });
+
+    _defineProperty(Order_assertThisInitialized(_this), "plusCount", function () {
+      _this.setState({
+        count: _this.state.count + 1
+      });
+    });
+
+    _defineProperty(Order_assertThisInitialized(_this), "minusCount", function () {
+      _this.setState({
+        count: _this.state.count - 1
+      });
+    });
+
+    return _this;
+  }
+
+  Order_createClass(Order, [{
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var imgStyle = {
+        background: "url('./img/".concat(this.state.img, ".jpg') no-repeat 50% / cover")
+      };
+      var acute = [];
+
+      for (var i = 0; i < this.state.acute; i++) {
+        acute.push(react_default.a.createElement("div", {
+          className: "product__acute_item",
+          key: shortid_default.a.generate()
+        }));
+      }
+
+      return react_default.a.createElement("div", {
+        className: "order"
+      }, react_default.a.createElement("div", {
+        className: "product"
+      }, react_default.a.createElement("div", {
+        className: "product__img",
+        style: imgStyle
+      }, react_default.a.createElement("img", {
+        src: "./img/".concat(this.state.img, ".jpg")
+      })), react_default.a.createElement("div", {
+        className: "product__info"
+      }, react_default.a.createElement("div", {
+        className: "product__header"
+      }, react_default.a.createElement("div", {
+        className: "product__title"
+      }, this.state.name), react_default.a.createElement("div", {
+        className: "product__acute"
+      }, acute, " - \u0443\u0440\u043E\u0432\u0435\u043D\u044C \u043E\u0441\u0442\u0440\u043E\u0442\u044B")), react_default.a.createElement("div", {
+        className: "product__description"
+      }, this.state.description), react_default.a.createElement("div", {
+        className: "product__price"
+      }, react_default.a.createElement("div", {
+        className: "product__price_result"
+      }, this.state.price * this.state.count, "$"), react_default.a.createElement("div", {
+        className: "product__price_count"
+      }, react_default.a.createElement("button", {
+        className: "product__price_number",
+        onClick: this.minusCount
+      }, "-"), react_default.a.createElement("div", {
+        className: "product__price_quantity"
+      }, this.state.count), react_default.a.createElement("button", {
+        className: "product__price_number",
+        onClick: this.plusCount
+      }, "+"))), react_default.a.createElement("div", {
+        className: "product__composition"
+      }, this.state.composition.map(function (item) {
+        return react_default.a.createElement("div", {
+          className: "product__composition_item",
+          key: shortid_default.a.generate()
+        }, item);
+      })))), react_default.a.createElement("div", {
+        className: "basket"
+      }, react_default.a.createElement("div", {
+        className: "basket__inner"
+      }, this.props.basket.map(function (item) {
+        return react_default.a.createElement("div", {
+          onClick: function onClick() {
+            return _this2.productInfo(item.name, item.img, item.description, item.price, item.composition, item.acute);
+          },
+          key: shortid_default.a.generate(),
+          className: "basket__item"
+        }, react_default.a.createElement("div", {
+          className: "basket__card"
+        }, react_default.a.createElement("div", {
+          className: "basket__card_title"
+        }, item.name), react_default.a.createElement("div", {
+          className: "basket__card_img",
+          style: {
+            background: "url('./img/".concat(item.img, ".jpg') no-repeat 50% / cover")
+          }
+        }, react_default.a.createElement("img", {
+          src: "./img/".concat(item.img, ".jpg")
+        }))));
+      }))));
+    }
+  }]);
+
+  return Order;
+}(react_default.a.Component);
+
+
+Order_Order.defaultProps = {
+  basket: [{
+    name: 'пицца',
+    img: '1',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore in itaque harum minima unde dolores repellendus. Saepe, unde, fugit id in illo, quo omnis minus veniam eos cumque ex nesciunt eius voluptatum expedita vitae? Libero quis voluptatibus commodi accusamus aliquid laboriosam, dolorem ipsa magni provident vero. Vitae voluptates architecto ratione.',
+    price: 13,
+    composition: ['Mozzarella', 'Bacon', 'Ham'],
+    acute: 1
+  }, {
+    name: 'суп',
+    img: '2',
+    description: 'Lorem ipsum dolor sit amet consectetur provident vero. Vitae voluptates architecto ratione.',
+    price: 16,
+    composition: ['Bacon', 'Ham', 'Sausages'],
+    acute: 3
+  }, {
+    name: 'каша',
+    img: '3',
+    description: 'adipisicing elit. Inventod in illo, quo omnis minus veniam eos cumque ex nesciunt eius voluptatum expedita vitae?',
+    price: 112,
+    composition: ['Mozzarella', 'Bacon', 'Ham', 'Chicken Faillet'],
+    acute: 2
+  }, {
+    name: 'пиво',
+    img: '4',
+    description: 'tatum expedita vitae? Libero quis voluptatibus commodi accusamus aliquid laboriosam, dolorem ipsa  tatum expedita vitae? Libero quis voluptatibus commodi accusamus aliquid laboriosam, dolorem ipsa Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore in itaque harum minima unde dolores repellendus. Saepe, unde, fugit id in illo, quo omnis minus veniam eos cumque ex nesciunt eius volupmagni provident vero. Vitae voluptates architecto ratione.',
+    price: 41,
+    composition: ['Pizza Base', 'Bacon', 'Ham', 'Chicken Faillet', 'Sausages'],
+    acute: 0
+  }, {
+    name: 'пицца',
+    img: '1',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore in itaque harum minima unde dolores repellendus. Saepe, unde, fugit id in illo, quo omnis minus veniam eos cumque ex nesciunt eius voluptatum expedita vitae? Libero quis voluptatibus commodi accusamus aliquid laboriosam, dolorem ipsa magni provident vero. Vitae voluptates architecto ratione.',
+    price: 13,
+    composition: ['Mozzarella', 'Bacon', 'Ham'],
+    acute: 1
+  }, {
+    name: 'суп',
+    img: '2',
+    description: 'Lorem ipsum dolor sit amet consectetur provident vero. Vitae voluptates architecto ratione.',
+    price: 16,
+    composition: ['Bacon', 'Ham', 'Sausages'],
+    acute: 3
+  }, {
+    name: 'каша',
+    img: '3',
+    description: 'adipisicing elit. Inventod in illo, quo omnis minus veniam eos cumque ex nesciunt eius voluptatum expedita vitae?',
+    price: 112,
+    composition: ['Mozzarella', 'Bacon', 'Ham', 'Chicken Faillet'],
+    acute: 2
+  }, {
+    name: 'пиво',
+    img: '4',
+    description: 'tatum expedita vitae? Libero quis voluptatibus commodi accusamus aliquid laboriosam, dolorem ipsa  tatum expedita vitae? Libero quis voluptatibus commodi accusamus aliquid laboriosam, dolorem ipsa Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore in itaque harum minima unde dolores repellendus. Saepe, unde, fugit id in illo, quo omnis minus veniam eos cumque ex nesciunt eius volupmagni provident vero. Vitae voluptates architecto ratione.',
+    price: 41,
+    composition: ['Pizza Base', 'Bacon', 'Ham', 'Chicken Faillet', 'Sausages'],
+    acute: 0
+  }]
+};
 // CONCATENATED MODULE: ./static/components/app/App.jsx
 function App_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { App_typeof = function _typeof(obj) { return typeof obj; }; } else { App_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return App_typeof(obj); }
 
@@ -10917,6 +11607,7 @@ function App_getPrototypeOf(o) { App_getPrototypeOf = Object.setPrototypeOf ? Ob
 function App_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) App_setPrototypeOf(subClass, superClass); }
 
 function App_setPrototypeOf(o, p) { App_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return App_setPrototypeOf(o, p); }
+
 
 
 
@@ -10952,30 +11643,16 @@ function (_React$Component) {
       }, "Home")), react_default.a.createElement("li", {
         className: "menu__item"
       }, react_default.a.createElement(es_Link, {
-        to: "/menu/"
-      }, "Menu")), react_default.a.createElement("li", {
-        className: "menu__item"
-      }, react_default.a.createElement(es_Link, {
         to: "/order/"
-      }, "Order")), react_default.a.createElement("li", {
-        className: "menu__item"
-      }, react_default.a.createElement(es_Link, {
-        to: "/about/"
-      }, "About"))))), react_default.a.createElement("div", {
+      }, "Order"))))), react_default.a.createElement("div", {
         className: "main"
       }, react_default.a.createElement(react_router_dom_es_Route, {
         path: "/",
         exact: true,
-        component: App_HomeRoute
-      }), react_default.a.createElement(react_router_dom_es_Route, {
-        path: "/menu/",
-        component: App_MenuRoute
-      }), react_default.a.createElement(react_router_dom_es_Route, {
-        path: "/order/",
         component: App_OrderRoute
       }), react_default.a.createElement(react_router_dom_es_Route, {
-        path: "/about/",
-        component: App_AboutRoute
+        path: "/order/",
+        component: App_HomeRoute
       }))));
     }
   }]);
@@ -11041,7 +11718,7 @@ function (_App3) {
   App_createClass(OrderRoute, [{
     key: "render",
     value: function render() {
-      return react_default.a.createElement("div", null, "Order");
+      return react_default.a.createElement(Order_Order, null);
     }
   }]);
 
@@ -11072,6 +11749,8 @@ function (_App4) {
 //sass
 
  //js
+
+ //img
 
  //react
 

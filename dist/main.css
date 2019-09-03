@@ -315,6 +315,13 @@ h2 {
   text-align: center;
   margin-bottom: 20px; }
 
+img {
+  max-width: 100%; }
+
+button {
+  border: none;
+  background: none; }
+
 .grid {
   display: flex;
   flex-wrap: wrap;
@@ -386,4 +393,103 @@ body {
 .offer__inner {
   width: 1200px;
   margin: 0 auto; }
+
+.product {
+  display: flex; }
+  .product__img {
+    width: 500px;
+    height: 400px;
+    overflow: hidden;
+    position: relative; }
+    .product__img img {
+      opacity: 0;
+      min-width: 100%;
+      min-height: 100%;
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0; }
+  .product__info {
+    flex: 1;
+    padding: 0 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column; }
+  .product__header {
+    display: flex;
+    margin-bottom: 20px; }
+  .product__title {
+    text-align: left;
+    margin-right: 20px;
+    font-size: 1.7em; }
+  .product__acute {
+    display: flex;
+    align-items: center; }
+    .product__acute_item {
+      height: 25px;
+      width: 20px;
+      background: #fff; }
+      .product__acute_item:not(:last-child) {
+        margin-right: 10px; }
+  .product__description {
+    margin-bottom: 20px;
+    flex: 1; }
+  .product__price {
+    display: flex;
+    margin-bottom: 20px; }
+    .product__price_result {
+      margin-right: 10px;
+      width: 50px; }
+    .product__price_count {
+      display: flex; }
+    .product__price_number {
+      width: 20px;
+      height: 20px;
+      background: #f1f1f1;
+      cursor: pointer; }
+    .product__price_quantity {
+      width: 50px;
+      text-align: center; }
+  .product__composition {
+    background: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap; }
+    .product__composition_item {
+      color: #000;
+      text-align: center; }
+      .product__composition_item:not(:last-child) {
+        margin-right: 20px; }
+
+.basket {
+  margin-top: 40px; }
+  .basket__inner {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1200px;
+    margin: 0 auto; }
+  .basket__item {
+    width: 20%; }
+    .basket__item:nth-child(1n+6) {
+      margin-top: 20px; }
+  .basket__card {
+    width: 200px;
+    height: 300px;
+    margin: 0 auto;
+    background: #f1f1f1;
+    cursor: pointer;
+    color: #000; }
+    .basket__card_img {
+      height: 150px;
+      overflow: hidden;
+      position: relative; }
+      .basket__card_img img {
+        opacity: 0;
+        min-width: 100%;
+        min-height: 100%;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0; }
 

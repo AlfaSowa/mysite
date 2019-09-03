@@ -70,12 +70,12 @@ let conf = {
             },
             //image
             {
-				test: /\.(png|jpg|jpeg|svg|gif)$/,
+				test: /\.(png|jpg|jpeg|svg|gif)$/i,
 				use: [
 					{
 						loader: 'file-loader',
 						options: {
-							name: './static/img/[name].[ext]'
+                            name: './img/[name].[ext]'
 						}
 					}
 				]
