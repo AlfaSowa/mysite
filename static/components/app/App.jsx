@@ -1,9 +1,8 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 
-import Home from '../main/Home.jsx'
-import Menu from '../main/Menu.jsx'
-import Order from '../main/Order.jsx'
+import Html from '../html/Html.jsx'
+import Css from '../css/Css.jsx'
 
 export default class App extends React.Component {
     render() {
@@ -11,23 +10,30 @@ export default class App extends React.Component {
             <Router>
                 <div>
                     <header className="header">
-                        <div className='logo'>sowa-restoran</div>
+                        <div className='logo'>sowa</div>
                         <nav className='menu'>
                             <ul className='menu__list'>
                                 <li className='menu__item'>
                                     <Link to="/">Home</Link>
                                 </li>
                                 <li className='menu__item'>
-                                    <Link to="/order/">Order</Link>
+                                    <Link to="/html">html</Link>
+                                </li>
+                                <li className='menu__item'>
+                                    <Link to="/css">css</Link>
+                                </li>
+                                <li className='menu__item'>
+                                    <Link to="/javascript">javascript</Link>
                                 </li>
                             </ul>
                         </nav>
                     </header>
                     <div className='main'>
-                        <Route path="/" exact component={OrderRoute} />
-                        <Route path="/order/" component={HomeRoute} />
+                        <Route path="/" exact component={HomeRoute} />
+                        <Route path="/html" component={HtmlRoute} />
+                        <Route path="/css" component={CssRoute} />
+                        <Route path="/javascript" component={JsRoute} />
                     </div>
-
                 </div>
             </Router>
         )
@@ -37,28 +43,28 @@ export default class App extends React.Component {
 class HomeRoute extends App {
     render() {
         return (
-            <Home />
+            <div>Home</div>
         )
     }
 }
-class MenuRoute extends App {
+class HtmlRoute extends App {
     render() {
         return (
-            <Menu />
+            <Html />
         )
     }
 }
-class OrderRoute extends App {
+class CssRoute extends App {
     render() {
         return (
-            <Order />
+            <Css />
         )
     }
 }
-class AboutRoute extends App {
+class JsRoute extends App {
     render() {
         return (
-            <div>About</div>
+            <div>Js</div>
         )
     }
 }

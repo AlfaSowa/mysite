@@ -2,13 +2,76 @@
     display: flex
     flex-wrap: wrap
     margin: 0 -10px
-    overflow: hidden
+    //overflow: hidden
     &__item
-        width: 33.33333333%
+        width: 20%
+        &:nth-child(1n + 6)
+            margin-top: 20px
+        @media all and (max-width: 1200px)
+            width: 25%
+            &:nth-child(1n + 5)
+                margin-top: 20px
+        @media all and (max-width: 800px)
+            width: 33.33333333%
+            &:nth-child(1n + 4)
+                margin-top: 20px
+        @media all and (max-width: 500px)
+            width: 100%
+            &:not(:first-child)
+                margin-top: 20px
 
 .card
     text-decoration: none
     display: block
     margin: 0 10px
-    height: 200px
     background: #fff
+    position: relative
+    cursor: pointer
+    &__mark
+        position: absolute
+        width: 60px
+        height: 60px
+        border-radius: 50%
+        border: 2px solid red
+        background: rgba(132, 19, 19, 0.6)
+        top: 10px
+        left: 10px
+        color: red
+        display: flex
+        align-items: center
+        justify-content: center
+        font-size: 0.7em
+        text-transform: uppercase
+    &__img
+        height: 200px
+        display: flex
+        align-items: center
+        justify-content: center
+        &_imitate
+            height: 150px
+            width: 150px
+            border-radius: 50%
+            background: #bf7426
+    &__name
+        color: $bodyclr
+        text-align: center
+        padding: 5px 0
+    &__info
+        height: 150px
+    &__structure
+        display: flex
+        flex-wrap: wrap
+        color: $bodyclr
+        padding: 5px
+        &_item
+            &:not(:last-child)
+                margin-right: 10px
+    &__img
+        img
+            opacity: 0
+            min-width: 100%
+            min-height: 100%
+            display: block
+            position: absolute
+            left: 0
+            top: 0

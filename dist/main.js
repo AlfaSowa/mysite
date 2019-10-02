@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 36);
+/******/ 	return __webpack_require__(__webpack_require__.s = 33);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -92,7 +92,7 @@
 
 
 if (true) {
-  module.exports = __webpack_require__(21);
+  module.exports = __webpack_require__(18);
 } else {}
 
 /***/ }),
@@ -108,11 +108,20 @@ if (true) {
 if (false) { var throwOnDirectAccess, ReactIs; } else {
   // By explicitly using `prop-types` you are opting into new production behavior.
   // http://fb.me/prop-types-in-prod
-  module.exports = __webpack_require__(25)();
+  module.exports = __webpack_require__(30)();
 }
 
 /***/ }),
 /* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = __webpack_require__(22);
+
+/***/ }),
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -181,7 +190,7 @@ if (__DEV__) {
 module.exports = warning;
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -229,13 +238,13 @@ var invariant = function (condition, format, a, b, c, d, e, f) {
 module.exports = invariant;
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var randomFromSeed = __webpack_require__(28);
+var randomFromSeed = __webpack_require__(23);
 
 var ORIGINAL = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-';
 var alphabet;
@@ -340,15 +349,6 @@ module.exports = {
   lookup: lookup,
   shuffled: getShuffled
 };
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = __webpack_require__(27);
 
 /***/ }),
 /* 6 */
@@ -884,14 +884,14 @@ if (true) {
   // DCE check should happen before ReactDOM bundle executes so that
   // DevTools can report bad minification during injection.
   checkDCE();
-  module.exports = __webpack_require__(22);
+  module.exports = __webpack_require__(19);
 } else {}
 
 /***/ }),
 /* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isarray = __webpack_require__(35);
+var isarray = __webpack_require__(32);
 /**
  * Expose `pathToRegexp`.
  */
@@ -1493,30 +1493,12 @@ if(false) {}
 
 /***/ }),
 /* 17 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-module.exports = __webpack_require__.p + "./img/1.jpg";
+
 
 /***/ }),
 /* 18 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "./img/2.jpg";
-
-/***/ }),
-/* 19 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "./img/3.jpg";
-
-/***/ }),
-/* 20 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "./img/4.jpg";
-
-/***/ }),
-/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1938,7 +1920,7 @@ var X = {
 module.exports = Z.default || Z;
 
 /***/ }),
-/* 22 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1958,7 +1940,7 @@ module.exports = Z.default || Z;
 
 var aa = __webpack_require__(0),
     m = __webpack_require__(7),
-    q = __webpack_require__(23);
+    q = __webpack_require__(20);
 
 function t(a) {
   for (var b = a.message, c = "https://reactjs.org/docs/error-decoder.html?invariant=" + b, d = 1; d < arguments.length; d++) c += "&args[]=" + encodeURIComponent(arguments[d]);
@@ -8665,18 +8647,18 @@ var Oj = {
 module.exports = Pj.default || Pj;
 
 /***/ }),
-/* 23 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 if (true) {
-  module.exports = __webpack_require__(24);
+  module.exports = __webpack_require__(21);
 } else {}
 
 /***/ }),
-/* 24 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9136,108 +9118,23 @@ exports.unstable_getFirstCallbackNode = function () {
 };
 
 /***/ }),
-/* 25 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-
-var ReactPropTypesSecret = __webpack_require__(26);
-
-function emptyFunction() {}
-
-function emptyFunctionWithReset() {}
-
-emptyFunctionWithReset.resetWarningCache = emptyFunction;
-
-module.exports = function () {
-  function shim(props, propName, componentName, location, propFullName, secret) {
-    if (secret === ReactPropTypesSecret) {
-      // It is still safe when called from React.
-      return;
-    }
-
-    var err = new Error('Calling PropTypes validators directly is not supported by the `prop-types` package. ' + 'Use PropTypes.checkPropTypes() to call them. ' + 'Read more at http://fb.me/use-check-prop-types');
-    err.name = 'Invariant Violation';
-    throw err;
-  }
-
-  ;
-  shim.isRequired = shim;
-
-  function getShim() {
-    return shim;
-  }
-
-  ; // Important!
-  // Keep this list in sync with production version in `./factoryWithTypeCheckers.js`.
-
-  var ReactPropTypes = {
-    array: shim,
-    bool: shim,
-    func: shim,
-    number: shim,
-    object: shim,
-    string: shim,
-    symbol: shim,
-    any: shim,
-    arrayOf: getShim,
-    element: shim,
-    elementType: shim,
-    instanceOf: getShim,
-    node: shim,
-    objectOf: getShim,
-    oneOf: getShim,
-    oneOfType: getShim,
-    shape: getShim,
-    exact: getShim,
-    checkPropTypes: emptyFunctionWithReset,
-    resetWarningCache: emptyFunction
-  };
-  ReactPropTypes.PropTypes = ReactPropTypes;
-  return ReactPropTypes;
-};
-
-/***/ }),
-/* 26 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-
-var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
-module.exports = ReactPropTypesSecret;
-
-/***/ }),
-/* 27 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var alphabet = __webpack_require__(4);
+var alphabet = __webpack_require__(5);
 
-var build = __webpack_require__(29);
+var build = __webpack_require__(24);
 
-var isValid = __webpack_require__(33); // if you are using cluster or multiple servers use this to make each instance
+var isValid = __webpack_require__(28); // if you are using cluster or multiple servers use this to make each instance
 // has a unique value for worker
 // Note: I don't know if this is automatically set when using third
 // party cluster solutions such as pm2.
 
 
-var clusterWorkerId = __webpack_require__(34) || 0;
+var clusterWorkerId = __webpack_require__(29) || 0;
 /**
  * Set the seed.
  * Highly recommended if you don't want people to try to figure out your id schema.
@@ -9294,7 +9191,7 @@ module.exports.characters = characters;
 module.exports.isValid = isValid;
 
 /***/ }),
-/* 28 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9323,15 +9220,15 @@ module.exports = {
 };
 
 /***/ }),
-/* 29 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var generate = __webpack_require__(30);
+var generate = __webpack_require__(25);
 
-var alphabet = __webpack_require__(4); // Ignore all milliseconds before a certain time to reduce the size of the date entropy without sacrificing uniqueness.
+var alphabet = __webpack_require__(5); // Ignore all milliseconds before a certain time to reduce the size of the date entropy without sacrificing uniqueness.
 // This number should be updated every year or so to keep the generated id short.
 // To regenerate `new Date() - 0` and bump the version. Always bump the version!
 
@@ -9374,17 +9271,17 @@ function build(clusterWorkerId) {
 module.exports = build;
 
 /***/ }),
-/* 30 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var alphabet = __webpack_require__(4);
+var alphabet = __webpack_require__(5);
 
-var random = __webpack_require__(31);
+var random = __webpack_require__(26);
 
-var format = __webpack_require__(32);
+var format = __webpack_require__(27);
 
 function generate(number) {
   var loopCounter = 0;
@@ -9403,7 +9300,7 @@ function generate(number) {
 module.exports = generate;
 
 /***/ }),
-/* 31 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9432,7 +9329,7 @@ if (!crypto || !crypto.getRandomValues) {
 module.exports = randomByte;
 
 /***/ }),
-/* 32 */
+/* 27 */
 /***/ (function(module, exports) {
 
 /**
@@ -9489,13 +9386,13 @@ module.exports = function (random, alphabet, size) {
  */
 
 /***/ }),
-/* 33 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var alphabet = __webpack_require__(4);
+var alphabet = __webpack_require__(5);
 
 function isShortId(id) {
   if (!id || typeof id !== 'string' || id.length < 6) {
@@ -9509,7 +9406,7 @@ function isShortId(id) {
 module.exports = isShortId;
 
 /***/ }),
-/* 34 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9518,7 +9415,92 @@ module.exports = isShortId;
 module.exports = 0;
 
 /***/ }),
-/* 35 */
+/* 30 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+var ReactPropTypesSecret = __webpack_require__(31);
+
+function emptyFunction() {}
+
+function emptyFunctionWithReset() {}
+
+emptyFunctionWithReset.resetWarningCache = emptyFunction;
+
+module.exports = function () {
+  function shim(props, propName, componentName, location, propFullName, secret) {
+    if (secret === ReactPropTypesSecret) {
+      // It is still safe when called from React.
+      return;
+    }
+
+    var err = new Error('Calling PropTypes validators directly is not supported by the `prop-types` package. ' + 'Use PropTypes.checkPropTypes() to call them. ' + 'Read more at http://fb.me/use-check-prop-types');
+    err.name = 'Invariant Violation';
+    throw err;
+  }
+
+  ;
+  shim.isRequired = shim;
+
+  function getShim() {
+    return shim;
+  }
+
+  ; // Important!
+  // Keep this list in sync with production version in `./factoryWithTypeCheckers.js`.
+
+  var ReactPropTypes = {
+    array: shim,
+    bool: shim,
+    func: shim,
+    number: shim,
+    object: shim,
+    string: shim,
+    symbol: shim,
+    any: shim,
+    arrayOf: getShim,
+    element: shim,
+    elementType: shim,
+    instanceOf: getShim,
+    node: shim,
+    objectOf: getShim,
+    oneOf: getShim,
+    oneOfType: getShim,
+    shape: getShim,
+    exact: getShim,
+    checkPropTypes: emptyFunctionWithReset,
+    resetWarningCache: emptyFunction
+  };
+  ReactPropTypes.PropTypes = ReactPropTypes;
+  return ReactPropTypes;
+};
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
+module.exports = ReactPropTypesSecret;
+
+/***/ }),
+/* 32 */
 /***/ (function(module, exports) {
 
 module.exports = Array.isArray || function (arr) {
@@ -9526,7 +9508,7 @@ module.exports = Array.isArray || function (arr) {
 };
 
 /***/ }),
-/* 36 */
+/* 33 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9541,22 +9523,8 @@ var style = __webpack_require__(14);
 // EXTERNAL MODULE: ./static/js/main.js
 var main = __webpack_require__(16);
 
-// EXTERNAL MODULE: ./static/img/1.jpg
-var _1 = __webpack_require__(17);
-
-// EXTERNAL MODULE: ./static/img/2.jpg
-var _2 = __webpack_require__(18);
-
-// EXTERNAL MODULE: ./static/img/3.jpg
-var _3 = __webpack_require__(19);
-
-// EXTERNAL MODULE: ./static/img/4.jpg
-var _4 = __webpack_require__(20);
-
-// CONCATENATED MODULE: ./static/js/files.js
-
-
-
+// EXTERNAL MODULE: ./static/js/files.js
+var files = __webpack_require__(17);
 
 // EXTERNAL MODULE: ./node_modules/react/index.js
 var react = __webpack_require__(0);
@@ -9567,7 +9535,7 @@ var react_dom = __webpack_require__(8);
 var react_dom_default = /*#__PURE__*/__webpack_require__.n(react_dom);
 
 // EXTERNAL MODULE: ./node_modules/warning/warning.js
-var warning = __webpack_require__(2);
+var warning = __webpack_require__(3);
 var warning_default = /*#__PURE__*/__webpack_require__.n(warning);
 
 // EXTERNAL MODULE: ./node_modules/prop-types/index.js
@@ -10632,7 +10600,7 @@ function createMemoryHistory(props) {
 
 
 // EXTERNAL MODULE: ./node_modules/invariant/browser.js
-var browser = __webpack_require__(3);
+var browser = __webpack_require__(4);
 var browser_default = /*#__PURE__*/__webpack_require__.n(browser);
 
 // CONCATENATED MODULE: ./node_modules/react-router/es/Router.js
@@ -11252,411 +11220,612 @@ Route_Route.childContextTypes = {
 // Written in this round about way for babel-transform-imports
 
 /* harmony default export */ var react_router_dom_es_Route = (es_Route);
-// CONCATENATED MODULE: ./static/components/main/Home.jsx
-function Home_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { Home_typeof = function _typeof(obj) { return typeof obj; }; } else { Home_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return Home_typeof(obj); }
+// EXTERNAL MODULE: ./node_modules/shortid/index.js
+var shortid = __webpack_require__(2);
+var shortid_default = /*#__PURE__*/__webpack_require__.n(shortid);
 
-function Home_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+// CONCATENATED MODULE: ./static/components/sidebar/Sidebar.jsx
+function Sidebar_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { Sidebar_typeof = function _typeof(obj) { return typeof obj; }; } else { Sidebar_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return Sidebar_typeof(obj); }
+
+function Sidebar_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-function Home_possibleConstructorReturn(self, call) { if (call && (Home_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+function Sidebar_possibleConstructorReturn(self, call) { if (call && (Sidebar_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-function Home_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function Sidebar_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
-var Home_Home =
-/*#__PURE__*/
-function (_React$Component) {
-  Home_inherits(Home, _React$Component);
-
-  function Home() {
-    Home_classCallCheck(this, Home);
-
-    return Home_possibleConstructorReturn(this, _getPrototypeOf(Home).apply(this, arguments));
-  }
-
-  _createClass(Home, [{
-    key: "render",
-    value: function render() {
-      return react_default.a.createElement("div", {
-        className: "frontpage"
-      }, react_default.a.createElement("div", {
-        className: "offer"
-      }, react_default.a.createElement("h2", null, "\u041F\u0440\u0435\u0434\u043B\u043E\u0436\u0435\u043D\u0438\u0435 \u0434\u043D\u044F"), react_default.a.createElement("div", {
-        className: "offer__inner grid"
-      }, react_default.a.createElement("div", {
-        className: "grid__item"
-      }, react_default.a.createElement("a", {
-        href: "#",
-        className: "card"
-      }, "1123123")), react_default.a.createElement("div", {
-        className: "grid__item"
-      }, react_default.a.createElement("a", {
-        href: "#",
-        className: "card"
-      }, "123123")), react_default.a.createElement("div", {
-        className: "grid__item"
-      }, react_default.a.createElement("a", {
-        href: "#",
-        className: "card"
-      }, "1231")))));
-    }
-  }]);
-
-  return Home;
-}(react_default.a.Component);
-
-
-// CONCATENATED MODULE: ./static/components/main/Menu.jsx
-function Menu_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { Menu_typeof = function _typeof(obj) { return typeof obj; }; } else { Menu_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return Menu_typeof(obj); }
-
-function Menu_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function Menu_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function Menu_createClass(Constructor, protoProps, staticProps) { if (protoProps) Menu_defineProperties(Constructor.prototype, protoProps); if (staticProps) Menu_defineProperties(Constructor, staticProps); return Constructor; }
-
-function Menu_possibleConstructorReturn(self, call) { if (call && (Menu_typeof(call) === "object" || typeof call === "function")) { return call; } return Menu_assertThisInitialized(self); }
-
-function Menu_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function Menu_getPrototypeOf(o) { Menu_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return Menu_getPrototypeOf(o); }
-
-function Menu_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) Menu_setPrototypeOf(subClass, superClass); }
-
-function Menu_setPrototypeOf(o, p) { Menu_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return Menu_setPrototypeOf(o, p); }
-
-
-
-var Menu_Menu =
-/*#__PURE__*/
-function (_React$Component) {
-  Menu_inherits(Menu, _React$Component);
-
-  function Menu() {
-    Menu_classCallCheck(this, Menu);
-
-    return Menu_possibleConstructorReturn(this, Menu_getPrototypeOf(Menu).apply(this, arguments));
-  }
-
-  Menu_createClass(Menu, [{
-    key: "render",
-    value: function render() {
-      return react_default.a.createElement("div", null, "12312312");
-    }
-  }]);
-
-  return Menu;
-}(react_default.a.Component);
-
-
-// EXTERNAL MODULE: ./node_modules/shortid/index.js
-var shortid = __webpack_require__(5);
-var shortid_default = /*#__PURE__*/__webpack_require__.n(shortid);
-
-// CONCATENATED MODULE: ./static/components/main/Order.jsx
-function Order_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { Order_typeof = function _typeof(obj) { return typeof obj; }; } else { Order_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return Order_typeof(obj); }
-
-function Order_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function Order_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function Order_createClass(Constructor, protoProps, staticProps) { if (protoProps) Order_defineProperties(Constructor.prototype, protoProps); if (staticProps) Order_defineProperties(Constructor, staticProps); return Constructor; }
-
-function Order_possibleConstructorReturn(self, call) { if (call && (Order_typeof(call) === "object" || typeof call === "function")) { return call; } return Order_assertThisInitialized(self); }
-
-function Order_getPrototypeOf(o) { Order_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return Order_getPrototypeOf(o); }
-
-function Order_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function Order_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) Order_setPrototypeOf(subClass, superClass); }
-
-function Order_setPrototypeOf(o, p) { Order_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return Order_setPrototypeOf(o, p); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
 
-
-var Order_Order =
+var Sidebar_Sidebar =
 /*#__PURE__*/
 function (_React$Component) {
-  Order_inherits(Order, _React$Component);
+  Sidebar_inherits(Sidebar, _React$Component);
 
-  function Order() {
+  function Sidebar() {
     var _getPrototypeOf2;
 
     var _this;
 
-    Order_classCallCheck(this, Order);
+    Sidebar_classCallCheck(this, Sidebar);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
 
-    _this = Order_possibleConstructorReturn(this, (_getPrototypeOf2 = Order_getPrototypeOf(Order)).call.apply(_getPrototypeOf2, [this].concat(args)));
+    _this = Sidebar_possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Sidebar)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
-    _defineProperty(Order_assertThisInitialized(_this), "state", {
-      sum: 0,
-      name: typeof _this.props.basket[0].name !== 'undefined' ? _this.props.basket[0].name : '',
-      img: typeof _this.props.basket[0].img !== 'undefined' ? _this.props.basket[0].img : '',
-      description: typeof _this.props.basket[0].description !== 'undefined' ? _this.props.basket[0].description : '',
-      price: typeof _this.props.basket[0].price !== 'undefined' ? _this.props.basket[0].price : '',
-      composition: typeof _this.props.basket[0].composition !== 'undefined' ? _this.props.basket[0].composition : [],
-      acute: typeof _this.props.basket[0].acute !== 'undefined' ? _this.props.basket[0].acute : ''
-    });
-
-    _defineProperty(Order_assertThisInitialized(_this), "productInfo", function (name, img, description, price, composition, acute) {
-      _this.setState({
-        name: name,
-        img: img,
-        description: description,
-        price: price,
-        composition: composition,
-        acute: acute
-      });
-    });
-
-    _defineProperty(Order_assertThisInitialized(_this), "result", function (item) {
-      console.log(item);
+    _defineProperty(_assertThisInitialized(_this), "setContent", function (itemName) {
+      _this.props.showContent(itemName);
     });
 
     return _this;
   }
 
-  Order_createClass(Order, [{
+  _createClass(Sidebar, [{
     key: "render",
     value: function render() {
       var _this2 = this;
 
-      var imgStyle = {
-        background: "url('./img/".concat(this.state.img, ".jpg') no-repeat 50% / cover")
-      };
-      var acute = [];
-
-      for (var i = 0; i < this.state.acute; i++) {
-        acute.push(react_default.a.createElement("div", {
-          className: "product__acute_item",
-          key: shortid_default.a.generate()
-        }));
-      }
-
-      return react_default.a.createElement("div", {
-        className: "order"
-      }, react_default.a.createElement("h2", null, "\u0418\u0422\u041E\u0413\u041E\u0412\u0410\u042F \u0421\u0423\u041C\u041C\u0410 "), react_default.a.createElement("div", {
-        className: "product"
-      }, react_default.a.createElement("div", {
-        className: "product__img",
-        style: imgStyle
-      }, react_default.a.createElement("img", {
-        src: "./img/".concat(this.state.img, ".jpg")
-      })), react_default.a.createElement("div", {
-        className: "product__info"
-      }, react_default.a.createElement("div", {
-        className: "product__header"
-      }, react_default.a.createElement("div", {
-        className: "product__title"
-      }, this.state.name), react_default.a.createElement("div", {
-        className: "product__acute"
-      }, acute, " - \u0443\u0440\u043E\u0432\u0435\u043D\u044C \u043E\u0441\u0442\u0440\u043E\u0442\u044B")), react_default.a.createElement("div", {
-        className: "product__description"
-      }, this.state.description), react_default.a.createElement("div", {
-        className: "product__composition"
-      }, this.state.composition.map(function (item) {
+      return react_default.a.createElement("aside", {
+        className: "sidebar"
+      }, this.props.sidebarItems.map(function (item) {
         return react_default.a.createElement("div", {
-          className: "product__composition_item",
-          key: shortid_default.a.generate()
-        }, item);
-      })))), react_default.a.createElement("div", {
-        className: "basket"
-      }, react_default.a.createElement("div", {
-        className: "basket__inner"
-      }, this.props.basket.map(function (item) {
-        return react_default.a.createElement(Order_Product, {
-          info: function info() {
-            return _this2.productInfo(item.name, item.img, item.description, item.price, item.composition, item.acute);
+          className: "sidebar__item",
+          onClick: function onClick() {
+            return _this2.setContent(item.itemName);
           },
-          name: item.name,
-          img: item.img,
-          price: item.price,
           key: shortid_default.a.generate()
-        });
-      }))));
+        }, item.itemName);
+      }));
     }
   }]);
 
-  return Order;
+  return Sidebar;
+}(react_default.a.Component);
+
+
+// CONCATENATED MODULE: ./static/components/content/Content.jsx
+function Content_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { Content_typeof = function _typeof(obj) { return typeof obj; }; } else { Content_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return Content_typeof(obj); }
+
+function Content_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function Content_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function Content_createClass(Constructor, protoProps, staticProps) { if (protoProps) Content_defineProperties(Constructor.prototype, protoProps); if (staticProps) Content_defineProperties(Constructor, staticProps); return Constructor; }
+
+function Content_possibleConstructorReturn(self, call) { if (call && (Content_typeof(call) === "object" || typeof call === "function")) { return call; } return Content_assertThisInitialized(self); }
+
+function Content_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function Content_getPrototypeOf(o) { Content_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return Content_getPrototypeOf(o); }
+
+function Content_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) Content_setPrototypeOf(subClass, superClass); }
+
+function Content_setPrototypeOf(o, p) { Content_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return Content_setPrototypeOf(o, p); }
+
+
+
+
+var Content_Content =
+/*#__PURE__*/
+function (_React$Component) {
+  Content_inherits(Content, _React$Component);
+
+  function Content() {
+    Content_classCallCheck(this, Content);
+
+    return Content_possibleConstructorReturn(this, Content_getPrototypeOf(Content).apply(this, arguments));
+  }
+
+  Content_createClass(Content, [{
+    key: "render",
+    value: function render() {
+      return react_default.a.createElement("div", {
+        className: "page"
+      }, this.props.content.map(function (item) {
+        return react_default.a.createElement(react_default.a.Fragment, {
+          key: shortid_default.a.generate()
+        }, react_default.a.createElement("h1", null, item.itemName), react_default.a.createElement("div", {
+          className: "page__content"
+        }, item.itemContent));
+      }));
+    }
+  }]);
+
+  return Content;
+}(react_default.a.Component);
+
+
+// CONCATENATED MODULE: ./static/components/content/Module.jsx
+function Module_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function Module_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { Module_typeof = function _typeof(obj) { return typeof obj; }; } else { Module_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return Module_typeof(obj); }
+
+function Module_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function Module_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function Module_createClass(Constructor, protoProps, staticProps) { if (protoProps) Module_defineProperties(Constructor.prototype, protoProps); if (staticProps) Module_defineProperties(Constructor, staticProps); return Constructor; }
+
+function Module_possibleConstructorReturn(self, call) { if (call && (Module_typeof(call) === "object" || typeof call === "function")) { return call; } return Module_assertThisInitialized(self); }
+
+function Module_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function Module_getPrototypeOf(o) { Module_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return Module_getPrototypeOf(o); }
+
+function Module_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) Module_setPrototypeOf(subClass, superClass); }
+
+function Module_setPrototypeOf(o, p) { Module_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return Module_setPrototypeOf(o, p); }
+
+
+
+
+var Module_Module =
+/*#__PURE__*/
+function (_React$Component) {
+  Module_inherits(Module, _React$Component);
+
+  function Module() {
+    Module_classCallCheck(this, Module);
+
+    return Module_possibleConstructorReturn(this, Module_getPrototypeOf(Module).apply(this, arguments));
+  }
+
+  Module_createClass(Module, [{
+    key: "render",
+    value: function render() {
+      return react_default.a.createElement("div", {
+        className: "module"
+      }, react_default.a.createElement("h2", {
+        className: "module__title"
+      }, this.props.title), react_default.a.createElement("p", {
+        className: "module__description"
+      }, this.props.content), this.props.sub ? this.props.sub.map(function (item) {
+        return react_default.a.createElement(Module_SubModule, {
+          key: shortid_default.a.generate(),
+          submodule: item
+        });
+      }) : null);
+    }
+  }]);
+
+  return Module;
 }(react_default.a.Component);
 
 
 
-var Order_Product =
+var Module_SubModule =
 /*#__PURE__*/
-function (_Order) {
-  Order_inherits(Product, _Order);
+function (_Module) {
+  Module_inherits(SubModule, _Module);
 
-  function Product() {
-    var _getPrototypeOf3;
+  function SubModule() {
+    var _getPrototypeOf2;
 
-    var _this3;
+    var _this;
 
-    Order_classCallCheck(this, Product);
+    Module_classCallCheck(this, SubModule);
 
-    for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-      args[_key2] = arguments[_key2];
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
     }
 
-    _this3 = Order_possibleConstructorReturn(this, (_getPrototypeOf3 = Order_getPrototypeOf(Product)).call.apply(_getPrototypeOf3, [this].concat(args)));
+    _this = Module_possibleConstructorReturn(this, (_getPrototypeOf2 = Module_getPrototypeOf(SubModule)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
-    _defineProperty(Order_assertThisInitialized(_this3), "state", {
-      count: 1,
-      price: 0
+    Module_defineProperty(Module_assertThisInitialized(_this), "state", {
+      showContent: true
     });
 
-    _defineProperty(Order_assertThisInitialized(_this3), "minusCount", function () {
-      if (_this3.state.count >= 1) {
-        _this3.setState({
-          count: _this3.state.count - 1,
-          price: _this3.props.price * (_this3.state.count - 1)
-        });
-      }
-    });
-
-    _defineProperty(Order_assertThisInitialized(_this3), "plusCount", function () {
-      _this3.setState({
-        count: _this3.state.count + 1,
-        price: _this3.props.price * (_this3.state.count + 1)
-      });
-    });
-
-    _defineProperty(Order_assertThisInitialized(_this3), "componentDidMount", function () {
-      _this3.setState({
-        price: _this3.props.price * _this3.state.count
-      });
-    });
-
-    return _this3;
+    return _this;
   }
 
-  Order_createClass(Product, [{
+  Module_createClass(SubModule, [{
     key: "render",
     value: function render() {
-      var _this4 = this;
+      var _this2 = this;
 
       return react_default.a.createElement("div", {
-        className: "basket__item"
+        className: "module__sub"
       }, react_default.a.createElement("div", {
-        className: "basket__card"
-      }, react_default.a.createElement("div", {
-        className: "basket__card_title"
-      }, this.props.name), react_default.a.createElement("div", {
-        onClick: this.props.info,
-        className: "basket__card_img",
-        style: {
-          background: "url('./img/".concat(this.props.img, ".jpg') no-repeat 50% / cover")
-        }
-      }, react_default.a.createElement("img", {
-        src: "./img/".concat(this.props.img, ".jpg")
-      })), react_default.a.createElement("div", {
-        className: "basket__price"
-      }, react_default.a.createElement("div", {
-        className: "basket__price_result"
-      }, this.state.price, "$"), react_default.a.createElement("div", {
-        className: "basket__price_count"
-      }, react_default.a.createElement("button", {
-        className: "basket__price_number",
         onClick: function onClick() {
-          return _this4.minusCount();
-        }
-      }, "-"), react_default.a.createElement("div", {
-        className: "basket__price_quantity"
-      }, this.state.count), react_default.a.createElement("button", {
-        className: "basket__price_number",
-        onClick: function onClick() {
-          return _this4.plusCount();
-        }
-      }, "+")))));
+          return _this2.showContent();
+        },
+        className: "module__sub_title"
+      }, this.props.submodule.Title), react_default.a.createElement("div", {
+        className: "module__sub_content"
+      }, this.props.submodule.Content));
     }
   }]);
 
-  return Product;
-}(Order_Order);
+  return SubModule;
+}(Module_Module);
+// CONCATENATED MODULE: ./static/components/html/Semantic/Semantic.jsx
+function Semantic_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { Semantic_typeof = function _typeof(obj) { return typeof obj; }; } else { Semantic_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return Semantic_typeof(obj); }
 
-Order_Order.defaultProps = {
-  basket: [{
-    count: 1,
-    name: 'пицца',
-    img: '1',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore in itaque harum minima unde dolores repellendus. Saepe, unde, fugit id in illo, quo omnis minus veniam eos cumque ex nesciunt eius voluptatum expedita vitae? Libero quis voluptatibus commodi accusamus aliquid laboriosam, dolorem ipsa magni provident vero. Vitae voluptates architecto ratione.',
-    price: 13,
-    composition: ['Mozzarella', 'Bacon', 'Ham'],
-    acute: 1
+function Semantic_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function Semantic_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function Semantic_createClass(Constructor, protoProps, staticProps) { if (protoProps) Semantic_defineProperties(Constructor.prototype, protoProps); if (staticProps) Semantic_defineProperties(Constructor, staticProps); return Constructor; }
+
+function Semantic_possibleConstructorReturn(self, call) { if (call && (Semantic_typeof(call) === "object" || typeof call === "function")) { return call; } return Semantic_assertThisInitialized(self); }
+
+function Semantic_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function Semantic_getPrototypeOf(o) { Semantic_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return Semantic_getPrototypeOf(o); }
+
+function Semantic_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) Semantic_setPrototypeOf(subClass, superClass); }
+
+function Semantic_setPrototypeOf(o, p) { Semantic_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return Semantic_setPrototypeOf(o, p); }
+
+
+
+
+
+var Semantic_Semantic =
+/*#__PURE__*/
+function (_React$Component) {
+  Semantic_inherits(Semantic, _React$Component);
+
+  function Semantic() {
+    Semantic_classCallCheck(this, Semantic);
+
+    return Semantic_possibleConstructorReturn(this, Semantic_getPrototypeOf(Semantic).apply(this, arguments));
+  }
+
+  Semantic_createClass(Semantic, [{
+    key: "render",
+    value: function render() {
+      return react_default.a.createElement(react_default.a.Fragment, null, this.props.modules.map(function (item) {
+        return react_default.a.createElement(Module_Module, {
+          key: shortid_default.a.generate(),
+          title: item.Title,
+          content: item.Content,
+          sub: item.Sub ? item.Sub : false
+        });
+      }));
+    }
+  }]);
+
+  return Semantic;
+}(react_default.a.Component);
+
+
+Semantic_Semantic.defaultProps = {
+  modules: [{
+    Title: 'Что такое семантика?',
+    Content: 'описание семантических тегов и их правильное использование'
   }, {
-    count: 1,
-    name: 'суп',
-    img: '2',
-    description: 'Lorem ipsum dolor sit amet consectetur provident vero. Vitae voluptates architecto ratione.',
-    price: 16,
-    composition: ['Bacon', 'Ham', 'Sausages'],
-    acute: 3
+    Title: 'Семантические HTML теги',
+    Content: 'Симантические HTML тегиСимантические HTML тегиСимантические HTML тегиСимантические HTML теги',
+    Sub: [{
+      Title: 'Тег <header>',
+      Content: 'headerheader v vv vheaderheaderheader header header'
+    }, {
+      Title: 'Тег <nav>',
+      Content: 'asdasd asdasdas asdasd assadasdasdasd'
+    }]
   }, {
-    count: 1,
-    name: 'каша',
-    img: '3',
-    description: 'adipisicing elit. Inventod in illo, quo omnis minus veniam eos cumque ex nesciunt eius voluptatum expedita vitae?',
-    price: 112,
-    composition: ['Mozzarella', 'Bacon', 'Ham', 'Chicken Faillet'],
-    acute: 2
+    Title: 'Основные законы семантики',
+    Content: 'ывавыа ыва ываыва ыва ыв ва ыва ывав ыа'
+  }]
+};
+// CONCATENATED MODULE: ./static/components/html/Seo/Seo.jsx
+function Seo_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { Seo_typeof = function _typeof(obj) { return typeof obj; }; } else { Seo_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return Seo_typeof(obj); }
+
+function Seo_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function Seo_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function Seo_createClass(Constructor, protoProps, staticProps) { if (protoProps) Seo_defineProperties(Constructor.prototype, protoProps); if (staticProps) Seo_defineProperties(Constructor, staticProps); return Constructor; }
+
+function Seo_possibleConstructorReturn(self, call) { if (call && (Seo_typeof(call) === "object" || typeof call === "function")) { return call; } return Seo_assertThisInitialized(self); }
+
+function Seo_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function Seo_getPrototypeOf(o) { Seo_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return Seo_getPrototypeOf(o); }
+
+function Seo_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) Seo_setPrototypeOf(subClass, superClass); }
+
+function Seo_setPrototypeOf(o, p) { Seo_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return Seo_setPrototypeOf(o, p); }
+
+
+
+
+
+var Seo_Seo =
+/*#__PURE__*/
+function (_React$Component) {
+  Seo_inherits(Seo, _React$Component);
+
+  function Seo() {
+    Seo_classCallCheck(this, Seo);
+
+    return Seo_possibleConstructorReturn(this, Seo_getPrototypeOf(Seo).apply(this, arguments));
+  }
+
+  Seo_createClass(Seo, [{
+    key: "render",
+    value: function render() {
+      return react_default.a.createElement(react_default.a.Fragment, null, this.props.modules.map(function (item) {
+        return react_default.a.createElement(Module_Module, {
+          key: shortid_default.a.generate(),
+          title: item.Title,
+          content: item.Content,
+          sub: item.Sub ? item.Sub : false
+        });
+      }));
+    }
+  }]);
+
+  return Seo;
+}(react_default.a.Component);
+
+
+Seo_Seo.defaultProps = {
+  modules: [{
+    Title: 'Что такое Seo?',
+    Content: 'описание и как работают html теги нужных для seo и их правильное использование'
   }, {
-    count: 1,
-    name: 'пиво',
-    img: '4',
-    description: 'tatum expedita vitae? Libero quis voluptatibus commodi accusamus aliquid laboriosam, dolorem ipsa  tatum expedita vitae? Libero quis voluptatibus commodi accusamus aliquid laboriosam, dolorem ipsa Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore in itaque harum minima unde dolores repellendus. Saepe, unde, fugit id in illo, quo omnis minus veniam eos cumque ex nesciunt eius volupmagni provident vero. Vitae voluptates architecto ratione.',
-    price: 41,
-    composition: ['Pizza Base', 'Bacon', 'Ham', 'Chicken Faillet', 'Sausages'],
-    acute: 0
+    Title: 'Seo HTML теги',
+    Content: 'Seo HTML тегиSeo HTML тегиSeo HTML тегиSeo HTML тегиSeo HTML теги',
+    Sub: [{
+      Title: 'Тег <title>',
+      Content: 'titletitletitletitletitletitletitletitle'
+    }, {
+      Title: 'Тег <img>',
+      Content: 'imgimgimgimgimgimgimgimg'
+    }]
+  }]
+};
+// CONCATENATED MODULE: ./static/components/html/Svg/Svg.jsx
+function Svg_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { Svg_typeof = function _typeof(obj) { return typeof obj; }; } else { Svg_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return Svg_typeof(obj); }
+
+function Svg_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function Svg_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function Svg_createClass(Constructor, protoProps, staticProps) { if (protoProps) Svg_defineProperties(Constructor.prototype, protoProps); if (staticProps) Svg_defineProperties(Constructor, staticProps); return Constructor; }
+
+function Svg_possibleConstructorReturn(self, call) { if (call && (Svg_typeof(call) === "object" || typeof call === "function")) { return call; } return Svg_assertThisInitialized(self); }
+
+function Svg_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function Svg_getPrototypeOf(o) { Svg_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return Svg_getPrototypeOf(o); }
+
+function Svg_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) Svg_setPrototypeOf(subClass, superClass); }
+
+function Svg_setPrototypeOf(o, p) { Svg_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return Svg_setPrototypeOf(o, p); }
+
+
+
+
+
+var Svg_Svg =
+/*#__PURE__*/
+function (_React$Component) {
+  Svg_inherits(Svg, _React$Component);
+
+  function Svg() {
+    Svg_classCallCheck(this, Svg);
+
+    return Svg_possibleConstructorReturn(this, Svg_getPrototypeOf(Svg).apply(this, arguments));
+  }
+
+  Svg_createClass(Svg, [{
+    key: "render",
+    value: function render() {
+      return react_default.a.createElement(react_default.a.Fragment, null, this.props.modules.map(function (item) {
+        return react_default.a.createElement(Module_Module, {
+          key: shortid_default.a.generate(),
+          title: item.Title,
+          content: item.Content,
+          sub: item.Sub ? item.Sub : false
+        });
+      }));
+    }
+  }]);
+
+  return Svg;
+}(react_default.a.Component);
+
+
+Svg_Svg.defaultProps = {
+  modules: [{
+    Title: 'Что такое Svg?',
+    Content: 'описание svg как подключать, анимация и др'
   }, {
-    count: 1,
-    name: 'пицца',
-    img: '1',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore in itaque harum minima unde dolores repellendus. Saepe, unde, fugit id in illo, quo omnis minus veniam eos cumque ex nesciunt eius voluptatum expedita vitae? Libero quis voluptatibus commodi accusamus aliquid laboriosam, dolorem ipsa magni provident vero. Vitae voluptates architecto ratione.',
-    price: 13,
-    composition: ['Mozzarella', 'Bacon', 'Ham'],
-    acute: 1
+    Title: 'Seo HTML теги',
+    Content: 'Seo HTML тегиSeo HTML тегиSeo HTML тегиSeo HTML тегиSeo HTML теги',
+    Sub: [{
+      Title: 'Тег <title>',
+      Content: 'titletitletitletitletitletitletitletitle'
+    }, {
+      Title: 'Тег <img>',
+      Content: 'imgimgimgimgimgimgimgimg'
+    }]
+  }]
+};
+// CONCATENATED MODULE: ./static/components/html/Html.jsx
+function Html_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { Html_typeof = function _typeof(obj) { return typeof obj; }; } else { Html_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return Html_typeof(obj); }
+
+function Html_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function Html_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function Html_createClass(Constructor, protoProps, staticProps) { if (protoProps) Html_defineProperties(Constructor.prototype, protoProps); if (staticProps) Html_defineProperties(Constructor, staticProps); return Constructor; }
+
+function Html_possibleConstructorReturn(self, call) { if (call && (Html_typeof(call) === "object" || typeof call === "function")) { return call; } return Html_assertThisInitialized(self); }
+
+function Html_getPrototypeOf(o) { Html_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return Html_getPrototypeOf(o); }
+
+function Html_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function Html_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) Html_setPrototypeOf(subClass, superClass); }
+
+function Html_setPrototypeOf(o, p) { Html_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return Html_setPrototypeOf(o, p); }
+
+function Html_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+ //sidebar
+
+ //content
+
+ //contentitems 
+//-- semantic
+
+ //-- seo
+
+ //--svg
+
+
+
+var Html_Html =
+/*#__PURE__*/
+function (_React$Component) {
+  Html_inherits(Html, _React$Component);
+
+  function Html() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    Html_classCallCheck(this, Html);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = Html_possibleConstructorReturn(this, (_getPrototypeOf2 = Html_getPrototypeOf(Html)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    Html_defineProperty(Html_assertThisInitialized(_this), "state", {
+      content: []
+    });
+
+    Html_defineProperty(Html_assertThisInitialized(_this), "showContetn", function () {
+      var itemName = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "".concat(_this.props.sidebaritems[0].itemName);
+
+      var getContent = _this.props.sidebaritems.filter(function (item) {
+        return item.itemName == itemName;
+      });
+
+      _this.setState({
+        content: getContent
+      });
+    });
+
+    Html_defineProperty(Html_assertThisInitialized(_this), "UNSAFE_componentWillMount", function () {
+      _this.showContetn();
+    });
+
+    return _this;
+  }
+
+  Html_createClass(Html, [{
+    key: "render",
+    value: function render() {
+      return react_default.a.createElement("div", {
+        className: "content"
+      }, react_default.a.createElement(Sidebar_Sidebar, {
+        showContent: this.showContetn,
+        sidebarItems: this.props.sidebaritems
+      }), react_default.a.createElement(Content_Content, {
+        content: this.state.content
+      }));
+    }
+  }]);
+
+  return Html;
+}(react_default.a.Component);
+
+
+Html_Html.defaultProps = {
+  sidebaritems: [{
+    itemName: 'Семантика',
+    itemContent: react_default.a.createElement(Semantic_Semantic, null)
   }, {
-    count: 1,
-    name: 'суп',
-    img: '2',
-    description: 'Lorem ipsum dolor sit amet consectetur provident vero. Vitae voluptates architecto ratione.',
-    price: 16,
-    composition: ['Bacon', 'Ham', 'Sausages'],
-    acute: 3
+    itemName: 'SEO',
+    itemContent: react_default.a.createElement(Seo_Seo, null)
   }, {
-    count: 1,
-    name: 'каша',
-    img: '3',
-    description: 'adipisicing elit. Inventod in illo, quo omnis minus veniam eos cumque ex nesciunt eius voluptatum expedita vitae?',
-    price: 112,
-    composition: ['Mozzarella', 'Bacon', 'Ham', 'Chicken Faillet'],
-    acute: 2
+    itemName: 'SVG',
+    itemContent: react_default.a.createElement(Svg_Svg, null)
+  }]
+};
+// CONCATENATED MODULE: ./static/components/css/Css.jsx
+function Css_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { Css_typeof = function _typeof(obj) { return typeof obj; }; } else { Css_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return Css_typeof(obj); }
+
+function Css_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function Css_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function Css_createClass(Constructor, protoProps, staticProps) { if (protoProps) Css_defineProperties(Constructor.prototype, protoProps); if (staticProps) Css_defineProperties(Constructor, staticProps); return Constructor; }
+
+function Css_possibleConstructorReturn(self, call) { if (call && (Css_typeof(call) === "object" || typeof call === "function")) { return call; } return Css_assertThisInitialized(self); }
+
+function Css_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function Css_getPrototypeOf(o) { Css_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return Css_getPrototypeOf(o); }
+
+function Css_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) Css_setPrototypeOf(subClass, superClass); }
+
+function Css_setPrototypeOf(o, p) { Css_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return Css_setPrototypeOf(o, p); }
+
+
+
+
+
+var Css_Css =
+/*#__PURE__*/
+function (_React$Component) {
+  Css_inherits(Css, _React$Component);
+
+  function Css() {
+    Css_classCallCheck(this, Css);
+
+    return Css_possibleConstructorReturn(this, Css_getPrototypeOf(Css).apply(this, arguments));
+  }
+
+  Css_createClass(Css, [{
+    key: "render",
+    value: function render() {
+      return react_default.a.createElement("div", {
+        className: "content"
+      }, react_default.a.createElement(Sidebar_Sidebar, {
+        sidebarItems: this.props.sidebaritems
+      }), react_default.a.createElement("div", null, "Css"));
+    }
+  }]);
+
+  return Css;
+}(react_default.a.Component);
+
+
+Css_Css.defaultProps = {
+  sidebaritems: [{
+    itemName: 'Sass'
   }, {
-    count: 1,
-    name: 'пиво',
-    img: '4',
-    description: 'tatum expedita vitae? Libero quis voluptatibus commodi accusamus aliquid laboriosam, dolorem ipsa  tatum expedita vitae? Libero quis voluptatibus commodi accusamus aliquid laboriosam, dolorem ipsa Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore in itaque harum minima unde dolores repellendus. Saepe, unde, fugit id in illo, quo omnis minus veniam eos cumque ex nesciunt eius volupmagni provident vero. Vitae voluptates architecto ratione.',
-    price: 41,
-    composition: ['Pizza Base', 'Bacon', 'Ham', 'Chicken Faillet', 'Sausages'],
-    acute: 0
+    itemName: 'PostCSS'
+  }, {
+    itemName: 'Flex'
+  }, {
+    itemName: 'Animation'
+  }, {
+    itemName: 'Media'
+  }, {
+    itemName: 'BEM'
   }]
 };
 // CONCATENATED MODULE: ./static/components/app/App.jsx
@@ -11683,7 +11852,6 @@ function App_setPrototypeOf(o, p) { App_setPrototypeOf = Object.setPrototypeOf |
 
 
 
-
 var App_App =
 /*#__PURE__*/
 function (_React$Component) {
@@ -11702,7 +11870,7 @@ function (_React$Component) {
         className: "header"
       }, react_default.a.createElement("div", {
         className: "logo"
-      }, "sowa-restoran"), react_default.a.createElement("nav", {
+      }, "sowa"), react_default.a.createElement("nav", {
         className: "menu"
       }, react_default.a.createElement("ul", {
         className: "menu__list"
@@ -11713,16 +11881,30 @@ function (_React$Component) {
       }, "Home")), react_default.a.createElement("li", {
         className: "menu__item"
       }, react_default.a.createElement(es_Link, {
-        to: "/order/"
-      }, "Order"))))), react_default.a.createElement("div", {
+        to: "/html"
+      }, "html")), react_default.a.createElement("li", {
+        className: "menu__item"
+      }, react_default.a.createElement(es_Link, {
+        to: "/css"
+      }, "css")), react_default.a.createElement("li", {
+        className: "menu__item"
+      }, react_default.a.createElement(es_Link, {
+        to: "/javascript"
+      }, "javascript"))))), react_default.a.createElement("div", {
         className: "main"
       }, react_default.a.createElement(react_router_dom_es_Route, {
         path: "/",
         exact: true,
-        component: App_OrderRoute
-      }), react_default.a.createElement(react_router_dom_es_Route, {
-        path: "/order/",
         component: App_HomeRoute
+      }), react_default.a.createElement(react_router_dom_es_Route, {
+        path: "/html",
+        component: App_HtmlRoute
+      }), react_default.a.createElement(react_router_dom_es_Route, {
+        path: "/css",
+        component: App_CssRoute
+      }), react_default.a.createElement(react_router_dom_es_Route, {
+        path: "/javascript",
+        component: App_JsRoute
       }))));
     }
   }]);
@@ -11746,74 +11928,74 @@ function (_App) {
   App_createClass(HomeRoute, [{
     key: "render",
     value: function render() {
-      return react_default.a.createElement(Home_Home, null);
+      return react_default.a.createElement("div", null, "Home");
     }
   }]);
 
   return HomeRoute;
 }(App_App);
 
-var App_MenuRoute =
+var App_HtmlRoute =
 /*#__PURE__*/
 function (_App2) {
-  App_inherits(MenuRoute, _App2);
+  App_inherits(HtmlRoute, _App2);
 
-  function MenuRoute() {
-    App_classCallCheck(this, MenuRoute);
+  function HtmlRoute() {
+    App_classCallCheck(this, HtmlRoute);
 
-    return App_possibleConstructorReturn(this, App_getPrototypeOf(MenuRoute).apply(this, arguments));
+    return App_possibleConstructorReturn(this, App_getPrototypeOf(HtmlRoute).apply(this, arguments));
   }
 
-  App_createClass(MenuRoute, [{
+  App_createClass(HtmlRoute, [{
     key: "render",
     value: function render() {
-      return react_default.a.createElement(Menu_Menu, null);
+      return react_default.a.createElement(Html_Html, null);
     }
   }]);
 
-  return MenuRoute;
+  return HtmlRoute;
 }(App_App);
 
-var App_OrderRoute =
+var App_CssRoute =
 /*#__PURE__*/
 function (_App3) {
-  App_inherits(OrderRoute, _App3);
+  App_inherits(CssRoute, _App3);
 
-  function OrderRoute() {
-    App_classCallCheck(this, OrderRoute);
+  function CssRoute() {
+    App_classCallCheck(this, CssRoute);
 
-    return App_possibleConstructorReturn(this, App_getPrototypeOf(OrderRoute).apply(this, arguments));
+    return App_possibleConstructorReturn(this, App_getPrototypeOf(CssRoute).apply(this, arguments));
   }
 
-  App_createClass(OrderRoute, [{
+  App_createClass(CssRoute, [{
     key: "render",
     value: function render() {
-      return react_default.a.createElement(Order_Order, null);
+      return react_default.a.createElement(Css_Css, null);
     }
   }]);
 
-  return OrderRoute;
+  return CssRoute;
 }(App_App);
 
-var App_AboutRoute =
+var App_JsRoute =
 /*#__PURE__*/
 function (_App4) {
-  App_inherits(AboutRoute, _App4);
+  App_inherits(JsRoute, _App4);
 
-  function AboutRoute() {
-    App_classCallCheck(this, AboutRoute);
+  function JsRoute() {
+    App_classCallCheck(this, JsRoute);
 
-    return App_possibleConstructorReturn(this, App_getPrototypeOf(AboutRoute).apply(this, arguments));
+    return App_possibleConstructorReturn(this, App_getPrototypeOf(JsRoute).apply(this, arguments));
   }
 
-  App_createClass(AboutRoute, [{
+  App_createClass(JsRoute, [{
     key: "render",
     value: function render() {
-      return react_default.a.createElement("div", null, "About");
+      return react_default.a.createElement("div", null, "Js");
     }
   }]);
 
-  return AboutRoute;
+  return JsRoute;
 }(App_App);
 // CONCATENATED MODULE: ./static/index.js
 //sass

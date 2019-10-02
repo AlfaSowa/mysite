@@ -1,0 +1,44 @@
+.page
+    flex: 1
+    padding: 10px 10px 0
+    margin-left: $sidebar-width
+
+.module
+    margin-bottom: 20px
+    &__title
+        margin-bottom: 10px
+    &__description
+        margin-bottom: 15px
+    &__sub
+        &_title
+            margin-bottom: 5px
+        &_content
+            padding: 5px
+            padding-top: 5px
+
+        
+.code
+    padding: 5px 15px
+    background: #f5f2f0
+    color: $bodyclr
+    &__html
+    &__tag
+        color: $code-tag
+        position: relative
+        &:before
+            content: '<'
+            left: 0
+            transform: translate(-100%, -50%)
+        &:after
+            content: '>'
+            right: 0
+            transform: translate(100%, -50%)
+        &:before,
+        &:after
+            position: absolute
+            top: 50%
+            color: $code-tag
+        &_left
+            margin-right: 10px
+        &_right
+            margin-left: 10px
