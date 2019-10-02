@@ -10742,6 +10742,82 @@ Router_Router.childContextTypes = {
 // Written in this round about way for babel-transform-imports
 
 /* harmony default export */ var react_router_dom_es_Router = (es_Router);
+// CONCATENATED MODULE: ./node_modules/react-router-dom/es/HashRouter.js
+function HashRouter_classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function HashRouter_possibleConstructorReturn(self, call) {
+  if (!self) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return call && (typeof call === "object" || typeof call === "function") ? call : self;
+}
+
+function HashRouter_inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      enumerable: false,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+}
+
+
+
+
+
+
+/**
+ * The public API for a <Router> that uses window.location.hash.
+ */
+
+var HashRouter_HashRouter = function (_React$Component) {
+  HashRouter_inherits(HashRouter, _React$Component);
+
+  function HashRouter() {
+    var _temp, _this, _ret;
+
+    HashRouter_classCallCheck(this, HashRouter);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = HashRouter_possibleConstructorReturn(this, _React$Component.call.apply(_React$Component, [this].concat(args))), _this), _this.history = createHashHistory(_this.props), _temp), HashRouter_possibleConstructorReturn(_this, _ret);
+  }
+
+  HashRouter.prototype.componentWillMount = function componentWillMount() {
+    warning_default()(!this.props.history, "<HashRouter> ignores the history prop. To use a custom history, " + "use `import { Router }` instead of `import { HashRouter as Router }`.");
+  };
+
+  HashRouter.prototype.render = function render() {
+    return react_default.a.createElement(react_router_dom_es_Router, {
+      history: this.history,
+      children: this.props.children
+    });
+  };
+
+  return HashRouter;
+}(react_default.a.Component);
+
+HashRouter_HashRouter.propTypes = {
+  basename: prop_types_default.a.string,
+  getUserConfirmation: prop_types_default.a.func,
+  hashType: prop_types_default.a.oneOf(["hashbang", "noslash", "slash"]),
+  children: prop_types_default.a.node
+};
+/* harmony default export */ var es_HashRouter = (HashRouter_HashRouter);
 // CONCATENATED MODULE: ./node_modules/react-router-dom/es/BrowserRouter.js
 function BrowserRouter_classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
@@ -12010,7 +12086,7 @@ function (_App4) {
 
 
 
-react_dom_default.a.render(react_default.a.createElement(es_BrowserRouter, null, react_default.a.createElement(App_App, null)), document.getElementById('app'));
+react_dom_default.a.render(react_default.a.createElement(es_HashRouter, null, react_default.a.createElement(App_App, null)), document.getElementById('app'));
 
 /***/ })
 /******/ ]);
