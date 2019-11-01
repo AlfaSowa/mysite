@@ -1,35 +1,38 @@
 .menu
     flex: 1
     display: flex
-    justify-content: center
+    justify-content: flex-end
+    align-items: center
     &__list
         display: flex
+        position: relative
     &__item
         cursor: pointer
-        overflow: hidden
-        a
-            position: relative
-            padding: 10px 20px
-            display: block
-            &:after,
-            &:before
-                content: ''
-                height: 2px
-                width: 100%
-                background: $font-color
-                position: absolute
-                transition: all .3s
-                bottom: 0
-            &:after
-                left: -100%
-            &:before
-                right: -100%
+        text-transform: uppercase
+        font-size: 0.75em
+        display: flex
+        &_link
+            color: $font
+            padding: 10px 10px
+            display: flex
+            border-bottom: 1px solid transparent
             &:hover
+                border-bottom: 1px solid $font
                 &:after
-                    left: 50%
-                &:before
-                    right: 50%
-
+                    height: 12px
+            &:after
+                content: attr(data-description)
+                position: absolute
+                right: 100%
+                top: 50%
+                transform: translateY(-50%)
+                height: 0
+                width: max-content
+                overflow: hidden
+                font-size: .8em
+                text-transform: none
+                color: $font-add
+                transition: height .3s ease-in-out
 .nav
     position: fixed
     width: 100%

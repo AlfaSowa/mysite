@@ -1,0 +1,23 @@
+.module
+    margin-top: 60px
+    &__title
+        color: $font-title
+        position: relative
+        transition: all .7s ease-in-out
+        &:before
+            content: ""
+            width: 8px
+            height: 8px
+            background: $font-add
+            position: absolute
+            left: 50%
+            top: -15px
+            transform: translateY(-50%)
+            transition: all .7s ease-in-out
+
+.showsection
+    .module
+        &__title
+            color: $font-add
+            &:before
+                background: $main
