@@ -314,7 +314,7 @@ h1 {
   text-align: left;
   font-size: 1.3em;
   margin: 0 0 40px 0;
-  color: #1e263f; }
+  color: #2b2b2d; }
 
 h2 {
   text-align: center;
@@ -339,19 +339,16 @@ button {
     transform-style: preserve-3d; }
     .grid__item:nth-child(1n + 6) {
       margin-top: 20px; }
-    @media all and (max-width: 1200px) {
+    @media all and (max-width: 1100px) {
       .grid__item {
-        width: 25%; }
+        min-width: 25%;
+        max-width: 25%; }
         .grid__item:nth-child(1n + 5) {
           margin-top: 20px; } }
-    @media all and (max-width: 800px) {
+    @media all and (max-width: 768px) {
       .grid__item {
-        width: 33.33333333%; }
-        .grid__item:nth-child(1n + 4) {
-          margin-top: 20px; } }
-    @media all and (max-width: 500px) {
-      .grid__item {
-        width: 100%; }
+        min-width: 100%;
+        max-width: 100%; }
         .grid__item:not(:first-child) {
           margin-top: 20px; } }
   .grid__catalog .grid__item .card {
@@ -379,20 +376,22 @@ button {
   margin: 0 auto;
   height: 170px;
   width: 170px;
-  border: solid 2px #1e263f;
+  border: solid 2px #2b2b2d;
   position: relative;
   cursor: pointer;
-  color: #fff;
+  color: #2b2b2d;
   overflow: hidden;
-  transition: transform .2s ease-in-out, box-shadow .2s ease-in-out; }
+  transition: all .5s ease-in-out; }
   .card:hover {
-    border: solid 2px #7195fc; }
+    border: solid 2px #f72743; }
+    .card:hover .card__title {
+      color: #f72743; }
     .card:hover .card__percentage {
       -webkit-animation: wave .7s infinite;
-              animation: wave .7s infinite;
-      border-top-color: red; }
-      .card:hover .card__percentage:before, .card:hover .card__percentage:after {
-        opacity: 1; }
+              animation: wave .7s infinite; }
+    .card:hover .card__icon svg {
+      fill: #f72743;
+      stroke: #f72743; }
   .card__content {
     position: absolute;
     top: 0;
@@ -406,7 +405,9 @@ button {
     text-transform: uppercase;
     padding: 0 10px 20px;
     font-size: .8em;
-    font-weight: 600; }
+    font-weight: 600;
+    color: #fff;
+    transition: all .5s ease-in-out; }
   .card__icon {
     width: 100%;
     height: 100%;
@@ -439,29 +440,14 @@ button {
   .card__percentage {
     position: absolute;
     width: 100%;
-    height: 100%;
-    background: #1e263f;
+    height: 105%;
+    background: #2b2b2d;
     transform: translateY(200%);
     left: 0;
     transition: transform .9s ease-in-out, opacity 1.2s ease-in-out, border .4s ease-in-out;
     opacity: 0;
     z-index: -1;
     border-top: solid 1px transparent; }
-    .card__percentage:before, .card__percentage:after {
-      content: '^';
-      width: 20px;
-      height: 20px;
-      position: absolute;
-      top: 0;
-      opacity: 0;
-      transition: all .4s ease-in-out;
-      font-size: 2em;
-      text-align: center;
-      color: red; }
-    .card__percentage:before {
-      left: 20px; }
-    .card__percentage:after {
-      right: 20px; }
 
 .showsection .card__percentage {
   transform: translateY(100%);
@@ -486,14 +472,14 @@ button {
 .module {
   margin-top: 60px; }
   .module__title {
-    color: #1e263f;
+    color: #2b2b2d;
     position: relative;
     transition: all .7s ease-in-out; }
     .module__title:before {
       content: "";
       width: 8px;
       height: 8px;
-      background: #7195fc;
+      background: #f72743;
       position: absolute;
       left: 50%;
       top: -15px;
@@ -501,9 +487,9 @@ button {
       transition: all .7s ease-in-out; }
 
 .showsection .module__title {
-  color: #7195fc; }
+  color: #fff; }
   .showsection .module__title:before {
-    background: #1e263f; }
+    background: #2b2b2d; }
 
 * {
   margin: 0;
@@ -511,48 +497,46 @@ button {
   box-sizing: border-box; }
 
 body {
-  background: #242d4d;
+  background: #17181a;
   color: #fff;
   font: 16px/1 "PT Sans", sans-serif; }
 
 .container {
   max-width: 1200px;
-  margin: 0 auto;
-  color: #1e263f; }
+  margin: 0 auto; }
 
 .header {
   height: 100vh; }
   .header__top {
     display: flex;
     position: fixed;
-    height: 70px;
-    background: #1e263f;
+    height: 50px;
+    background: #17181a;
     z-index: 100;
     top: 0;
     left: 0;
     width: 100%;
-    transition: all .2s ease-in-out; }
+    transition: all .2s ease-in-out;
+    border-bottom: 1px solid #2b2b2d; }
     .header__top--active {
-      height: 50px;
-      background: #1e263f; }
+      height: 50px; }
   .header__bottom {
     height: 100%; }
   .header__content {
     width: 100%;
+    max-width: 800px;
     height: 100%;
-    background: #2D365B;
     padding-top: 70px;
     position: relative; }
     .header__content_title {
-      text-align: center;
-      font-size: 3em;
+      font: 16px/1.23 "Cabin", sans-serif;
+      font-size: 2.5em;
       margin-top: 5vh; }
     .header__content_description {
       font-size: 1.3em;
-      max-width: 1000px;
-      margin: 0 auto;
-      text-align: center;
-      margin-top: 5vh; }
+      margin-top: 3vh;
+      line-height: 1.2;
+      color: #2b2b2d; }
 
 .logo {
   text-transform: uppercase;
@@ -564,8 +548,31 @@ body {
   width: 200px; }
   .logo__link {
     color: #fff;
-    padding: 10px;
-    font-weight: 700; }
+    padding: 10px 70px 10px 15px;
+    font-weight: 700;
+    position: relative;
+    transform: translateY(25px) translateX(30px);
+    background: #17181a; }
+    .logo__link:after {
+      content: '';
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      background: #f72743;
+      right: 25px;
+      top: 50%;
+      transform: translateY(-50%);
+      border-radius: 50%;
+      box-shadow: 0px 0px 0px 2px #17181a, 0px 0px 0px 8px #661e29; }
+    .logo__link:before {
+      content: '';
+      width: 3px;
+      height: 50px;
+      background: #f72743;
+      position: absolute;
+      right: 33px;
+      top: -50%;
+      z-index: 2; }
 
 .menu {
   flex: 1;
@@ -584,26 +591,9 @@ body {
       color: #fff;
       padding: 10px 10px;
       display: flex;
-      border-bottom: 1px solid transparent; }
+      transition: color .2s ease-in-out; }
       .menu__item_link:hover {
-        border-bottom: 1px solid #fff; }
-        .menu__item_link:hover:after {
-          height: 12px; }
-      .menu__item_link:after {
-        content: attr(data-description);
-        position: absolute;
-        right: 100%;
-        top: 50%;
-        transform: translateY(-50%);
-        height: 0;
-        width: -webkit-max-content;
-        width: -moz-max-content;
-        width: max-content;
-        overflow: hidden;
-        font-size: .8em;
-        text-transform: none;
-        color: #7195fc;
-        transition: height .3s ease-in-out; }
+        color: #f72743; }
 
 .nav {
   position: fixed;
@@ -664,10 +654,9 @@ body {
     transform-origin: 100% 50%;
     border-radius: 20px 0 0 20px;
     overflow: hidden;
-    background: #1e263f; }
+    background: #2b2b2d; }
     .about__description_content {
-      padding: 20px;
-      background: #2D365B; }
+      padding: 20px; }
       .about__description_content h3 {
         font-size: 1.7em;
         text-align: center;

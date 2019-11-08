@@ -8,16 +8,14 @@
         transform-style: preserve-3d
         &:nth-child(1n + 6)
             margin-top: 20px
-        @media all and (max-width: 1200px)
-            width: 25%
+        @media all and (max-width: 1100px)
+            min-width: 25%
+            max-width: 25%
             &:nth-child(1n + 5)
                 margin-top: 20px
-        @media all and (max-width: 800px)
-            width: 33.33333333%
-            &:nth-child(1n + 4)
-                margin-top: 20px
-        @media all and (max-width: 500px)
-            width: 100%
+        @media all and (max-width: 768px)
+            min-width: 100%
+            max-width: 100%
             &:not(:first-child)
                 margin-top: 20px
     &__catalog
@@ -55,19 +53,20 @@
     border: solid 2px $card
     position: relative
     cursor: pointer
-    color: $font
+    color: $font-hover
     overflow: hidden
-    transition: transform .2s ease-in-out, box-shadow .2s ease-in-out
+    transition: all .5s ease-in-out
     &:hover
-        //background: $card-hover
         border: solid 2px $card-hover
         .card
+            &__title
+                color: $font-add
             &__percentage
                 animation: wave .7s infinite
-                border-top-color: $hint
-                &:before,
-                &:after
-                    opacity: 1
+            &__icon
+                svg
+                    fill: $details
+                    stroke: $details
     &__content
         position: absolute
         top: 0
@@ -82,6 +81,8 @@
         padding: 0 10px 20px
         font-size: .8em
         font-weight: 600
+        color: $font
+        transition: all .5s ease-in-out
     &__icon
         width: 100%
         height: 100%
@@ -114,30 +115,14 @@
     &__percentage
         position: absolute
         width: 100%
-        height: 100%
+        height: 105%
         background: $main
         transform: translateY(200%)
         left: 0
         transition: transform .9s ease-in-out, opacity 1.2s ease-in-out, border .4s ease-in-out
         opacity: 0
         z-index: -1
-        border-top: solid 1px transparent 
-        &:before,
-        &:after
-            content: '^'
-            width: 20px
-            height: 20px
-            position: absolute
-            top: 0
-            opacity: 0
-            transition: all .4s ease-in-out
-            font-size: 2em
-            text-align: center
-            color: $hint
-        &:before
-            left: 20px
-        &:after
-            right: 20px
+        border-top: solid 1px transparent
 
 .showsection
     .card

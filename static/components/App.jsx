@@ -47,13 +47,13 @@ export default class App extends React.Component {
                             <ul className="menu__list">
                                 {this.props.menu.map(item => (
                                     <li onClick={(e) => this.goTo(e, item.name)} key={shortid.generate()} className="menu__item">
-                                        <a className="menu__item_link" href={`#${item.name}`} data-description={item.description}>{item.text}</a>
+                                        <a className="menu__item_link" href={`#${item.name}`}>{item.text}</a>
                                     </li>
                                 ))}
                             </ul>
                         </nav>
                     </div>
-                    <div className="header__bottom">
+                    <div className="header__bottom container">
                         <div className="header__content">
                             <div className="header__content_title">Привет, меня зовут Алексей.</div>
                             <div className="header__content_description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium maxime ea, repellat totam culpa iure optio nisi delectus blanditiis ab quae vel animi officiis iste corrupti cumque labore necessitatibus, dolore ut. Odio nisi, perferendis enim assumenda dolorem velit eveniet quisquam provident non modi ducimus minima quasi aperiam illum tempora doloribus pariatur cupiditate blanditiis eius itaque culpa eum mollitia quis? Qui beatae aperiam nostrum odit odio maxime ea deserunt at ratione vitae quibusdam necessitatibus, soluta iusto accusamus perferendis tenetur quasi. Praesentium nobis doloribus odit, unde, fuga placeat iure tempora inventore nisi quae, in voluptates eligendi. Quas veritatis itaque impedit quam eos?</div>
@@ -80,26 +80,22 @@ App.defaultProps = {
     menu: [
         {
             name: 'about', 
-            text: 'обо мне', 
-            description: 'немного обо мне и чем я занимался',
+            text: 'обо мне',
             content: <About />
         },
         {
             name: 'skills', 
-            text: 'мои навыки', 
-            description: 'то что я умею и знаю',
+            text: 'мои навыки',
             content: <Skills />
         },
         {
             name: 'works', 
-            text: 'мои работы', 
-            description: 'работы и наработки сделанные мной',
+            text: 'мои работы',
             content: <Works />
         },
         {
             name: 'contacts', 
-            text: 'контакты', 
-            description: 'как связаться со мной',
+            text: 'контакты',
             content: <Contacts />
         }
     ]

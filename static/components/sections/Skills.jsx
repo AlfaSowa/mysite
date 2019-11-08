@@ -10,9 +10,6 @@ export default class Skills extends React.Component {
                 {this.props.gridItems.map((item, index) => (
                     <div key={index} className="grid__item">
                         <div className="card">
-                            <div className="card__icon">
-                                {item.icon}
-                            </div>
                             <div className="card__content">
                                 <div className="card__title">{item.title}</div>
                             </div>
@@ -49,7 +46,7 @@ Skills.defaultProps = {
                       <ellipse rx="11" ry="4.2" transform="rotate(120)"/>
                     </g>
                 </svg>,
-            level: 85
+            level: 90
         },
         {
             title: 'javascript',

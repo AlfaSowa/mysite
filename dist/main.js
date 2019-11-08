@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 32);
+/******/ 	return __webpack_require__(__webpack_require__.s = 34);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -92,17 +92,11 @@
 
 
 if (true) {
-  module.exports = __webpack_require__(17);
+  module.exports = __webpack_require__(18);
 } else {}
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "./img/1.jpg";
-
-/***/ }),
-/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -114,8 +108,17 @@ module.exports = __webpack_require__.p + "./img/1.jpg";
 if (false) { var throwOnDirectAccess, ReactIs; } else {
   // By explicitly using `prop-types` you are opting into new production behavior.
   // http://fb.me/prop-types-in-prod
-  module.exports = __webpack_require__(30)();
+  module.exports = __webpack_require__(32)();
 }
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = __webpack_require__(22);
 
 /***/ }),
 /* 3 */
@@ -124,16 +127,7 @@ if (false) { var throwOnDirectAccess, ReactIs; } else {
 "use strict";
 
 
-module.exports = __webpack_require__(21);
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var randomFromSeed = __webpack_require__(22);
+var randomFromSeed = __webpack_require__(23);
 
 var ORIGINAL = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-';
 var alphabet;
@@ -240,7 +234,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 5 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -309,7 +303,7 @@ if (__DEV__) {
 module.exports = warning;
 
 /***/ }),
-/* 6 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -378,7 +372,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(12);
+var	fixUrls = __webpack_require__(13);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -713,7 +707,7 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 7 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -814,7 +808,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 };
 
 /***/ }),
-/* 8 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -842,11 +836,23 @@ if (true) {
   // DCE check should happen before ReactDOM bundle executes so that
   // DevTools can report bad minification during injection.
   checkDCE();
-  module.exports = __webpack_require__(18);
+  module.exports = __webpack_require__(19);
 } else {}
 
 /***/ }),
+/* 8 */
+/***/ (function(module) {
+
+module.exports = JSON.parse("[{\"title\":\"Redsolution\",\"description\":\"Fronted разработчки. Верстка сайтов\",\"year\":\"октябрь 2018г. - июль 2019г.\"},{\"title\":\"Фриланс, удаленная работа\",\"description\":\"Fronted разработчки. Верстка сайтов\",\"year\":\"апрель 2017г. - октябрь 2018г.\"},{\"title\":\"Golden dragon\",\"description\":\"Fronted разработчки. Верстка сайтов\",\"year\":\"декабрь 2013г. - апрель 2017г.\"}]");
+
+/***/ }),
 /* 9 */
+/***/ (function(module) {
+
+module.exports = JSON.parse("[{\"title\":\"github.com/Grimmino\",\"description\":\"Мой GitHub где хранятся мои наработки и примеры кода.\",\"img\":\"1231231\",\"link\":\"https://github.com/Grimmino?tab=repositories\",\"content\":[{\"aboutWork\":\"github.com/Grimmino\"}]},{\"title\":\"vk174\",\"description\":\"Сайт типографии в Челябинске\",\"img\":\"1231231\",\"content\":[{\"aboutWork\":\"qweqweqweqeqwe\"}]},{\"title\":\"03chel\",\"description\":\"Сайт станции скорой помощи в Челябинске\",\"img\":\"1231231\",\"content\":[{\"aboutWork\":\"особенность сайта. Наличие версии для слабовидящих\"}]}]");
+
+/***/ }),
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -894,11 +900,11 @@ var invariant = function (condition, format, a, b, c, d, e, f) {
 module.exports = invariant;
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(11);
+var content = __webpack_require__(12);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -912,20 +918,20 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(6)(content, options);
+var update = __webpack_require__(5)(content, options);
 
 if(content.locals) module.exports = content.locals;
 
 if(false) {}
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports) {
 
 /**
@@ -1014,11 +1020,11 @@ module.exports = function (css) {
 };
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(14);
+var content = __webpack_require__(15);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -1032,23 +1038,17 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(6)(content, options);
+var update = __webpack_require__(5)(content, options);
 
 if(content.locals) module.exports = content.locals;
 
 if(false) {}
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
-
-/***/ }),
-/* 15 */
-/***/ (function(module, exports) {
-
-
 
 /***/ }),
 /* 16 */
@@ -1058,6 +1058,12 @@ if(false) {}
 
 /***/ }),
 /* 17 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1071,7 +1077,7 @@ if(false) {}
  */
 
 
-var h = __webpack_require__(7),
+var h = __webpack_require__(6),
     n = "function" === typeof Symbol && Symbol.for,
     p = n ? Symbol.for("react.element") : 60103,
     q = n ? Symbol.for("react.portal") : 60106,
@@ -1479,7 +1485,7 @@ var X = {
 module.exports = Z.default || Z;
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1498,8 +1504,8 @@ module.exports = Z.default || Z;
 
 
 var aa = __webpack_require__(0),
-    m = __webpack_require__(7),
-    q = __webpack_require__(19);
+    m = __webpack_require__(6),
+    q = __webpack_require__(20);
 
 function t(a) {
   for (var b = a.message, c = "https://reactjs.org/docs/error-decoder.html?invariant=" + b, d = 1; d < arguments.length; d++) c += "&args[]=" + encodeURIComponent(arguments[d]);
@@ -8206,18 +8212,18 @@ var Oj = {
 module.exports = Pj.default || Pj;
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 if (true) {
-  module.exports = __webpack_require__(20);
+  module.exports = __webpack_require__(21);
 } else {}
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8677,23 +8683,23 @@ exports.unstable_getFirstCallbackNode = function () {
 };
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var alphabet = __webpack_require__(4);
+var alphabet = __webpack_require__(3);
 
-var build = __webpack_require__(23);
+var build = __webpack_require__(24);
 
-var isValid = __webpack_require__(27); // if you are using cluster or multiple servers use this to make each instance
+var isValid = __webpack_require__(28); // if you are using cluster or multiple servers use this to make each instance
 // has a unique value for worker
 // Note: I don't know if this is automatically set when using third
 // party cluster solutions such as pm2.
 
 
-var clusterWorkerId = __webpack_require__(28) || 0;
+var clusterWorkerId = __webpack_require__(29) || 0;
 /**
  * Set the seed.
  * Highly recommended if you don't want people to try to figure out your id schema.
@@ -8750,7 +8756,7 @@ module.exports.characters = characters;
 module.exports.isValid = isValid;
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8779,15 +8785,15 @@ module.exports = {
 };
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var generate = __webpack_require__(24);
+var generate = __webpack_require__(25);
 
-var alphabet = __webpack_require__(4); // Ignore all milliseconds before a certain time to reduce the size of the date entropy without sacrificing uniqueness.
+var alphabet = __webpack_require__(3); // Ignore all milliseconds before a certain time to reduce the size of the date entropy without sacrificing uniqueness.
 // This number should be updated every year or so to keep the generated id short.
 // To regenerate `new Date() - 0` and bump the version. Always bump the version!
 
@@ -8830,17 +8836,17 @@ function build(clusterWorkerId) {
 module.exports = build;
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var alphabet = __webpack_require__(4);
+var alphabet = __webpack_require__(3);
 
-var random = __webpack_require__(25);
+var random = __webpack_require__(26);
 
-var format = __webpack_require__(26);
+var format = __webpack_require__(27);
 
 function generate(number) {
   var loopCounter = 0;
@@ -8859,7 +8865,7 @@ function generate(number) {
 module.exports = generate;
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8888,7 +8894,7 @@ if (!crypto || !crypto.getRandomValues) {
 module.exports = randomByte;
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports) {
 
 /**
@@ -8945,13 +8951,13 @@ module.exports = function (random, alphabet, size) {
  */
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var alphabet = __webpack_require__(4);
+var alphabet = __webpack_require__(3);
 
 function isShortId(id) {
   if (!id || typeof id !== 'string' || id.length < 6) {
@@ -8965,7 +8971,7 @@ function isShortId(id) {
 module.exports = isShortId;
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8974,13 +8980,19 @@ module.exports = isShortId;
 module.exports = 0;
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "./img/react.svg";
 
 /***/ }),
-/* 30 */
+/* 31 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "./img/1.jpg";
+
+/***/ }),
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8992,7 +9004,7 @@ module.exports = __webpack_require__.p + "./img/react.svg";
  */
 
 
-var ReactPropTypesSecret = __webpack_require__(31);
+var ReactPropTypesSecret = __webpack_require__(33);
 
 function emptyFunction() {}
 
@@ -9049,7 +9061,7 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 31 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9065,38 +9077,38 @@ var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 module.exports = ReactPropTypesSecret;
 
 /***/ }),
-/* 32 */
+/* 34 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
 // EXTERNAL MODULE: ./node_modules/normalize.css/normalize.css
-var normalize = __webpack_require__(10);
+var normalize = __webpack_require__(11);
 
 // EXTERNAL MODULE: ./static/sass/style.sass
-var style = __webpack_require__(13);
+var style = __webpack_require__(14);
 
 // EXTERNAL MODULE: ./static/js/main.js
-var main = __webpack_require__(15);
+var main = __webpack_require__(16);
 
 // EXTERNAL MODULE: ./static/js/files.js
-var files = __webpack_require__(16);
+var files = __webpack_require__(17);
 
 // EXTERNAL MODULE: ./node_modules/react/index.js
 var react = __webpack_require__(0);
 var react_default = /*#__PURE__*/__webpack_require__.n(react);
 
 // EXTERNAL MODULE: ./node_modules/react-dom/index.js
-var react_dom = __webpack_require__(8);
+var react_dom = __webpack_require__(7);
 var react_dom_default = /*#__PURE__*/__webpack_require__.n(react_dom);
 
 // EXTERNAL MODULE: ./node_modules/warning/warning.js
-var warning = __webpack_require__(5);
+var warning = __webpack_require__(4);
 var warning_default = /*#__PURE__*/__webpack_require__.n(warning);
 
 // EXTERNAL MODULE: ./node_modules/prop-types/index.js
-var prop_types = __webpack_require__(2);
+var prop_types = __webpack_require__(1);
 var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
 
 // CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/extends.js
@@ -10157,7 +10169,7 @@ function createMemoryHistory(props) {
 
 
 // EXTERNAL MODULE: ./node_modules/invariant/browser.js
-var browser = __webpack_require__(9);
+var browser = __webpack_require__(10);
 var browser_default = /*#__PURE__*/__webpack_require__.n(browser);
 
 // CONCATENATED MODULE: ./node_modules/react-router/es/Router.js
@@ -10377,8 +10389,11 @@ BrowserRouter_BrowserRouter.propTypes = {
 };
 /* harmony default export */ var es_BrowserRouter = (BrowserRouter_BrowserRouter);
 // EXTERNAL MODULE: ./node_modules/shortid/index.js
-var shortid = __webpack_require__(3);
+var shortid = __webpack_require__(2);
 var shortid_default = /*#__PURE__*/__webpack_require__.n(shortid);
+
+// EXTERNAL MODULE: ./static/json/about.json
+var about = __webpack_require__(8);
 
 // CONCATENATED MODULE: ./static/components/sections/About.jsx
 function About_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { About_typeof = function _typeof(obj) { return typeof obj; }; } else { About_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return About_typeof(obj); }
@@ -10402,6 +10417,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var About_About =
 /*#__PURE__*/
 function (_React$Component) {
@@ -10416,7 +10432,7 @@ function (_React$Component) {
   _createClass(About, [{
     key: "render",
     value: function render() {
-      return react_default.a.createElement(react_default.a.Fragment, null, this.props.contentItems.map(function (item, index) {
+      return react_default.a.createElement(react_default.a.Fragment, null, about.map(function (item, index) {
         return react_default.a.createElement("div", {
           key: shortid_default.a.generate(),
           className: "about__item".concat(index % 2 ? '' : ' about__revers')
@@ -10462,7 +10478,7 @@ function (_About) {
         className: "about__year"
       }, react_default.a.createElement("div", {
         className: "about__year_number"
-      }, this.props.year, " \u0433."), react_default.a.createElement("div", {
+      }, this.props.year), react_default.a.createElement("div", {
         className: "icon about__year_icon"
       }));
     }
@@ -10495,36 +10511,8 @@ function (_About2) {
 
   return Description;
 }(About_About);
-
-About_About.defaultProps = {
-  contentItems: [{
-    title: 'Lorem, ipsum dolor.',
-    description: 'Lorem, ipsum dolor.',
-    year: '2014'
-  }, {
-    title: 'Lorem, ipsum dolor Lorem, ipsum dolor.',
-    description: 'Lorem, ipsum dolor Lorem, ipsum dolorLorem, ipsum dolor Lorem, ipsum dolor Lorem, ipsum dolorLorem, ipsum dolorvLorem, ipsum dolor.',
-    year: '2015'
-  }, {
-    title: 'Lorem, ipsum Lorem, ipsum .',
-    description: 'Lorem, ipsum dolor Lorem, ipsum dolorLorem, ipsum dolorLorem, ipsum dolorLorem, ipsum dolor.',
-    year: '2016'
-  }, {
-    title: 'Lorem, ipsum dolor.',
-    description: 'Lorem, ipsum dolor.',
-    year: '2017'
-  }, {
-    title: 'Lorem, ipsum dolor Lorem, ipsum dolor.',
-    description: 'Lorem, ipsum dolor Lorem, ipsum dolorLorem, ipsum dolor Lorem, ipsum dolor Lorem, ipsum dolorLorem, ipsum dolorvLorem, ipsum dolor.',
-    year: '2018'
-  }, {
-    title: 'Lorem, ipsum Lorem, ipsum .',
-    description: 'Lorem, ipsum dolor Lorem, ipsum dolorLorem, ipsum dolorLorem, ipsum dolorLorem, ipsum dolor.',
-    year: '2019'
-  }]
-};
 // EXTERNAL MODULE: ./static/img/react.svg
-var img_react = __webpack_require__(29);
+var img_react = __webpack_require__(30);
 
 // CONCATENATED MODULE: ./static/components/sections/Skills.jsx
 function Skills_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { Skills_typeof = function _typeof(obj) { return typeof obj; }; } else { Skills_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return Skills_typeof(obj); }
@@ -10572,8 +10560,6 @@ function (_React$Component) {
         }, react_default.a.createElement("div", {
           className: "card"
         }, react_default.a.createElement("div", {
-          className: "card__icon"
-        }, item.icon), react_default.a.createElement("div", {
           className: "card__content"
         }, react_default.a.createElement("div", {
           className: "card__title"
@@ -10641,7 +10627,7 @@ Skills_Skills.defaultProps = {
       ry: "4.2",
       transform: "rotate(120)"
     }))),
-    level: 85
+    level: 90
   }, {
     title: 'javascript',
     icon: react_default.a.createElement("svg", {
@@ -10794,9 +10780,8 @@ Skills_Skills.defaultProps = {
     level: 5
   }]
 };
-// EXTERNAL MODULE: ./static/img/1.jpg
-var _1 = __webpack_require__(1);
-var _1_default = /*#__PURE__*/__webpack_require__.n(_1);
+// EXTERNAL MODULE: ./static/json/works.json
+var works = __webpack_require__(9);
 
 // CONCATENATED MODULE: ./static/components/sections/Works.jsx
 function Works_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { Works_typeof = function _typeof(obj) { return typeof obj; }; } else { Works_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return Works_typeof(obj); }
@@ -10843,17 +10828,13 @@ function (_React$Component) {
 
     _defineProperty(Works_assertThisInitialized(_this), "state", {
       isShowDetails: true,
-      title: '',
-      description: ''
+      item: []
     });
 
-    _defineProperty(Works_assertThisInitialized(_this), "showDetailsWork", function (title, description) {
-      console.log(title);
-
+    _defineProperty(Works_assertThisInitialized(_this), "showDetailsWork", function (item) {
       _this.setState({
         isShowDetails: !_this.state.isShowDetails,
-        title: title,
-        description: description
+        item: item
       });
     });
 
@@ -10873,19 +10854,17 @@ function (_React$Component) {
 
       return react_default.a.createElement(react_default.a.Fragment, null, react_default.a.createElement("div", {
         className: "grid grid__catalog"
-      }, this.props.works.map(function (item, index) {
+      }, works.map(function (item, index) {
         return react_default.a.createElement("div", {
           key: index,
           className: "grid__item"
         }, react_default.a.createElement(Works_WorkCard, {
-          title: item.title,
-          description: item.description,
+          item: item,
           index: index,
           showDetailsWork: _this2.showDetailsWork
         }));
       })), this.state.isShowDetails || react_default.a.createElement(Works_Details, {
-        title: this.state.title,
-        description: this.state.description,
+        item: this.state.item,
         close: this.closeDetails
       }));
     }
@@ -10916,12 +10895,19 @@ function (_Works) {
         className: "details__top"
       }, react_default.a.createElement("div", {
         className: "details__title"
-      }, this.props.title), react_default.a.createElement("div", {
+      }, this.props.item.title), react_default.a.createElement("div", {
         onClick: this.props.close,
         className: "details__close"
       })), react_default.a.createElement("div", {
+        className: "details__description"
+      }, this.props.item.description), react_default.a.createElement("div", {
         className: "details__content"
-      }, this.props.description));
+      }, this.props.item.content.map(function (item, index) {
+        return react_default.a.createElement("div", {
+          key: index,
+          className: "details__content_item"
+        }, item.aboutWork);
+      })));
     }
   }]);
 
@@ -10946,10 +10932,10 @@ function (_Works2) {
 
     _this3 = Works_possibleConstructorReturn(this, (_getPrototypeOf3 = Works_getPrototypeOf(WorkCard)).call.apply(_getPrototypeOf3, [this].concat(args)));
 
-    _defineProperty(Works_assertThisInitialized(_this3), "getDetails", function (e, title, description) {
+    _defineProperty(Works_assertThisInitialized(_this3), "getDetails", function (e, item) {
       e.preventDefault();
 
-      _this3.props.showDetailsWork(title, description);
+      _this3.props.showDetailsWork(item);
     });
 
     return _this3;
@@ -10962,7 +10948,7 @@ function (_Works2) {
 
       return react_default.a.createElement("a", {
         onClick: function onClick(e) {
-          return _this4.getDetails(e, _this4.props.title, _this4.props.description);
+          return _this4.getDetails(e, _this4.props.item);
         },
         className: "card",
         href: "#"
@@ -10972,68 +10958,16 @@ function (_Works2) {
         className: "card__content"
       }, react_default.a.createElement("div", {
         className: "card__title"
-      }, this.props.title), react_default.a.createElement("div", {
+      }, this.props.item.title), react_default.a.createElement("div", {
         className: "card__description"
-      }, this.props.description)), this.props.index == 0 ? react_default.a.createElement("div", {
+      }, this.props.item.description)), this.props.index == 0 ? react_default.a.createElement("div", {
         className: "card__last"
-      }, "\u043F\u043E\u0441\u043B\u0435\u0434\u043D\u044F\u044F \u0440\u0430\u0431\u043E\u0442\u0430") : null);
+      }, "\u043C\u043E\u0439 GitHub") : null);
     }
   }]);
 
   return WorkCard;
 }(Works_Works);
-/*<div className="card__icon" style={{background: `url(${item.img}) no-repeat 50% / cover`}}>
-    <img src={item.img}/>
-</div>*/
-
-
-Works_Works.defaultProps = {
-  works: [{
-    title: 'Lorem ipsum dolor, sit amet consectetur adipisicing ',
-    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est, ex? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est, ex? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est, ex?',
-    img: _1_default.a
-  }, {
-    title: 'Lorem ipsum dolor, sit amet ',
-    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est, ex? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est, ex?',
-    img: _1_default.a
-  }, {
-    title: 'Lorem ipsum dolor, sit amet consectetur adipisicing  Lorem ipsum dolor, sit amet consectetur adipisicing ',
-    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est, ex? consectetur adipisicing elit. Est, ex?',
-    img: _1_default.a
-  }, {
-    title: 'Lorem ipsum dolor, sit amet consectetur',
-    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est, ex? ipsum dolor, sit amet consectetur adipisicing elit. Est, ex?',
-    img: _1_default.a
-  }, {
-    title: 'html',
-    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est, ex? ipsum dolor, sit amet consectetur adipisicing elit. Est, ex? ipsum dolor, sit amet consectetur adipisicing elit. Est, ex? ipsum dolor, sit amet consectetur adipisicing elit. Est, ex? ipsum dolor, sit amet consectetur adipisicing elit. Est, ex? ipsum dolor, sit amet consectetur adipisicing elit. Est, ex?',
-    img: _1_default.a
-  }, {
-    title: '1231231 123 12312 3123',
-    description: 'Lorem ipsum dolor',
-    img: _1_default.a
-  }, {
-    title: 'Lorem ipsum dolor, sit amet consectetur adipisicing  Lorem ipsum dolor, sit amet consectetur adipisicing ',
-    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est, ex? consectetur adipisicing elit. Est, ex?',
-    img: _1_default.a
-  }, {
-    title: 'Lorem ipsum dolor, sit amet consectetur',
-    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est, ex? ipsum dolor, sit amet consectetur adipisicing elit. Est, ex?',
-    img: _1_default.a
-  }, {
-    title: 'html',
-    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est, ex? ipsum dolor, sit amet consectetur adipisicing elit. Est, ex? ipsum dolor, sit amet consectetur adipisicing elit. Est, ex? ipsum dolor, sit amet consectetur adipisicing elit. Est, ex? ipsum dolor, sit amet consectetur adipisicing elit. Est, ex? ipsum dolor, sit amet consectetur adipisicing elit. Est, ex?',
-    img: _1_default.a
-  }, {
-    title: 'qweqwe qwe qw eqw ',
-    description: 'Lorem ipsum dolor',
-    img: _1_default.a
-  }, {
-    title: 'qweqwe qwe qw eqw ',
-    description: 'Lorem ipsum dolor',
-    img: _1_default.a
-  }]
-};
 // CONCATENATED MODULE: ./static/components/sections/Contacts.jsx
 function Contacts_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { Contacts_typeof = function _typeof(obj) { return typeof obj; }; } else { Contacts_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return Contacts_typeof(obj); }
 
@@ -11077,6 +11011,9 @@ function (_React$Component) {
   return Contacts;
 }(react_default.a.Component);
 
+
+// EXTERNAL MODULE: ./static/img/1.jpg
+var _1 = __webpack_require__(31);
 
 // CONCATENATED MODULE: ./static/components/App.jsx
 function App_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { App_typeof = function _typeof(obj) { return typeof obj; }; } else { App_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return App_typeof(obj); }
@@ -11181,11 +11118,10 @@ function (_React$Component) {
           className: "menu__item"
         }, react_default.a.createElement("a", {
           className: "menu__item_link",
-          href: "#".concat(item.name),
-          "data-description": item.description
+          href: "#".concat(item.name)
         }, item.text));
       })))), react_default.a.createElement("div", {
-        className: "header__bottom"
+        className: "header__bottom container"
       }, react_default.a.createElement("div", {
         className: "header__content"
       }, react_default.a.createElement("div", {
@@ -11214,22 +11150,18 @@ App_App.defaultProps = {
   menu: [{
     name: 'about',
     text: 'обо мне',
-    description: 'немного обо мне и чем я занимался',
     content: react_default.a.createElement(About_About, null)
   }, {
     name: 'skills',
     text: 'мои навыки',
-    description: 'то что я умею и знаю',
     content: react_default.a.createElement(Skills_Skills, null)
   }, {
     name: 'works',
     text: 'мои работы',
-    description: 'работы и наработки сделанные мной',
     content: react_default.a.createElement(Works_Works, null)
   }, {
     name: 'contacts',
     text: 'контакты',
-    description: 'как связаться со мной',
     content: react_default.a.createElement(Contacts_Contacts, null)
   }]
 };
