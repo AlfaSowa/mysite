@@ -329,6 +329,24 @@ button {
   border: none;
   background: none; }
 
+.btn {
+  background: none;
+  border: none; }
+  .btn__link {
+    text-decoration: none;
+    color: #686869;
+    border: 2px solid #2b2b2d;
+    font-size: .9rem;
+    display: block;
+    margin-top: 15px;
+    max-width: -webkit-max-content;
+    max-width: -moz-max-content;
+    max-width: max-content;
+    padding: 8px 16px;
+    border-radius: 20px; }
+    .btn__link:hover {
+      background: #2b2b2d; }
+
 .grid {
   display: flex;
   flex-wrap: wrap; }
@@ -379,7 +397,7 @@ button {
   border: solid 2px #2b2b2d;
   position: relative;
   cursor: pointer;
-  color: #2b2b2d;
+  color: #686869;
   overflow: hidden;
   transition: all .5s ease-in-out; }
   .card:hover {
@@ -472,7 +490,7 @@ button {
 .module {
   margin-top: 60px; }
   .module__title {
-    color: #2b2b2d;
+    color: #686869;
     position: relative;
     transition: all .7s ease-in-out; }
     .module__title:before {
@@ -505,6 +523,10 @@ body {
   max-width: 1200px;
   margin: 0 auto; }
 
+.alarm {
+  color: #f72743;
+  font-size: 1.5rem; }
+
 .header {
   height: 100vh; }
   .header__top {
@@ -524,7 +546,7 @@ body {
     height: 100%; }
   .header__content {
     width: 100%;
-    max-width: 800px;
+    max-width: 900px;
     height: 100%;
     padding-top: 70px;
     position: relative; }
@@ -533,10 +555,12 @@ body {
       font-size: 2.5em;
       margin-top: 5vh; }
     .header__content_description {
-      font-size: 1.3em;
+      font-size: 1rem;
       margin-top: 3vh;
       line-height: 1.2;
-      color: #2b2b2d; }
+      color: #686869; }
+      .header__content_description p:not(:last-child) {
+        margin-bottom: 10px; }
 
 .logo {
   text-transform: uppercase;

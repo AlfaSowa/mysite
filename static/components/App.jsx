@@ -1,12 +1,13 @@
 import React from 'react'
 import shortid from 'shortid'
 
-import About from './sections/About.jsx'
-import Skills from './sections/Skills.jsx'
-import Works from './sections/Works.jsx'
-import Contacts from './sections/Contacts.jsx'
+//----grid----
+import List from './sections/grid/List.jsx'
+import works from '../json/works.json'
+import skills from '../json/skills.json'
+//----gridend----
 
-import headerbg from '../img/1.jpg'
+import About from './sections/About.jsx'
 
 export default class App extends React.Component { 
 
@@ -56,7 +57,12 @@ export default class App extends React.Component {
                     <div className="header__bottom container">
                         <div className="header__content">
                             <div className="header__content_title">Привет, меня зовут Алексей.</div>
-                            <div className="header__content_description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium maxime ea, repellat totam culpa iure optio nisi delectus blanditiis ab quae vel animi officiis iste corrupti cumque labore necessitatibus, dolore ut. Odio nisi, perferendis enim assumenda dolorem velit eveniet quisquam provident non modi ducimus minima quasi aperiam illum tempora doloribus pariatur cupiditate blanditiis eius itaque culpa eum mollitia quis? Qui beatae aperiam nostrum odit odio maxime ea deserunt at ratione vitae quibusdam necessitatibus, soluta iusto accusamus perferendis tenetur quasi. Praesentium nobis doloribus odit, unde, fuga placeat iure tempora inventore nisi quae, in voluptates eligendi. Quas veritatis itaque impedit quam eos?</div>
+                            <div className="header__content_description">
+                                <p className="alarm">Сайт находится в разработке информация находящаяся здесь, пока что не верная</p>
+                                <p>Занимаюсь фронтенд частью в веб разработке. Этот сайт демонстрирует мои ключевые навыки в верстке (HTML/CSS) и знание основ react фреимворка.</p>
+                                <p>На сайте представленна информация обо мне чем я занимался, мои навыки и знания, а так же примеры некоторых моих работ.</p>
+                                <a className="btn btn__link" href="https://github.com/Grimmino/mysite">Репозиторий сайта</a>
+                            </div>
                         </div>
                     </div>
                 </header>
@@ -86,17 +92,12 @@ App.defaultProps = {
         {
             name: 'skills', 
             text: 'мои навыки',
-            content: <Skills />
+            content: <List content={skills} />
         },
         {
             name: 'works', 
             text: 'мои работы',
-            content: <Works />
-        },
-        {
-            name: 'contacts', 
-            text: 'контакты',
-            content: <Contacts />
+            content: <List content={works} catalog/>
         }
     ]
 }

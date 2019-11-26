@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 34);
+/******/ 	return __webpack_require__(__webpack_require__.s = 33);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -92,7 +92,7 @@
 
 
 if (true) {
-  module.exports = __webpack_require__(18);
+  module.exports = __webpack_require__(19);
 } else {}
 
 /***/ }),
@@ -108,7 +108,7 @@ if (true) {
 if (false) { var throwOnDirectAccess, ReactIs; } else {
   // By explicitly using `prop-types` you are opting into new production behavior.
   // http://fb.me/prop-types-in-prod
-  module.exports = __webpack_require__(32)();
+  module.exports = __webpack_require__(31)();
 }
 
 /***/ }),
@@ -118,7 +118,7 @@ if (false) { var throwOnDirectAccess, ReactIs; } else {
 "use strict";
 
 
-module.exports = __webpack_require__(22);
+module.exports = __webpack_require__(23);
 
 /***/ }),
 /* 3 */
@@ -127,7 +127,7 @@ module.exports = __webpack_require__(22);
 "use strict";
 
 
-var randomFromSeed = __webpack_require__(23);
+var randomFromSeed = __webpack_require__(24);
 
 var ORIGINAL = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-';
 var alphabet;
@@ -372,7 +372,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(13);
+var	fixUrls = __webpack_require__(14);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -836,23 +836,29 @@ if (true) {
   // DCE check should happen before ReactDOM bundle executes so that
   // DevTools can report bad minification during injection.
   checkDCE();
-  module.exports = __webpack_require__(19);
+  module.exports = __webpack_require__(20);
 } else {}
 
 /***/ }),
 /* 8 */
 /***/ (function(module) {
 
-module.exports = JSON.parse("[{\"title\":\"Redsolution\",\"description\":\"Fronted разработчки. Верстка сайтов\",\"year\":\"октябрь 2018г. - июль 2019г.\"},{\"title\":\"Фриланс, удаленная работа\",\"description\":\"Fronted разработчки. Верстка сайтов\",\"year\":\"апрель 2017г. - октябрь 2018г.\"},{\"title\":\"Golden dragon\",\"description\":\"Fronted разработчки. Верстка сайтов\",\"year\":\"декабрь 2013г. - апрель 2017г.\"}]");
+module.exports = JSON.parse("[{\"title\":\"github.com/Grimmino\",\"description\":\"Мой GitHub где хранятся мои наработки и примеры кода.\",\"img\":\"1231231\",\"link\":\"https://github.com/Grimmino?tab=repositories\",\"content\":[{\"aboutWork\":\"github.com/Grimmino\"}]},{\"title\":\"vk174\",\"description\":\"Сайт типографии в Челябинске\",\"img\":\"1231231\",\"content\":[{\"aboutWork\":\"qweqweqweqeqwe\"}]},{\"title\":\"03chel\",\"description\":\"Сайт станции скорой помощи в Челябинске\",\"img\":\"1231231\",\"content\":[{\"aboutWork\":\"особенность сайта. Наличие версии для слабовидящих\"}]}]");
 
 /***/ }),
 /* 9 */
 /***/ (function(module) {
 
-module.exports = JSON.parse("[{\"title\":\"github.com/Grimmino\",\"description\":\"Мой GitHub где хранятся мои наработки и примеры кода.\",\"img\":\"1231231\",\"link\":\"https://github.com/Grimmino?tab=repositories\",\"content\":[{\"aboutWork\":\"github.com/Grimmino\"}]},{\"title\":\"vk174\",\"description\":\"Сайт типографии в Челябинске\",\"img\":\"1231231\",\"content\":[{\"aboutWork\":\"qweqweqweqeqwe\"}]},{\"title\":\"03chel\",\"description\":\"Сайт станции скорой помощи в Челябинске\",\"img\":\"1231231\",\"content\":[{\"aboutWork\":\"особенность сайта. Наличие версии для слабовидящих\"}]}]");
+module.exports = JSON.parse("[{\"title\":\"html\",\"level\":88},{\"title\":\"css\",\"level\":95},{\"title\":\"js\",\"level\":76},{\"title\":\"react\",\"level\":60},{\"title\":\"seo\",\"level\":40},{\"title\":\"qweqw\",\"level\":5}]");
 
 /***/ }),
 /* 10 */
+/***/ (function(module) {
+
+module.exports = JSON.parse("[{\"title\":\"Redsolution\",\"description\":\"Fronted разработчки. Верстка сайтов\",\"year\":\"октябрь 2018г. - июль 2019г.\"},{\"title\":\"Фриланс, удаленная работа\",\"description\":\"Fronted разработчки. Верстка сайтов\",\"year\":\"апрель 2017г. - октябрь 2018г.\"},{\"title\":\"Golden dragon\",\"description\":\"Fronted разработчки. Верстка сайтов\",\"year\":\"декабрь 2013г. - апрель 2017г.\"}]");
+
+/***/ }),
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -900,11 +906,11 @@ var invariant = function (condition, format, a, b, c, d, e, f) {
 module.exports = invariant;
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(12);
+var content = __webpack_require__(13);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -925,13 +931,13 @@ if(content.locals) module.exports = content.locals;
 if(false) {}
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports) {
 
 /**
@@ -1020,11 +1026,11 @@ module.exports = function (css) {
 };
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(15);
+var content = __webpack_require__(16);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -1045,16 +1051,10 @@ if(content.locals) module.exports = content.locals;
 if(false) {}
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
-
-/***/ }),
-/* 16 */
-/***/ (function(module, exports) {
-
-
 
 /***/ }),
 /* 17 */
@@ -1064,6 +1064,12 @@ if(false) {}
 
 /***/ }),
 /* 18 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1485,7 +1491,7 @@ var X = {
 module.exports = Z.default || Z;
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1505,7 +1511,7 @@ module.exports = Z.default || Z;
 
 var aa = __webpack_require__(0),
     m = __webpack_require__(6),
-    q = __webpack_require__(20);
+    q = __webpack_require__(21);
 
 function t(a) {
   for (var b = a.message, c = "https://reactjs.org/docs/error-decoder.html?invariant=" + b, d = 1; d < arguments.length; d++) c += "&args[]=" + encodeURIComponent(arguments[d]);
@@ -8212,18 +8218,18 @@ var Oj = {
 module.exports = Pj.default || Pj;
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 if (true) {
-  module.exports = __webpack_require__(21);
+  module.exports = __webpack_require__(22);
 } else {}
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8683,7 +8689,7 @@ exports.unstable_getFirstCallbackNode = function () {
 };
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8691,15 +8697,15 @@ exports.unstable_getFirstCallbackNode = function () {
 
 var alphabet = __webpack_require__(3);
 
-var build = __webpack_require__(24);
+var build = __webpack_require__(25);
 
-var isValid = __webpack_require__(28); // if you are using cluster or multiple servers use this to make each instance
+var isValid = __webpack_require__(29); // if you are using cluster or multiple servers use this to make each instance
 // has a unique value for worker
 // Note: I don't know if this is automatically set when using third
 // party cluster solutions such as pm2.
 
 
-var clusterWorkerId = __webpack_require__(29) || 0;
+var clusterWorkerId = __webpack_require__(30) || 0;
 /**
  * Set the seed.
  * Highly recommended if you don't want people to try to figure out your id schema.
@@ -8756,7 +8762,7 @@ module.exports.characters = characters;
 module.exports.isValid = isValid;
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8785,13 +8791,13 @@ module.exports = {
 };
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var generate = __webpack_require__(25);
+var generate = __webpack_require__(26);
 
 var alphabet = __webpack_require__(3); // Ignore all milliseconds before a certain time to reduce the size of the date entropy without sacrificing uniqueness.
 // This number should be updated every year or so to keep the generated id short.
@@ -8836,7 +8842,7 @@ function build(clusterWorkerId) {
 module.exports = build;
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8844,9 +8850,9 @@ module.exports = build;
 
 var alphabet = __webpack_require__(3);
 
-var random = __webpack_require__(26);
+var random = __webpack_require__(27);
 
-var format = __webpack_require__(27);
+var format = __webpack_require__(28);
 
 function generate(number) {
   var loopCounter = 0;
@@ -8865,7 +8871,7 @@ function generate(number) {
 module.exports = generate;
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8894,7 +8900,7 @@ if (!crypto || !crypto.getRandomValues) {
 module.exports = randomByte;
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports) {
 
 /**
@@ -8951,7 +8957,7 @@ module.exports = function (random, alphabet, size) {
  */
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8971,7 +8977,7 @@ function isShortId(id) {
 module.exports = isShortId;
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8980,19 +8986,7 @@ module.exports = isShortId;
 module.exports = 0;
 
 /***/ }),
-/* 30 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "./img/react.svg";
-
-/***/ }),
 /* 31 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "./img/1.jpg";
-
-/***/ }),
-/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9004,7 +8998,7 @@ module.exports = __webpack_require__.p + "./img/1.jpg";
  */
 
 
-var ReactPropTypesSecret = __webpack_require__(33);
+var ReactPropTypesSecret = __webpack_require__(32);
 
 function emptyFunction() {}
 
@@ -9061,7 +9055,7 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 33 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9077,23 +9071,23 @@ var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 module.exports = ReactPropTypesSecret;
 
 /***/ }),
-/* 34 */
+/* 33 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
 // EXTERNAL MODULE: ./node_modules/normalize.css/normalize.css
-var normalize = __webpack_require__(11);
+var normalize = __webpack_require__(12);
 
 // EXTERNAL MODULE: ./static/sass/style.sass
-var style = __webpack_require__(14);
+var style = __webpack_require__(15);
 
 // EXTERNAL MODULE: ./static/js/main.js
-var main = __webpack_require__(16);
+var main = __webpack_require__(17);
 
 // EXTERNAL MODULE: ./static/js/files.js
-var files = __webpack_require__(17);
+var files = __webpack_require__(18);
 
 // EXTERNAL MODULE: ./node_modules/react/index.js
 var react = __webpack_require__(0);
@@ -10169,7 +10163,7 @@ function createMemoryHistory(props) {
 
 
 // EXTERNAL MODULE: ./node_modules/invariant/browser.js
-var browser = __webpack_require__(10);
+var browser = __webpack_require__(11);
 var browser_default = /*#__PURE__*/__webpack_require__.n(browser);
 
 // CONCATENATED MODULE: ./node_modules/react-router/es/Router.js
@@ -10392,27 +10386,238 @@ BrowserRouter_BrowserRouter.propTypes = {
 var shortid = __webpack_require__(2);
 var shortid_default = /*#__PURE__*/__webpack_require__.n(shortid);
 
+// CONCATENATED MODULE: ./static/components/sections/grid/Item.jsx
+function Item_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { Item_typeof = function _typeof(obj) { return typeof obj; }; } else { Item_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return Item_typeof(obj); }
+
+function Item_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function Item_possibleConstructorReturn(self, call) { if (call && (Item_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function Item_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+var Item_Item =
+/*#__PURE__*/
+function (_React$Component) {
+  Item_inherits(Item, _React$Component);
+
+  function Item() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    Item_classCallCheck(this, Item);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = Item_possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Item)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    _defineProperty(_assertThisInitialized(_this), "getDetails", function (e, item) {
+      e.preventDefault();
+
+      _this.props.showDetailsWork(item);
+    });
+
+    return _this;
+  }
+
+  _createClass(Item, [{
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      return react_default.a.createElement(react_default.a.Fragment, null, react_default.a.createElement("div", {
+        className: "grid__item"
+      }, react_default.a.createElement("a", {
+        onClick: function onClick(e) {
+          return _this2.getDetails(e, _this2.props.item);
+        },
+        href: "#",
+        className: "card"
+      }, react_default.a.createElement("div", {
+        className: "card__content"
+      }, react_default.a.createElement("div", {
+        className: "card__title"
+      }, this.props.item.title), this.props.item.description ? react_default.a.createElement("div", {
+        className: "card__description"
+      }, this.props.item.description) : null), this.props.item.level ? react_default.a.createElement("div", {
+        className: "card__percentage",
+        style: {
+          bottom: "".concat(this.props.item.level, "%")
+        }
+      }) : null, this.props.catalog && this.props.index == 0 ? react_default.a.createElement("div", {
+        className: "card__last"
+      }, "\u043C\u043E\u0439 GitHub") : null)));
+    }
+  }]);
+
+  return Item;
+}(react_default.a.Component);
+
+
+// CONCATENATED MODULE: ./static/components/sections/grid/List.jsx
+function List_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { List_typeof = function _typeof(obj) { return typeof obj; }; } else { List_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return List_typeof(obj); }
+
+function List_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function List_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function List_createClass(Constructor, protoProps, staticProps) { if (protoProps) List_defineProperties(Constructor.prototype, protoProps); if (staticProps) List_defineProperties(Constructor, staticProps); return Constructor; }
+
+function List_possibleConstructorReturn(self, call) { if (call && (List_typeof(call) === "object" || typeof call === "function")) { return call; } return List_assertThisInitialized(self); }
+
+function List_getPrototypeOf(o) { List_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return List_getPrototypeOf(o); }
+
+function List_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function List_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) List_setPrototypeOf(subClass, superClass); }
+
+function List_setPrototypeOf(o, p) { List_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return List_setPrototypeOf(o, p); }
+
+function List_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+var List_List =
+/*#__PURE__*/
+function (_React$Component) {
+  List_inherits(List, _React$Component);
+
+  function List() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    List_classCallCheck(this, List);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = List_possibleConstructorReturn(this, (_getPrototypeOf2 = List_getPrototypeOf(List)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    List_defineProperty(List_assertThisInitialized(_this), "state", {
+      isShowDetails: true,
+      item: []
+    });
+
+    List_defineProperty(List_assertThisInitialized(_this), "showDetailsWork", function (item) {
+      _this.setState({
+        isShowDetails: !_this.state.isShowDetails,
+        item: item
+      });
+    });
+
+    List_defineProperty(List_assertThisInitialized(_this), "closeDetails", function () {
+      _this.setState({
+        isShowDetails: !_this.state.isShowDetails
+      });
+    });
+
+    return _this;
+  }
+
+  List_createClass(List, [{
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      return react_default.a.createElement(react_default.a.Fragment, null, react_default.a.createElement("div", {
+        className: "grid ".concat(this.props.catalog ? "grid__catalog" : "")
+      }, this.props.content.map(function (item, index) {
+        return react_default.a.createElement(Item_Item, {
+          key: index,
+          catalog: _this2.props.catalog ? true : false,
+          item: item,
+          index: index,
+          showDetailsWork: _this2.showDetailsWork
+        });
+      })), this.state.isShowDetails || react_default.a.createElement(List_Details, {
+        item: this.state.item,
+        close: this.closeDetails
+      }));
+    }
+  }]);
+
+  return List;
+}(react_default.a.Component);
+
+
+
+var List_Details =
+/*#__PURE__*/
+function (_List) {
+  List_inherits(Details, _List);
+
+  function Details() {
+    List_classCallCheck(this, Details);
+
+    return List_possibleConstructorReturn(this, List_getPrototypeOf(Details).apply(this, arguments));
+  }
+
+  List_createClass(Details, [{
+    key: "render",
+    value: function render() {
+      return react_default.a.createElement("div", {
+        className: "details"
+      }, react_default.a.createElement("div", {
+        className: "details__top"
+      }, react_default.a.createElement("div", {
+        className: "details__title"
+      }, this.props.item.title), react_default.a.createElement("div", {
+        onClick: this.props.close,
+        className: "details__close"
+      })));
+    }
+  }]);
+
+  return Details;
+}(List_List);
+// EXTERNAL MODULE: ./static/json/works.json
+var works = __webpack_require__(8);
+
+// EXTERNAL MODULE: ./static/json/skills.json
+var skills = __webpack_require__(9);
+
 // EXTERNAL MODULE: ./static/json/about.json
-var about = __webpack_require__(8);
+var about = __webpack_require__(10);
 
 // CONCATENATED MODULE: ./static/components/sections/About.jsx
 function About_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { About_typeof = function _typeof(obj) { return typeof obj; }; } else { About_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return About_typeof(obj); }
 
 function About_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function About_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function About_createClass(Constructor, protoProps, staticProps) { if (protoProps) About_defineProperties(Constructor.prototype, protoProps); if (staticProps) About_defineProperties(Constructor, staticProps); return Constructor; }
 
-function About_possibleConstructorReturn(self, call) { if (call && (About_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+function About_possibleConstructorReturn(self, call) { if (call && (About_typeof(call) === "object" || typeof call === "function")) { return call; } return About_assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+function About_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+function About_getPrototypeOf(o) { About_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return About_getPrototypeOf(o); }
 
-function About_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+function About_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) About_setPrototypeOf(subClass, superClass); }
 
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+function About_setPrototypeOf(o, p) { About_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return About_setPrototypeOf(o, p); }
 
 
 
@@ -10426,10 +10631,10 @@ function (_React$Component) {
   function About() {
     About_classCallCheck(this, About);
 
-    return About_possibleConstructorReturn(this, _getPrototypeOf(About).apply(this, arguments));
+    return About_possibleConstructorReturn(this, About_getPrototypeOf(About).apply(this, arguments));
   }
 
-  _createClass(About, [{
+  About_createClass(About, [{
     key: "render",
     value: function render() {
       return react_default.a.createElement(react_default.a.Fragment, null, about.map(function (item, index) {
@@ -10468,10 +10673,10 @@ function (_About) {
   function Year() {
     About_classCallCheck(this, Year);
 
-    return About_possibleConstructorReturn(this, _getPrototypeOf(Year).apply(this, arguments));
+    return About_possibleConstructorReturn(this, About_getPrototypeOf(Year).apply(this, arguments));
   }
 
-  _createClass(Year, [{
+  About_createClass(Year, [{
     key: "render",
     value: function render() {
       return react_default.a.createElement("div", {
@@ -10495,10 +10700,10 @@ function (_About2) {
   function Description() {
     About_classCallCheck(this, Description);
 
-    return About_possibleConstructorReturn(this, _getPrototypeOf(Description).apply(this, arguments));
+    return About_possibleConstructorReturn(this, About_getPrototypeOf(Description).apply(this, arguments));
   }
 
-  _createClass(Description, [{
+  About_createClass(Description, [{
     key: "render",
     value: function render() {
       return react_default.a.createElement("div", {
@@ -10511,510 +10716,6 @@ function (_About2) {
 
   return Description;
 }(About_About);
-// EXTERNAL MODULE: ./static/img/react.svg
-var img_react = __webpack_require__(30);
-
-// CONCATENATED MODULE: ./static/components/sections/Skills.jsx
-function Skills_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { Skills_typeof = function _typeof(obj) { return typeof obj; }; } else { Skills_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return Skills_typeof(obj); }
-
-function Skills_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function Skills_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function Skills_createClass(Constructor, protoProps, staticProps) { if (protoProps) Skills_defineProperties(Constructor.prototype, protoProps); if (staticProps) Skills_defineProperties(Constructor, staticProps); return Constructor; }
-
-function Skills_possibleConstructorReturn(self, call) { if (call && (Skills_typeof(call) === "object" || typeof call === "function")) { return call; } return Skills_assertThisInitialized(self); }
-
-function Skills_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function Skills_getPrototypeOf(o) { Skills_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return Skills_getPrototypeOf(o); }
-
-function Skills_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) Skills_setPrototypeOf(subClass, superClass); }
-
-function Skills_setPrototypeOf(o, p) { Skills_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return Skills_setPrototypeOf(o, p); }
-
-
-
-
-
-var Skills_Skills =
-/*#__PURE__*/
-function (_React$Component) {
-  Skills_inherits(Skills, _React$Component);
-
-  function Skills() {
-    Skills_classCallCheck(this, Skills);
-
-    return Skills_possibleConstructorReturn(this, Skills_getPrototypeOf(Skills).apply(this, arguments));
-  }
-
-  Skills_createClass(Skills, [{
-    key: "render",
-    value: function render() {
-      return react_default.a.createElement("div", {
-        className: "grid"
-      }, this.props.gridItems.map(function (item, index) {
-        return react_default.a.createElement("div", {
-          key: index,
-          className: "grid__item"
-        }, react_default.a.createElement("div", {
-          className: "card"
-        }, react_default.a.createElement("div", {
-          className: "card__content"
-        }, react_default.a.createElement("div", {
-          className: "card__title"
-        }, item.title)), react_default.a.createElement("div", {
-          className: "card__percentage",
-          style: {
-            bottom: "".concat(item.level, "%")
-          }
-        })));
-      }));
-    }
-  }]);
-
-  return Skills;
-}(react_default.a.Component);
-
-
-Skills_Skills.defaultProps = {
-  gridItems: [{
-    title: 'html',
-    icon: react_default.a.createElement("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      viewBox: "-11.5 -10.23174 23 20.46348"
-    }, react_default.a.createElement("circle", {
-      cx: "0",
-      cy: "0",
-      r: "2.05"
-    }), react_default.a.createElement("g", {
-      strokeWidth: "1",
-      fill: "none"
-    }, react_default.a.createElement("ellipse", {
-      rx: "11",
-      ry: "4.2"
-    }), react_default.a.createElement("ellipse", {
-      rx: "11",
-      ry: "4.2",
-      transform: "rotate(60)"
-    }), react_default.a.createElement("ellipse", {
-      rx: "11",
-      ry: "4.2",
-      transform: "rotate(120)"
-    }))),
-    level: 78
-  }, {
-    title: 'css',
-    icon: react_default.a.createElement("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      viewBox: "-11.5 -10.23174 23 20.46348"
-    }, react_default.a.createElement("circle", {
-      cx: "0",
-      cy: "0",
-      r: "2.05"
-    }), react_default.a.createElement("g", {
-      strokeWidth: "1",
-      fill: "none"
-    }, react_default.a.createElement("ellipse", {
-      rx: "11",
-      ry: "4.2"
-    }), react_default.a.createElement("ellipse", {
-      rx: "11",
-      ry: "4.2",
-      transform: "rotate(60)"
-    }), react_default.a.createElement("ellipse", {
-      rx: "11",
-      ry: "4.2",
-      transform: "rotate(120)"
-    }))),
-    level: 90
-  }, {
-    title: 'javascript',
-    icon: react_default.a.createElement("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      viewBox: "-11.5 -10.23174 23 20.46348"
-    }, react_default.a.createElement("circle", {
-      cx: "0",
-      cy: "0",
-      r: "2.05"
-    }), react_default.a.createElement("g", {
-      strokeWidth: "1",
-      fill: "none"
-    }, react_default.a.createElement("ellipse", {
-      rx: "11",
-      ry: "4.2"
-    }), react_default.a.createElement("ellipse", {
-      rx: "11",
-      ry: "4.2",
-      transform: "rotate(60)"
-    }), react_default.a.createElement("ellipse", {
-      rx: "11",
-      ry: "4.2",
-      transform: "rotate(120)"
-    }))),
-    level: 64
-  }, {
-    title: 'react',
-    icon: react_default.a.createElement("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      viewBox: "-11.5 -10.23174 23 20.46348"
-    }, react_default.a.createElement("circle", {
-      cx: "0",
-      cy: "0",
-      r: "2.05"
-    }), react_default.a.createElement("g", {
-      strokeWidth: "1",
-      fill: "none"
-    }, react_default.a.createElement("ellipse", {
-      rx: "11",
-      ry: "4.2"
-    }), react_default.a.createElement("ellipse", {
-      rx: "11",
-      ry: "4.2",
-      transform: "rotate(60)"
-    }), react_default.a.createElement("ellipse", {
-      rx: "11",
-      ry: "4.2",
-      transform: "rotate(120)"
-    }))),
-    level: 48
-  }, {
-    title: 'git',
-    icon: react_default.a.createElement("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      viewBox: "-11.5 -10.23174 23 20.46348"
-    }, react_default.a.createElement("circle", {
-      cx: "0",
-      cy: "0",
-      r: "2.05"
-    }), react_default.a.createElement("g", {
-      strokeWidth: "1",
-      fill: "none"
-    }, react_default.a.createElement("ellipse", {
-      rx: "11",
-      ry: "4.2"
-    }), react_default.a.createElement("ellipse", {
-      rx: "11",
-      ry: "4.2",
-      transform: "rotate(60)"
-    }), react_default.a.createElement("ellipse", {
-      rx: "11",
-      ry: "4.2",
-      transform: "rotate(120)"
-    }))),
-    level: 67
-  }, {
-    title: 'seo',
-    icon: react_default.a.createElement("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      viewBox: "-11.5 -10.23174 23 20.46348"
-    }, react_default.a.createElement("circle", {
-      cx: "0",
-      cy: "0",
-      r: "2.05"
-    }), react_default.a.createElement("g", {
-      strokeWidth: "1",
-      fill: "none"
-    }, react_default.a.createElement("ellipse", {
-      rx: "11",
-      ry: "4.2"
-    }), react_default.a.createElement("ellipse", {
-      rx: "11",
-      ry: "4.2",
-      transform: "rotate(60)"
-    }), react_default.a.createElement("ellipse", {
-      rx: "11",
-      ry: "4.2",
-      transform: "rotate(120)"
-    }))),
-    level: 35
-  }, {
-    title: 'restAPI',
-    icon: react_default.a.createElement("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      viewBox: "-11.5 -10.23174 23 20.46348"
-    }, react_default.a.createElement("circle", {
-      cx: "0",
-      cy: "0",
-      r: "2.05"
-    }), react_default.a.createElement("g", {
-      strokeWidth: "1",
-      fill: "none"
-    }, react_default.a.createElement("ellipse", {
-      rx: "11",
-      ry: "4.2"
-    }), react_default.a.createElement("ellipse", {
-      rx: "11",
-      ry: "4.2",
-      transform: "rotate(60)"
-    }), react_default.a.createElement("ellipse", {
-      rx: "11",
-      ry: "4.2",
-      transform: "rotate(120)"
-    }))),
-    level: 20
-  }, {
-    title: 'CORS',
-    icon: react_default.a.createElement("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      viewBox: "-11.5 -10.23174 23 20.46348"
-    }, react_default.a.createElement("circle", {
-      cx: "0",
-      cy: "0",
-      r: "2.05"
-    }), react_default.a.createElement("g", {
-      strokeWidth: "1",
-      fill: "none"
-    }, react_default.a.createElement("ellipse", {
-      rx: "11",
-      ry: "4.2"
-    }), react_default.a.createElement("ellipse", {
-      rx: "11",
-      ry: "4.2",
-      transform: "rotate(60)"
-    }), react_default.a.createElement("ellipse", {
-      rx: "11",
-      ry: "4.2",
-      transform: "rotate(120)"
-    }))),
-    level: 5
-  }]
-};
-// EXTERNAL MODULE: ./static/json/works.json
-var works = __webpack_require__(9);
-
-// CONCATENATED MODULE: ./static/components/sections/Works.jsx
-function Works_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { Works_typeof = function _typeof(obj) { return typeof obj; }; } else { Works_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return Works_typeof(obj); }
-
-function Works_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function Works_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function Works_createClass(Constructor, protoProps, staticProps) { if (protoProps) Works_defineProperties(Constructor.prototype, protoProps); if (staticProps) Works_defineProperties(Constructor, staticProps); return Constructor; }
-
-function Works_possibleConstructorReturn(self, call) { if (call && (Works_typeof(call) === "object" || typeof call === "function")) { return call; } return Works_assertThisInitialized(self); }
-
-function Works_getPrototypeOf(o) { Works_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return Works_getPrototypeOf(o); }
-
-function Works_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function Works_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) Works_setPrototypeOf(subClass, superClass); }
-
-function Works_setPrototypeOf(o, p) { Works_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return Works_setPrototypeOf(o, p); }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
-
-
-
-var Works_Works =
-/*#__PURE__*/
-function (_React$Component) {
-  Works_inherits(Works, _React$Component);
-
-  function Works() {
-    var _getPrototypeOf2;
-
-    var _this;
-
-    Works_classCallCheck(this, Works);
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = Works_possibleConstructorReturn(this, (_getPrototypeOf2 = Works_getPrototypeOf(Works)).call.apply(_getPrototypeOf2, [this].concat(args)));
-
-    _defineProperty(Works_assertThisInitialized(_this), "state", {
-      isShowDetails: true,
-      item: []
-    });
-
-    _defineProperty(Works_assertThisInitialized(_this), "showDetailsWork", function (item) {
-      _this.setState({
-        isShowDetails: !_this.state.isShowDetails,
-        item: item
-      });
-    });
-
-    _defineProperty(Works_assertThisInitialized(_this), "closeDetails", function () {
-      _this.setState({
-        isShowDetails: !_this.state.isShowDetails
-      });
-    });
-
-    return _this;
-  }
-
-  Works_createClass(Works, [{
-    key: "render",
-    value: function render() {
-      var _this2 = this;
-
-      return react_default.a.createElement(react_default.a.Fragment, null, react_default.a.createElement("div", {
-        className: "grid grid__catalog"
-      }, works.map(function (item, index) {
-        return react_default.a.createElement("div", {
-          key: index,
-          className: "grid__item"
-        }, react_default.a.createElement(Works_WorkCard, {
-          item: item,
-          index: index,
-          showDetailsWork: _this2.showDetailsWork
-        }));
-      })), this.state.isShowDetails || react_default.a.createElement(Works_Details, {
-        item: this.state.item,
-        close: this.closeDetails
-      }));
-    }
-  }]);
-
-  return Works;
-}(react_default.a.Component);
-
-
-
-var Works_Details =
-/*#__PURE__*/
-function (_Works) {
-  Works_inherits(Details, _Works);
-
-  function Details() {
-    Works_classCallCheck(this, Details);
-
-    return Works_possibleConstructorReturn(this, Works_getPrototypeOf(Details).apply(this, arguments));
-  }
-
-  Works_createClass(Details, [{
-    key: "render",
-    value: function render() {
-      return react_default.a.createElement("div", {
-        className: "details"
-      }, react_default.a.createElement("div", {
-        className: "details__top"
-      }, react_default.a.createElement("div", {
-        className: "details__title"
-      }, this.props.item.title), react_default.a.createElement("div", {
-        onClick: this.props.close,
-        className: "details__close"
-      })), react_default.a.createElement("div", {
-        className: "details__description"
-      }, this.props.item.description), react_default.a.createElement("div", {
-        className: "details__content"
-      }, this.props.item.content.map(function (item, index) {
-        return react_default.a.createElement("div", {
-          key: index,
-          className: "details__content_item"
-        }, item.aboutWork);
-      })));
-    }
-  }]);
-
-  return Details;
-}(Works_Works);
-
-var Works_WorkCard =
-/*#__PURE__*/
-function (_Works2) {
-  Works_inherits(WorkCard, _Works2);
-
-  function WorkCard() {
-    var _getPrototypeOf3;
-
-    var _this3;
-
-    Works_classCallCheck(this, WorkCard);
-
-    for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-      args[_key2] = arguments[_key2];
-    }
-
-    _this3 = Works_possibleConstructorReturn(this, (_getPrototypeOf3 = Works_getPrototypeOf(WorkCard)).call.apply(_getPrototypeOf3, [this].concat(args)));
-
-    _defineProperty(Works_assertThisInitialized(_this3), "getDetails", function (e, item) {
-      e.preventDefault();
-
-      _this3.props.showDetailsWork(item);
-    });
-
-    return _this3;
-  }
-
-  Works_createClass(WorkCard, [{
-    key: "render",
-    value: function render() {
-      var _this4 = this;
-
-      return react_default.a.createElement("a", {
-        onClick: function onClick(e) {
-          return _this4.getDetails(e, _this4.props.item);
-        },
-        className: "card",
-        href: "#"
-      }, react_default.a.createElement("div", {
-        className: "card__icon"
-      }), react_default.a.createElement("div", {
-        className: "card__content"
-      }, react_default.a.createElement("div", {
-        className: "card__title"
-      }, this.props.item.title), react_default.a.createElement("div", {
-        className: "card__description"
-      }, this.props.item.description)), this.props.index == 0 ? react_default.a.createElement("div", {
-        className: "card__last"
-      }, "\u043C\u043E\u0439 GitHub") : null);
-    }
-  }]);
-
-  return WorkCard;
-}(Works_Works);
-// CONCATENATED MODULE: ./static/components/sections/Contacts.jsx
-function Contacts_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { Contacts_typeof = function _typeof(obj) { return typeof obj; }; } else { Contacts_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return Contacts_typeof(obj); }
-
-function Contacts_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function Contacts_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function Contacts_createClass(Constructor, protoProps, staticProps) { if (protoProps) Contacts_defineProperties(Constructor.prototype, protoProps); if (staticProps) Contacts_defineProperties(Constructor, staticProps); return Constructor; }
-
-function Contacts_possibleConstructorReturn(self, call) { if (call && (Contacts_typeof(call) === "object" || typeof call === "function")) { return call; } return Contacts_assertThisInitialized(self); }
-
-function Contacts_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function Contacts_getPrototypeOf(o) { Contacts_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return Contacts_getPrototypeOf(o); }
-
-function Contacts_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) Contacts_setPrototypeOf(subClass, superClass); }
-
-function Contacts_setPrototypeOf(o, p) { Contacts_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return Contacts_setPrototypeOf(o, p); }
-
-
-
-
-var Contacts_Contacts =
-/*#__PURE__*/
-function (_React$Component) {
-  Contacts_inherits(Contacts, _React$Component);
-
-  function Contacts() {
-    Contacts_classCallCheck(this, Contacts);
-
-    return Contacts_possibleConstructorReturn(this, Contacts_getPrototypeOf(Contacts).apply(this, arguments));
-  }
-
-  Contacts_createClass(Contacts, [{
-    key: "render",
-    value: function render() {
-      return react_default.a.createElement(react_default.a.Fragment, null, "\u043A\u043E\u043D\u0442\u0430\u043A\u0442\u044B");
-    }
-  }]);
-
-  return Contacts;
-}(react_default.a.Component);
-
-
-// EXTERNAL MODULE: ./static/img/1.jpg
-var _1 = __webpack_require__(31);
-
 // CONCATENATED MODULE: ./static/components/App.jsx
 function App_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { App_typeof = function _typeof(obj) { return typeof obj; }; } else { App_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return App_typeof(obj); }
 
@@ -11037,10 +10738,11 @@ function App_setPrototypeOf(o, p) { App_setPrototypeOf = Object.setPrototypeOf |
 function App_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
+ //----grid----
 
 
 
-
+ //----gridend----
 
 
 
@@ -11128,7 +10830,12 @@ function (_React$Component) {
         className: "header__content_title"
       }, "\u041F\u0440\u0438\u0432\u0435\u0442, \u043C\u0435\u043D\u044F \u0437\u043E\u0432\u0443\u0442 \u0410\u043B\u0435\u043A\u0441\u0435\u0439."), react_default.a.createElement("div", {
         className: "header__content_description"
-      }, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium maxime ea, repellat totam culpa iure optio nisi delectus blanditiis ab quae vel animi officiis iste corrupti cumque labore necessitatibus, dolore ut. Odio nisi, perferendis enim assumenda dolorem velit eveniet quisquam provident non modi ducimus minima quasi aperiam illum tempora doloribus pariatur cupiditate blanditiis eius itaque culpa eum mollitia quis? Qui beatae aperiam nostrum odit odio maxime ea deserunt at ratione vitae quibusdam necessitatibus, soluta iusto accusamus perferendis tenetur quasi. Praesentium nobis doloribus odit, unde, fuga placeat iure tempora inventore nisi quae, in voluptates eligendi. Quas veritatis itaque impedit quam eos?")))), this.props.menu.map(function (section, index) {
+      }, react_default.a.createElement("p", {
+        className: "alarm"
+      }, "\u0421\u0430\u0439\u0442 \u043D\u0430\u0445\u043E\u0434\u0438\u0442\u0441\u044F \u0432 \u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044F \u043D\u0430\u0445\u043E\u0434\u044F\u0449\u0430\u044F\u0441\u044F \u0437\u0434\u0435\u0441\u044C, \u043F\u043E\u043A\u0430 \u0447\u0442\u043E \u043D\u0435 \u0432\u0435\u0440\u043D\u0430\u044F"), react_default.a.createElement("p", null, "\u0417\u0430\u043D\u0438\u043C\u0430\u044E\u0441\u044C \u0444\u0440\u043E\u043D\u0442\u0435\u043D\u0434 \u0447\u0430\u0441\u0442\u044C\u044E \u0432 \u0432\u0435\u0431 \u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0435. \u042D\u0442\u043E\u0442 \u0441\u0430\u0439\u0442 \u0434\u0435\u043C\u043E\u043D\u0441\u0442\u0440\u0438\u0440\u0443\u0435\u0442 \u043C\u043E\u0438 \u043A\u043B\u044E\u0447\u0435\u0432\u044B\u0435 \u043D\u0430\u0432\u044B\u043A\u0438 \u0432 \u0432\u0435\u0440\u0441\u0442\u043A\u0435 (HTML/CSS) \u0438 \u0437\u043D\u0430\u043D\u0438\u0435 \u043E\u0441\u043D\u043E\u0432 react \u0444\u0440\u0435\u0438\u043C\u0432\u043E\u0440\u043A\u0430."), react_default.a.createElement("p", null, "\u041D\u0430 \u0441\u0430\u0439\u0442\u0435 \u043F\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u043B\u0435\u043D\u043D\u0430 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044F \u043E\u0431\u043E \u043C\u043D\u0435 \u0447\u0435\u043C \u044F \u0437\u0430\u043D\u0438\u043C\u0430\u043B\u0441\u044F, \u043C\u043E\u0438 \u043D\u0430\u0432\u044B\u043A\u0438 \u0438 \u0437\u043D\u0430\u043D\u0438\u044F, \u0430 \u0442\u0430\u043A \u0436\u0435 \u043F\u0440\u0438\u043C\u0435\u0440\u044B \u043D\u0435\u043A\u043E\u0442\u043E\u0440\u044B\u0445 \u043C\u043E\u0438\u0445 \u0440\u0430\u0431\u043E\u0442."), react_default.a.createElement("a", {
+        className: "btn btn__link",
+        href: "https://github.com/Grimmino/mysite"
+      }, "\u0420\u0435\u043F\u043E\u0437\u0438\u0442\u043E\u0440\u0438\u0439 \u0441\u0430\u0439\u0442\u0430"))))), this.props.menu.map(function (section, index) {
         return react_default.a.createElement("section", {
           key: index,
           name: section.name,
@@ -11154,15 +10861,16 @@ App_App.defaultProps = {
   }, {
     name: 'skills',
     text: 'мои навыки',
-    content: react_default.a.createElement(Skills_Skills, null)
+    content: react_default.a.createElement(List_List, {
+      content: skills
+    })
   }, {
     name: 'works',
     text: 'мои работы',
-    content: react_default.a.createElement(Works_Works, null)
-  }, {
-    name: 'contacts',
-    text: 'контакты',
-    content: react_default.a.createElement(Contacts_Contacts, null)
+    content: react_default.a.createElement(List_List, {
+      content: works,
+      catalog: true
+    })
   }]
 };
 // CONCATENATED MODULE: ./static/index.js
