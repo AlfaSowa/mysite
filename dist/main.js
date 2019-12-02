@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 33);
+/******/ 	return __webpack_require__(__webpack_require__.s = 23);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -92,7 +92,7 @@
 
 
 if (true) {
-  module.exports = __webpack_require__(19);
+  module.exports = __webpack_require__(17);
 } else {}
 
 /***/ }),
@@ -108,133 +108,11 @@ if (true) {
 if (false) { var throwOnDirectAccess, ReactIs; } else {
   // By explicitly using `prop-types` you are opting into new production behavior.
   // http://fb.me/prop-types-in-prod
-  module.exports = __webpack_require__(31)();
+  module.exports = __webpack_require__(21)();
 }
 
 /***/ }),
 /* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = __webpack_require__(23);
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var randomFromSeed = __webpack_require__(24);
-
-var ORIGINAL = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-';
-var alphabet;
-var previousSeed;
-var shuffled;
-
-function reset() {
-  shuffled = false;
-}
-
-function setCharacters(_alphabet_) {
-  if (!_alphabet_) {
-    if (alphabet !== ORIGINAL) {
-      alphabet = ORIGINAL;
-      reset();
-    }
-
-    return;
-  }
-
-  if (_alphabet_ === alphabet) {
-    return;
-  }
-
-  if (_alphabet_.length !== ORIGINAL.length) {
-    throw new Error('Custom alphabet for shortid must be ' + ORIGINAL.length + ' unique characters. You submitted ' + _alphabet_.length + ' characters: ' + _alphabet_);
-  }
-
-  var unique = _alphabet_.split('').filter(function (item, ind, arr) {
-    return ind !== arr.lastIndexOf(item);
-  });
-
-  if (unique.length) {
-    throw new Error('Custom alphabet for shortid must be ' + ORIGINAL.length + ' unique characters. These characters were not unique: ' + unique.join(', '));
-  }
-
-  alphabet = _alphabet_;
-  reset();
-}
-
-function characters(_alphabet_) {
-  setCharacters(_alphabet_);
-  return alphabet;
-}
-
-function setSeed(seed) {
-  randomFromSeed.seed(seed);
-
-  if (previousSeed !== seed) {
-    reset();
-    previousSeed = seed;
-  }
-}
-
-function shuffle() {
-  if (!alphabet) {
-    setCharacters(ORIGINAL);
-  }
-
-  var sourceArray = alphabet.split('');
-  var targetArray = [];
-  var r = randomFromSeed.nextValue();
-  var characterIndex;
-
-  while (sourceArray.length > 0) {
-    r = randomFromSeed.nextValue();
-    characterIndex = Math.floor(r * sourceArray.length);
-    targetArray.push(sourceArray.splice(characterIndex, 1)[0]);
-  }
-
-  return targetArray.join('');
-}
-
-function getShuffled() {
-  if (shuffled) {
-    return shuffled;
-  }
-
-  shuffled = shuffle();
-  return shuffled;
-}
-/**
- * lookup shuffled letter
- * @param index
- * @returns {string}
- */
-
-
-function lookup(index) {
-  var alphabetShuffled = getShuffled();
-  return alphabetShuffled[index];
-}
-
-function get() {
-  return alphabet || ORIGINAL;
-}
-
-module.exports = {
-  get: get,
-  characters: characters,
-  seed: setSeed,
-  lookup: lookup,
-  shuffled: getShuffled
-};
-
-/***/ }),
-/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -303,7 +181,7 @@ if (__DEV__) {
 module.exports = warning;
 
 /***/ }),
-/* 5 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -372,7 +250,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(14);
+var	fixUrls = __webpack_require__(12);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -707,7 +585,7 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 6 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -808,7 +686,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 };
 
 /***/ }),
-/* 7 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -836,29 +714,29 @@ if (true) {
   // DCE check should happen before ReactDOM bundle executes so that
   // DevTools can report bad minification during injection.
   checkDCE();
-  module.exports = __webpack_require__(20);
+  module.exports = __webpack_require__(18);
 } else {}
 
 /***/ }),
-/* 8 */
+/* 6 */
 /***/ (function(module) {
 
 module.exports = JSON.parse("[{\"title\":\"github.com/Grimmino\",\"description\":\"Мой GitHub где хранятся мои наработки и примеры кода.\",\"img\":\"1231231\",\"link\":\"https://github.com/Grimmino?tab=repositories\",\"content\":[{\"paragraph\":\"github.com/Grimmino\"}]},{\"title\":\"vk174\",\"description\":\"Сайт типографии в Челябинске\",\"img\":\"1231231\",\"content\":[{\"paragraph\":\"qweqweqweqeqwe\"}]},{\"title\":\"03chel\",\"description\":\"Сайт станции скорой помощи в Челябинске\",\"img\":\"1231231\",\"content\":[{\"paragraph\":\"особенность сайта. Наличие версии для слабовидящих\"}]}]");
 
 /***/ }),
-/* 9 */
+/* 7 */
 /***/ (function(module) {
 
 module.exports = JSON.parse("[{\"title\":\"html\",\"level\":88,\"content\":[{\"paragraph\":\"Понимаю принципы cемантической верстки\"},{\"paragraph\":\"тег HEAD\"},{\"paragraph\":\"SEO оптимизация\"},{\"paragraph\":\"тег IMG,SVG\"}]},{\"title\":\"css\",\"level\":95,\"content\":[{\"paragraph\":\"Разбираюсь во flexbox. Правильно использую позиционирование элементов, шрифты, кнопки, ссылки, формы и элементы форм (input, textarea и тд). Использую анимации и трансформации элементов, так же медиа запросы и mobilefirst верстку.\"},{\"paragraph\":\"Знаю препроцессоры (использую SASS) - использование переменных, миксинов, функции. Разделение кода\"}]},{\"title\":\"js\",\"level\":76},{\"title\":\"react\",\"level\":60}]");
 
 /***/ }),
-/* 10 */
+/* 8 */
 /***/ (function(module) {
 
 module.exports = JSON.parse("[{\"title\":\"Сейчас\",\"description\":[{\"paragraph\":\"Fronted разработчки. React\"},{\"paragraph\":\"активное изучаение React\"}],\"year\":\"2019г\"},{\"title\":\"Redsolution\",\"description\":[{\"paragraph\":\"Fronted разработчки. Верстка сайтов\"},{\"paragraph\":\"Fronted разработчки. Верстка сайтов\"}],\"year\":\"октябрь 2018г. - 2019г.\"},{\"title\":\"Фриланс, удаленная работа\",\"description\":[{\"paragraph\":\"Fronted разработчки. Верстка сайтов. Удаленная работа. Углубленное изучение\"},{\"paragraph\":\"Работал с другом на удаленной основе (он делад Backend я Frontend). Понял что знаний не достаточно и начал углубленно изучать Frontend.\"},{\"paragraph\":\"Начал изучать нативный JS, препроцессоры css (SASS/LESS по итогу остановился на SASS). Открыл для себя БЭМ методологию\"}],\"year\":\"апрель 2015г. - октябрь 2018г.\"},{\"title\":\"агенство Golden dragon\",\"description\":[{\"paragraph\":\"Верстка сайтов. Начало карьеры\"},{\"paragraph\":\"Занимался версткой, чаще лендингов, но иногда и попадались более серьезные заказы. Начало карьеры, осваивал азы HTML/CSS иногда приходилось использовать js, но обычно это был JQuery\"}],\"year\":\"декабрь 2013г. - апрель 2015г.\"}]");
 
 /***/ }),
-/* 11 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -906,11 +784,11 @@ var invariant = function (condition, format, a, b, c, d, e, f) {
 module.exports = invariant;
 
 /***/ }),
-/* 12 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(13);
+var content = __webpack_require__(11);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -924,20 +802,20 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(5)(content, options);
+var update = __webpack_require__(3)(content, options);
 
 if(content.locals) module.exports = content.locals;
 
 if(false) {}
 
 /***/ }),
-/* 13 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
 
 /***/ }),
-/* 14 */
+/* 12 */
 /***/ (function(module, exports) {
 
 /**
@@ -1026,11 +904,11 @@ module.exports = function (css) {
 };
 
 /***/ }),
-/* 15 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(16);
+var content = __webpack_require__(14);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -1044,32 +922,32 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(5)(content, options);
+var update = __webpack_require__(3)(content, options);
 
 if(content.locals) module.exports = content.locals;
 
 if(false) {}
 
 /***/ }),
-/* 16 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
 
 /***/ }),
+/* 15 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
 /* 17 */
-/***/ (function(module, exports) {
-
-
-
-/***/ }),
-/* 18 */
-/***/ (function(module, exports) {
-
-
-
-/***/ }),
-/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1083,7 +961,7 @@ if(false) {}
  */
 
 
-var h = __webpack_require__(6),
+var h = __webpack_require__(4),
     n = "function" === typeof Symbol && Symbol.for,
     p = n ? Symbol.for("react.element") : 60103,
     q = n ? Symbol.for("react.portal") : 60106,
@@ -1491,7 +1369,7 @@ var X = {
 module.exports = Z.default || Z;
 
 /***/ }),
-/* 20 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1510,8 +1388,8 @@ module.exports = Z.default || Z;
 
 
 var aa = __webpack_require__(0),
-    m = __webpack_require__(6),
-    q = __webpack_require__(21);
+    m = __webpack_require__(4),
+    q = __webpack_require__(19);
 
 function t(a) {
   for (var b = a.message, c = "https://reactjs.org/docs/error-decoder.html?invariant=" + b, d = 1; d < arguments.length; d++) c += "&args[]=" + encodeURIComponent(arguments[d]);
@@ -8218,18 +8096,18 @@ var Oj = {
 module.exports = Pj.default || Pj;
 
 /***/ }),
-/* 21 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 if (true) {
-  module.exports = __webpack_require__(22);
+  module.exports = __webpack_require__(20);
 } else {}
 
 /***/ }),
-/* 22 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8689,304 +8567,7 @@ exports.unstable_getFirstCallbackNode = function () {
 };
 
 /***/ }),
-/* 23 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var alphabet = __webpack_require__(3);
-
-var build = __webpack_require__(25);
-
-var isValid = __webpack_require__(29); // if you are using cluster or multiple servers use this to make each instance
-// has a unique value for worker
-// Note: I don't know if this is automatically set when using third
-// party cluster solutions such as pm2.
-
-
-var clusterWorkerId = __webpack_require__(30) || 0;
-/**
- * Set the seed.
- * Highly recommended if you don't want people to try to figure out your id schema.
- * exposed as shortid.seed(int)
- * @param seed Integer value to seed the random alphabet.  ALWAYS USE THE SAME SEED or you might get overlaps.
- */
-
-function seed(seedValue) {
-  alphabet.seed(seedValue);
-  return module.exports;
-}
-/**
- * Set the cluster worker or machine id
- * exposed as shortid.worker(int)
- * @param workerId worker must be positive integer.  Number less than 16 is recommended.
- * returns shortid module so it can be chained.
- */
-
-
-function worker(workerId) {
-  clusterWorkerId = workerId;
-  return module.exports;
-}
-/**
- *
- * sets new characters to use in the alphabet
- * returns the shuffled alphabet
- */
-
-
-function characters(newCharacters) {
-  if (newCharacters !== undefined) {
-    alphabet.characters(newCharacters);
-  }
-
-  return alphabet.shuffled();
-}
-/**
- * Generate unique id
- * Returns string id
- */
-
-
-function generate() {
-  return build(clusterWorkerId);
-} // Export all other functions as properties of the generate function
-
-
-module.exports = generate;
-module.exports.generate = generate;
-module.exports.seed = seed;
-module.exports.worker = worker;
-module.exports.characters = characters;
-module.exports.isValid = isValid;
-
-/***/ }),
-/* 24 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
- // Found this seed-based random generator somewhere
-// Based on The Central Randomizer 1.3 (C) 1997 by Paul Houle (houle@msc.cornell.edu)
-
-var seed = 1;
-/**
- * return a random number based on a seed
- * @param seed
- * @returns {number}
- */
-
-function getNextValue() {
-  seed = (seed * 9301 + 49297) % 233280;
-  return seed / 233280.0;
-}
-
-function setSeed(_seed_) {
-  seed = _seed_;
-}
-
-module.exports = {
-  nextValue: getNextValue,
-  seed: setSeed
-};
-
-/***/ }),
-/* 25 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var generate = __webpack_require__(26);
-
-var alphabet = __webpack_require__(3); // Ignore all milliseconds before a certain time to reduce the size of the date entropy without sacrificing uniqueness.
-// This number should be updated every year or so to keep the generated id short.
-// To regenerate `new Date() - 0` and bump the version. Always bump the version!
-
-
-var REDUCE_TIME = 1459707606518; // don't change unless we change the algos or REDUCE_TIME
-// must be an integer and less than 16
-
-var version = 6; // Counter is used when shortid is called multiple times in one second.
-
-var counter; // Remember the last time shortid was called in case counter is needed.
-
-var previousSeconds;
-/**
- * Generate unique id
- * Returns string id
- */
-
-function build(clusterWorkerId) {
-  var str = '';
-  var seconds = Math.floor((Date.now() - REDUCE_TIME) * 0.001);
-
-  if (seconds === previousSeconds) {
-    counter++;
-  } else {
-    counter = 0;
-    previousSeconds = seconds;
-  }
-
-  str = str + generate(version);
-  str = str + generate(clusterWorkerId);
-
-  if (counter > 0) {
-    str = str + generate(counter);
-  }
-
-  str = str + generate(seconds);
-  return str;
-}
-
-module.exports = build;
-
-/***/ }),
-/* 26 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var alphabet = __webpack_require__(3);
-
-var random = __webpack_require__(27);
-
-var format = __webpack_require__(28);
-
-function generate(number) {
-  var loopCounter = 0;
-  var done;
-  var str = '';
-
-  while (!done) {
-    str = str + format(random, alphabet.get(), 1);
-    done = number < Math.pow(16, loopCounter + 1);
-    loopCounter++;
-  }
-
-  return str;
-}
-
-module.exports = generate;
-
-/***/ }),
-/* 27 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var crypto = typeof window === 'object' && (window.crypto || window.msCrypto); // IE 11 uses window.msCrypto
-
-var randomByte;
-
-if (!crypto || !crypto.getRandomValues) {
-  randomByte = function (size) {
-    var bytes = [];
-
-    for (var i = 0; i < size; i++) {
-      bytes.push(Math.floor(Math.random() * 256));
-    }
-
-    return bytes;
-  };
-} else {
-  randomByte = function (size) {
-    return crypto.getRandomValues(new Uint8Array(size));
-  };
-}
-
-module.exports = randomByte;
-
-/***/ }),
-/* 28 */
-/***/ (function(module, exports) {
-
-/**
- * Secure random string generator with custom alphabet.
- *
- * Alphabet must contain 256 symbols or less. Otherwise, the generator
- * will not be secure.
- *
- * @param {generator} random The random bytes generator.
- * @param {string} alphabet Symbols to be used in new random string.
- * @param {size} size The number of symbols in new random string.
- *
- * @return {string} Random string.
- *
- * @example
- * const format = require('nanoid/format')
- *
- * function random (size) {
- *   const result = []
- *   for (let i = 0; i < size; i++) {
- *     result.push(randomByte())
- *   }
- *   return result
- * }
- *
- * format(random, "abcdef", 5) //=> "fbaef"
- *
- * @name format
- * @function
- */
-module.exports = function (random, alphabet, size) {
-  var mask = (2 << Math.log(alphabet.length - 1) / Math.LN2) - 1;
-  var step = Math.ceil(1.6 * mask * size / alphabet.length);
-  size = +size;
-  var id = '';
-
-  while (true) {
-    var bytes = random(step);
-
-    for (var i = 0; i < step; i++) {
-      var byte = bytes[i] & mask;
-
-      if (alphabet[byte]) {
-        id += alphabet[byte];
-        if (id.length === size) return id;
-      }
-    }
-  }
-};
-/**
- * @callback generator
- * @param {number} bytes The number of bytes to generate.
- * @return {number[]} Random bytes.
- */
-
-/***/ }),
-/* 29 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var alphabet = __webpack_require__(3);
-
-function isShortId(id) {
-  if (!id || typeof id !== 'string' || id.length < 6) {
-    return false;
-  }
-
-  var nonAlphabetic = new RegExp('[^' + alphabet.get().replace(/[|\\{}()[\]^$+*?.-]/g, '\\$&') + ']');
-  return !nonAlphabetic.test(id);
-}
-
-module.exports = isShortId;
-
-/***/ }),
-/* 30 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = 0;
-
-/***/ }),
-/* 31 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8998,7 +8579,7 @@ module.exports = 0;
  */
 
 
-var ReactPropTypesSecret = __webpack_require__(32);
+var ReactPropTypesSecret = __webpack_require__(22);
 
 function emptyFunction() {}
 
@@ -9055,7 +8636,7 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 32 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9071,34 +8652,34 @@ var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 module.exports = ReactPropTypesSecret;
 
 /***/ }),
-/* 33 */
+/* 23 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
 // EXTERNAL MODULE: ./node_modules/normalize.css/normalize.css
-var normalize = __webpack_require__(12);
+var normalize = __webpack_require__(10);
 
 // EXTERNAL MODULE: ./static/sass/style.sass
-var style = __webpack_require__(15);
+var style = __webpack_require__(13);
 
 // EXTERNAL MODULE: ./static/js/main.js
-var main = __webpack_require__(17);
+var main = __webpack_require__(15);
 
 // EXTERNAL MODULE: ./static/js/files.js
-var files = __webpack_require__(18);
+var files = __webpack_require__(16);
 
 // EXTERNAL MODULE: ./node_modules/react/index.js
 var react = __webpack_require__(0);
 var react_default = /*#__PURE__*/__webpack_require__.n(react);
 
 // EXTERNAL MODULE: ./node_modules/react-dom/index.js
-var react_dom = __webpack_require__(7);
+var react_dom = __webpack_require__(5);
 var react_dom_default = /*#__PURE__*/__webpack_require__.n(react_dom);
 
 // EXTERNAL MODULE: ./node_modules/warning/warning.js
-var warning = __webpack_require__(4);
+var warning = __webpack_require__(2);
 var warning_default = /*#__PURE__*/__webpack_require__.n(warning);
 
 // EXTERNAL MODULE: ./node_modules/prop-types/index.js
@@ -10163,7 +9744,7 @@ function createMemoryHistory(props) {
 
 
 // EXTERNAL MODULE: ./node_modules/invariant/browser.js
-var browser = __webpack_require__(11);
+var browser = __webpack_require__(9);
 var browser_default = /*#__PURE__*/__webpack_require__.n(browser);
 
 // CONCATENATED MODULE: ./node_modules/react-router/es/Router.js
@@ -10382,10 +9963,6 @@ BrowserRouter_BrowserRouter.propTypes = {
   children: prop_types_default.a.node
 };
 /* harmony default export */ var es_BrowserRouter = (BrowserRouter_BrowserRouter);
-// EXTERNAL MODULE: ./node_modules/shortid/index.js
-var shortid = __webpack_require__(2);
-var shortid_default = /*#__PURE__*/__webpack_require__.n(shortid);
-
 // CONCATENATED MODULE: ./static/components/sections/grid/Item.jsx
 function Item_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { Item_typeof = function _typeof(obj) { return typeof obj; }; } else { Item_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return Item_typeof(obj); }
 
@@ -10406,7 +9983,6 @@ function Item_inherits(subClass, superClass) { if (typeof superClass !== "functi
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 
 
 
@@ -10491,7 +10067,6 @@ function List_inherits(subClass, superClass) { if (typeof superClass !== "functi
 function List_setPrototypeOf(o, p) { List_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return List_setPrototypeOf(o, p); }
 
 function List_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 
 
 
@@ -10581,22 +10156,21 @@ function Details(props) {
   }) : null));
 }
 // EXTERNAL MODULE: ./static/json/works.json
-var works = __webpack_require__(8);
+var works = __webpack_require__(6);
 
 // EXTERNAL MODULE: ./static/json/skills.json
-var skills = __webpack_require__(9);
+var skills = __webpack_require__(7);
 
 // EXTERNAL MODULE: ./static/json/about.json
-var about = __webpack_require__(10);
+var about = __webpack_require__(8);
 
 // CONCATENATED MODULE: ./static/components/sections/About.jsx
-
 
 
 function About() {
   return react_default.a.createElement(react_default.a.Fragment, null, about.map(function (item, index) {
     return react_default.a.createElement("div", {
-      key: shortid_default.a.generate(),
+      key: index,
       className: "about__item".concat(index % 2 ? '' : ' about__revers')
     }, react_default.a.createElement("div", {
       className: "about__left"
@@ -10658,7 +10232,6 @@ function App_inherits(subClass, superClass) { if (typeof superClass !== "functio
 function App_setPrototypeOf(o, p) { App_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return App_setPrototypeOf(o, p); }
 
 function App_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 
  //----grid----
 
@@ -10731,10 +10304,10 @@ function (_React$Component) {
         className: "menu"
       }, react_default.a.createElement("ul", {
         className: "menu__list"
-      }, this.props.menu.map(function (item) {
+      }, this.props.menu.map(function (item, index) {
         return react_default.a.createElement("li", {
           /*onClick={(e) => this.goTo(e, item.name)}*/
-          key: shortid_default.a.generate(),
+          key: index,
           className: "menu__item"
         }, react_default.a.createElement("a", {
           className: "menu__item_link",

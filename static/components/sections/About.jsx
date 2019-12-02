@@ -1,5 +1,4 @@
 import React from 'react'
-import shortid from 'shortid'
 
 import contentItems from '../../json/about.json'
 
@@ -7,7 +6,7 @@ export default function About () {
     return (
         <React.Fragment>
             {contentItems.map((item, index) => (
-                <div key={shortid.generate()} className={`about__item${index%2 ? '' : ' about__revers'}`}>
+                <div key={index} className={`about__item${index%2 ? '' : ' about__revers'}`}>
                     <div className="about__left">
                         { index%2 ? <Description title={item.title} description={item.description} /> : <Year year={item.year} /> }
                     </div>

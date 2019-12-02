@@ -1,5 +1,4 @@
 import React from 'react'
-import shortid from 'shortid'
 
 //----grid----
 import List from './sections/grid/List.jsx'
@@ -46,8 +45,8 @@ export default class App extends React.Component {
                         </div>
                         <nav className="menu">
                             <ul className="menu__list">
-                                {this.props.menu.map(item => (
-                                    <li /*onClick={(e) => this.goTo(e, item.name)}*/ key={shortid.generate()} className="menu__item">
+                                {this.props.menu.map((item, index) => (
+                                    <li /*onClick={(e) => this.goTo(e, item.name)}*/ key={index} className="menu__item">
                                         <a className="menu__item_link" href={`#${item.name}`}>{item.text}</a>
                                     </li>
                                 ))}
