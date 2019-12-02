@@ -843,19 +843,19 @@ if (true) {
 /* 8 */
 /***/ (function(module) {
 
-module.exports = JSON.parse("[{\"title\":\"github.com/Grimmino\",\"description\":\"Мой GitHub где хранятся мои наработки и примеры кода.\",\"img\":\"1231231\",\"link\":\"https://github.com/Grimmino?tab=repositories\",\"content\":[{\"aboutWork\":\"github.com/Grimmino\"}]},{\"title\":\"vk174\",\"description\":\"Сайт типографии в Челябинске\",\"img\":\"1231231\",\"content\":[{\"aboutWork\":\"qweqweqweqeqwe\"}]},{\"title\":\"03chel\",\"description\":\"Сайт станции скорой помощи в Челябинске\",\"img\":\"1231231\",\"content\":[{\"aboutWork\":\"особенность сайта. Наличие версии для слабовидящих\"}]}]");
+module.exports = JSON.parse("[{\"title\":\"github.com/Grimmino\",\"description\":\"Мой GitHub где хранятся мои наработки и примеры кода.\",\"img\":\"1231231\",\"link\":\"https://github.com/Grimmino?tab=repositories\",\"content\":[{\"paragraph\":\"github.com/Grimmino\"}]},{\"title\":\"vk174\",\"description\":\"Сайт типографии в Челябинске\",\"img\":\"1231231\",\"content\":[{\"paragraph\":\"qweqweqweqeqwe\"}]},{\"title\":\"03chel\",\"description\":\"Сайт станции скорой помощи в Челябинске\",\"img\":\"1231231\",\"content\":[{\"paragraph\":\"особенность сайта. Наличие версии для слабовидящих\"}]}]");
 
 /***/ }),
 /* 9 */
 /***/ (function(module) {
 
-module.exports = JSON.parse("[{\"title\":\"html\",\"level\":88},{\"title\":\"css\",\"level\":95},{\"title\":\"js\",\"level\":76},{\"title\":\"react\",\"level\":60},{\"title\":\"seo\",\"level\":40},{\"title\":\"qweqw\",\"level\":5}]");
+module.exports = JSON.parse("[{\"title\":\"html\",\"level\":88,\"content\":[{\"paragraph\":\"Понимаю принципы cемантической верстки\"},{\"paragraph\":\"тег HEAD\"},{\"paragraph\":\"SEO оптимизация\"},{\"paragraph\":\"тег IMG,SVG\"}]},{\"title\":\"css\",\"level\":95,\"content\":[{\"paragraph\":\"Разбираюсь во flexbox. Правильно использую позиционирование элементов, шрифты, кнопки, ссылки, формы и элементы форм (input, textarea и тд). Использую анимации и трансформации элементов, так же медиа запросы и mobilefirst верстку.\"},{\"paragraph\":\"Знаю препроцессоры (использую SASS) - использование переменных, миксинов, функции. Разделение кода\"}]},{\"title\":\"js\",\"level\":76},{\"title\":\"react\",\"level\":60}]");
 
 /***/ }),
 /* 10 */
 /***/ (function(module) {
 
-module.exports = JSON.parse("[{\"title\":\"Redsolution\",\"description\":\"Fronted разработчки. Верстка сайтов\",\"year\":\"октябрь 2018г. - июль 2019г.\"},{\"title\":\"Фриланс, удаленная работа\",\"description\":\"Fronted разработчки. Верстка сайтов\",\"year\":\"апрель 2017г. - октябрь 2018г.\"},{\"title\":\"Golden dragon\",\"description\":\"Fronted разработчки. Верстка сайтов\",\"year\":\"декабрь 2013г. - апрель 2017г.\"}]");
+module.exports = JSON.parse("[{\"title\":\"Сейчас\",\"description\":[{\"paragraph\":\"Fronted разработчки. React\"},{\"paragraph\":\"активное изучаение React\"}],\"year\":\"2019г\"},{\"title\":\"Redsolution\",\"description\":[{\"paragraph\":\"Fronted разработчки. Верстка сайтов\"},{\"paragraph\":\"Fronted разработчки. Верстка сайтов\"}],\"year\":\"октябрь 2018г. - 2019г.\"},{\"title\":\"Фриланс, удаленная работа\",\"description\":[{\"paragraph\":\"Fronted разработчки. Верстка сайтов. Удаленная работа. Углубленное изучение\"},{\"paragraph\":\"Работал с другом на удаленной основе (он делад Backend я Frontend). Понял что знаний не достаточно и начал углубленно изучать Frontend.\"},{\"paragraph\":\"Начал изучать нативный JS, препроцессоры css (SASS/LESS по итогу остановился на SASS). Открыл для себя БЭМ методологию\"}],\"year\":\"апрель 2015г. - октябрь 2018г.\"},{\"title\":\"агенство Golden dragon\",\"description\":[{\"paragraph\":\"Верстка сайтов. Начало карьеры\"},{\"paragraph\":\"Занимался версткой, чаще лендингов, но иногда и попадались более серьезные заказы. Начало карьеры, осваивал азы HTML/CSS иногда приходилось использовать js, но обычно это был JQuery\"}],\"year\":\"декабрь 2013г. - апрель 2015г.\"}]");
 
 /***/ }),
 /* 11 */
@@ -10550,7 +10550,7 @@ function (_React$Component) {
           index: index,
           showDetailsWork: _this2.showDetailsWork
         });
-      })), this.state.isShowDetails || react_default.a.createElement(List_Details, {
+      })), this.state.isShowDetails || react_default.a.createElement(Details, {
         item: this.state.item,
         close: this.closeDetails
       }));
@@ -10562,35 +10562,24 @@ function (_React$Component) {
 
 
 
-var List_Details =
-/*#__PURE__*/
-function (_List) {
-  List_inherits(Details, _List);
-
-  function Details() {
-    List_classCallCheck(this, Details);
-
-    return List_possibleConstructorReturn(this, List_getPrototypeOf(Details).apply(this, arguments));
-  }
-
-  List_createClass(Details, [{
-    key: "render",
-    value: function render() {
-      return react_default.a.createElement("div", {
-        className: "details"
-      }, react_default.a.createElement("div", {
-        className: "details__top"
-      }, react_default.a.createElement("div", {
-        className: "details__title"
-      }, this.props.item.title), react_default.a.createElement("div", {
-        onClick: this.props.close,
-        className: "details__close"
-      })));
-    }
-  }]);
-
-  return Details;
-}(List_List);
+function Details(props) {
+  return react_default.a.createElement("div", {
+    className: "details"
+  }, react_default.a.createElement("div", {
+    className: "details__header"
+  }, react_default.a.createElement("div", {
+    className: "details__title"
+  }, props.item.title), react_default.a.createElement("div", {
+    onClick: props.close,
+    className: "details__close"
+  })), react_default.a.createElement("div", {
+    className: "details__content"
+  }, props.item.content ? props.item.content.map(function (item, index) {
+    return react_default.a.createElement("p", {
+      key: index
+    }, item.paragraph);
+  }) : null));
+}
 // EXTERNAL MODULE: ./static/json/works.json
 var works = __webpack_require__(8);
 
@@ -10601,121 +10590,54 @@ var skills = __webpack_require__(9);
 var about = __webpack_require__(10);
 
 // CONCATENATED MODULE: ./static/components/sections/About.jsx
-function About_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { About_typeof = function _typeof(obj) { return typeof obj; }; } else { About_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return About_typeof(obj); }
-
-function About_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function About_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function About_createClass(Constructor, protoProps, staticProps) { if (protoProps) About_defineProperties(Constructor.prototype, protoProps); if (staticProps) About_defineProperties(Constructor, staticProps); return Constructor; }
-
-function About_possibleConstructorReturn(self, call) { if (call && (About_typeof(call) === "object" || typeof call === "function")) { return call; } return About_assertThisInitialized(self); }
-
-function About_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function About_getPrototypeOf(o) { About_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return About_getPrototypeOf(o); }
-
-function About_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) About_setPrototypeOf(subClass, superClass); }
-
-function About_setPrototypeOf(o, p) { About_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return About_setPrototypeOf(o, p); }
 
 
 
+function About() {
+  return react_default.a.createElement(react_default.a.Fragment, null, about.map(function (item, index) {
+    return react_default.a.createElement("div", {
+      key: shortid_default.a.generate(),
+      className: "about__item".concat(index % 2 ? '' : ' about__revers')
+    }, react_default.a.createElement("div", {
+      className: "about__left"
+    }, index % 2 ? react_default.a.createElement(Description, {
+      title: item.title,
+      description: item.description
+    }) : react_default.a.createElement(Year, {
+      year: item.year
+    })), react_default.a.createElement("div", {
+      className: "about__right"
+    }, index % 2 ? react_default.a.createElement(Year, {
+      year: item.year
+    }) : react_default.a.createElement(Description, {
+      title: item.title,
+      description: item.description
+    })));
+  }));
+}
 
+function Year(props) {
+  return react_default.a.createElement("div", {
+    className: "about__year"
+  }, react_default.a.createElement("div", {
+    className: "about__year_number"
+  }, props.year), react_default.a.createElement("div", {
+    className: "icon about__year_icon"
+  }));
+}
 
-var About_About =
-/*#__PURE__*/
-function (_React$Component) {
-  About_inherits(About, _React$Component);
-
-  function About() {
-    About_classCallCheck(this, About);
-
-    return About_possibleConstructorReturn(this, About_getPrototypeOf(About).apply(this, arguments));
-  }
-
-  About_createClass(About, [{
-    key: "render",
-    value: function render() {
-      return react_default.a.createElement(react_default.a.Fragment, null, about.map(function (item, index) {
-        return react_default.a.createElement("div", {
-          key: shortid_default.a.generate(),
-          className: "about__item".concat(index % 2 ? '' : ' about__revers')
-        }, react_default.a.createElement("div", {
-          className: "about__left"
-        }, index % 2 ? react_default.a.createElement(About_Description, {
-          title: item.title,
-          description: item.description
-        }) : react_default.a.createElement(About_Year, {
-          year: item.year
-        })), react_default.a.createElement("div", {
-          className: "about__right"
-        }, index % 2 ? react_default.a.createElement(About_Year, {
-          year: item.year
-        }) : react_default.a.createElement(About_Description, {
-          title: item.title,
-          description: item.description
-        })));
-      }));
-    }
-  }]);
-
-  return About;
-}(react_default.a.Component);
-
-
-
-var About_Year =
-/*#__PURE__*/
-function (_About) {
-  About_inherits(Year, _About);
-
-  function Year() {
-    About_classCallCheck(this, Year);
-
-    return About_possibleConstructorReturn(this, About_getPrototypeOf(Year).apply(this, arguments));
-  }
-
-  About_createClass(Year, [{
-    key: "render",
-    value: function render() {
-      return react_default.a.createElement("div", {
-        className: "about__year"
-      }, react_default.a.createElement("div", {
-        className: "about__year_number"
-      }, this.props.year), react_default.a.createElement("div", {
-        className: "icon about__year_icon"
-      }));
-    }
-  }]);
-
-  return Year;
-}(About_About);
-
-var About_Description =
-/*#__PURE__*/
-function (_About2) {
-  About_inherits(Description, _About2);
-
-  function Description() {
-    About_classCallCheck(this, Description);
-
-    return About_possibleConstructorReturn(this, About_getPrototypeOf(Description).apply(this, arguments));
-  }
-
-  About_createClass(Description, [{
-    key: "render",
-    value: function render() {
-      return react_default.a.createElement("div", {
-        className: "about__description"
-      }, react_default.a.createElement("div", {
-        className: "about__description_content"
-      }, react_default.a.createElement("h3", null, this.props.title), react_default.a.createElement("p", null, this.props.description)));
-    }
-  }]);
-
-  return Description;
-}(About_About);
+function Description(props) {
+  return react_default.a.createElement("div", {
+    className: "about__description"
+  }, react_default.a.createElement("div", {
+    className: "about__description_content"
+  }, react_default.a.createElement("h3", null, props.title), react_default.a.createElement("div", null, props.description.map(function (item, index) {
+    return react_default.a.createElement("p", {
+      key: index,
+      className: index == 0 ? 'about__description_tags' : ''
+    }, item.paragraph);
+  }))));
+}
 // CONCATENATED MODULE: ./static/components/App.jsx
 function App_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { App_typeof = function _typeof(obj) { return typeof obj; }; } else { App_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return App_typeof(obj); }
 
@@ -10796,8 +10718,6 @@ function (_React$Component) {
   App_createClass(App, [{
     key: "render",
     value: function render() {
-      var _this2 = this;
-
       return react_default.a.createElement(react_default.a.Fragment, null, react_default.a.createElement("header", {
         className: "header"
       }, react_default.a.createElement("div", {
@@ -10813,9 +10733,7 @@ function (_React$Component) {
         className: "menu__list"
       }, this.props.menu.map(function (item) {
         return react_default.a.createElement("li", {
-          onClick: function onClick(e) {
-            return _this2.goTo(e, item.name);
-          },
+          /*onClick={(e) => this.goTo(e, item.name)}*/
           key: shortid_default.a.generate(),
           className: "menu__item"
         }, react_default.a.createElement("a", {
@@ -10832,11 +10750,12 @@ function (_React$Component) {
         className: "header__content_description"
       }, react_default.a.createElement("p", {
         className: "alarm"
-      }, "\u0421\u0430\u0439\u0442 \u043D\u0430\u0445\u043E\u0434\u0438\u0442\u0441\u044F \u0432 \u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044F \u043D\u0430\u0445\u043E\u0434\u044F\u0449\u0430\u044F\u0441\u044F \u0437\u0434\u0435\u0441\u044C, \u043F\u043E\u043A\u0430 \u0447\u0442\u043E \u043D\u0435 \u0432\u0435\u0440\u043D\u0430\u044F"), react_default.a.createElement("p", null, "\u0417\u0430\u043D\u0438\u043C\u0430\u044E\u0441\u044C \u0444\u0440\u043E\u043D\u0442\u0435\u043D\u0434 \u0447\u0430\u0441\u0442\u044C\u044E \u0432 \u0432\u0435\u0431 \u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0435. \u042D\u0442\u043E\u0442 \u0441\u0430\u0439\u0442 \u0434\u0435\u043C\u043E\u043D\u0441\u0442\u0440\u0438\u0440\u0443\u0435\u0442 \u043C\u043E\u0438 \u043A\u043B\u044E\u0447\u0435\u0432\u044B\u0435 \u043D\u0430\u0432\u044B\u043A\u0438 \u0432 \u0432\u0435\u0440\u0441\u0442\u043A\u0435 (HTML/CSS) \u0438 \u0437\u043D\u0430\u043D\u0438\u0435 \u043E\u0441\u043D\u043E\u0432 react \u0444\u0440\u0435\u0438\u043C\u0432\u043E\u0440\u043A\u0430."), react_default.a.createElement("p", null, "\u041D\u0430 \u0441\u0430\u0439\u0442\u0435 \u043F\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u043B\u0435\u043D\u043D\u0430 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044F \u043E\u0431\u043E \u043C\u043D\u0435 \u0447\u0435\u043C \u044F \u0437\u0430\u043D\u0438\u043C\u0430\u043B\u0441\u044F, \u043C\u043E\u0438 \u043D\u0430\u0432\u044B\u043A\u0438 \u0438 \u0437\u043D\u0430\u043D\u0438\u044F, \u0430 \u0442\u0430\u043A \u0436\u0435 \u043F\u0440\u0438\u043C\u0435\u0440\u044B \u043D\u0435\u043A\u043E\u0442\u043E\u0440\u044B\u0445 \u043C\u043E\u0438\u0445 \u0440\u0430\u0431\u043E\u0442."), react_default.a.createElement("a", {
+      }, "\u0421\u0430\u0439\u0442 \u043D\u0430\u0445\u043E\u0434\u0438\u0442\u0441\u044F \u0432 \u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0435, \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044F \u043D\u0430\u0445\u043E\u0434\u044F\u0449\u0430\u044F\u0441\u044F \u0437\u0434\u0435\u0441\u044C \u043F\u043E\u043A\u0430 \u0447\u0442\u043E \u043D\u0435 \u0432\u0435\u0440\u043D\u0430\u044F"), react_default.a.createElement("p", null, "\u0417\u0430\u043D\u0438\u043C\u0430\u044E\u0441\u044C \u0444\u0440\u043E\u043D\u0442\u0435\u043D\u0434 \u0447\u0430\u0441\u0442\u044C\u044E \u0432 \u0432\u0435\u0431 \u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0435. \u042D\u0442\u043E\u0442 \u0441\u0430\u0439\u0442 \u0434\u0435\u043C\u043E\u043D\u0441\u0442\u0440\u0438\u0440\u0443\u0435\u0442 \u043C\u043E\u0438 \u043A\u043B\u044E\u0447\u0435\u0432\u044B\u0435 \u043D\u0430\u0432\u044B\u043A\u0438 \u0432\u043E \u0444\u0440\u043E\u043D\u0442\u0435\u043D\u0434\u0435, \u0432\u0435\u0440\u0441\u0442\u043A\u0435 (HTML/CSS), \u0430 \u0442\u0430\u043A \u0436\u0435 \u0437\u043D\u0430\u043D\u0438\u0435 react."), react_default.a.createElement("p", null, "\u041D\u0430 \u0441\u0430\u0439\u0442\u0435 \u043F\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u043B\u0435\u043D\u043D\u0430 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044F \u043E\u0431\u043E \u043C\u043D\u0435 \u0447\u0435\u043C \u044F \u0437\u0430\u043D\u0438\u043C\u0430\u043B\u0441\u044F, \u043C\u043E\u0438 \u043D\u0430\u0432\u044B\u043A\u0438 \u0438 \u0437\u043D\u0430\u043D\u0438\u044F, \u0430 \u0442\u0430\u043A \u0436\u0435 \u043F\u0440\u0438\u043C\u0435\u0440\u044B \u043D\u0435\u043A\u043E\u0442\u043E\u0440\u044B\u0445 \u043C\u043E\u0438\u0445 \u0440\u0430\u0431\u043E\u0442."), react_default.a.createElement("p", null, "\u0422\u0430\u043A \u0436\u0435 \u0441\u0430\u043C \u0441\u0430\u0439\u0442 \u043F\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u043B\u0435\u043D \u043A\u0430\u043A \u043F\u0440\u0438\u043C\u0435\u0440  \u0438 \u0435\u0433\u043E \u043A\u043E\u0434 \u043C\u043E\u0436\u043D\u043E \u043F\u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C \u043D\u0430 GitHub"), react_default.a.createElement("a", {
         className: "btn btn__link",
         href: "https://github.com/Grimmino/mysite"
-      }, "\u0420\u0435\u043F\u043E\u0437\u0438\u0442\u043E\u0440\u0438\u0439 \u0441\u0430\u0439\u0442\u0430"))))), this.props.menu.map(function (section, index) {
+      }, "GitHub \u0440\u0435\u043F\u043E\u0437\u0438\u0442\u043E\u0440\u0438\u0439 \u0441\u0430\u0439\u0442\u0430"))))), this.props.menu.map(function (section, index) {
         return react_default.a.createElement("section", {
+          id: section.name,
           key: index,
           name: section.name,
           className: "module ".concat(section.name)
@@ -10857,7 +10776,7 @@ App_App.defaultProps = {
   menu: [{
     name: 'about',
     text: 'обо мне',
-    content: react_default.a.createElement(About_About, null)
+    content: react_default.a.createElement(About, null)
   }, {
     name: 'skills',
     text: 'мои навыки',

@@ -12,6 +12,7 @@ export default class Item extends React.Component {
         return (
             <React.Fragment>
                 <div className="grid__item">
+                    
                     <a onClick={(e) => this.getDetails(e, this.props.item)} href="#" className="card">
                         <div className="card__content">
                             <div className="card__title">{this.props.item.title}</div>

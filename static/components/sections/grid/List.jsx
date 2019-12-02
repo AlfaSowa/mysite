@@ -45,15 +45,21 @@ export default class List extends React.Component {
     }
 }
 
-class Details extends List {
-    render() {
-        return(
-            <div className="details">
-                <div className="details__top">
-                    <div className="details__title">{this.props.item.title}</div>
-                    <div onClick={this.props.close} className="details__close"></div>
-                </div>
+function Details (props) {
+    return(
+        <div className="details">
+            <div className="details__header">
+                <div className="details__title">{props.item.title}</div>
+                <div onClick={props.close} className="details__close"></div>
             </div>
-        )
-    }
+            <div className="details__content">
+                {props.item.content 
+                    ? props.item.content.map((item, index) => (
+                        <p key={index}>{item.paragraph}</p>
+                    ))
+                    : null
+                }
+            </div>
+        </div>
+    )
 }

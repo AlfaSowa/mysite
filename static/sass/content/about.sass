@@ -37,9 +37,10 @@
         transform-origin: 100% 50%
         border-radius: 20px 0 0 20px
         overflow: hidden
-        background: $main
+        background: $body
         &_content
             padding: 20px
+            background: $main
             h3
                 font-size: 1.7em
                 text-align: center
@@ -48,6 +49,10 @@
                 text-transform: uppercase
             p
                 font-size: 0.9em
+                &:not(:last-child)
+                    margin-bottom: 5px
+        &_tags
+            color: $font-add
     &__revers
         .about
             &__right

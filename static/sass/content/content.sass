@@ -11,8 +11,11 @@
     width: 900px
     padding: 20px
     z-index: 1000
-    &__top
+    color: $main
+    &__header
         display: flex
+        text-transform: uppercase
+        font-weight: 600
     &__title
         flex: 1
     &__close
@@ -20,3 +23,8 @@
         height: 20px
         background: red
         cursor: pointer
+    &__content
+        padding: 20px 0 0 0
+        p
+            &:not(:last-child)
+                margin-bottom: 4px
