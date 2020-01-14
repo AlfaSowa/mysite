@@ -10698,6 +10698,8 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
+var string = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~" + " ";
+var logoText = 'alfa-sowa';
 
 var Header_App =
 /*#__PURE__*/
@@ -10727,6 +10729,56 @@ function (_React$Component) {
       });
     });
 
+    _defineProperty(_assertThisInitialized(_this), "f1", function (i, x, temp, targetArray, stringArray) {
+      if (i < targetArray.length) {
+        setTimeout(function () {
+          _this.f1(i, x, temp, targetArray, stringArray);
+        }, .01);
+        var rdn = temp[Math.round(Math.floor(Math.random() * Math.floor(temp.length)))];
+
+        if (stringArray[i] != targetArray[i]) {
+          stringArray[i] = rdn;
+          var tempArray = temp.split('');
+          tempArray.splice(temp.indexOf(rdn), 1);
+          temp = tempArray.join('');
+        }
+
+        if (stringArray[i] == targetArray[i]) {
+          i++;
+          temp = string;
+        }
+
+        x = 0;
+
+        _this.f2(x, stringArray);
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "f2", function (x, stringArray) {
+      if (x < stringArray.length) {
+        setTimeout(function () {
+          _this.f2(x, stringArray);
+        }, 10);
+        _this.logoText.innerText = stringArray.join('');
+        x++;
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "rollerText", function (targetArray, stringArray) {
+      var i = 0;
+      var x = 0;
+      var temp = string;
+
+      _this.f1(i, x, temp, targetArray, stringArray);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "componentDidMount", function () {
+      var targetArray = logoText.split('');
+      var stringArray = new Array(targetArray.length).fill('');
+
+      _this.rollerText(targetArray, stringArray);
+    });
+
     return _this;
   }
 
@@ -10742,9 +10794,12 @@ function (_React$Component) {
       }, react_default.a.createElement("div", {
         className: "logo"
       }, react_default.a.createElement("a", {
+        ref: function ref(e) {
+          return _this2.logoText = e;
+        },
         className: "logo__link",
         href: "#"
-      }, "Portfolio")), react_default.a.createElement("nav", {
+      })), react_default.a.createElement("nav", {
         className: "menu ".concat(this.state.showMenu ? 'menu--active' : '')
       }, react_default.a.createElement("ul", {
         className: "menu__list"
