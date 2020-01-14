@@ -37,28 +37,68 @@ export default class List extends React.Component {
                     ))}
                 </div>
 
-                {this.state.isShowDetails || <Details item={this.state.item} close={this.closeDetails} />}
+                {this.state.isShowDetails || <Details detail={this.state.item} close={this.closeDetails} />}
             </React.Fragment>
 
         )
     }
 }
 
-function Details (props) {
-    return(
-        <div className="details">
-            <div className="details__header">
-                <div className="details__title">{props.item.title}</div>
-                <div onClick={props.close} className="details__close"></div>
+const html = document.querySelector("html")
+
+class Details extends React.Component {
+    
+    componentDidMount = () => {
+        html.classList.add("details--active")
+    }
+    
+    componentWillUnmount = () => {
+        html.classList.remove("details--active")
+    }
+
+    render() {
+        const { close, detail} = this.props
+        return(
+            <div className="details">
+                <div className="details__space">
+                    <div className="details__inner">
+                        <div className="details__header">
+                            <div className="details__title">{detail.title}</div>
+                            <div onClick={close} className="details__close"></div>
+                        </div>
+        
+                        <div className="details__content">
+                            {detail.content ? detail.content.map((item, index) => (
+                                <DetailsTxt key={index} item={item}/>
+                            )): null}
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div className="details__content">
-                {props.item.content 
-                    ? props.item.content.map((item, index) => (
-                        <p key={index}>{item.paragraph}</p>
-                    ))
+        )
+    }
+}
+
+class DetailsTxt extends React.Component {
+    state = {
+        showTxt: false
+    }
+
+    showTxt = () => {
+        this.setState({
+            showTxt: !this.state.showTxt
+        }) 
+    }
+
+    render(){
+        return(
+            <div className="details__item">
+                <span className={`details__item_toggler ${this.props.item.txt ? 'details__item_dropdown' : ''}`} onClick={this.showTxt}>{this.props.item.paragraph}</span>
+                {this.props.item.txt 
+                    ? <p className={`details__item_txt ${this.state.showTxt ? 'details__item_txt--active' : ''}`}>{this.props.item.txt}</p>
                     : null
                 }
             </div>
-        </div>
-    )
+        )
+    }
 }

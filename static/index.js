@@ -1,3 +1,4 @@
+import "regenerator-runtime/runtime";
 //sass
 import 'normalize.css'
 import './sass/style.sass'

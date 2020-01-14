@@ -2,7 +2,6 @@
     {
         "title": "github.com/Grimmino",
         "description": "Мой GitHub где хранятся мои наработки и примеры кода.",
-        "img": "1231231",
         "link": "https://github.com/Grimmino?tab=repositories",
         "content": [
             {
@@ -13,20 +12,10 @@
     {
         "title": "vk174",
         "description": "Сайт типографии в Челябинске",
-        "img": "1231231",
+        "link": "http://www.vk174.ru/",
         "content": [
             {
                 "paragraph": "qweqweqweqeqwe"
-            }
-        ]
-    },
-    {
-        "title": "03chel",
-        "description": "Сайт станции скорой помощи в Челябинске",
-        "img": "1231231",
-        "content": [
-            {
-                "paragraph": "особенность сайта. Наличие версии для слабовидящих"
             }
         ]
     }

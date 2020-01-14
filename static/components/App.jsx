@@ -1,92 +1,58 @@
 import React from 'react'
 
 //----grid----
+import Header from './header/Header.jsx'
 import List from './sections/grid/List.jsx'
 import works from '../json/works.json'
 import skills from '../json/skills.json'
 //----gridend----
 
 import About from './sections/About.jsx'
+import PageSpeed from './api/PageSpeed.jsx'
 
 export default class App extends React.Component { 
 
     state = {
-        activHeader: ''
+        sectionRef: [],
+        setSectionRef: (e) => {
+            this.state.sectionRef.push(e)
+        }
     }
+
     componentDidMount = () => {
-        window.addEventListener('scroll', () => {
-            let activeClass = window.scrollY > 200 ? activeClass = 'header__top--active' : ''
-            this.setState({activHeader: activeClass})
-            
-        })
-
-        let sections = document.querySelectorAll('section')
-
-        sections.forEach(elem => {
+        this.state.sectionRef.forEach(elem => {
             window.addEventListener('scroll', () => {
                 window.scrollY >= elem.offsetTop - 500 ? elem.classList.add('showsection')  : elem.classList.remove('showsection')
             })
         })
     }
 
-    goTo = (e, name) => {
-        e.preventDefault()
-        let destination = document.querySelector(`section[name=${name}]`).offsetTop - 100
-        console.log(destination)
-    }
-
     render() {
         return (
             <React.Fragment>
-                <header className="header">
-                    <div className={`header__top ${this.state.activHeader}`}>
-                        <div className="logo">
-                            <a className="logo__link" href="#">Portfolio</a>
-                        </div>
-                        <nav className="menu">
-                            <ul className="menu__list">
-                                {this.props.menu.map((item, index) => (
-                                    <li /*onClick={(e) => this.goTo(e, item.name)}*/ key={index} className="menu__item">
-                                        <a className="menu__item_link" href={`#${item.name}`}>{item.text}</a>
-                                    </li>
-                                ))}
-                            </ul>
-                        </nav>
-                    </div>
-                    <div className="header__bottom container">
-                        <div className="header__content">
-                            <div className="header__content_title">Привет, меня зовут Алексей.</div>
-                            <div className="header__content_description">
-                                <p className="alarm">Сайт находится в разработке, информация находящаяся здесь пока что не верная</p>
+                <Header menu={this.props.sections}/>
 
-                                <p>Занимаюсь фронтенд частью в веб разработке. Этот сайт демонстрирует мои ключевые навыки во фронтенде, верстке (HTML/CSS), а так же знание react.</p>
-
-                                <p>На сайте представленна информация обо мне чем я занимался, мои навыки и знания, а так же примеры некоторых моих работ.</p>
-
-                                <p>Так же сам сайт представлен как пример  и его код можно посмотреть на GitHub</p>
-                                <a className="btn btn__link" href="https://github.com/Grimmino/mysite">GitHub репозиторий сайта</a>
-                            </div>
-                        </div>
-                    </div>
-                </header>
+                <main>
+                    <article>
+                        {this.props.sections.map((section, index) => (
+                            <section ref={this.state.setSectionRef} id={section.name} key={index} name={section.name} className={`module ${section.name}`}>
+                                <h2 className="module__title">{section.text}</h2>
+                                <div className={`module__content ${section.name}__content ${section.name == 'skills' || section.name == 'works' ? 'container' : ''}`}>
+                                    {section.content}
+                                </div>
+                            </section>
+                        ))}
+                    </article>
+                </main>
     
-                {this.props.menu.map((section, index) => (
-                    <section id={section.name} key={index} name={section.name} className={`module ${section.name}`}>
-                        <h2 className="module__title">{section.text}</h2>
-                        <div className={`module__content ${section.name}__content ${section.name == 'skills' || section.name == 'works' ? 'container' : ''}`}>
-                            {section.content}
-                        </div>
-                    </section>
-                ))}
-
-                <footer>footer</footer>
+                <PageSpeed />
             </React.Fragment>
         )
     }
 }
 
 App.defaultProps = {
-    menu: [
+    sections: [
         {
             name: 'about', 
             text: 'обо мне',

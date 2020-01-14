@@ -1,0 +1,10 @@
+$breakpoint-mobile: 768
+
+@mixin mobile
+    @media only screen and  (max-width: #{$breakpoint-mobile}px)
+        @content
+
+@mixin desctop
+    @media only screen and (min-width: #{$breakpoint-mobile}px)
+        @content
+    

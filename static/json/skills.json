@@ -4,21 +4,24 @@
         "level": 88,
         "content": [
             {
-                "paragraph": "Понимаю принципы cемантической верстки"
+                "paragraph": "Понимаю принципы cемантической верстки",
+                "txt": "da dqw  deqwqdqw ddq wdwdqw"
             },
             {
                 "paragraph": "тег HEAD"
             },
             {
-                "paragraph": "SEO оптимизация"
+                "paragraph": "SEO оптимизация",
+                "txt": "da dqw  deqwqdqw ddq wdwdqw"
             },
             {
-                "paragraph": "тег IMG,SVG"
+                "paragraph": "тег IMG,SVG",
+                "txt": "da dqw  deqwqdqw ddq wdwdqw"
             }
         ]
     },
     {
-        "title": "css",
+        "title": "css (sass/scss)",
         "level": 95,
         "content": [
             {
@@ -30,11 +33,263 @@
         ]
     },
     {
-        "title": "js",
-        "level": 76
+        "title": "JavaScript",
+        "level": 76,
+        "content": [
+            {
+                "paragraph": "Типы данных, масссивы, циклы",
+                "txt": "da dqw  deqwqdqw ddq wdwdqw"
+            },
+            {
+                "paragraph": "Работа с DOM элементам, навешивание обработчиков событий, работа с формами",
+                "txt": "da dqw  deqwqdqw ddq wdwdqw"
+            },
+            {
+                "paragraph": "Сетевые запросы - fetch, отправка данных из формы, async/await, promises"
+            },
+            {
+                "paragraph": "Cookie, LocalStorage/SessionStorage"
+            },
+            {
+                "paragraph": "анимация"
+            },
+            {
+                "paragraph": "регулярные выражения"
+            }
+        ]
     },
     {
         "title": "react",
         "level": 60
+    },
+    {
+        "title": "REST API",
+        "level": 60,
+        "content": [
+            {
+                "paragraph": "Типы данных, масссивы, циклы",
+                "txt": "da dqw  deqwqdqw ddq wdwdqw"
+            },
+            {
+                "paragraph": "Работа с DOM элементам, навешивание обработчиков событий, работа с формами",
+                "txt": "da dqw  deqwqdqw ddq wdwdqw"
+            },
+            {
+                "paragraph": "Сетевые запросы - fetch, отправка данных из формы, async/await, promises"
+            },
+            {
+                "paragraph": "Cookie, LocalStorage/SessionStorage"
+            },
+            {
+                "paragraph": "анимация"
+            },
+            {
+                "paragraph": "Типы данных, масссивы, циклы",
+                "txt": "da dqw  deqwqdqw ddq wdwdqw"
+            },
+            {
+                "paragraph": "Работа с DOM элементам, навешивание обработчиков событий, работа с формами",
+                "txt": "da dqw  deqwqdqw ddq wdwdqw"
+            },
+            {
+                "paragraph": "Сетевые запросы - fetch, отправка данных из формы, async/await, promises"
+            },
+            {
+                "paragraph": "Cookie, LocalStorage/SessionStorage"
+            },
+            {
+                "paragraph": "анимация"
+            },
+            {
+                "paragraph": "Типы данных, масссивы, циклы",
+                "txt": "da dqw  deqwqdqw ddq wdwdqw"
+            },
+            {
+                "paragraph": "Работа с DOM элементам, навешивание обработчиков событий, работа с формами",
+                "txt": "da dqw  deqwqdqw ddq wdwdqw"
+            },
+            {
+                "paragraph": "Сетевые запросы - fetch, отправка данных из формы, async/await, promises"
+            },
+            {
+                "paragraph": "Cookie, LocalStorage/SessionStorage"
+            },
+            {
+                "paragraph": "анимация"
+            },
+            {
+                "paragraph": "Типы данных, масссивы, циклы",
+                "txt": "da dqw  deqwqdqw ddq wdwdqw"
+            },
+            {
+                "paragraph": "Работа с DOM элементам, навешивание обработчиков событий, работа с формами",
+                "txt": "da dqw  deqwqdqw ddq wdwdqw"
+            },
+            {
+                "paragraph": "Сетевые запросы - fetch, отправка данных из формы, async/await, promises"
+            },
+            {
+                "paragraph": "Cookie, LocalStorage/SessionStorage"
+            },
+            {
+                "paragraph": "анимация"
+            },
+            {
+                "paragraph": "Типы данных, масссивы, циклы",
+                "txt": "da dqw  deqwqdqw ddq wdwdqw"
+            },
+            {
+                "paragraph": "Работа с DOM элементам, навешивание обработчиков событий, работа с формами",
+                "txt": "da dqw  deqwqdqw ddq wdwdqw"
+            },
+            {
+                "paragraph": "Сетевые запросы - fetch, отправка данных из формы, async/await, promises"
+            },
+            {
+                "paragraph": "Cookie, LocalStorage/SessionStorage"
+            },
+            {
+                "paragraph": "анимация"
+            },
+            {
+                "paragraph": "Типы данных, масссивы, циклы",
+                "txt": "da dqw  deqwqdqw ddq wdwdqw"
+            },
+            {
+                "paragraph": "Работа с DOM элементам, навешивание обработчиков событий, работа с формами",
+                "txt": "da dqw  deqwqdqw ddq wdwdqw"
+            },
+            {
+                "paragraph": "Сетевые запросы - fetch, отправка данных из формы, async/await, promises"
+            },
+            {
+                "paragraph": "Cookie, LocalStorage/SessionStorage"
+            },
+            {
+                "paragraph": "анимация"
+            },
+            {
+                "paragraph": "Типы данных, масссивы, циклы",
+                "txt": "da dqw  deqwqdqw ddq wdwdqw"
+            },
+            {
+                "paragraph": "Работа с DOM элементам, навешивание обработчиков событий, работа с формами",
+                "txt": "da dqw  deqwqdqw ddq wdwdqw"
+            },
+            {
+                "paragraph": "Сетевые запросы - fetch, отправка данных из формы, async/await, promises"
+            },
+            {
+                "paragraph": "Cookie, LocalStorage/SessionStorage"
+            },
+            {
+                "paragraph": "анимация"
+            },
+            {
+                "paragraph": "Типы данных, масссивы, циклы",
+                "txt": "da dqw  deqwqdqw ddq wdwdqw"
+            },
+            {
+                "paragraph": "Работа с DOM элементам, навешивание обработчиков событий, работа с формами",
+                "txt": "da dqw  deqwqdqw ddq wdwdqw"
+            },
+            {
+                "paragraph": "Сетевые запросы - fetch, отправка данных из формы, async/await, promises"
+            },
+            {
+                "paragraph": "Cookie, LocalStorage/SessionStorage"
+            },
+            {
+                "paragraph": "анимация"
+            },
+            {
+                "paragraph": "Типы данных, масссивы, циклы",
+                "txt": "da dqw  deqwqdqw ddq wdwdqw"
+            },
+            {
+                "paragraph": "Работа с DOM элементам, навешивание обработчиков событий, работа с формами",
+                "txt": "da dqw  deqwqdqw ddq wdwdqw"
+            },
+            {
+                "paragraph": "Сетевые запросы - fetch, отправка данных из формы, async/await, promises"
+            },
+            {
+                "paragraph": "Cookie, LocalStorage/SessionStorage"
+            },
+            {
+                "paragraph": "анимация"
+            },
+            {
+                "paragraph": "Типы данных, масссивы, циклы",
+                "txt": "da dqw  deqwqdqw ddq wdwdqw"
+            },
+            {
+                "paragraph": "Работа с DOM элементам, навешивание обработчиков событий, работа с формами",
+                "txt": "da dqw  deqwqdqw ddq wdwdqw"
+            },
+            {
+                "paragraph": "Сетевые запросы - fetch, отправка данных из формы, async/await, promises"
+            },
+            {
+                "paragraph": "Cookie, LocalStorage/SessionStorage"
+            },
+            {
+                "paragraph": "анимация"
+            },
+            {
+                "paragraph": "Типы данных, масссивы, циклы",
+                "txt": "da dqw  deqwqdqw ddq wdwdqw"
+            },
+            {
+                "paragraph": "Работа с DOM элементам, навешивание обработчиков событий, работа с формами",
+                "txt": "da dqw  deqwqdqw ddq wdwdqw"
+            },
+            {
+                "paragraph": "Сетевые запросы - fetch, отправка данных из формы, async/await, promises"
+            },
+            {
+                "paragraph": "Cookie, LocalStorage/SessionStorage"
+            },
+            {
+                "paragraph": "анимация"
+            },
+            {
+                "paragraph": "Типы данных, масссивы, циклы",
+                "txt": "da dqw  deqwqdqw ddq wdwdqw"
+            },
+            {
+                "paragraph": "Работа с DOM элементам, навешивание обработчиков событий, работа с формами",
+                "txt": "da dqw  deqwqdqw ddq wdwdqw"
+            },
+            {
+                "paragraph": "Сетевые запросы - fetch, отправка данных из формы, async/await, promises"
+            },
+            {
+                "paragraph": "Cookie, LocalStorage/SessionStorage"
+            },
+            {
+                "paragraph": "анимация"
+            },
+            {
+                "paragraph": "Типы данных, масссивы, циклы",
+                "txt": "da dqw  deqwqdqw ddq wdwdqw"
+            },
+            {
+                "paragraph": "Работа с DOM элементам, навешивание обработчиков событий, работа с формами",
+                "txt": "da dqw  deqwqdqw ddq wdwdqw"
+            },
+            {
+                "paragraph": "Сетевые запросы - fetch, отправка данных из формы, async/await, promises"
+            },
+            {
+                "paragraph": "Cookie, LocalStorage/SessionStorage"
+            },
+            {
+                "paragraph": "анимация"
+            },
+            {
+                "paragraph": "регулярные выражения"
+            }
+        ]
     }
 ]
