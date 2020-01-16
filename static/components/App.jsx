@@ -1,7 +1,10 @@
 import React from 'react'
 
-//----grid----
 import Header from './header/Header.jsx'
+
+import Hero from './hero/Hero.jsx'
+
+//----grid----
 import List from './sections/grid/List.jsx'
 import works from '../json/works.json'
 import skills from '../json/skills.json'
@@ -32,7 +35,10 @@ export default class App extends React.Component {
             <React.Fragment>
                 <Header menu={this.props.sections}/>
 
+
                 <main>
+                    <Hero />
+                    
                     <article>
                         {this.props.sections.map((section, index) => (
                             <section ref={this.state.setSectionRef} id={section.name} key={index} name={section.name} className={`module ${section.name}`}>
@@ -44,8 +50,6 @@ export default class App extends React.Component {
                         ))}
                     </article>
                 </main>
-    
-                <PageSpeed />
             </React.Fragment>
         )
     }
@@ -60,12 +64,12 @@ App.defaultProps = {
         },
         {
             name: 'skills', 
-            text: 'мои навыки',
+            text: 'навыки',
             content: <List content={skills} />
         },
         {
             name: 'works', 
-            text: 'мои работы',
+            text: 'работы',
             content: <List content={works} catalog/>
         }
     ]

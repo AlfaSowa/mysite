@@ -6,12 +6,10 @@ export default function About () {
     return (
         <React.Fragment>
             {contentItems.map((item, index) => (
-                <div key={index} className={`about__item${index%2 ? '' : ' about__revers'}`}>
-                    <div className="about__left">
-                        { index%2 ? <Description title={item.title} description={item.description} /> : <Year year={item.year} /> }
-                    </div>
-                    <div className="about__right">
-                        { index%2 ? <Year year={item.year} /> : <Description title={item.title} description={item.description} /> }
+                <div key={index} className="about__row">
+                    <div className="about__row_item">
+                        <Year year={item.year} />
+                        <Description item={item} />
                     </div>
                 </div>
             ))}
@@ -21,23 +19,19 @@ export default function About () {
 
 function Year(props) {
     return (
-        <div className="about__year">
-            <div className="about__year_number">{props.year}</div>
-            <div className="icon about__year_icon"></div>
-        </div>
+        <div className="about__year">{props.year}</div>
     )
 }
 
 function Description(props) {
     return (
         <div className="about__description">
+            <h3 className="about__description_title">{props.item.title}</h3>
+            <span className="about__description_tags">{props.item.tags}</span>
             <div className="about__description_content">
-                <h3>{props.title}</h3>
-                <div>
-                    {props.description.map((item, index) => (
-                        <p key={index} className={index == 0 ? 'about__description_tags' : ''}>{item.paragraph}</p>
-                    ))}
-                </div>
+                {props.item.description.map((item, index) => (
+                    <p key={index}>{item.paragraph}</p>
+                ))}
             </div>
         </div>
     )

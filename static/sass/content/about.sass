@@ -1,88 +1,26 @@
 .about
     position: relative
-    transition: height .5s ease-in-out
-    height: max-content
-    &__space
-        padding-bottom: 120px
-    &__item
-        display: flex
+    &__row
+        padding: 10px
         &:not(:last-child)
-            .about
-                &__left,
-                &__right
-                    padding-bottom: 20px
-    &__left,
-    &__right
-        display: flex
-        align-items: center
-        flex: 1
-        transform-style: preserve-3d
-    &__left
-        justify-content: flex-end
+            margin-bottom: 24px
+
     &__year
-        font-size: 1.4em
-        display: flex
-        align-items: center
-        padding: 0 0 0 15px
-        &_icon
-            width: 10px
-            height: 10px
-            border-radius: 50%
-            margin: 0 10px 0 0
+        text-align: center
+        font-size: 1em
+
     &__description
-        text-align: right
-        max-width: 500px
-        padding: 0 40px 0 0
-        box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.4)
-        transform-origin: 100% 50%
-        border-radius: 20px 0 0 20px
-        overflow: hidden
-        background: $body
-        &_content
-            padding: 20px
-            background: $main
-            h3
-                font-size: 1.7em
-                text-align: center
-                font-weight: bold
-                margin-bottom: 10px
-                text-transform: uppercase
-            p
-                font-size: 0.9em
-                &:not(:last-child)
-                    margin-bottom: 5px
+        flex: 1
+        &_title
+            text-align: center
+            margin-bottom: 8px
+            font-size: 1.5rem
+            font-weight: bold
+            text-transform: uppercase
         &_tags
-            color: $font-add
-    &__revers
-        .about
-            &__right
-                justify-content: flex-start
-            &__year
-                justify-content: flex-end
-                padding: 0 15px 0 0
-            &__description
-                text-align: left
-                padding: 0 0 0 40px
-                transform-origin: 0 50%
-                border-radius: 0 20px 20px 0
-        .icon
-            margin: 0 0 0 10px
-    &__bottom
-        position: absolute
-        bottom: 0
-        width: 100%
-        display: flex
-        justify-content: center
-        padding-top: 10px
-        display: none
-        box-shadow: 0px -20px 16px 0px rgba(241,241,241,1)
-        &--show
-            display: flex
-    &__more
-        max-width: max-content
-        padding: 10px 20px
-        border-radius: 5px
-        cursor: pointer
-    @include  mobile
-        &__item
-            flex-direction: column
+            display: block
+            text-align: center
+            font-size: 0.9em
+            color: $color-details-basic
+        &_content
+            text-align: center

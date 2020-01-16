@@ -4,9 +4,16 @@
     box-sizing: border-box
 
 body
-    background: $body
-    color: $font
+    background: $color-body
+    color: $color-font
     font: $font-family-main
+
+main
+    margin-top: 60px
+
+article
+    @include desctop
+        padding-left: $sidebar-width
 
 .container
     width: 100%
@@ -15,5 +22,8 @@ body
     margin: 0 auto
 
 .alarm
-    color: $details
-    font-size: 1.5rem
+    color: $color-details-basic
+    font-size: 1rem
+    margin-bottom: 16px
+    position: relative
+    display: block

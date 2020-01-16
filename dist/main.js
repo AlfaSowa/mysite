@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 24);
+/******/ 	return __webpack_require__(__webpack_require__.s = 25);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -92,7 +92,7 @@
 
 
 if (true) {
-  module.exports = __webpack_require__(18);
+  module.exports = __webpack_require__(19);
 } else {}
 
 /***/ }),
@@ -108,7 +108,7 @@ if (true) {
 if (false) { var throwOnDirectAccess, ReactIs; } else {
   // By explicitly using `prop-types` you are opting into new production behavior.
   // http://fb.me/prop-types-in-prod
-  module.exports = __webpack_require__(22)();
+  module.exports = __webpack_require__(23)();
 }
 
 /***/ }),
@@ -250,7 +250,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(13);
+var	fixUrls = __webpack_require__(14);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -714,29 +714,35 @@ if (true) {
   // DCE check should happen before ReactDOM bundle executes so that
   // DevTools can report bad minification during injection.
   checkDCE();
-  module.exports = __webpack_require__(19);
+  module.exports = __webpack_require__(20);
 } else {}
 
 /***/ }),
 /* 6 */
-/***/ (function(module) {
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = JSON.parse("[{\"title\":\"github.com/Grimmino\",\"description\":\"Мой GitHub где хранятся мои наработки и примеры кода.\",\"link\":\"https://github.com/Grimmino?tab=repositories\",\"content\":[{\"paragraph\":\"github.com/Grimmino\"}]},{\"title\":\"vk174\",\"description\":\"Сайт типографии в Челябинске\",\"link\":\"http://www.vk174.ru/\",\"content\":[{\"paragraph\":\"qweqweqweqeqwe\"}]}]");
+module.exports = __webpack_require__.p + "./img/1.jpg";
 
 /***/ }),
 /* 7 */
 /***/ (function(module) {
 
-module.exports = JSON.parse("[{\"title\":\"html\",\"level\":88,\"content\":[{\"paragraph\":\"Понимаю принципы cемантической верстки\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"тег HEAD\"},{\"paragraph\":\"SEO оптимизация\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"тег IMG,SVG\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"}]},{\"title\":\"css (sass/scss)\",\"level\":95,\"content\":[{\"paragraph\":\"Разбираюсь во flexbox. Правильно использую позиционирование элементов, шрифты, кнопки, ссылки, формы и элементы форм (input, textarea и тд). Использую анимации и трансформации элементов, так же медиа запросы и mobilefirst верстку.\"},{\"paragraph\":\"Знаю препроцессоры (использую SASS) - использование переменных, миксинов, функции. Разделение кода\"}]},{\"title\":\"JavaScript\",\"level\":76,\"content\":[{\"paragraph\":\"Типы данных, масссивы, циклы\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Работа с DOM элементам, навешивание обработчиков событий, работа с формами\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Сетевые запросы - fetch, отправка данных из формы, async/await, promises\"},{\"paragraph\":\"Cookie, LocalStorage/SessionStorage\"},{\"paragraph\":\"анимация\"},{\"paragraph\":\"регулярные выражения\"}]},{\"title\":\"react\",\"level\":60},{\"title\":\"REST API\",\"level\":60,\"content\":[{\"paragraph\":\"Типы данных, масссивы, циклы\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Работа с DOM элементам, навешивание обработчиков событий, работа с формами\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Сетевые запросы - fetch, отправка данных из формы, async/await, promises\"},{\"paragraph\":\"Cookie, LocalStorage/SessionStorage\"},{\"paragraph\":\"анимация\"},{\"paragraph\":\"Типы данных, масссивы, циклы\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Работа с DOM элементам, навешивание обработчиков событий, работа с формами\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Сетевые запросы - fetch, отправка данных из формы, async/await, promises\"},{\"paragraph\":\"Cookie, LocalStorage/SessionStorage\"},{\"paragraph\":\"анимация\"},{\"paragraph\":\"Типы данных, масссивы, циклы\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Работа с DOM элементам, навешивание обработчиков событий, работа с формами\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Сетевые запросы - fetch, отправка данных из формы, async/await, promises\"},{\"paragraph\":\"Cookie, LocalStorage/SessionStorage\"},{\"paragraph\":\"анимация\"},{\"paragraph\":\"Типы данных, масссивы, циклы\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Работа с DOM элементам, навешивание обработчиков событий, работа с формами\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Сетевые запросы - fetch, отправка данных из формы, async/await, promises\"},{\"paragraph\":\"Cookie, LocalStorage/SessionStorage\"},{\"paragraph\":\"анимация\"},{\"paragraph\":\"Типы данных, масссивы, циклы\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Работа с DOM элементам, навешивание обработчиков событий, работа с формами\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Сетевые запросы - fetch, отправка данных из формы, async/await, promises\"},{\"paragraph\":\"Cookie, LocalStorage/SessionStorage\"},{\"paragraph\":\"анимация\"},{\"paragraph\":\"Типы данных, масссивы, циклы\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Работа с DOM элементам, навешивание обработчиков событий, работа с формами\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Сетевые запросы - fetch, отправка данных из формы, async/await, promises\"},{\"paragraph\":\"Cookie, LocalStorage/SessionStorage\"},{\"paragraph\":\"анимация\"},{\"paragraph\":\"Типы данных, масссивы, циклы\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Работа с DOM элементам, навешивание обработчиков событий, работа с формами\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Сетевые запросы - fetch, отправка данных из формы, async/await, promises\"},{\"paragraph\":\"Cookie, LocalStorage/SessionStorage\"},{\"paragraph\":\"анимация\"},{\"paragraph\":\"Типы данных, масссивы, циклы\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Работа с DOM элементам, навешивание обработчиков событий, работа с формами\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Сетевые запросы - fetch, отправка данных из формы, async/await, promises\"},{\"paragraph\":\"Cookie, LocalStorage/SessionStorage\"},{\"paragraph\":\"анимация\"},{\"paragraph\":\"Типы данных, масссивы, циклы\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Работа с DOM элементам, навешивание обработчиков событий, работа с формами\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Сетевые запросы - fetch, отправка данных из формы, async/await, promises\"},{\"paragraph\":\"Cookie, LocalStorage/SessionStorage\"},{\"paragraph\":\"анимация\"},{\"paragraph\":\"Типы данных, масссивы, циклы\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Работа с DOM элементам, навешивание обработчиков событий, работа с формами\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Сетевые запросы - fetch, отправка данных из формы, async/await, promises\"},{\"paragraph\":\"Cookie, LocalStorage/SessionStorage\"},{\"paragraph\":\"анимация\"},{\"paragraph\":\"Типы данных, масссивы, циклы\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Работа с DOM элементам, навешивание обработчиков событий, работа с формами\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Сетевые запросы - fetch, отправка данных из формы, async/await, promises\"},{\"paragraph\":\"Cookie, LocalStorage/SessionStorage\"},{\"paragraph\":\"анимация\"},{\"paragraph\":\"Типы данных, масссивы, циклы\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Работа с DOM элементам, навешивание обработчиков событий, работа с формами\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Сетевые запросы - fetch, отправка данных из формы, async/await, promises\"},{\"paragraph\":\"Cookie, LocalStorage/SessionStorage\"},{\"paragraph\":\"анимация\"},{\"paragraph\":\"Типы данных, масссивы, циклы\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Работа с DOM элементам, навешивание обработчиков событий, работа с формами\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Сетевые запросы - fetch, отправка данных из формы, async/await, promises\"},{\"paragraph\":\"Cookie, LocalStorage/SessionStorage\"},{\"paragraph\":\"анимация\"},{\"paragraph\":\"регулярные выражения\"}]}]");
+module.exports = JSON.parse("[{\"title\":\"github.com/Grimmino\",\"description\":\"Мой GitHub где хранятся мои наработки и примеры кода.\",\"link\":\"https://github.com/Grimmino?tab=repositories\",\"content\":[{\"paragraph\":\"github.com/Grimmino\"}]},{\"title\":\"vk174\",\"description\":\"Сайт типографии в Челябинске\",\"link\":\"http://www.vk174.ru/\",\"content\":[{\"paragraph\":\"qweqweqweqeqwe\"}]}]");
 
 /***/ }),
 /* 8 */
 /***/ (function(module) {
 
-module.exports = JSON.parse("[{\"title\":\"Сейчас\",\"description\":[{\"paragraph\":\"Fronted разработчки. React\"},{\"paragraph\":\"активное изучаение React\"}],\"year\":\"2019г\"},{\"title\":\"Redsolution\",\"description\":[{\"paragraph\":\"Fronted разработчки. Верстка сайтов\"},{\"paragraph\":\"Fronted разработчки. Верстка сайтов\"}],\"year\":\"октябрь 2018г. - 2019г.\"},{\"title\":\"Фриланс, удаленная работа\",\"description\":[{\"paragraph\":\"Fronted разработчки. Верстка сайтов. Удаленная работа. Углубленное изучение\"},{\"paragraph\":\"Работал с другом на удаленной основе (он делад Backend я Frontend). Понял что знаний не достаточно и начал углубленно изучать Frontend.\"},{\"paragraph\":\"Начал изучать нативный JS, препроцессоры css (SASS/LESS по итогу остановился на SASS). Открыл для себя БЭМ методологию\"}],\"year\":\"апрель 2015г. - октябрь 2018г.\"},{\"title\":\"агенство Golden dragon\",\"description\":[{\"paragraph\":\"Верстка сайтов. Начало карьеры\"},{\"paragraph\":\"Занимался версткой, чаще лендингов, но иногда и попадались более серьезные заказы. Начало карьеры, осваивал азы HTML/CSS иногда приходилось использовать js, но обычно это был JQuery\"}],\"year\":\"декабрь 2013г. - апрель 2015г.\"}]");
+module.exports = JSON.parse("[{\"title\":\"html\",\"level\":88,\"content\":[{\"paragraph\":\"Понимаю принципы cемантической верстки\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"тег HEAD\"},{\"paragraph\":\"SEO оптимизация\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"тег IMG,SVG\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"}]},{\"title\":\"css (sass/scss)\",\"level\":95,\"content\":[{\"paragraph\":\"Разбираюсь во flexbox. Правильно использую позиционирование элементов, шрифты, кнопки, ссылки, формы и элементы форм (input, textarea и тд). Использую анимации и трансформации элементов, так же медиа запросы и mobilefirst верстку.\"},{\"paragraph\":\"Знаю препроцессоры (использую SASS) - использование переменных, миксинов, функции. Разделение кода\"}]},{\"title\":\"JavaScript\",\"level\":76,\"content\":[{\"paragraph\":\"Типы данных, масссивы, циклы\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Работа с DOM элементам, навешивание обработчиков событий, работа с формами\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Сетевые запросы - fetch, отправка данных из формы, async/await, promises\"},{\"paragraph\":\"Cookie, LocalStorage/SessionStorage\"},{\"paragraph\":\"анимация\"},{\"paragraph\":\"регулярные выражения\"}]},{\"title\":\"react\",\"level\":60},{\"title\":\"REST API\",\"level\":60,\"content\":[{\"paragraph\":\"Типы данных, масссивы, циклы\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Работа с DOM элементам, навешивание обработчиков событий, работа с формами\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Сетевые запросы - fetch, отправка данных из формы, async/await, promises\"},{\"paragraph\":\"Cookie, LocalStorage/SessionStorage\"},{\"paragraph\":\"анимация\"},{\"paragraph\":\"Типы данных, масссивы, циклы\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Работа с DOM элементам, навешивание обработчиков событий, работа с формами\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Сетевые запросы - fetch, отправка данных из формы, async/await, promises\"},{\"paragraph\":\"Cookie, LocalStorage/SessionStorage\"},{\"paragraph\":\"анимация\"},{\"paragraph\":\"Типы данных, масссивы, циклы\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Работа с DOM элементам, навешивание обработчиков событий, работа с формами\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Сетевые запросы - fetch, отправка данных из формы, async/await, promises\"},{\"paragraph\":\"Cookie, LocalStorage/SessionStorage\"},{\"paragraph\":\"анимация\"},{\"paragraph\":\"Типы данных, масссивы, циклы\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Работа с DOM элементам, навешивание обработчиков событий, работа с формами\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Сетевые запросы - fetch, отправка данных из формы, async/await, promises\"},{\"paragraph\":\"Cookie, LocalStorage/SessionStorage\"},{\"paragraph\":\"анимация\"},{\"paragraph\":\"Типы данных, масссивы, циклы\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Работа с DOM элементам, навешивание обработчиков событий, работа с формами\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Сетевые запросы - fetch, отправка данных из формы, async/await, promises\"},{\"paragraph\":\"Cookie, LocalStorage/SessionStorage\"},{\"paragraph\":\"анимация\"},{\"paragraph\":\"Типы данных, масссивы, циклы\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Работа с DOM элементам, навешивание обработчиков событий, работа с формами\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Сетевые запросы - fetch, отправка данных из формы, async/await, promises\"},{\"paragraph\":\"Cookie, LocalStorage/SessionStorage\"},{\"paragraph\":\"анимация\"},{\"paragraph\":\"Типы данных, масссивы, циклы\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Работа с DOM элементам, навешивание обработчиков событий, работа с формами\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Сетевые запросы - fetch, отправка данных из формы, async/await, promises\"},{\"paragraph\":\"Cookie, LocalStorage/SessionStorage\"},{\"paragraph\":\"анимация\"},{\"paragraph\":\"Типы данных, масссивы, циклы\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Работа с DOM элементам, навешивание обработчиков событий, работа с формами\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Сетевые запросы - fetch, отправка данных из формы, async/await, promises\"},{\"paragraph\":\"Cookie, LocalStorage/SessionStorage\"},{\"paragraph\":\"анимация\"},{\"paragraph\":\"Типы данных, масссивы, циклы\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Работа с DOM элементам, навешивание обработчиков событий, работа с формами\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Сетевые запросы - fetch, отправка данных из формы, async/await, promises\"},{\"paragraph\":\"Cookie, LocalStorage/SessionStorage\"},{\"paragraph\":\"анимация\"},{\"paragraph\":\"Типы данных, масссивы, циклы\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Работа с DOM элементам, навешивание обработчиков событий, работа с формами\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Сетевые запросы - fetch, отправка данных из формы, async/await, promises\"},{\"paragraph\":\"Cookie, LocalStorage/SessionStorage\"},{\"paragraph\":\"анимация\"},{\"paragraph\":\"Типы данных, масссивы, циклы\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Работа с DOM элементам, навешивание обработчиков событий, работа с формами\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Сетевые запросы - fetch, отправка данных из формы, async/await, promises\"},{\"paragraph\":\"Cookie, LocalStorage/SessionStorage\"},{\"paragraph\":\"анимация\"},{\"paragraph\":\"Типы данных, масссивы, циклы\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Работа с DOM элементам, навешивание обработчиков событий, работа с формами\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Сетевые запросы - fetch, отправка данных из формы, async/await, promises\"},{\"paragraph\":\"Cookie, LocalStorage/SessionStorage\"},{\"paragraph\":\"анимация\"},{\"paragraph\":\"Типы данных, масссивы, циклы\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Работа с DOM элементам, навешивание обработчиков событий, работа с формами\",\"txt\":\"da dqw  deqwqdqw ddq wdwdqw\"},{\"paragraph\":\"Сетевые запросы - fetch, отправка данных из формы, async/await, promises\"},{\"paragraph\":\"Cookie, LocalStorage/SessionStorage\"},{\"paragraph\":\"анимация\"},{\"paragraph\":\"регулярные выражения\"}]}]");
 
 /***/ }),
 /* 9 */
+/***/ (function(module) {
+
+module.exports = JSON.parse("[{\"title\":\"Сейчас\",\"tags\":\"Fronted разработчки. React\",\"year\":\"2019г\",\"description\":[{\"paragraph\":\"Активное изучаение React\"}]},{\"title\":\"Redsolution\",\"tags\":\"Fronted разработчки. Верстка сайтов\",\"year\":\"октябрь 2018г. - 2019г.\",\"description\":[{\"paragraph\":\"Fronted разработчки. Верстка сайтов\"}]},{\"title\":\"Фриланс, удаленная работа\",\"tags\":\"Fronted разработчки. Верстка сайтов. Удаленная работа. Углубленное изучение\",\"year\":\"апрель 2015г. - октябрь 2018г.\",\"description\":[{\"paragraph\":\"Работал с другом на удаленной основе (он делад Backend я Frontend). Понял что знаний не достаточно и начал углубленно изучать Frontend.\"},{\"paragraph\":\"Начал изучать нативный JS, препроцессоры css (SASS/LESS по итогу остановился на SASS). Открыл для себя БЭМ методологию\"}]},{\"title\":\"агенство Golden dragon\",\"tags\":\"Верстка сайтов. Начало карьеры\",\"year\":\"декабрь 2013г. - апрель 2015г.\",\"description\":[{\"paragraph\":\"Занимался версткой, чаще лендингов, но иногда и попадались более серьезные заказы. Начало карьеры, осваивал азы HTML/CSS иногда приходилось использовать js, но обычно это был JQuery\"}]}]");
+
+/***/ }),
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -784,7 +790,7 @@ var invariant = function (condition, format, a, b, c, d, e, f) {
 module.exports = invariant;
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -1494,11 +1500,11 @@ try {
 }
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(12);
+var content = __webpack_require__(13);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -1519,13 +1525,13 @@ if(content.locals) module.exports = content.locals;
 if(false) {}
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports) {
 
 /**
@@ -1614,11 +1620,11 @@ module.exports = function (css) {
 };
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(15);
+var content = __webpack_require__(16);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -1639,16 +1645,10 @@ if(content.locals) module.exports = content.locals;
 if(false) {}
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
-
-/***/ }),
-/* 16 */
-/***/ (function(module, exports) {
-
-
 
 /***/ }),
 /* 17 */
@@ -1658,6 +1658,12 @@ if(false) {}
 
 /***/ }),
 /* 18 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2079,7 +2085,7 @@ var X = {
 module.exports = Z.default || Z;
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2099,7 +2105,7 @@ module.exports = Z.default || Z;
 
 var aa = __webpack_require__(0),
     m = __webpack_require__(4),
-    q = __webpack_require__(20);
+    q = __webpack_require__(21);
 
 function t(a) {
   for (var b = a.message, c = "https://reactjs.org/docs/error-decoder.html?invariant=" + b, d = 1; d < arguments.length; d++) c += "&args[]=" + encodeURIComponent(arguments[d]);
@@ -8806,18 +8812,18 @@ var Oj = {
 module.exports = Pj.default || Pj;
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 if (true) {
-  module.exports = __webpack_require__(21);
+  module.exports = __webpack_require__(22);
 } else {}
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9277,7 +9283,7 @@ exports.unstable_getFirstCallbackNode = function () {
 };
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9289,7 +9295,7 @@ exports.unstable_getFirstCallbackNode = function () {
  */
 
 
-var ReactPropTypesSecret = __webpack_require__(23);
+var ReactPropTypesSecret = __webpack_require__(24);
 
 function emptyFunction() {}
 
@@ -9346,7 +9352,7 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9362,26 +9368,26 @@ var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 module.exports = ReactPropTypesSecret;
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
 // EXTERNAL MODULE: ./node_modules/regenerator-runtime/runtime.js
-var runtime = __webpack_require__(10);
+var runtime = __webpack_require__(11);
 
 // EXTERNAL MODULE: ./node_modules/normalize.css/normalize.css
-var normalize = __webpack_require__(11);
+var normalize = __webpack_require__(12);
 
 // EXTERNAL MODULE: ./static/sass/style.sass
-var style = __webpack_require__(14);
+var style = __webpack_require__(15);
 
 // EXTERNAL MODULE: ./static/js/main.js
-var main = __webpack_require__(16);
+var main = __webpack_require__(17);
 
 // EXTERNAL MODULE: ./static/js/files.js
-var files = __webpack_require__(17);
+var files = __webpack_require__(18);
 
 // EXTERNAL MODULE: ./node_modules/react/index.js
 var react = __webpack_require__(0);
@@ -10457,7 +10463,7 @@ function createMemoryHistory(props) {
 
 
 // EXTERNAL MODULE: ./node_modules/invariant/browser.js
-var browser = __webpack_require__(9);
+var browser = __webpack_require__(10);
 var browser_default = /*#__PURE__*/__webpack_require__.n(browser);
 
 // CONCATENATED MODULE: ./node_modules/react-router/es/Router.js
@@ -10676,22 +10682,22 @@ BrowserRouter_BrowserRouter.propTypes = {
   children: prop_types_default.a.node
 };
 /* harmony default export */ var es_BrowserRouter = (BrowserRouter_BrowserRouter);
-// CONCATENATED MODULE: ./static/components/header/Header.jsx
-function Header_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { Header_typeof = function _typeof(obj) { return typeof obj; }; } else { Header_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return Header_typeof(obj); }
+// CONCATENATED MODULE: ./static/components/header/Logo.jsx
+function Logo_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { Logo_typeof = function _typeof(obj) { return typeof obj; }; } else { Logo_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return Logo_typeof(obj); }
 
-function Header_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function Logo_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-function Header_possibleConstructorReturn(self, call) { if (call && (Header_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+function Logo_possibleConstructorReturn(self, call) { if (call && (Logo_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
-function Header_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+function Logo_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
@@ -10701,33 +10707,23 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var string = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~" + " ";
 var logoText = 'alfa-sowa';
 
-var Header_App =
+var Logo_App =
 /*#__PURE__*/
 function (_React$Component) {
-  Header_inherits(App, _React$Component);
+  Logo_inherits(App, _React$Component);
 
   function App() {
     var _getPrototypeOf2;
 
     var _this;
 
-    Header_classCallCheck(this, App);
+    Logo_classCallCheck(this, App);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
 
-    _this = Header_possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(App)).call.apply(_getPrototypeOf2, [this].concat(args)));
-
-    _defineProperty(_assertThisInitialized(_this), "state", {
-      showMenu: false
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "toggleMenu", function () {
-      _this.setState({
-        showMenu: !_this.state.showMenu
-      });
-    });
+    _this = Logo_possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(App)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
     _defineProperty(_assertThisInitialized(_this), "f1", function (i, x, temp, targetArray, stringArray) {
       if (i < targetArray.length) {
@@ -10787,52 +10783,206 @@ function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      return react_default.a.createElement("header", {
-        className: "header"
-      }, react_default.a.createElement("div", {
-        className: "header__top"
-      }, react_default.a.createElement("div", {
+      return react_default.a.createElement("div", {
         className: "logo"
-      }, react_default.a.createElement("a", {
+      }, react_default.a.createElement("span", {
         ref: function ref(e) {
           return _this2.logoText = e;
         },
-        className: "logo__link",
-        href: "#"
-      })), react_default.a.createElement("nav", {
+        className: "logo__link"
+      }));
+    }
+  }]);
+
+  return App;
+}(react_default.a.Component);
+
+
+// CONCATENATED MODULE: ./static/components/header/Header.jsx
+function Header_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { Header_typeof = function _typeof(obj) { return typeof obj; }; } else { Header_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return Header_typeof(obj); }
+
+function Header_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function Header_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function Header_createClass(Constructor, protoProps, staticProps) { if (protoProps) Header_defineProperties(Constructor.prototype, protoProps); if (staticProps) Header_defineProperties(Constructor, staticProps); return Constructor; }
+
+function Header_possibleConstructorReturn(self, call) { if (call && (Header_typeof(call) === "object" || typeof call === "function")) { return call; } return Header_assertThisInitialized(self); }
+
+function Header_getPrototypeOf(o) { Header_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return Header_getPrototypeOf(o); }
+
+function Header_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function Header_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) Header_setPrototypeOf(subClass, superClass); }
+
+function Header_setPrototypeOf(o, p) { Header_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return Header_setPrototypeOf(o, p); }
+
+function Header_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+var Header_App =
+/*#__PURE__*/
+function (_React$Component) {
+  Header_inherits(App, _React$Component);
+
+  function App() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    Header_classCallCheck(this, App);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = Header_possibleConstructorReturn(this, (_getPrototypeOf2 = Header_getPrototypeOf(App)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    Header_defineProperty(Header_assertThisInitialized(_this), "state", {
+      showMenu: false
+    });
+
+    Header_defineProperty(Header_assertThisInitialized(_this), "toggleMenu", function (e) {
+      e.preventDefault();
+
+      _this.setState({
+        showMenu: !_this.state.showMenu
+      });
+    });
+
+    return _this;
+  }
+
+  Header_createClass(App, [{
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      return react_default.a.createElement("header", {
+        className: "header"
+      }, react_default.a.createElement(Logo_App, null), react_default.a.createElement("nav", {
         className: "menu ".concat(this.state.showMenu ? 'menu--active' : '')
       }, react_default.a.createElement("ul", {
         className: "menu__list"
       }, this.props.menu.map(function (item, index) {
         return react_default.a.createElement("li", {
-          onClick: _this2.toggleMenu,
           key: index,
           className: "menu__item"
         }, react_default.a.createElement("a", {
+          onClick: function onClick(e) {
+            return _this2.toggleMenu(e);
+          },
           className: "menu__item_link",
           href: "#".concat(item.name)
         }, item.text));
       }))), react_default.a.createElement("div", {
-        className: "hamburger",
+        className: "hamburger ".concat(this.state.showMenu ? 'hamburger--active' : ''),
         onClick: this.toggleMenu
-      })), react_default.a.createElement("div", {
-        className: "header__bottom container"
-      }, react_default.a.createElement("div", {
-        className: "header__content"
-      }, react_default.a.createElement("div", {
-        className: "header__content_title"
-      }, "\u041F\u0440\u0438\u0432\u0435\u0442, \u043C\u0435\u043D\u044F \u0437\u043E\u0432\u0443\u0442 \u0410\u043B\u0435\u043A\u0441\u0435\u0439."), react_default.a.createElement("div", {
-        className: "header__content_description"
-      }, react_default.a.createElement("p", {
-        className: "alarm"
-      }, "\u0421\u0430\u0439\u0442 \u043D\u0430\u0445\u043E\u0434\u0438\u0442\u0441\u044F \u0432 \u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0435, \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044F \u043D\u0430\u0445\u043E\u0434\u044F\u0449\u0430\u044F\u0441\u044F \u0437\u0434\u0435\u0441\u044C \u043F\u043E\u043A\u0430 \u0447\u0442\u043E \u043D\u0435 \u0432\u0435\u0440\u043D\u0430\u044F"), react_default.a.createElement("p", null, "\u0417\u0430\u043D\u0438\u043C\u0430\u044E\u0441\u044C \u0444\u0440\u043E\u043D\u0442\u0435\u043D\u0434 \u0447\u0430\u0441\u0442\u044C\u044E \u0432 \u0432\u0435\u0431 \u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0435. \u042D\u0442\u043E\u0442 \u0441\u0430\u0439\u0442 \u0434\u0435\u043C\u043E\u043D\u0441\u0442\u0440\u0438\u0440\u0443\u0435\u0442 \u043C\u043E\u0438 \u043A\u043B\u044E\u0447\u0435\u0432\u044B\u0435 \u043D\u0430\u0432\u044B\u043A\u0438 \u0432\u043E \u0444\u0440\u043E\u043D\u0442\u0435\u043D\u0434\u0435, \u0432\u0435\u0440\u0441\u0442\u043A\u0435 (HTML/CSS), \u0430 \u0442\u0430\u043A \u0436\u0435 \u0437\u043D\u0430\u043D\u0438\u0435 react."), react_default.a.createElement("p", null, "\u041D\u0430 \u0441\u0430\u0439\u0442\u0435 \u043F\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u043B\u0435\u043D\u043D\u0430 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044F \u043E\u0431\u043E \u043C\u043D\u0435 \u0447\u0435\u043C \u044F \u0437\u0430\u043D\u0438\u043C\u0430\u043B\u0441\u044F, \u043C\u043E\u0438 \u043D\u0430\u0432\u044B\u043A\u0438 \u0438 \u0437\u043D\u0430\u043D\u0438\u044F, \u0430 \u0442\u0430\u043A \u0436\u0435 \u043F\u0440\u0438\u043C\u0435\u0440\u044B \u043D\u0435\u043A\u043E\u0442\u043E\u0440\u044B\u0445 \u043C\u043E\u0438\u0445 \u0440\u0430\u0431\u043E\u0442."), react_default.a.createElement("p", null, "\u0422\u0430\u043A \u0436\u0435 \u0441\u0430\u043C \u0441\u0430\u0439\u0442 \u043F\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u043B\u0435\u043D \u043A\u0430\u043A \u043F\u0440\u0438\u043C\u0435\u0440  \u0438 \u0435\u0433\u043E \u043A\u043E\u0434 \u043C\u043E\u0436\u043D\u043E \u043F\u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C \u043D\u0430 GitHub"), react_default.a.createElement("a", {
-        className: "btn btn__link",
-        href: "https://github.com/Grimmino/mysite"
-      }, "GitHub \u0440\u0435\u043F\u043E\u0437\u0438\u0442\u043E\u0440\u0438\u0439 \u0441\u0430\u0439\u0442\u0430")))));
+      }));
     }
   }]);
 
   return App;
+}(react_default.a.Component);
+
+
+// EXTERNAL MODULE: ./static/img/1.jpg
+var _1 = __webpack_require__(6);
+var _1_default = /*#__PURE__*/__webpack_require__.n(_1);
+
+// CONCATENATED MODULE: ./static/components/hero/Hero.jsx
+function Hero_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { Hero_typeof = function _typeof(obj) { return typeof obj; }; } else { Hero_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return Hero_typeof(obj); }
+
+function Hero_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function Hero_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function Hero_createClass(Constructor, protoProps, staticProps) { if (protoProps) Hero_defineProperties(Constructor.prototype, protoProps); if (staticProps) Hero_defineProperties(Constructor, staticProps); return Constructor; }
+
+function Hero_possibleConstructorReturn(self, call) { if (call && (Hero_typeof(call) === "object" || typeof call === "function")) { return call; } return Hero_assertThisInitialized(self); }
+
+function Hero_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function Hero_getPrototypeOf(o) { Hero_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return Hero_getPrototypeOf(o); }
+
+function Hero_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) Hero_setPrototypeOf(subClass, superClass); }
+
+function Hero_setPrototypeOf(o, p) { Hero_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return Hero_setPrototypeOf(o, p); }
+
+
+
+
+var Hero_Hero =
+/*#__PURE__*/
+function (_React$Component) {
+  Hero_inherits(Hero, _React$Component);
+
+  function Hero() {
+    Hero_classCallCheck(this, Hero);
+
+    return Hero_possibleConstructorReturn(this, Hero_getPrototypeOf(Hero).apply(this, arguments));
+  }
+
+  Hero_createClass(Hero, [{
+    key: "render",
+    value: function render() {
+      return react_default.a.createElement("aside", {
+        className: "hero"
+      }, react_default.a.createElement("div", {
+        className: "hero__inner"
+      }, react_default.a.createElement("div", {
+        className: "hero__item hero__pic",
+        style: {
+          background: "url(".concat(_1_default.a, ") no-repeat top left / cover")
+        }
+      }, react_default.a.createElement("div", {
+        className: "hero__pic_title"
+      }, "Tamson Aleksei"), react_default.a.createElement("div", {
+        className: "hero__pic_main"
+      }, react_default.a.createElement("div", {
+        className: "hero__pic_short-title"
+      }, "Frontend dev"), react_default.a.createElement("ul", {
+        className: "hero__pic_short-list"
+      }, react_default.a.createElement("li", {
+        className: "hero__pic_short-item"
+      }, "html/css"), react_default.a.createElement("li", {
+        className: "hero__pic_short-item"
+      }, "javascript/typescript"), react_default.a.createElement("li", {
+        className: "hero__pic_short-item"
+      }, "react/redux")))), react_default.a.createElement("div", {
+        className: "hero__item hero__content"
+      }, react_default.a.createElement("span", {
+        className: "alarm"
+      }, "\u0421\u0430\u0439\u0442 \u043D\u0430\u0445\u043E\u0434\u0438\u0442\u0441\u044F \u0432 \u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0435"), react_default.a.createElement("p", null, "\u0417\u0430\u043D\u0438\u043C\u0430\u044E\u0441\u044C \u0444\u0440\u043E\u043D\u0442\u0435\u043D\u0434 \u0447\u0430\u0441\u0442\u044C\u044E \u0432 \u0432\u0435\u0431 \u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0435. \u042D\u0442\u043E\u0442 \u0441\u0430\u0439\u0442 \u0434\u0435\u043C\u043E\u043D\u0441\u0442\u0440\u0438\u0440\u0443\u0435\u0442 \u043C\u043E\u0438 \u043A\u043B\u044E\u0447\u0435\u0432\u044B\u0435 \u043D\u0430\u0432\u044B\u043A\u0438 \u0432\u043E \u0444\u0440\u043E\u043D\u0442\u0435\u043D\u0434\u0435, \u0432\u0435\u0440\u0441\u0442\u043A\u0435 (HTML/CSS), \u0430 \u0442\u0430\u043A \u0436\u0435 \u0437\u043D\u0430\u043D\u0438\u0435 react."), react_default.a.createElement("p", null, "\u041D\u0430 \u0441\u0430\u0439\u0442\u0435 \u043F\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u043B\u0435\u043D\u043D\u0430 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044F \u043E\u0431\u043E \u043C\u043D\u0435 \u0447\u0435\u043C \u044F \u0437\u0430\u043D\u0438\u043C\u0430\u043B\u0441\u044F, \u043C\u043E\u0438 \u043D\u0430\u0432\u044B\u043A\u0438 \u0438 \u0437\u043D\u0430\u043D\u0438\u044F, \u0430 \u0442\u0430\u043A \u0436\u0435 \u043F\u0440\u0438\u043C\u0435\u0440\u044B \u043D\u0435\u043A\u043E\u0442\u043E\u0440\u044B\u0445 \u043C\u043E\u0438\u0445 \u0440\u0430\u0431\u043E\u0442."), react_default.a.createElement("p", null, "\u0422\u0430\u043A \u0436\u0435 \u0441\u0430\u043C \u0441\u0430\u0439\u0442 \u043F\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u043B\u0435\u043D \u043A\u0430\u043A \u043F\u0440\u0438\u043C\u0435\u0440  \u0438 \u0435\u0433\u043E \u043A\u043E\u0434 \u043C\u043E\u0436\u043D\u043E \u043F\u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C \u043D\u0430 GitHub"), react_default.a.createElement("a", {
+        className: "btn btn__link",
+        href: "https://github.com/Grimmino/mysite"
+      }, "GitHub \u0440\u0435\u043F\u043E\u0437\u0438\u0442\u043E\u0440\u0438\u0439 \u0441\u0430\u0439\u0442\u0430")), react_default.a.createElement("ul", {
+        className: "hero__item hero__links"
+      }, react_default.a.createElement("li", {
+        className: "hero__links_item"
+      }, react_default.a.createElement("a", {
+        className: "hero__links_link",
+        href: "https://hh.ru/resume/ffd982adff015f658b0039ed1f79534c574879",
+        target: "_blank"
+      }, "\u041C\u043E\u0439 \u0440\u0435\u043F\u043E\u0437\u0438\u0442\u043E\u0440\u0438\u0439 \u043D\u0430 GitHub")), react_default.a.createElement("li", {
+        className: "hero__links_item"
+      }, react_default.a.createElement("a", {
+        className: "hero__links_link",
+        href: "https://hh.ru/resume/ffd982adff015f658b0039ed1f79534c574879",
+        target: "_blank"
+      }, "\u041C\u043E\u0435 \u0440\u0435\u0437\u044E\u043C\u0435 \u043D\u0430 hh")), react_default.a.createElement("li", {
+        className: "hero__links_item"
+      }, react_default.a.createElement("a", {
+        className: "hero__links_link",
+        href: "https://hh.ru/resume/ffd982adff015f658b0039ed1f79534c574879",
+        target: "_blank"
+      }, "\u041C\u043E\u0435 \u0440\u0435\u0437\u044E\u043C\u0435 \u043D\u0430 LinkedIn")))));
+    }
+  }]);
+
+  return Hero;
 }(react_default.a.Component);
 
 
@@ -11121,13 +11271,13 @@ function (_React$Component3) {
   return DetailsTxt;
 }(react_default.a.Component);
 // EXTERNAL MODULE: ./static/json/works.json
-var works = __webpack_require__(6);
+var works = __webpack_require__(7);
 
 // EXTERNAL MODULE: ./static/json/skills.json
-var skills = __webpack_require__(7);
+var skills = __webpack_require__(8);
 
 // EXTERNAL MODULE: ./static/json/about.json
-var about = __webpack_require__(8);
+var about = __webpack_require__(9);
 
 // CONCATENATED MODULE: ./static/components/sections/About.jsx
 
@@ -11136,21 +11286,13 @@ function About() {
   return react_default.a.createElement(react_default.a.Fragment, null, about.map(function (item, index) {
     return react_default.a.createElement("div", {
       key: index,
-      className: "about__item".concat(index % 2 ? '' : ' about__revers')
+      className: "about__row"
     }, react_default.a.createElement("div", {
-      className: "about__left"
-    }, index % 2 ? react_default.a.createElement(Description, {
-      title: item.title,
-      description: item.description
-    }) : react_default.a.createElement(Year, {
+      className: "about__row_item"
+    }, react_default.a.createElement(Year, {
       year: item.year
-    })), react_default.a.createElement("div", {
-      className: "about__right"
-    }, index % 2 ? react_default.a.createElement(Year, {
-      year: item.year
-    }) : react_default.a.createElement(Description, {
-      title: item.title,
-      description: item.description
+    }), react_default.a.createElement(Description, {
+      item: item
     })));
   }));
 }
@@ -11158,24 +11300,23 @@ function About() {
 function Year(props) {
   return react_default.a.createElement("div", {
     className: "about__year"
-  }, react_default.a.createElement("div", {
-    className: "about__year_number"
-  }, props.year), react_default.a.createElement("div", {
-    className: "icon about__year_icon"
-  }));
+  }, props.year);
 }
 
 function Description(props) {
   return react_default.a.createElement("div", {
     className: "about__description"
-  }, react_default.a.createElement("div", {
+  }, react_default.a.createElement("h3", {
+    className: "about__description_title"
+  }, props.item.title), react_default.a.createElement("span", {
+    className: "about__description_tags"
+  }, props.item.tags), react_default.a.createElement("div", {
     className: "about__description_content"
-  }, react_default.a.createElement("h3", null, props.title), react_default.a.createElement("div", null, props.description.map(function (item, index) {
+  }, props.item.description.map(function (item, index) {
     return react_default.a.createElement("p", {
-      key: index,
-      className: index == 0 ? 'about__description_tags' : ''
+      key: index
     }, item.paragraph);
-  }))));
+  })));
 }
 // CONCATENATED MODULE: ./static/components/api/PageSpeed.jsx
 function PageSpeed_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { PageSpeed_typeof = function _typeof(obj) { return typeof obj; }; } else { PageSpeed_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return PageSpeed_typeof(obj); }
@@ -11314,8 +11455,9 @@ function App_setPrototypeOf(o, p) { App_setPrototypeOf = Object.setPrototypeOf |
 
 function App_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
- //----grid----
 
+
+ //----grid----
 
 
 
@@ -11367,7 +11509,7 @@ function (_React$Component) {
 
       return react_default.a.createElement(react_default.a.Fragment, null, react_default.a.createElement(Header_App, {
         menu: this.props.sections
-      }), react_default.a.createElement("main", null, react_default.a.createElement("article", null, this.props.sections.map(function (section, index) {
+      }), react_default.a.createElement("main", null, react_default.a.createElement(Hero_Hero, null), react_default.a.createElement("article", null, this.props.sections.map(function (section, index) {
         return react_default.a.createElement("section", {
           ref: _this2.state.setSectionRef,
           id: section.name,
@@ -11379,7 +11521,7 @@ function (_React$Component) {
         }, section.text), react_default.a.createElement("div", {
           className: "module__content ".concat(section.name, "__content ").concat(section.name == 'skills' || section.name == 'works' ? 'container' : '')
         }, section.content));
-      }))), react_default.a.createElement(PageSpeed_PageSpeed, null));
+      }))));
     }
   }]);
 
@@ -11394,13 +11536,13 @@ App_App.defaultProps = {
     content: react_default.a.createElement(About, null)
   }, {
     name: 'skills',
-    text: 'мои навыки',
+    text: 'навыки',
     content: react_default.a.createElement(List_List, {
       content: skills
     })
   }, {
     name: 'works',
-    text: 'мои работы',
+    text: 'работы',
     content: react_default.a.createElement(List_List, {
       content: works,
       catalog: true
