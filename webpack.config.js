@@ -1,74 +1,148 @@
-let path = require('path');
+const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
-const webpack = require('webpack');
-
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const ReplaceHashInFileWebpackPlugin = require('replace-hash-in-file-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const TerserPlugin = require('terser-webpack-plugin');
+const { BundleAnalyzerPlugin }  = require('webpack-bundle-analyzer');
+const autoprefixer = require('autoprefixer');
 
-let conf = {
-    entry: './static/index.js',
+const isDev = process.env.NODE_ENV === 'development'
+
+const optimization = () => {
+    const config = {}
+
+    if(!isDev) {
+        config.minimizer = [
+            new OptimizeCSSAssetsPlugin(),
+            new TerserPlugin()
+        ]
+    }
+
+    return config
+}
+
+const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`
+
+const babelOptions = preset => {
+    const opt = {
+        presets: [
+            '@babel/preset-env'
+        ],
+        plugins: [
+            "@babel/plugin-proposal-class-properties"
+        ]
+    }
+
+    if(preset) {
+        opt.presets.push(preset)
+    }
+
+    return opt
+}
+
+const plugins = () => {
+    const base = [
+        new CleanWebpackPlugin(),
+        new CopyWebpackPlugin([
+            {
+                from: path.resolve(__dirname, 'src/favicon.ico'),
+                to: path.resolve(__dirname, 'dist')
+            }
+        ]),
+        new HtmlWebPackPlugin({
+            template: './index.html',
+            minify: {
+                collapseWhitespace: !isDev
+            }
+        }),
+        new MiniCssExtractPlugin({
+            filename: filename('css'),
+        }),
+    ]
+
+    if(!isDev) {
+        base.push(new BundleAnalyzerPlugin())
+    }
+
+    return base
+}
+
+module.exports = {
+    context: path.resolve(__dirname, 'src'),
+
+    entry: [
+        '@babel/polyfill',
+        './index.js',
+    ],
 
     output: {
-        path: path.join(__dirname, './dist'),
-        //filename: '[name].[hash].js',
-        filename: '[name].js',
-        publicPath: '',
+        path: path.resolve(__dirname, './dist'),
+        filename: filename('js')
     },
 
     devServer: {
-        contentBase: './dist',
-        historyApiFallback: true,
         port: 8181
     },
 
-    stats: {
-        errors: true,
-        errorDetails: true,
-        builtAt: true,
-        assets: false,
-        modules: false,
-        children: false,
-    },
-    optimization: {
-        minimize: false,
-        /*minimizer: [
-            new TerserPlugin(),
-            new OptimizeCSSAssetsPlugin({
-                cssProcessor: require('cssnano'),
-                cssProcessorPluginOptions: {
-                    preset: ['default', { 
-                        discardComments: { 
-                            removeAll: true 
-                        } 
-                    }],
-                },
-            }),
-        ],*/
-    },
+    optimization: optimization(),
+
+    devtool: isDev ? 'source-map' : false,
+
     module: {
-        rules: [
-            
-            //js
+        rules:[
+            //javascript
             {
-                test: /\.(js|jsx)$/,
+                test: /\.js$/,
                 exclude: '/node_modules/',
-                loader: 'babel-loader',
+                loader: {
+                    loader: 'babel-loader',
+                    options: babelOptions()
+                },
             },
-            //sass
+            //typescript
+            {
+                test: /\.ts$/,
+                exclude: '/node_modules/',
+                loader: {
+                    loader: 'babel-loader',
+                    options: babelOptions('@babel/preset-typescript')
+                },
+            },
+            //react jsx
+            {
+                test: /\.jsx?$/,
+                exclude: '/node_modules/',
+                loader: {
+                    loader: 'babel-loader',
+                    options: babelOptions('@babel/preset-react')
+                },
+            },
+            //styles
             {
                 test: /\.(sa|sc|c)ss$/,
                 use: [
-                    'style-loader',
-                    MiniCssExtractPlugin.loader,
-                    {loader: 'css-loader'},
-                    {loader: 'postcss-loader'},
-                    {loader: 'sass-loader'},
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            hmr: isDev,
+                            reloadAll: true
+                        },
+                    },
+                    'css-loader',
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            plugins: [
+                                autoprefixer()
+                            ]
+                        }
+                    },
+                    'sass-loader'
                 ],
             },
-            //image
+            //images
             {
 				test: /\.(png|jpg|jpeg|svg|gif)$/i,
 				use: [
@@ -80,49 +154,20 @@ let conf = {
 					}
 				]
             },
-        ],
+            //fonts
+            {
+                test: /\.(ttf|woff|woff2|eot)$/i,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: './fonts/[name].[hash].[ext]'
+                        }
+                    }
+                ]
+            },
+        ]
     },
 
-    plugins: [
-        new CleanWebpackPlugin(['./dist']),
-        new HtmlWebPackPlugin({
-            template: './templates/index.html',
-            filename: './index.html',
-            inject: false,
-        }),
-        new MiniCssExtractPlugin({
-            //filename: "[name].[hash].css",
-            filename: "[name].css",
-        }),
-        /*new ReplaceHashInFileWebpackPlugin([{
-            dir: './appsowa/templates',
-            files: [
-                'index.html',
-                'pages/myworks.html'
-            ],
-            rules: [
-                {
-                    search: /main.[a-zA-Z0-9]*\.js/,
-                    replace: 'main.[hash].js'
-                },
-                {
-                    search: /main.[a-zA-Z0-9]*\.css/,
-                    replace: 'main.[hash].css'
-                },
-                {
-                    search: /critical.[a-zA-Z0-9]*\.css/,
-                    replace: 'critical.[hash].css'
-                }
-            ]
-        }]),*/
-    ]
-};
-
-module.exports = (env, options) => {
-    let production = options.mode === 'production';
-
-    conf.devtool = production 
-                    ? false
-                    : false;
-    return conf;
+    plugins: plugins(),
 }
