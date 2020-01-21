@@ -48,11 +48,11 @@ const plugins = () => {
         new CopyWebpackPlugin([
             {
                 from: path.resolve(__dirname, 'src/favicon.ico'),
-                to: path.resolve(__dirname, 'dist')
+                to: path.resolve(__dirname, 'docs')
             },
             {
                 from: path.resolve(__dirname, 'CNAME'),
-                to: path.resolve(__dirname, 'dist')
+                to: path.resolve(__dirname, 'docs')
             }
         ]),
         new HtmlWebPackPlugin({
@@ -82,7 +82,7 @@ module.exports = {
     ],
 
     output: {
-        path: path.resolve(__dirname, './dist'),
+        path: path.resolve(__dirname, './docs'),
         filename: filename('js')
     },
 
