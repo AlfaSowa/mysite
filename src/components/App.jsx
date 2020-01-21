@@ -39,7 +39,7 @@ export default class App extends React.Component {
                 <main>
                     <Hero />
                     
-                    <article>
+                    <article className="page">
                         {this.props.sections.map((section, index) => (
                             <section ref={this.state.setSectionRef} id={section.name} key={index} name={section.name} className={`module ${section.name}`}>
                                 <h2 className="module__title">{section.text}</h2>
