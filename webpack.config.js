@@ -92,7 +92,7 @@ module.exports = {
 
     optimization: optimization(),
 
-    devtool: isDev ? 'source-map' : false,
+    devtool: isDev ? false : false,
 
     module: {
         rules:[
