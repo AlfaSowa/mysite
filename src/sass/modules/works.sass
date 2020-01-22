@@ -1,0 +1,42 @@
+.works
+    &__list
+        display: flex
+        flex-wrap: wrap
+
+    &__item
+        flex: 1 0 20%
+        max-width: 20%
+        padding: 2px
+        position: relative
+
+        &--active
+            .works__item_content--active
+                background: transparentize($color-details-basic, .9)
+        
+        &_content
+            height: calc(250px/4)
+            border: 1px solid $color-main-basic
+            display: flex
+            align-items: center
+            justify-content: center
+            color: $color-main-basic
+            &--active
+                border-color: $color-main-add
+                color: $color-main-add
+                cursor: pointer
+                &:hover
+                    border-color: $color-details-basic
+                    color: $color-details-basic
+                    & + .works__item_dropdown
+                        display: block
+                
+        &_dropdown
+            position: absolute
+            right: 100%
+            top: 0
+            display: none
+            width: 250px
+            height: 300px
+            background: transparentize($color-body, .1)
+            z-index: 100
+            padding: 8px

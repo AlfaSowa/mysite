@@ -1,77 +1,66 @@
 import React from 'react'
 
-import Header from './header/Header.jsx'
-
-import Hero from './hero/Hero.jsx'
-
-//----grid----
-import List from './sections/grid/List.jsx'
-import works from '../json/works.json'
-import skills from '../json/skills.json'
-//----gridend----
-
-import About from './sections/About.jsx'
-import PageSpeed from './api/PageSpeed.jsx'
+import Avatar from './avatar/Avatar.jsx'
+import Info from './info/Info.jsx'
+import Skills from './skills/Skills.jsx'
+import Works from './works/Works.jsx'
+import Links from './links/Links.jsx'
 
 export default class App extends React.Component { 
 
     state = {
-        sectionRef: [],
-        setSectionRef: (e) => {
-            this.state.sectionRef.push(e)
-        }
+        workDetails: false
     }
 
-    componentDidMount = () => {
-        this.state.sectionRef.forEach(elem => {
-            window.addEventListener('scroll', () => {
-                window.scrollY >= elem.offsetTop - 500 ? elem.classList.add('showsection')  : elem.classList.remove('showsection')
-            })
+    workDetails = (details) => {
+        
+        this.setState({
+            workDetails: details
         })
     }
 
     render() {
         return (
-            <React.Fragment>
-                <Header menu={this.props.sections}/>
+            <div className="board">
+                <div className="board__sidebar">
+                    <Avatar />
+
+                    <Info />
+                </div>
+
+                <div className="board__inner">
+                    <div className="board__content">
+                        <div className="board__item module">
+                            <h2 className="module__title">Навыки</h2>
+                            <div className="module__content skills">
+                                <Skills />
+                            </div>
+                        </div>
+                        <div className="board__item module">
+                            <h2 className="module__title">Выполненые заказы</h2>
+                            <div className="module__content">
+                                <Works workDetails={this.workDetails}/>
+                            </div>
+                        </div>
+                        <div className="board__item module">
+                            <h2 className="module__title">Ссылки</h2>
+                            <div className="module__content">
+                                <Links />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="board__details details">
+                        <div className="details__inner">
+                            <span className="details__title">{this.state.workDetails.title ? this.state.workDetails.title : 'asdasdasda as das dsa d asd '}</span>
+                            <p className="details__txt">{this.state.workDetails.txt ? this.state.workDetails.txt : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque pariatur placeat officia molestiae autem quo, enim sunt quae odio, quis cupiditate quaerat doloribus illum nisi expedita sit consequuntur ex neque! Voluptates, placeat saepe ad vero nulla sint, asperiores, iusto possimus soluta cumque sapiente tempora explicabo! Labore inventore qui ullam possimus.'}</p>
+                        </div>
+                    </div>
 
 
-                <main>
-                    <Hero />
-                    
-                    <article className="page">
-                        {this.props.sections.map((section, index) => (
-                            <section ref={this.state.setSectionRef} id={section.name} key={index} name={section.name} className={`module ${section.name}`}>
-                                <h2 className="module__title">{section.text}</h2>
-                                <div className={`module__content ${section.name}__content ${section.name == 'skills' || section.name == 'works' ? 'container' : ''}`}>
-                                    {section.content}
-                                </div>
-                            </section>
-                        ))}
-                    </article>
-                </main>
-            </React.Fragment>
+                </div>
+                <div className="board__bg"></div>
+            </div>
         )
     }
 }
-
-App.defaultProps = {
-    sections: [
-        {
-            name: 'about', 
-            text: 'обо мне',
-            content: <About />
-        },
-        {
-            name: 'skills', 
-            text: 'навыки',
-            content: <List content={skills} />
-        },
-        {
-            name: 'works', 
-            text: 'работы',
-            content: <List content={works} catalog/>
-        }
-    ]
-}
-

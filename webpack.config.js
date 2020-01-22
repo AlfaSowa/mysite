@@ -92,7 +92,7 @@ module.exports = {
 
     optimization: optimization(),
 
-    devtool: isDev ? 'source-map' : false,
+    devtool: isDev ? false : false,
 
     module: {
         rules:[
@@ -148,7 +148,7 @@ module.exports = {
             },
             //images
             {
-				test: /\.(png|jpg|jpeg|svg|gif)$/i,
+				test: /\.(png|jpg|svg|gif)$/,
 				use: [
 					{
 						loader: 'file-loader',
