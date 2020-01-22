@@ -48,10 +48,11 @@
         width: calc(100% - 20px)
         height: 40px
         position: absolute
-        background: $color-details-basic
         top: 0
         left: 10px
-        opacity: .1
+        background-image: repeating-radial-gradient(circle at center, $color-details-add, $color-details-add 1px, transparent 1px, transparent 100%)
+        background-size: 6px 6px
+
 
     @include desctop
         flex: 1 0 33.3333333%
