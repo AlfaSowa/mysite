@@ -7,25 +7,33 @@
     &__sidebar
         position: absolute
         @include desctop
-            width: 30%
+            width: $sidebar-width
             top: 0
             bottom: 0
 
     &__inner
         flex: 1
         @include desctop
-            padding-left: 30%
+            padding: 0 10% 0 $sidebar-width
             margin: 100px 0
             border-top: 2px solid $color-details-basic
             border-bottom: 2px solid $color-details-basic
             display: flex
             flex-direction: column
     
+    &__title
+        position: absolute
+        top: 10px
+        left: 20px
+        text-transform: uppercase
+        font-weight: 600
+            
     &__details
         flex: 1
     
     &__content
         display: flex
+        position: relative
             
     
     &__bg
@@ -37,8 +45,8 @@
         opacity: .1
 
 .module
-    flex: 1 0 50%
-    max-width: 50%
+    flex: 1
+    min-width: 50%
     display: flex
     flex-direction: column
     padding: 60px 10px 10px 10px
@@ -50,19 +58,18 @@
         position: absolute
         top: 0
         left: 10px
-        background-image: repeating-radial-gradient(circle at center, $color-details-add, $color-details-add 1px, transparent 1px, transparent 100%)
-        background-size: 6px 6px
+        @include dotted
 
 
     @include desctop
-        flex: 1 0 33.3333333%
-        max-width: 33.3333333%
+        flex: 1
+        min-width: 33.3333333%
     
     &__content
         flex: 1
         border: 2px solid $color-main-basic
-        min-height: 270px
-        max-height: 270px
+        min-height: $module-height
+        max-height: $module-height
         transition: all .3s ease-in-out
         background: $color-module-bg
     

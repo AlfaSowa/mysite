@@ -4,6 +4,33 @@
     border: 2px solid $color-module-bg
 
     &__inner
-        padding: 10px
+        padding: 5px
+    
+    &__header
+        display: flex
+        margin-bottom: 16px
+    
+    &__difficulty
+        width: 24px
+        height: 24px
+        display: flex
+        align-items: center
+        justify-content: center
+        margin-right: 5px
+        font-size: .9rem
+        //color: #000
+        &_low
+            background: $difficulty-bg-low
+        &_mid
+            background: $difficulty-bg-mid
+        &_high
+            background: $difficulty-bg-high
+
     &__title
-        color: $color-font-title
+        background: $difficulty-bg-title
+        padding: 0 5px
+        font-size: 1rem
+        display: flex
+        align-items: center
+        justify-content: center
+        text-transform: uppercase

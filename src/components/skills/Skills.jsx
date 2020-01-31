@@ -26,14 +26,15 @@ export default class Skills extends React.Component {
                     <li className="skills__item">HTML</li>
                     <li className="skills__item">HTML</li>
                 </ul>
-
-                <div onClick={this.showTree} className="skills__tree">1</div>
-
-                {!this.state.isShowTree || <Tree showTree={this.showTree}/>}
             </React.Fragment>
         )
     }
 }
+
+/*
+<div onClick={this.showTree} className="skills__tree">1</div>
+{!this.state.isShowTree || <Tree showTree={this.showTree}/>}
+*/
 
 
 class Tree extends Skills {

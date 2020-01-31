@@ -34,13 +34,11 @@ export default class Works extends React.Component {
 
     render(){
         return(
-            <div className="works">
-                <ul className="works__list">
-                    {blocks.map((item,index) => (
-                        <Block setRef={this.state.getWorksRef} key={index} item={item} showInfo={this.showInfo}/>
-                    ))}
-                </ul>
-            </div>
+            <ul className="works__list">
+                {blocks.map((item,index) => (
+                    <Block setRef={this.state.getWorksRef} key={index} item={item} showInfo={this.showInfo}/>
+                ))}
+            </ul>
         )
     }
 }
@@ -75,6 +73,7 @@ Works.defaultProps = {
         {
             name: '1',
             content: {
+                difficulty: 1,
                 title: 'alfa-sowa.me',
                 txt: '111'
             }
@@ -82,6 +81,7 @@ Works.defaultProps = {
         {
             name: '2',
             content: {
+                difficulty: 2,
                 title: 'qwe',
                 txt: '12312 123 131 23'
             }
@@ -89,6 +89,7 @@ Works.defaultProps = {
         {
             name: '3',
             content: {
+                difficulty: 3,
                 title: ' 23r2r fwefwd wqdwe',
                 txt: 'qw  12 d dqwe 212'
             }
@@ -96,6 +97,7 @@ Works.defaultProps = {
         {
             name: '4',
             content: {
+                difficulty: 2,
                 title: 'qw eq d qwd 12e 12e12',
                 txt: ' wer wer w 23 23 3232'
             }
@@ -103,6 +105,7 @@ Works.defaultProps = {
         {
             name: '5',
             content: {
+                difficulty: 1,
                 title: 'alfa-sowa.me',
                 txt: 'qweqweqweqe'
             }
@@ -110,6 +113,7 @@ Works.defaultProps = {
         {
             name: '6',
             content: {
+                difficulty: 1,
                 title: 'alfa-sowa.me',
                 txt: 'qweqweqweqe'
             }
@@ -117,6 +121,7 @@ Works.defaultProps = {
         {
             name: '7',
             content: {
+                difficulty: 3,
                 title: 'alfa-sowa.me',
                 txt: 'qweqweqweqe'
             }
