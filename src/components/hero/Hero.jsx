@@ -1,6 +1,5 @@
 import React from 'react'
 
-import avatar from '../../img/1.jpg'
 
 export default class Hero extends React.Component {
 
@@ -8,7 +7,7 @@ export default class Hero extends React.Component {
         return(
             <aside className="hero">
                 <div className="hero__inner">
-                    <div className="hero__item hero__pic" style={{ background: `url(${avatar}) no-repeat top left / cover`}}>
+                    <div className="hero__item hero__pic">
                         <div className="hero__pic_title">Tamson Aleksei</div>
 
                         <div className="hero__pic_main">
