@@ -1,6 +1,12 @@
 import React from 'react'
+import Block from './Block.jsx'
 
-let blocks = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+import works from '../../json/works.json'
+
+const { MongoClient } = require('mongodb');
+
+//const URL = 'mongodb+srv://alexSowa:Sowushka74meepo@cluster0-rbuw9.mongodb.net/alfasowa'
+//const TEST_URL = 'mongodb://http://localhost:8181/works'
 
 export default class Works extends React.Component {
 
@@ -12,119 +18,63 @@ export default class Works extends React.Component {
         }
     }
 
+    getWorks = async () => {
+
+        //mongodd
+        try {
+            const client = await new MongoClient(URL, {
+                useNewUrlParser: true
+            })
+
+            console.log(client)
+
+            client.connect(err => {
+                const worksItem = client.db("alfasowa").collection("works");
+                console.log(worksItem)
+                client.close();
+            })
+        } catch(e) {
+            console.log(e)
+        }
+
+    }
+
     componentDidMount = () => {
-        blocks.map((item, index) => {
-            this.props.activeBlocks[index] ? blocks.splice(index, 1, this.props.activeBlocks[index]) : null
-        })
+        //this.getWorks()
+        
+        const blocks = []
+        
+        for(let i = 0; i < 20; i++) {
+            works[i] ? blocks.push(works[i]) : blocks.push(i)
+        }
 
         this.setState({
             works: blocks
         })
     }
 
-    showInfo = (e,number) => {
+    showInfo = (e,item) => {
         const target = e.target
+
         this.state.worksRef.forEach(el => {
             el.parentElement.classList.contains('works__item--active') ? el.parentElement.classList.remove('works__item--active') : null
         })
         target.parentElement.classList.add('works__item--active')
 
-        this.props.workDetails(number)
+        this.props.workDetails(item)
     }
 
     render(){
+        const { works } = this.state
         return(
             <ul className="works__list">
-                {blocks.map((item,index) => (
-                    <Block setRef={this.state.getWorksRef} key={index} item={item} showInfo={this.showInfo}/>
-                ))}
+                {works !== [] 
+                    ? works.map((item,index) => (
+                        <Block setRef={this.state.getWorksRef} key={index} index={index} item={item} showInfo={this.showInfo}/>
+                    ))
+                    : null
+                }
             </ul>
         )
     }
-}
-
-class Block extends Works {
-
-    state = {
-        isActive: false
-    }
-
-    render(){
-        const { item, setRef } = this.props
-        return(
-            <li onClick={item.name ? e => this.props.showInfo(e, item.content) : null} className='works__item'>
-                <div ref={item.name ? setRef : null} className={`works__item_content ${item.name ? 'works__item_content--active' : ''}`}>{item.name ? item.name : item}</div>
-                {item.content 
-                    ? <div className='works__item_dropdown'>
-                        <span>{item.content.title}</span>
-                        <p>{item.content.txt}</p>
-                    </div>
-                    : null
-                }
-            </li>
-        )
-    }
-}
-
-//{this.getItems(this.props.blocks)}
-
-Works.defaultProps = {
-    activeBlocks: [
-        {
-            name: '1',
-            content: {
-                difficulty: 1,
-                title: 'alfa-sowa.me',
-                txt: '111'
-            }
-        },
-        {
-            name: '2',
-            content: {
-                difficulty: 2,
-                title: 'qwe',
-                txt: '12312 123 131 23'
-            }
-        },
-        {
-            name: '3',
-            content: {
-                difficulty: 3,
-                title: ' 23r2r fwefwd wqdwe',
-                txt: 'qw  12 d dqwe 212'
-            }
-        },
-        {
-            name: '4',
-            content: {
-                difficulty: 2,
-                title: 'qw eq d qwd 12e 12e12',
-                txt: ' wer wer w 23 23 3232'
-            }
-        },
-        {
-            name: '5',
-            content: {
-                difficulty: 1,
-                title: 'alfa-sowa.me',
-                txt: 'qweqweqweqe'
-            }
-        },
-        {
-            name: '6',
-            content: {
-                difficulty: 1,
-                title: 'alfa-sowa.me',
-                txt: 'qweqweqweqe'
-            }
-        },
-        {
-            name: '7',
-            content: {
-                difficulty: 3,
-                title: 'alfa-sowa.me',
-                txt: 'qweqweqweqe'
-            }
-        }
-    ]
 }

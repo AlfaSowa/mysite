@@ -6,20 +6,23 @@
 
     &__sidebar
         position: absolute
+        display: none
         @include desctop
+            display: block
             width: $sidebar-width
             top: 0
             bottom: 0
 
     &__inner
         flex: 1
+        padding: 0 20px
+        margin: 100px 0
+        border-top: 2px solid $color-details-basic
+        border-bottom: 2px solid $color-details-basic
+        display: flex
+        flex-direction: column
         @include desctop
             padding: 0 10% 0 $sidebar-width
-            margin: 100px 0
-            border-top: 2px solid $color-details-basic
-            border-bottom: 2px solid $color-details-basic
-            display: flex
-            flex-direction: column
     
     &__title
         position: absolute
@@ -58,10 +61,13 @@
         position: absolute
         top: 0
         left: 10px
-        @include dotted
+        @include dotted($color-details-add)
 
 
     @include desctop
+        flex: 1
+        min-width: 33.3333333%
+    @include table
         flex: 1
         min-width: 33.3333333%
     

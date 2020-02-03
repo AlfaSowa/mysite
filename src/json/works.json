@@ -1,18 +1,20 @@
 [
     {
-        "title": "github.com/Grimmino",
-        "description": "Мой GitHub где хранятся мои наработки и примеры кода.",
-        "link": "https://github.com/Grimmino?tab=repositories",
+        "title": "vk174",
+        "description": "Сайт типографии в Челябинске",
+        "link": "http://www.vk174.ru/",
+        "difficulty": "C",
         "content": [
             {
-                "paragraph": "github.com/Grimmino"
+                "paragraph": "qweqweqweqeqwe"
             }
         ]
     },
     {
-        "title": "vk174",
-        "description": "Сайт типографии в Челябинске",
-        "link": "http://www.vk174.ru/",
+        "title": "03chel",
+        "description": "Сайт скорой помощи",
+        "link": "йцу",
+        "difficulty": "B",
         "content": [
             {
                 "paragraph": "qweqweqweqeqwe"

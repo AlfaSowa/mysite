@@ -55,7 +55,7 @@ export default class App extends React.Component {
                         ))}
                     </div>
 
-                    <Details details={this.state.workDetails}/>
+                    {this.state.workDetails ? <Details details={this.state.workDetails}/> : null}
 
                 </div>
                 <div className="board__bg"></div>
@@ -66,34 +66,21 @@ export default class App extends React.Component {
 
 const Details = (props) => {
     const { details } = props
-
-    const getRandomArbitrary= (min, max) => {
-        min = Math.ceil(min)
-        max = Math.floor(max)
-        return Math.floor(Math.random() * (max - min)) + min
-    }
-
-    const getDif = (number) => {
-        console.log(number)
-        switch (number) {
-            case 1:
-                return <div className="details__difficulty details__difficulty_low">A</div>
-            case 2:
-                return <div className="details__difficulty details__difficulty_mid">B</div>
-            case 3:
-                return <div className="details__difficulty details__difficulty_high">C</div>
-        }
-    }
-
+    const getClassDifficulty = (number) => number == "A" ? "low" : number == "B" ? "mid" : "high"
 
     return(
         <div className="board__details details">
             <div className="details__inner">
                 <div className="details__header">
-                    {details.difficulty ? getDif(details.difficulty) : getDif(getRandomArbitrary(1,4))}
-                    <span className="details__title">{details.title ? details.title : 'asdasdasda as das dsa d asd '}</span>
+                    <div className={`details__difficulty details__difficulty_${getClassDifficulty(details.difficulty)}`}>{details.difficulty}</div>
+                    <span className="details__title">{details.title}</span>
                 </div>
-                <p className="details__txt">{details.txt ? details.txt : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque pariatur placeat officia molestiae autem quo, enim sunt quae odio, quis cupiditate quaerat doloribus illum nisi expedita sit consequuntur ex neque! Voluptates, placeat saepe ad vero nulla sint, asperiores, iusto possimus soluta cumque sapiente tempora explicabo! Labore inventore qui ullam possimus.'}</p>
+
+                <div className="details__content">
+                    {details.content.map((item, index) => (
+                        <p key={index}>{item.paragraph}</p>
+                    ))}
+                </div>
             </div>
         </div>
     )
