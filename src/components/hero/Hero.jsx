@@ -33,13 +33,13 @@ export default class Hero extends React.Component {
 
                     <ul className="hero__item hero__links">
                         <li className="hero__links_item">
-                            <a className="hero__links_link" href="https://hh.ru/resume/ffd982adff015f658b0039ed1f79534c574879" target="_blank">Мой репозиторий на GitHub</a>
+                            <a className="hero__links_link" href="https://github.com/Grimmino" target="_blank">Мой репозиторий на GitHub</a>
                         </li>
                         <li className="hero__links_item">
                             <a className="hero__links_link" href="https://hh.ru/resume/ffd982adff015f658b0039ed1f79534c574879" target="_blank">Мое резюме на hh</a>
                         </li>
                         <li className="hero__links_item">
-                            <a className="hero__links_link" href="https://hh.ru/resume/ffd982adff015f658b0039ed1f79534c574879" target="_blank">Мое резюме на LinkedIn</a>
+                            <a className="hero__links_link" href="https://www.linkedin.com/in/alexey-tamson-48ba51194/" target="_blank">Мое резюме на LinkedIn</a>
                         </li>
                     </ul>
                 </div>

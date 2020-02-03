@@ -20364,7 +20364,7 @@ class Hero extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       className: "hero__links_item"
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
       className: "hero__links_link",
-      href: "https://hh.ru/resume/ffd982adff015f658b0039ed1f79534c574879",
+      href: "https://github.com/Grimmino",
       target: "_blank"
     }, "\u041C\u043E\u0439 \u0440\u0435\u043F\u043E\u0437\u0438\u0442\u043E\u0440\u0438\u0439 \u043D\u0430 GitHub")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
       className: "hero__links_item"
@@ -20376,7 +20376,7 @@ class Hero extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       className: "hero__links_item"
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
       className: "hero__links_link",
-      href: "https://hh.ru/resume/ffd982adff015f658b0039ed1f79534c574879",
+      href: "https://www.linkedin.com/in/alexey-tamson-48ba51194/",
       target: "_blank"
     }, "\u041C\u043E\u0435 \u0440\u0435\u0437\u044E\u043C\u0435 \u043D\u0430 LinkedIn")))));
   }
