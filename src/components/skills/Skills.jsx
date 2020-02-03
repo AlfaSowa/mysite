@@ -17,14 +17,12 @@ export default class Skills extends React.Component {
             <React.Fragment>
                 <ul className="skills__list">
                     <li className="skills__item">HTML</li>
-                    <li className="skills__item">HTML</li>
-                    <li className="skills__item">HTML</li>
-                    <li className="skills__item">HTML</li>
-                    <li className="skills__item">HTML</li>
-                    <li className="skills__item">HTML</li>
-                    <li className="skills__item">HTML</li>
-                    <li className="skills__item">HTML</li>
-                    <li className="skills__item">HTML</li>
+                    <li className="skills__item">CSS/SASS/SCSS/LESS</li>
+                    <li className="skills__item">Кроссбраузерная и адаптивная верстка/Flexbox/БЭМ</li>
+                    <li className="skills__item">JS/ES5/ES6</li>
+                    <li className="skills__item">Promise/Async/await/Fetch</li>
+                    <li className="skills__item">TypeScript</li>
+                    <li className="skills__item">REACT/REDUX</li>
                 </ul>
             </React.Fragment>
         )

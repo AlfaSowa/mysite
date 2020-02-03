@@ -3,9 +3,9 @@ import Block from './Block.jsx'
 
 import works from '../../json/works.json'
 
-const { MongoClient } = require('mongodb');
+//const { MongoClient } = require('mongodb');
 
-//const URL = 'mongodb+srv://alexSowa:Sowushka74meepo@cluster0-rbuw9.mongodb.net/alfasowa'
+//const URL = 'mongodb+srv://alexSowa:<pass>@cluster0-rbuw9.mongodb.net/alfasowa'
 //const TEST_URL = 'mongodb://http://localhost:8181/works'
 
 export default class Works extends React.Component {

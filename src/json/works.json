@@ -6,18 +6,18 @@
         "difficulty": "C",
         "content": [
             {
-                "paragraph": "qweqweqweqeqwe"
+                "paragraph": "Занимался фронтенд разработкой сайта для типографии."
             }
         ]
     },
     {
         "title": "03chel",
         "description": "Сайт скорой помощи",
-        "link": "йцу",
+        "link": "http://www.03chel.ru/",
         "difficulty": "B",
         "content": [
             {
-                "paragraph": "qweqweqweqeqwe"
+                "paragraph": "Занимался фронтенд разработкой сайта для станции скорой помощи."
             }
         ]
     }

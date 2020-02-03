@@ -73,7 +73,10 @@ const Details = (props) => {
             <div className="details__inner">
                 <div className="details__header">
                     <div className={`details__difficulty details__difficulty_${getClassDifficulty(details.difficulty)}`}>{details.difficulty}</div>
-                    <span className="details__title">{details.title}</span>
+                    <div className="details__title">
+                        <span>{details.title}</span>
+                        <a href={details.link} target="_blank">перейти на сайт</a>
+                    </div>
                 </div>
 
                 <div className="details__content">
@@ -85,6 +88,7 @@ const Details = (props) => {
         </div>
     )
 }
+
 
 App.defaultProps = {
     modules: [
