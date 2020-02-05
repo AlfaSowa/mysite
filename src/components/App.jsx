@@ -40,6 +40,8 @@ export default class App extends React.Component {
                     <Links />
                 </div>
 
+                
+
                 <div className="board__inner">
                     
                     <div className="board__content">

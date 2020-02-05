@@ -1,14 +1,16 @@
 import React from 'react'
 
+import tree from '../../json/tree.json'
+
 export default class Skills extends React.Component {
 
     state = {
-        isShowTree: false
+        item: false
     }
 
-    showTree = () => {
+    showSkill = (e, item) => {
         this.setState({
-            isShowTree: !this.state.isShowTree
+            item: item
         })
     }
 
@@ -16,34 +18,38 @@ export default class Skills extends React.Component {
         return(
             <React.Fragment>
                 <ul className="skills__list">
-                    <li className="skills__item">HTML</li>
-                    <li className="skills__item">CSS/SASS/SCSS/LESS</li>
-                    <li className="skills__item">Кроссбраузерная и адаптивная верстка/Flexbox/БЭМ</li>
-                    <li className="skills__item">JS/ES5/ES6</li>
-                    <li className="skills__item">Promise/Async/await/Fetch</li>
-                    <li className="skills__item">TypeScript</li>
-                    <li className="skills__item">REACT/REDUX</li>
+                    {tree.map((item, index) => (
+                        <li key={index} className="skills__item">
+                            <div onClick={(e) => this.showSkill(e, item)} className="skills__box">{item.name}</div>
+                        </li>
+                    ))}
                 </ul>
+
+                <SkillInfo item={this.state.item} />
             </React.Fragment>
         )
     }
 }
 
-/*
-<div onClick={this.showTree} className="skills__tree">1</div>
-{!this.state.isShowTree || <Tree showTree={this.showTree}/>}
-*/
-
-
-class Tree extends Skills {
-    render(){
+class SkillInfo extends Skills {
+    render() {
+        const { item } = this.props
         return(
-            <div className="tree">
-                <div className="tree__inner">
-                    <span>asdasdasdd</span>
-                    <div onClick={this.props.showTree} className="tree__close"></div>
+            <div className="skills__inner">
+                <div className="skills__header">
+                    <div className="skills__header_name">{item.name}</div>
+
+                    <div className="skills__header_perks">
+                        <ul>
+                            <li>перк номер один</li>
+                            <li>перк номер два длинное имя</li>
+                            <li>перк номер три очень длинное имя</li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
+
+                <div className="skills__content"></div>
+            </div> 
         )
     }
 }

@@ -1,13 +1,16 @@
 .works
+    min-width: 500px
+    max-width: 500px
+
     &__list
         display: flex
         flex-wrap: wrap
+        position: relative
 
     &__item
         flex: 1 0 20%
         max-width: 20%
         padding: 2px
-        position: relative
 
         &--active
             .works__item_content--active
@@ -33,18 +36,18 @@
                 
         &_dropdown
             position: absolute
-            right: 100%
-            top: 0
+            right: 2px
+            top: -42px
             display: none
-            width: 200px
-            background: $color-body
+            min-width: max-content
             z-index: 100
+            text-align: right
+            text-transform: uppercase
             &-title
-                padding: 8px
-                background: $color-details-add
-                text-align: center
+                font-size: 1.4rem
+                font-weight: 800
             &-content
-                padding: 8px
+                font-size: .6rem
             &-dif
                 width: 100%
                 height: 10px

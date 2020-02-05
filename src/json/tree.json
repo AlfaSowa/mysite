@@ -1,0 +1,86 @@
+[
+    {
+        "name": "css",
+        "level": 88,
+        "branches": [
+            {
+                "name": "препроцессоры"
+            },
+            {
+                "name": "flexbox/grid"
+            },
+            {
+                "name": "анимация"
+            },
+            {
+                "name": "@media"
+            },
+            {
+                "name": "БЭМ"
+            }
+        ]
+    },
+    {
+        "name": "html",
+        "level": 58,
+        "branches": [
+            {
+                "name": "семантика"
+            },
+            {
+                "name": "SVG"
+            },
+            {
+                "name": "SEO"
+            }
+        ]
+    },
+    {
+        "name": "javascript",
+        "level": 20,
+        "branches": [
+            {
+                "name": "DOM"
+            },
+            {
+                "name": "массивы"
+            },
+            {
+                "name": "объекты"
+            },
+            {
+                "name": "es6"
+            },
+            {
+                "name": "JSON"
+            },
+            {
+                "name": "Promise"
+            },
+            {
+                "name": "async/await"
+            },
+            {
+                "name": "fetch"
+            }
+        ]
+    },
+    {
+        "name": "react",
+        "level": 20,
+        "branches": [
+            {
+                "name": "react"
+            }
+        ]
+    },
+    {
+        "name": "other",
+        "level": 20,
+        "branches": [
+            {
+                "name": "react"
+            }
+        ]
+    }
+]

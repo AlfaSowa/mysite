@@ -1,6 +1,5 @@
 .avatar
     position: relative
-    padding: 50px 0
 
     &__photo
         height: 250px
@@ -8,8 +7,29 @@
         border-radius: 50%
         margin: 0 auto
         background: url("../img/avatar.jpg") no-repeat center center / cover
-
-    &__inner
+    
+    &__level
         position: absolute
+        width: 250px
+        height: 100%
         top: 0
-        left: 0
+        left: 50%
+        transform: translateX(-50%)
+    
+        &_box
+            position: absolute
+            width: 42px
+            height: 42px
+            bottom: 20px
+            left: 20px
+            background: $color-details-basic
+            display: flex
+            justify-content: space-around
+            align-items: center
+            border-radius: 50%
+            font-weight: 800
+            text-transform: uppercase
+            padding: 0 4px
+            span
+                font-weight: 400
+                font-size: .6rem
