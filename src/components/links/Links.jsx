@@ -1,20 +1,18 @@
 import React from 'react'
 
-export default class Links extends React.Component {
+export const Links = props => {
 
-    render(){
-        return(
-            <div className="links">
-                <ul className="links__list">
-                    {this.props.links.map((item, index) => (
-                        <li key={index} className="links__item">
-                            <a className="links__item_link" href={item.link} target="_blank">{item.title}</a>
-                        </li>
-                    ))}
-                </ul>
-            </div>
-        )
-    }
+    return(
+        <div className="refs">
+            <ul className="refs__list">
+                {props.links.map((item, index) => (
+                    <li key={index} className="refs__item">
+                        <a className="refs__link" href={item.link} target="_blank">{item.title}</a>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    )
 }
 
 Links.defaultProps = {

@@ -4,29 +4,28 @@
         height: 100vh
         min-height: 800px
 
-    &__sidebar
-        position: absolute
-        display: none
-        padding: 50px 40px
-        @include desctop
-            display: block
-            width: $sidebar-width
-            top: 0
-            bottom: 0
-        
-        >:not(:last-child)
-            margin-bottom: 32px
-
-    &__inner
+    &__wrapper
         flex: 1
-        padding: 0 20px
         margin: 100px 0
         border-top: 2px solid $color-details-basic
         border-bottom: 2px solid $color-details-basic
         display: flex
+        justify-content: center
+        padding: 0 20px
+
+    &__sidebar
+        margin-top: -40px
+        display: none
+        @include desctop
+            display: block
+            width: 350px
+
+    &__inner
+        //padding: 0 20px
+        display: flex
         flex-direction: column
         @include desctop
-            padding: 0 10% 0 $sidebar-width
+            //padding: 0 10% 0 $sidebar-width
     
     &__title
         position: absolute
@@ -51,32 +50,34 @@
         z-index: -1
         opacity: .1
 
-.module
-    flex: 1
-    display: flex
-    flex-direction: column
-    padding: 60px 10px 10px 10px
-    position: relative
-    &:before
-        content: ''
-        width: calc(100% - 20px)
-        height: 40px
-        position: absolute
-        top: 0
-        left: 10px
-        @include dotted($color-details-add)
-    
-    &__content
+    &__item
         flex: 1
-        border: 2px solid $color-main-basic
-        min-height: $module-height
-        max-height: $module-height
-        transition: all .3s ease-in-out
-        background: $color-module-bg
-    
-    &__title
-        font-size: .8rem
-        color: $color-details-basic
-        text-transform: uppercase
-        margin-bottom: 8px
-        transition: all .3s ease-in-out
+        display: flex
+        flex-direction: column
+        padding: 60px 10px 10px 10px
+        position: relative
+        &:before
+            content: ''
+            width: calc(100% - 20px)
+            height: 40px
+            position: absolute
+            top: 0
+            left: 10px
+            @include dotted($color-details-add)
+        
+        &-content
+            flex: 1
+            display: flex
+            flex-direction: column
+            border: 2px solid $color-main-basic
+            min-height: $module-height
+            max-height: $module-height
+            transition: all .3s ease-in-out
+            background: $color-module-bg
+        
+        &-title
+            font-size: .8rem
+            color: $color-details-basic
+            text-transform: uppercase
+            margin-bottom: 8px
+            transition: all .3s ease-in-out

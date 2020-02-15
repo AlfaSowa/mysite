@@ -12,11 +12,11 @@ export default class Block extends React.Component {
 
         return(
             <li className='works__item'>
-                <div onClick={item.title ? e => showInfo(e, item) : null} ref={setRef} className={`works__item_content ${item.title ? 'works__item_content--active' : ''}`}>{index}</div>
+                <div onClick={item.title ? e => showInfo(e, item) : null} ref={setRef} className={`works__box ${item.title ? 'works__box--active' : ''}`}>{index}</div>
 
-                <div className='works__item_dropdown'>
-                    <div className="works__item_dropdown-title">{item.title ? item.title : item}</div>
-                    <div className="works__item_dropdown-content">{item.description ? item.description : ''}</div>
+                <div className='works__dropdown'>
+                    <div className="works__dropdown-title">{item.title ? item.title : item}</div>
+                    <div className="works__dropdown-content">{item.description ? item.description : ''}</div>
                 </div>
             </li>
         )

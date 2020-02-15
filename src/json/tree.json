@@ -1,22 +1,77 @@
 [
     {
         "name": "css",
-        "level": 88,
+        "level": 95,
+        "perks": [
+            {
+                "name": "верстка под любую платформу"
+            },
+            {
+                "name": "перк номер два"
+            },
+            {
+                "name": "перк номер три"
+            }
+        ],
         "branches": [
             {
-                "name": "препроцессоры"
+                "name": "внешние/внутренние/встроенные стили",
+                "type": "main"
             },
             {
-                "name": "flexbox/grid"
+                "name": "блочная модель",
+                "type": "main"
             },
             {
-                "name": "анимация"
+                "name": "работа с псевдоэлементами",
+                "type": "main"
             },
             {
-                "name": "@media"
+                "name": "работа с текстом и шрифтами",
+                "type": "main"
             },
             {
-                "name": "БЭМ"
+                "name": "работа с фоном и цветами",
+                "type": "main"
+            },
+            {
+                "name": "таблицы",
+                "type": "main"
+            },
+            {
+                "name": "пониание как работают еденицы измерения",
+                "type": "main"
+            },
+            {
+                "name": "адаптивная верстка",
+                "type": "main"
+            },
+            {
+                "name": "позиционирование элементов",
+                "type": "main"
+            },
+            {
+                "name": "flexbox/grid",
+                "type": "main"
+            },
+            {
+                "name": "Анимации, Трансформации, Переходы, Тени, Градиенты",
+                "type": "main"
+            },
+            {
+                "name": "Медиавыражения",
+                "type": "main"
+            },
+            {
+                "name": "препроцессоры (scss/sass/less)",
+                "type": "main"
+            },
+            {
+                "name": "Организация CSS-кода по БЭМ",
+                "type": "main"
+            },
+            {
+                "name": "Кросс-браузерность"
             }
         ]
     },
@@ -25,7 +80,19 @@
         "level": 58,
         "branches": [
             {
-                "name": "семантика"
+                "name": "DOM"
+            },
+            {
+                "name": "Основные HTML-теги"
+            },
+            {
+                "name": "Семантическая вёрстка"
+            },
+            {
+                "name": "Работа с формами"
+            },
+            {
+                "name": "Canvas"
             },
             {
                 "name": "SVG"
@@ -40,19 +107,34 @@
         "level": 20,
         "branches": [
             {
-                "name": "DOM"
+                "name": "Основы языка JavaScript"
             },
             {
-                "name": "массивы"
+                "name": "Области видимости в JavaScript"
             },
             {
-                "name": "объекты"
+                "name": "Объекты и Массивы"
+            },
+            {
+                "name": "try..catch"
+            },
+            {
+                "name": "setTimeout и setInterval"
+            },
+            {
+                "name": "Классы и наследование классов"
+            },
+            {
+                "name": "Статические, приватные и защищенные свойства классов"
+            },
+            {
+                "name": "call(), apply(), bind()"
+            },
+            {
+                "name": "Регулярные выражения"
             },
             {
                 "name": "es6"
-            },
-            {
-                "name": "JSON"
             },
             {
                 "name": "Promise"
@@ -62,20 +144,20 @@
             },
             {
                 "name": "fetch"
+            },
+            {
+                "name": "DOM-дерево"
+            },
+            {
+                "name": "document и window"
+            },
+            {
+                "name": "JSON"
             }
         ]
     },
     {
         "name": "react",
-        "level": 20,
-        "branches": [
-            {
-                "name": "react"
-            }
-        ]
-    },
-    {
-        "name": "other",
         "level": 20,
         "branches": [
             {

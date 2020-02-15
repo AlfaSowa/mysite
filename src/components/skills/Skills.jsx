@@ -2,19 +2,31 @@ import React from 'react'
 
 import tree from '../../json/tree.json'
 
+import Header from './Header.jsx'
+import Branches from './Branches.jsx'
+import Tree from './Tree.jsx'
+
 export default class Skills extends React.Component {
 
     state = {
-        item: false
+        skill: false,
+        isShowTree: false
     }
 
     showSkill = (e, item) => {
         this.setState({
-            item: item
+            skill: item
+        })
+    }
+
+    ShowTree = () => {
+        this.setState({
+            isShowTree: !this.state.isShowTree
         })
     }
 
     render(){
+        const { skill, isShowTree } = this.state
         return(
             <React.Fragment>
                 <ul className="skills__list">
@@ -25,31 +37,13 @@ export default class Skills extends React.Component {
                     ))}
                 </ul>
 
-                <SkillInfo item={this.state.item} />
-            </React.Fragment>
-        )
-    }
-}
-
-class SkillInfo extends Skills {
-    render() {
-        const { item } = this.props
-        return(
-            <div className="skills__inner">
-                <div className="skills__header">
-                    <div className="skills__header_name">{item.name}</div>
-
-                    <div className="skills__header_perks">
-                        <ul>
-                            <li>перк номер один</li>
-                            <li>перк номер два длинное имя</li>
-                            <li>перк номер три очень длинное имя</li>
-                        </ul>
-                    </div>
+                <div className="skills__inner">
+                    {skill.name ? <Header item={skill} /> : null}
+                    {skill.branches ? <Branches ShowTree={this.ShowTree} item={skill} /> : null}
                 </div>
 
-                <div className="skills__content"></div>
-            </div> 
+                {isShowTree ? <Tree skill={skill} ShowTree={this.ShowTree} /> : null}
+            </React.Fragment>
         )
     }
 }
