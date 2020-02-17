@@ -1,21 +1,23 @@
 [
     {
-        "title": "github.com/Grimmino",
-        "description": "Мой GitHub где хранятся мои наработки и примеры кода.",
-        "link": "https://github.com/Grimmino?tab=repositories",
+        "title": "vk174",
+        "description": "Сайт типографии в Челябинске",
+        "link": "http://www.vk174.ru/",
+        "difficulty": "C",
         "content": [
             {
-                "paragraph": "github.com/Grimmino"
+                "paragraph": "Занимался фронтенд разработкой сайта для типографии."
             }
         ]
     },
     {
-        "title": "vk174",
-        "description": "Сайт типографии в Челябинске",
-        "link": "http://www.vk174.ru/",
+        "title": "03chel",
+        "description": "Сайт скорой помощи",
+        "link": "http://www.03chel.ru/",
+        "difficulty": "B",
         "content": [
             {
-                "paragraph": "qweqweqweqeqwe"
+                "paragraph": "Занимался фронтенд разработкой сайта для станции скорой помощи."
             }
         ]
     }

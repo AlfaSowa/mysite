@@ -53,6 +53,10 @@ const plugins = () => {
             {
                 from: path.resolve(__dirname, 'CNAME'),
                 to: path.resolve(__dirname, 'docs')
+            },
+            {
+                from: path.resolve(__dirname, 'src/manifest.json'),
+                to: path.resolve(__dirname, 'docs')
             }
         ]),
         new HtmlWebPackPlugin({
@@ -148,7 +152,7 @@ module.exports = {
             },
             //images
             {
-				test: /\.(png|jpg|jpeg|svg|gif)$/i,
+				test: /\.(png|jpg|svg|gif)$/,
 				use: [
 					{
 						loader: 'file-loader',

@@ -1,77 +1,114 @@
 import React from 'react'
 
-import Header from './header/Header.jsx'
-
-import Hero from './hero/Hero.jsx'
-
-//----grid----
-import List from './sections/grid/List.jsx'
-import works from '../json/works.json'
-import skills from '../json/skills.json'
-//----gridend----
-
-import About from './sections/About.jsx'
-import PageSpeed from './api/PageSpeed.jsx'
+//info in sidebar
+import { Avatar } from './avatar/Avatar.jsx'
+import { Info } from './info/Info.jsx'
+import { Links } from './links/Links.jsx'
+//main content
+import Skills from './skills/Skills.jsx'
+import Works from './works/Works.jsx'
+import Stats from './stats/Stats.jsx'
 
 export default class App extends React.Component { 
 
     state = {
-        sectionRef: [],
-        setSectionRef: (e) => {
-            this.state.sectionRef.push(e)
-        }
+        workDetails: false
     }
 
-    componentDidMount = () => {
-        this.state.sectionRef.forEach(elem => {
-            window.addEventListener('scroll', () => {
-                window.scrollY >= elem.offsetTop - 500 ? elem.classList.add('showsection')  : elem.classList.remove('showsection')
-            })
+    workDetails = (details) => {
+        
+        this.setState({
+            workDetails: details
         })
+    }
+
+    getContent = (module) => {
+        switch (module) {
+            case 'skills':
+                return <Skills />
+            case 'works':
+                return <Works workDetails={this.workDetails}/>
+            case 'stats':
+                return <Stats />
+        }
     }
 
     render() {
         return (
-            <React.Fragment>
-                <Header menu={this.props.sections}/>
+            <div className="board">
+                <div className="board__wrapper">
+                    <div className="board__sidebar">
+                        <Avatar />
+                        <Info />
+                        <Links />
+                    </div>
 
+                    <div className="board__inner">
+                        
+                        <div className="board__content">
+                            <div className="board__title">Основная информация</div>
 
-                <main>
-                    <Hero />
-                    
-                    <article className="page">
-                        {this.props.sections.map((section, index) => (
-                            <section ref={this.state.setSectionRef} id={section.name} key={index} name={section.name} className={`module ${section.name}`}>
-                                <h2 className="module__title">{section.text}</h2>
-                                <div className={`module__content ${section.name}__content ${section.name == 'skills' || section.name == 'works' ? 'container' : ''}`}>
-                                    {section.content}
+                            {this.props.modules.map((item,index) => (
+                                <div key={index} className={`board__item ${item.class}`}>
+                                    <h2 className="board__item-title">{item.name}</h2>
+                                    <div className="board__item-content">
+                                        {this.getContent(item.class)}
+                                    </div>
                                 </div>
-                            </section>
-                        ))}
-                    </article>
-                </main>
-            </React.Fragment>
+                            ))}
+                        </div>
+
+                        {this.state.workDetails ? <Details details={this.state.workDetails}/> : null}
+
+                    </div>
+                </div>
+
+                
+                <div className="board__bg"></div>
+            </div>
         )
     }
 }
 
-App.defaultProps = {
-    sections: [
-        {
-            name: 'about', 
-            text: 'обо мне',
-            content: <About />
-        },
-        {
-            name: 'skills', 
-            text: 'навыки',
-            content: <List content={skills} />
-        },
-        {
-            name: 'works', 
-            text: 'работы',
-            content: <List content={works} catalog/>
-        }
-    ]
+const Details = (props) => {
+    const { details } = props
+    const getClassDifficulty = (number) => number == "A" ? "low" : number == "B" ? "mid" : "high"
+
+    return(
+        <div className="board__details details">
+            <div className="details__inner">
+                <div className="details__header">
+                    <div className={`details__difficulty details__difficulty--${getClassDifficulty(details.difficulty)}`}>{details.difficulty}</div>
+                    <div className="details__title">
+                        <span>{details.title}</span>
+                        <a href={details.link} target="_blank">перейти на сайт</a>
+                    </div>
+                </div>
+
+                <div className="details__content">
+                    {details.content.map((item, index) => (
+                        <p key={index}>{item.paragraph}</p>
+                    ))}
+                </div>
+            </div>
+        </div>
+    )
 }
 
+
+App.defaultProps = {
+    modules: [
+        {
+            name: 'навыки',
+            class: 'skills'
+        },
+        {
+            name: 'выполненые заказы',
+            class: 'works'
+        },
+        {
+            name: 'статистика',
+            class: 'stats'
+        },
+    ]
+}

@@ -1,10 +1,19 @@
 $breakpoint-mobile: 768
+$breakpoint-table: 1500
 
 @mixin mobile
     @media only screen and  (max-width: #{$breakpoint-mobile}px)
         @content
 
-@mixin desctop
-    @media only screen and (min-width: #{$breakpoint-mobile}px)
+@mixin table
+    @media only screen and  (max-width: #{$breakpoint-table}px)
         @content
-    
+
+@mixin desctop
+    @media only screen and (min-width: #{$breakpoint-table + 1}px)
+        @content
+
+//dotted background $color-details-add
+@mixin dotted($color)
+    background-image: repeating-radial-gradient(circle at center, $color, $color 1px, transparent 1px, transparent 100%)
+    background-size: 6px 6px

@@ -1,0 +1,39 @@
+.details
+    margin: 10px
+    background: $color-module-bg
+    border: 2px solid $color-module-bg
+
+    &__inner
+        padding: 5px
+    
+    &__header
+        display: flex
+        margin-bottom: 16px
+    
+    &__difficulty
+        width: 24px
+        height: 24px
+        display: flex
+        align-items: center
+        justify-content: center
+        margin-right: 5px
+        font-size: .9rem
+        //color: #000
+        &--low
+            background: $difficulty-bg-low
+        &--mid
+            background: $difficulty-bg-mid
+        &--high
+            background: $difficulty-bg-high
+
+    &__title
+        flex: 1
+        background: $difficulty-bg-title
+        padding: 0 5px
+        font-size: 1rem
+        display: flex
+        align-items: center
+        justify-content: space-between
+        text-transform: uppercase
+        a
+            color: $color-font

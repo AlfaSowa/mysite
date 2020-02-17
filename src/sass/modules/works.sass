@@ -1,0 +1,51 @@
+.works
+    min-width: 500px
+    max-width: 500px
+
+    &__list
+        display: flex
+        flex-wrap: wrap
+        position: relative
+
+    &__item
+        flex: 1 0 20%
+        max-width: 20%
+        padding: 2px
+
+        &--active
+            .works__box--active
+                border-color: transparent
+                @include dotted(transparentize($color-details-basic, .5))
+        
+    &__box
+        height: calc(#{$module-height - 20px}/4)
+        border: 1px solid $color-main-basic
+        display: flex
+        align-items: center
+        justify-content: center
+        color: $color-main-basic
+        &--active
+            border-color: $color-font
+            color: $color-font
+            cursor: pointer
+            &:hover
+                border-color: $color-details-basic
+                color: $color-details-basic
+                & + .works__dropdown
+                    display: block
+                
+    &__dropdown
+        position: absolute
+        right: 2px
+        top: -42px
+        display: none
+        min-width: max-content
+        z-index: 100
+        text-align: right
+        text-transform: uppercase
+        &-title
+            font-size: 1.4rem
+            font-weight: 800
+        &-content
+            font-size: .6rem
+
