@@ -28,6 +28,10 @@ Links.defaultProps = {
         {
             title: 'Мой репозиторий на GitHub',
             link: 'https://github.com/Grimmino'
+        },
+        {
+            title: 'Мой профиль на CodeWars',
+            link: 'https://www.codewars.com/users/Grimmino'
         }
     ]
 }

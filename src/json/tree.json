@@ -4,27 +4,21 @@
         "level": 95,
         "perks": [
             {
-                "name": "верстка под любую платформу"
-            },
-            {
-                "name": "перк номер два"
-            },
-            {
-                "name": "перк номер три"
+                "name": ""
             }
         ],
         "branches": [
             {
                 "name": "внешние/внутренние/встроенные стили",
-                "type": "main"
+                "type": null
             },
             {
                 "name": "блочная модель",
-                "type": "main"
+                "type": null
             },
             {
                 "name": "работа с псевдоэлементами",
-                "type": "main"
+                "type": null
             },
             {
                 "name": "работа с текстом и шрифтами",
@@ -32,15 +26,15 @@
             },
             {
                 "name": "работа с фоном и цветами",
-                "type": "main"
+                "type": null
             },
             {
                 "name": "таблицы",
-                "type": "main"
+                "type": null
             },
             {
                 "name": "пониание как работают еденицы измерения",
-                "type": "main"
+                "type": null
             },
             {
                 "name": "адаптивная верстка",
@@ -48,7 +42,7 @@
             },
             {
                 "name": "позиционирование элементов",
-                "type": "main"
+                "type": null
             },
             {
                 "name": "flexbox/grid",
@@ -71,7 +65,8 @@
                 "type": "main"
             },
             {
-                "name": "Кросс-браузерность"
+                "name": "Кросс-браузерность",
+                "type": "main"
             }
         ]
     },
@@ -80,25 +75,32 @@
         "level": 58,
         "branches": [
             {
-                "name": "DOM"
+                "name": "DOM",
+                "type": null
             },
             {
-                "name": "Основные HTML-теги"
+                "name": "Основные HTML-теги",
+                "type": null
             },
             {
-                "name": "Семантическая вёрстка"
+                "name": "Семантическая вёрстка",
+                "type": "main"
             },
             {
-                "name": "Работа с формами"
+                "name": "Работа с формами",
+                "type": "main"
             },
             {
-                "name": "Canvas"
+                "name": "Canvas",
+                "type": null
             },
             {
-                "name": "SVG"
+                "name": "SVG",
+                "type": "main"
             },
             {
-                "name": "SEO"
+                "name": "SEO",
+                "type": "main"
             }
         ]
     },
@@ -107,52 +109,68 @@
         "level": 20,
         "branches": [
             {
-                "name": "Основы языка JavaScript"
+                "name": "Основы языка JavaScript",
+                "type": "main"
             },
             {
-                "name": "Области видимости в JavaScript"
+                "name": "Области видимости в JavaScript",
+                "type": "main"
             },
             {
-                "name": "Объекты и Массивы"
+                "name": "Объекты и Массивы",
+                "type": "main"
             },
             {
-                "name": "try..catch"
+                "name": "try..catch",
+                "type": null
             },
             {
-                "name": "setTimeout и setInterval"
+                "name": "setTimeout и setInterval",
+                "type": null
             },
             {
-                "name": "Классы и наследование классов"
+                "name": "Классы и наследование классов",
+                "type": "main"
             },
             {
-                "name": "Статические, приватные и защищенные свойства классов"
+                "name": "Статические, приватные и защищенные свойства классов",
+                "type": null
             },
             {
-                "name": "call(), apply(), bind()"
+                "name": "call(), apply(), bind()",
+                "type": null
             },
             {
-                "name": "Регулярные выражения"
+                "name": "Регулярные выражения",
+                "type": "main"
             },
             {
-                "name": "es6"
+                "name": "es6",
+                "type": "main"
             },
             {
-                "name": "Promise"
+                "name": "Promise",
+                "type": null
             },
             {
-                "name": "async/await"
+                "name": "async/await",
+                "type": null
             },
             {
-                "name": "fetch"
+                "name": "fetch",
+                "type": "main"
             },
             {
-                "name": "DOM-дерево"
+                "name": "DOM-дерево",
+                "type": "main"
             },
             {
-                "name": "document и window"
+                "name": "document и window",
+                "type": null
             },
             {
-                "name": "JSON"
+                "name": "JSON",
+                "type": "main"
             }
         ]
     },
@@ -161,7 +179,8 @@
         "level": 20,
         "branches": [
             {
-                "name": "react"
+                "name": "react",
+                "type": "main"
             }
         ]
     }
