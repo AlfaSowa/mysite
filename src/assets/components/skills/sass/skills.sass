@@ -1,0 +1,95 @@
+.skills
+    position: relative
+    min-width: 500px
+    max-width: 500px
+    .module__content
+        display: flex
+        flex-direction: column
+
+    &__list
+        display: flex
+
+    &__item
+        flex: 1
+        padding: 5px
+            
+    &__box
+        background: $color-details-add
+        padding: 10px 0
+        display: flex
+        justify-content: center
+        align-items: center
+        text-transform: uppercase
+        cursor: pointer
+        font-size: .7rem
+        &:hover
+            background: $color-details-basic
+    
+    &__inner
+        flex: 1
+        display: flex
+        flex-direction: column
+    
+    &__header
+        flex: 1 0 80px
+        max-height: 80px
+        display: flex
+        align-items: center
+        overflow: hidden
+        padding: 0 8px
+
+    &__title
+        width: 80px
+        height: 80px
+        display: flex
+        align-items: center
+        justify-content: center
+        @include dotted(transparentize($color-details-basic, .7))
+
+    &__perks
+        padding: 0 0 0 16px
+        font-size: .8rem
+        text-transform: uppercase
+        &-item
+            padding: 2px 0
+
+    &__content
+        flex: 1 0 223px
+        max-height: 223px
+        padding: 8px
+        overflow: hidden
+        position: relative
+
+    &__showtree
+        position: absolute
+        right: 0
+        bottom: 0
+        width: 50px
+        height: 50px
+        cursor: pointer
+        transition: all .2s ease-in-out
+        background: $color-details-add
+        overflow: hidden
+        display: flex
+        align-items: center
+        justify-content: center
+        &:hover
+            background: $color-details-basic
+            .skills__showtree-icon
+                fill: $color-font
+
+        &-icon
+            width: 35px
+            height: 35px
+            fill: $color-details-basic
+            transition: all .2s ease-in-out
+
+    &__branch
+        position: relative
+        font-size: .7rem
+        font-weight: 400
+        text-transform: uppercase
+        &:not(:last-child)
+            margin-bottom: 4px
+
+
