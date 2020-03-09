@@ -1,16 +1,16 @@
 $breakpoint-mobile: 768
-$breakpoint-table: 1500
+$breakpoint-table: 1200
 
 @mixin mobile
-    @media only screen and  (max-width: #{$breakpoint-mobile}px)
+    @media (max-width: #{$breakpoint-mobile}px)
         @content
 
 @mixin table
-    @media only screen and  (max-width: #{$breakpoint-table}px)
+    @media (max-width: #{$breakpoint-table}px)
         @content
 
 @mixin desctop
-    @media only screen and (min-width: #{$breakpoint-table + 1}px)
+    @media (min-width: #{$breakpoint-mobile}px)
         @content
 
 //dotted background $color-details-add
