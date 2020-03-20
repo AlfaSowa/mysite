@@ -3,11 +3,62 @@
     
     &__list
         display: flex
+        max-width: max-content
+        position: relative
+        // &:before
+        //     content: ''
+        //     height: 4px
+        //     width: 100%
+        //     position: absolute
+        //     bottom: 0
+        //     left: 0
+        //     background: var(--details-color)
     
     &__item
-        &:not(:last-child)
-            margin: 0 20px 0 0
+        // border-top: 1px dotted var(--sub-details-color)
+        // border-left: 1px dotted var(--sub-details-color)
+        // &:last-child
+        //     border-right: 1px dotted var(--sub-details-color)
+            
 
     &__link
-        display: block
+        position: relative
+        display: flex
+        align-items: center
+        justify-content: center
         padding: 5px 0
+        width: 55px
+        height: 45px
+        fill: var(--details-color)
+        &:hover
+            // background: var(--sub-details-color)
+            fill: #fff
+            & + .menu__title
+                display: block
+            // &:before
+            //     display: block
+            //     height: 6px
+            //     bottom: -2px
+            //     background: #fff
+        &:before
+            display: none
+            content: ''
+            height: 4px
+            width: 100%
+            position: absolute
+            bottom: 0
+            left: 0
+            background: var(--details-color)
+    
+    &__title
+        display: none
+        position: absolute
+        bottom: calc(100% + 5px)
+        left: 0
+        white-space: nowrap
+        z-index: 100
+        text-transform: uppercase
+
+    &__icon
+        width: 80%
+        height: 80%
