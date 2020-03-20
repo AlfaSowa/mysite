@@ -1,0 +1,35 @@
+.header
+    height: 60px
+    display: flex
+    align-items: center
+    justify-content: flex-end
+    margin: 0 auto
+    @include notdesctop
+        padding: 20px
+    @include desctop
+        max-width: $sidebar-desctop-width + $content-desctop-width
+        margin: 60px auto 0
+
+    &__inner
+        display: flex
+        align-items: center
+        @include desctop
+            flex: 1 0 $content-desctop-width
+            max-width: $content-desctop-width
+        
+    &__item
+        &:not(:last-child)
+            margin: 0 24px 0 0
+    
+    &__info
+        display: flex
+        align-items: center
+        margin: 0 0 0 24px
+        padding: 5px 10px
+        border: 1px solid var(--details-color)
+
+        &-item
+            &:not(:last-child)
+                border-right: 1px dotted var(--label-color)
+                margin: 0 8px 0 0
+                padding: 0 8px 0 0

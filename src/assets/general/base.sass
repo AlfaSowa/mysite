@@ -1,12 +1,39 @@
+\:root, [data-theme='dark']
+    --main-bg-color: #{$main-bg-color-dark}
+    --main-font-color: #{$main-font-color-dark}
+    --details-color: #{transparentize($main-details-dark, .6)}
+    --sub-details-color: #{transparentize($main-details-dark, .8)}
+    --label-color: #{$main-details-dark}
+
+[data-theme='light']
+    --main-bg-color: #{$main-bg-color-light}
+    --main-font-color: #{$main-font-color-light}
+    --details-color: #{transparentize($main-details-light, .6)}
+    --sub-details-color: #{transparentize($main-details-light, .8)}
+    --label-color: #{$main-details-light}
+
+[data-theme]
+    transition: all .9s ease-in-out
+    background-color: var(--main-bg-color)
+    *,
+    a
+        color: var(--main-font-color)
+
+
 *
     margin: 0
     padding: 0
     box-sizing: border-box
 
+
 body
-    background: $color-body
-    color: $color-font
     font: $font-family-main
+    position: fixed
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    overflow-y: auto
 
 main
     margin-top: 60px

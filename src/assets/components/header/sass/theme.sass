@@ -1,0 +1,47 @@
+.theme
+    position: relative
+    cursor: pointer
+
+    &__toggler
+        width: 30px
+        height: 30px
+        &:active
+            & + .theme__circle
+                // animation: circle .9s ease-in-out forwards
+                width: 1px
+                height: 1px
+                opacity: 1
+                transition: 0s
+            
+    &__icon
+        width: 100%
+        height: 100%
+        fill: var(--label-color)
+
+    &__circle
+        position: absolute
+        background: var(--main-bg-color)
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        z-index: -1
+        border-radius: 50%
+        width: 2000px
+        height: 2000px
+        opacity: 0
+        transition: all .9s
+        // animation: circle .9s ease-in-out forwards
+
+@keyframes circle
+    0%
+        opacity: 0
+        width: 1px
+        height: 1px
+    60%
+        opacity: 1
+    100%
+        opacity: 0
+        width: 2000px
+        height: 2000px
+        
+

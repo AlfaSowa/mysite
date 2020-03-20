@@ -2,33 +2,11 @@
 
     &__photo
         position: relative
-        width: 150px
-        height: 150px
+        width: 100px
+        height: 100px
         margin: 0 auto
         border-radius: 50%
         background: url("./img/avatar.jpg") no-repeat center center / cover
         @include desctop
             height: 250px
             width: 250px
-        
-    &__level
-        position: absolute
-        width: 40px
-        height: 40px
-        bottom: 0
-        right: 0
-        background: $color-details-basic
-        display: flex
-        justify-content: space-around
-        align-items: center
-        border-radius: 50%
-        font-weight: 800
-        text-transform: uppercase
-        padding: 0 4px
-        @include desctop
-            bottom: 15px
-            right: 15px
-
-        span
-            font-weight: 400
-            font-size: .6rem

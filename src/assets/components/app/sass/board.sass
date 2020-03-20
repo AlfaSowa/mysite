@@ -1,20 +1,25 @@
 .board
     display: flex
-    padding: 20px 20px 0
-    @include mobile
+    @include notdesctop
         flex-direction: column
     @include desctop
         flex: 1
         justify-content: center
         flex-wrap: wrap
-        padding: 100px 20px 0
 
     &__sidebar
-        margin: 0 0 20px 0
+        @include mobile
+            flex-wrap: wrap
+        @include notdesctop
+            display: flex
+            padding: 0 20px
+
         @include desctop
-            margin: 0
-            flex: 1 0 350px
-            max-width: 350px
+            flex: 1 0 $sidebar-desctop-width
+            max-width: $sidebar-desctop-width
+
+        &-item
+            margin: 0 0 20px 0
     
     &__title
         position: absolute
@@ -31,8 +36,8 @@
     &__inner
         position: relative
         @include desctop
-            flex: 1 0 900px
-            max-width: 900px
+            flex: 1 0 $content-desctop-width
+            max-width: $content-desctop-width
     
     &__content
         display: flex
@@ -58,13 +63,14 @@
             position: absolute
             top: 0
             left: 0
-            @include dotted($color-details-add)
-        @include mobile
-            margin: 0 0 24px 0
+            background-image: repeating-radial-gradient(circle at center, var(--details-color), var(--details-color) 1px, transparent 1px, transparent 100%)
+            background-size: 6px 6px
         @include desctop
             padding: 60px 0 0 0
             &:not(:last-child)
                 margin: 0 24px 0 0
+        @include notdesctop
+            margin: 0 20px
         
         &-content
             flex: 1
@@ -78,7 +84,7 @@
         
         &-title
             font-size: .8rem
-            color: $color-details-basic
+            color: var(--label-color)
             text-transform: uppercase
             text-align: center
             margin: 0 0 20px 0

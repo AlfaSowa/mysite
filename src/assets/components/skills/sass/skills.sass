@@ -26,7 +26,10 @@
         cursor: pointer
         font-size: .9rem
         font-weight: 700
-        &:hover
+        transition: all .2s ease-in-out
+        &:hover,
+            background: transparentize($color-details-basic, .5)
+        &--active
             background: $color-details-basic
     
     &__inner
@@ -60,7 +63,6 @@
     
     &__level
         width: 5px
-        background: $color-body
         position: relative
         overflow: hidden
         &-line
