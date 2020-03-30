@@ -980,7 +980,8 @@ main {
     left: 0;
     white-space: nowrap;
     z-index: 100;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    font-size: .7rem; }
   .menu__icon {
     width: 80%;
     height: 80%; }
