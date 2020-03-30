@@ -17,16 +17,18 @@
         @include desctop
             flex: 1 0 $sidebar-desctop-width
             max-width: $sidebar-desctop-width
+            padding: 0 16px
 
         &-item
             margin: 0 0 20px 0
     
     &__title
+        font: $font-family-main
         position: absolute
         top: 10px
         left: 20px
         text-transform: uppercase
-        font-weight: 600
+        font-weight: 700
         z-index: 999
             
     &__details
@@ -84,9 +86,11 @@
             background: $color-module-bg
         
         &-title
+            font: $font-family-main
             font-size: .8rem
             color: var(--label-color)
             text-transform: uppercase
+            font-weight: 700
             text-align: center
             margin: 0 0 20px 0
             @include desctop

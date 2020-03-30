@@ -5,12 +5,38 @@
         min-width: 100%
 
     &__item
+        position: relative
+        overflow: hidden
+        display: flex
+        align-items: center
+        height: 35px
+        margin: 0 0 2px 0
+        padding: 0 8px
+        border: 1px dashed var(--details-color)
         cursor: pointer
+        transition: all .2s ease-in-out
+        a
+            color: $color-font
         &:hover
+            border: 1px dashed var(--label-color)
             .refs__link
-                color: $color-details-basic
+                transform: translateX(-100%)
     
     &__link
-        display: block
-        padding: 3px 0
+        position: absolute
+        left: 100%
+        top: 0
+        padding: 0 8px
+        background: var(--label-color)
+        height: 100%
+        transform: translateX(0)
+        transition: all .2s ease-in-out
+        display: flex
+        align-items: center
+
+    &__icon
+        width: 12px
+        height: 12px
+        margin: 0 0 0 5px
+        fill: $color-font
 

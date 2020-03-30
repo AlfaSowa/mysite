@@ -13,6 +13,7 @@
     &__inner
         display: flex
         align-items: center
+        flex: 1
         @include desctop
             flex: 1 0 $content-desctop-width
             max-width: $content-desctop-width
@@ -27,6 +28,7 @@
         margin: 0 0 0 24px
         padding: 5px 10px
         border: 1px dashed var(--details-color)
+        font: $font-family-main
 
         &-item
             &:not(:last-child)

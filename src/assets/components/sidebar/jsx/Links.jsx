@@ -6,8 +6,12 @@ export const Links = (props) => {
             <ul className='refs__list'>
                 {props.links.map((item, index) => (
                     <li key={index} className='refs__item'>
+                        <span>{item.title}</span>
                         <a className='refs__link' href={item.link} target='_blank'>
-                            {item.title}
+                            открыть
+                            <svg className='refs__icon'>
+                                <use xlinkHref='#arrow-right'></use>
+                            </svg>
                         </a>
                     </li>
                 ))}
