@@ -54,12 +54,12 @@ App.defaultProps = {
         {
             name: 'основная информация',
             id: 'mission',
-            link: ''
+            link: '',
         },
         {
             name: 'работы',
             id: 'level',
-            link: 'works'
-        }
-    ]
+            link: 'works',
+        },
+    ],
 };

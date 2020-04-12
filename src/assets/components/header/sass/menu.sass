@@ -5,21 +5,6 @@
         display: flex
         max-width: max-content
         position: relative
-        // &:before
-        //     content: ''
-        //     height: 4px
-        //     width: 100%
-        //     position: absolute
-        //     bottom: 0
-        //     left: 0
-        //     background: var(--details-color)
-    
-    &__item
-        // border-top: 1px dotted var(--sub-details-color)
-        // border-left: 1px dotted var(--sub-details-color)
-        // &:last-child
-        //     border-right: 1px dotted var(--sub-details-color)
-            
 
     &__link
         position: relative
@@ -29,17 +14,11 @@
         padding: 5px 0
         width: 55px
         height: 45px
-        fill: var(--details-color)
+        fill: var(--add-color)
         &:hover
-            // background: var(--sub-details-color)
-            fill: #fff
+            fill: var(--font-color)
             & + .menu__title
                 display: block
-            // &:before
-            //     display: block
-            //     height: 6px
-            //     bottom: -2px
-            //     background: #fff
         &:before
             display: none
             content: ''
@@ -48,7 +27,7 @@
             position: absolute
             bottom: 0
             left: 0
-            background: var(--details-color)
+            background: var(--add-color)
     
     &__title
         display: none

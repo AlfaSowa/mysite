@@ -44,23 +44,22 @@
     margin: 0 auto
     height: 170px
     width: 170px
-    border: solid 2px $color-main-basic
+    border: solid 2px transparentize($base-color, .8)
     position: relative
     cursor: pointer
-    color: $color-font-hover
     overflow: hidden
     transition: all .5s ease-in-out
     &:hover
-        border: solid 2px $color-details-basic
+        border: solid 2px var(--add-color)
         .card
             &__title
-                color: $color-details-basic
+                color: var(--add-color)
             &__percentage
                 animation: wave .7s infinite
             &__icon
                 svg
-                    fill: $color-details-basic
-                    stroke: $color-details-basic
+                    fill: var(--add-color)
+                    stroke: var(--add-color)
     &__content
         position: absolute
         top: 0
@@ -75,7 +74,6 @@
         padding: 0 10px 20px
         font-size: .8em
         font-weight: 600
-        color: $color-font
         transition: all .5s ease-in-out
     &__icon
         width: 100%
@@ -110,7 +108,7 @@
         position: absolute
         width: 100%
         height: 105%
-        background: $color-main-basic
+        background: var(--add-color)
         transform: translateY(200%)
         left: 0
         transition: transform .9s ease-in-out, opacity 1.2s ease-in-out, border .4s ease-in-out

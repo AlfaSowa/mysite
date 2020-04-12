@@ -4,7 +4,7 @@
     left: 0
     bottom: 0
     right: 0
-    background: transparentize($color-body, .2)
+    background: var(--main-color)
     z-index: 1000
     padding: 50px 20px
 
@@ -13,10 +13,10 @@
         height: 32px
         cursor: pointer
         margin-left: 8px
-        fill: $color-font
+        fill: var(--add-color)
         transition: all .2s ease-in-out
         &:hover
-            fill: $color-details-basic
+            fill: var(--add-color)
 
     &__inner
         max-width: $sidebar-desctop-width + $content-desctop-width
@@ -26,7 +26,7 @@
 
     &__content
         flex: 1 0
-        background: $color-main-basic
+        background: var(--add-color)
         padding: 16px
         font-size: .7rem
         font-weight: 400

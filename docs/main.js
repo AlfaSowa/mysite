@@ -24517,9 +24517,7 @@ class Theme extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       className: "theme__icon"
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("use", {
       xlinkHref: "#theme"
-    }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "theme__circle"
-    }));
+    }))));
   }
 
 }
@@ -25148,7 +25146,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-Object(react_dom__WEBPACK_IMPORTED_MODULE_3__["render"])(react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_assets_components_app_jsx_App_jsx__WEBPACK_IMPORTED_MODULE_4__["default"], null), document.getElementById('app'));
+Object(react_dom__WEBPACK_IMPORTED_MODULE_3__["render"])(react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_assets_components_app_jsx_App_jsx__WEBPACK_IMPORTED_MODULE_4__["default"], null), document.getElementById("app"));
 
 /***/ }),
 

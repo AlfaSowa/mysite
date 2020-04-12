@@ -2,12 +2,12 @@ import React from 'react';
 
 export class Theme extends React.Component {
     state = {
-        dark: true
+        dark: true,
     };
 
     changeTheme = () => {
         this.setState({
-            dark: !this.state.dark
+            dark: !this.state.dark,
         });
 
         document.body.dataset.theme = document.body.dataset.theme == 'dark' ? 'light' : 'dark';
@@ -21,8 +21,6 @@ export class Theme extends React.Component {
                         <use xlinkHref='#theme'></use>
                     </svg>
                 </div>
-
-                <div className='theme__circle'></div>
             </div>
         );
     }

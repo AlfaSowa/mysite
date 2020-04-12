@@ -11,12 +11,12 @@ import Stats from '../../stats/jsx/Stats.jsx';
 
 export class Main extends React.Component {
     state = {
-        workDetails: false
+        workDetails: false,
     };
 
     workDetails = (details) => {
         this.setState({
-            workDetails: details
+            workDetails: details,
         });
     };
 
@@ -91,15 +91,15 @@ Main.defaultProps = {
     modules: [
         {
             name: 'навыки',
-            class: 'skills'
+            class: 'skills',
         },
         {
             name: 'выполненые заказы',
-            class: 'works'
+            class: 'works',
         },
         {
             name: 'статистика',
-            class: 'stats'
-        }
-    ]
+            class: 'stats',
+        },
+    ],
 };

@@ -17,23 +17,23 @@
         &--active
             .works__box--active
                 border-color: transparent
-                background-image: repeating-radial-gradient(circle at center, var(--details-color), var(--details-color) 1px, transparent 1px, transparent 100%)
+                background-image: repeating-radial-gradient(circle at center, var(--sub-add-color), var(--sub-add-color) 1px, transparent 1px, transparent 100%)
                 background-size: 6px 6px
         
     &__box
         height: ($module-height - (4 * ($number-row-in-works + 1))) / $number-row-in-works
-        border: 1px solid $color-main-basic
+        border: 1px solid transparentize($base-color, .4)
         display: flex
         align-items: center
         justify-content: center
-        color: $color-main-basic
+        color: transparentize($base-color, .4)
         &--active
-            border-color: $color-font
-            color: $color-font
+            border-color: var(--font-color)
+            color: var(--font-color)
             cursor: pointer
             &:hover
-                border-color: $color-details-basic
-                color: $color-details-basic
+                border-color: var(--add-color)
+                color: var(--add-color)
                 & + .works__dropdown
                     display: block
                 

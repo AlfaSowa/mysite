@@ -66,7 +66,7 @@
             position: absolute
             top: 0
             left: 0
-            background-image: repeating-radial-gradient(circle at center, var(--details-color), var(--details-color) 1px, transparent 1px, transparent 100%)
+            background-image: repeating-radial-gradient(circle at center, var(--sub-add-color), var(--sub-add-color) 1px, transparent 1px, transparent 100%)
             background-size: 6px 6px
         @include desctop
             padding: 60px 0 0 0
@@ -79,16 +79,16 @@
             flex: 1
             display: flex
             flex-direction: column
-            border: 2px solid $color-main-basic
+            border: 2px solid var(--base-color)
             min-height: $module-height
             max-height: $module-height
             transition: all .3s ease-in-out
-            background: $color-module-bg
+            background: transparentize($base-color, .95)
         
         &-title
             font: $font-family-main
             font-size: .8rem
-            color: var(--label-color)
+            color: var(--add-color)
             text-transform: uppercase
             font-weight: 700
             text-align: center

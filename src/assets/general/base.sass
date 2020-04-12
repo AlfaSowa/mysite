@@ -1,23 +1,21 @@
 \:root, [data-theme='dark']
-    --main-bg-color: #{$main-bg-color-dark}
-    --main-font-color: #{$main-font-color-dark}
-    --details-color: #{transparentize($main-details-dark, .6)}
-    --sub-details-color: #{transparentize($main-details-dark, .8)}
-    --label-color: #{$main-details-dark}
+    --main-color: #{$dark-main}
+    --font-color: #{$dark-font}
+    --add-color: #{$dark-add}
+    --sub-add-color: #{transparentize($dark-add, .7)}
+    --base-color: #{$base-color}
 
 [data-theme='light']
-    --main-bg-color: #{$main-bg-color-light}
-    --main-font-color: #{$main-font-color-light}
-    --details-color: #{transparentize($main-details-light, .6)}
-    --sub-details-color: #{transparentize($main-details-light, .8)}
-    --label-color: #{$main-details-light}
+    --main-color: #{$light-main}
+    --font-color: #{$light-font}
+    --add-color: #{$light-add}
+    --sub-add-color: #{transparentize($light-add, .8)}
 
 [data-theme]
-    transition: all .9s ease-in-out
-    background-color: var(--main-bg-color)
+    background-color: var(--main-color)
     *,
     a
-        color: var(--main-font-color)
+        color: var(--font-color)
 
 
 *
@@ -28,12 +26,7 @@
 
 body
     font: $font-family-add
-    position: fixed
-    top: 0
-    left: 0
-    bottom: 0
-    right: 0
-    overflow-y: auto
+    background: #ee5f8c
 
 main
     margin-top: 60px
@@ -45,8 +38,80 @@ main
     margin: 0 auto
 
 .alarm
-    color: $color-details-basic
+    color: var(--add-color)
     font-size: 1rem
     margin-bottom: 16px
     position: relative
     display: block
+
+.clouds
+    position: fixed
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    transition: .3s opacity cubic-bezier(0,0,.2,1)
+    opacity: .2
+    z-index: -100
+
+    &__item
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        width: 100% 
+        height: 100%
+        display: flex
+        align-items: center
+        justify-content: center
+
+    &__back
+        background: url(./img/back_cloud.png) center center / cover
+        animation: 8s linear infinite bgGrowing1
+        &-second
+            background: url(./img/back_cloud.png) center center / cover
+            animation: 8s linear infinite bgGrowing2
+
+    &__front
+        background: url(./img/front_cloud.png) center center / cover
+        animation: 16s linear infinite bgGrowing1
+        &-second
+            background: url(./img/front_cloud.png) center center / cover
+            animation: 16s linear infinite bgGrowing2
+
+@keyframes bgGrowing1
+    0%, 100%
+        transform: scale3d(1,1,1)
+        opacity: 0
+    25%
+        opacity: .15
+    75%
+        opacity: 1
+    90%
+        transform: scale3d(1.7,1.7,1)
+        opacity: 0
+    
+@keyframes bgGrowing2
+    0%, 100%
+        opacity: .85
+        transform: scale3d(1.35,1.35,1)
+    25%
+        opacity: 1
+    40%
+        transform: scale3d(1.7,1.7,1)
+        opacity: 0
+    50%
+        opacity: 0
+        transform: scale3d(1,1,1)
+    75%
+        opacity: .15
+
+
+.media
+    position: absolute
+    top: 0
+    left: 0
+    opacity: 0
+    &:hover
+        opacity: 1

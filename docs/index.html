@@ -18,6 +18,15 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="main.css" rel="stylesheet"></head>
     <body data-theme="dark">
+        <div class="media">
+            <audio class="media__audio" controls autoplay>
+                <source src="./media/hollow_talk.mp3" type="audio/mpeg">
+            </audio>
+            <script>
+                let audio = document.querySelector(".media__audio");
+                audio.volume = 0.1;
+            </script>
+        </div>
         <div aria-hidden="true" style="position: absolute; width: 0; height: 0;">
             <svg width="0" height="0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <defs>
@@ -44,6 +53,13 @@
                     </symbol>
                 </defs>
             </svg>
+        </div>
+
+        <div class="clouds">
+            <div class="clouds__item clouds__back"></div>
+            <div class="clouds__item clouds__back-second"></div>
+            <div class="clouds__item clouds__front"></div>
+            <div class="clouds__item clouds__front-second"></div>
         </div>
 
         <div id="app"></div>

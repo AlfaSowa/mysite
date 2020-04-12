@@ -1,97 +1,94 @@
-const path = require('path');
-const HtmlWebPackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require("path");
+const HtmlWebPackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const TerserPlugin = require('terser-webpack-plugin');
-const { BundleAnalyzerPlugin }  = require('webpack-bundle-analyzer');
-const autoprefixer = require('autoprefixer');
+const TerserPlugin = require("terser-webpack-plugin");
+const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
+const autoprefixer = require("autoprefixer");
 
-const isDev = process.env.NODE_ENV === 'development'
+const isDev = process.env.NODE_ENV === "development";
 
 const optimization = () => {
-    const config = {}
+    const config = {};
 
-    if(!isDev) {
-        config.minimizer = [
-            new OptimizeCSSAssetsPlugin(),
-            new TerserPlugin()
-        ]
+    if (!isDev) {
+        config.minimizer = [new OptimizeCSSAssetsPlugin(), new TerserPlugin()];
     }
 
-    return config
-}
+    return config;
+};
 
-const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`
+const filename = (ext) => (isDev ? `[name].${ext}` : `[name].[hash].${ext}`);
 
-const babelOptions = preset => {
+const babelOptions = (preset) => {
     const opt = {
-        presets: [
-            '@babel/preset-env'
-        ],
-        plugins: [
-            "@babel/plugin-proposal-class-properties"
-        ]
+        presets: ["@babel/preset-env"],
+        plugins: ["@babel/plugin-proposal-class-properties"],
+    };
+
+    if (preset) {
+        opt.presets.push(preset);
     }
 
-    if(preset) {
-        opt.presets.push(preset)
-    }
-
-    return opt
-}
+    return opt;
+};
 
 const plugins = () => {
     const base = [
         new CleanWebpackPlugin(),
         new CopyWebpackPlugin([
             {
-                from: path.resolve(__dirname, 'src/favicon.ico'),
-                to: path.resolve(__dirname, 'docs')
+                from: path.resolve(__dirname, "src/favicon.ico"),
+                to: path.resolve(__dirname, "docs"),
             },
             {
-                from: path.resolve(__dirname, 'CNAME'),
-                to: path.resolve(__dirname, 'docs')
+                from: path.resolve(__dirname, "CNAME"),
+                to: path.resolve(__dirname, "docs"),
             },
             {
-                from: path.resolve(__dirname, 'src/manifest.json'),
-                to: path.resolve(__dirname, 'docs')
-            }
+                from: path.resolve(__dirname, "src/manifest.json"),
+                to: path.resolve(__dirname, "docs"),
+            },
+            {
+                from: path.resolve(
+                    __dirname,
+                    "src/assets/general/media/hollow_talk.mp3"
+                ),
+                to: path.resolve(__dirname, "docs/media"),
+            },
         ]),
         new HtmlWebPackPlugin({
-            template: './index.html',
+            template: "./index.html",
             minify: {
-                collapseWhitespace: !isDev
-            }
+                collapseWhitespace: !isDev,
+            },
         }),
         new MiniCssExtractPlugin({
-            filename: filename('css'),
+            filename: filename("css"),
         }),
-    ]
+    ];
 
-    if(!isDev) {
-        base.push(new BundleAnalyzerPlugin())
+    if (!isDev) {
+        base.push(new BundleAnalyzerPlugin());
     }
 
-    return base
-}
+    return base;
+};
 
 module.exports = {
-    context: path.resolve(__dirname, 'src'),
+    context: path.resolve(__dirname, "src"),
 
-    entry: [
-        '@babel/polyfill',
-        './index.js',
-    ],
+    entry: ["@babel/polyfill", "./index.js"],
 
     output: {
-        path: path.resolve(__dirname, './docs'),
-        filename: filename('js')
+        path: path.resolve(__dirname, "./docs"),
+        filename: filename("js"),
     },
 
     devServer: {
-        port: 8181
+        port: 8181,
     },
 
     optimization: optimization(),
@@ -99,32 +96,37 @@ module.exports = {
     devtool: isDev ? false : false,
 
     module: {
-        rules:[
+        rules: [
             //javascript
             {
                 test: /\.js$/,
-                exclude: '/node_modules/',
-                loader: {
-                    loader: 'babel-loader',
-                    options: babelOptions()
-                },
+                exclude: "/node_modules/",
+                use: [
+                    {
+                        loader: "babel-loader",
+                        options: babelOptions(),
+                    },
+                    {
+                        loader: "eslint-loader",
+                    },
+                ],
             },
             //typescript
             {
                 test: /\.ts$/,
-                exclude: '/node_modules/',
+                exclude: "/node_modules/",
                 loader: {
-                    loader: 'babel-loader',
-                    options: babelOptions('@babel/preset-typescript')
+                    loader: "babel-loader",
+                    options: babelOptions("@babel/preset-typescript"),
                 },
             },
             //react jsx
             {
                 test: /\.jsx?$/,
-                exclude: '/node_modules/',
+                exclude: "/node_modules/",
                 loader: {
-                    loader: 'babel-loader',
-                    options: babelOptions('@babel/preset-react')
+                    loader: "babel-loader",
+                    options: babelOptions("@babel/preset-react"),
                 },
             },
             //styles
@@ -135,47 +137,45 @@ module.exports = {
                         loader: MiniCssExtractPlugin.loader,
                         options: {
                             hmr: isDev,
-                            reloadAll: true
+                            reloadAll: true,
                         },
                     },
-                    'css-loader',
+                    "css-loader",
                     {
-                        loader: 'postcss-loader',
+                        loader: "postcss-loader",
                         options: {
-                            plugins: [
-                                autoprefixer()
-                            ]
-                        }
+                            plugins: [autoprefixer()],
+                        },
                     },
-                    'sass-loader'
+                    "sass-loader",
                 ],
             },
             //images
             {
-				test: /\.(png|jpg|svg|gif)$/,
-				use: [
-					{
-						loader: 'file-loader',
-						options: {
-                            name: './img/[name].[ext]'
-						}
-					}
-				]
+                test: /\.(png|jpg|svg|gif)$/,
+                use: [
+                    {
+                        loader: "file-loader",
+                        options: {
+                            name: "./img/[name].[ext]",
+                        },
+                    },
+                ],
             },
             //fonts
             {
                 test: /\.(ttf|woff|woff2|eot)$/i,
                 use: [
                     {
-                        loader: 'file-loader',
+                        loader: "file-loader",
                         options: {
-                            name: './fonts/[name].[hash].[ext]'
-                        }
-                    }
-                ]
+                            name: "./fonts/[name].[hash].[ext]",
+                        },
+                    },
+                ],
             },
-        ]
+        ],
     },
 
     plugins: plugins(),
-}
+};
