@@ -3,12 +3,13 @@
     display: flex
     align-items: center
     justify-content: flex-end
-    margin: 0 auto
-    @include notdesctop
-        padding: 20px
-    @include desctop
-        max-width: $sidebar-desctop-width + $content-desctop-width
-        margin: 60px auto 0
+    margin: 60px auto 16px
+    max-width: $sidebar-desctop-width + $content-desctop-width
+
+    &__title
+        flex: 1
+        text-transform: uppercase
+        font-weight: 700
 
     &__inner
         display: flex

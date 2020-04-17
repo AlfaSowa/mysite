@@ -52,10 +52,7 @@ const plugins = () => {
                 to: path.resolve(__dirname, "docs"),
             },
             {
-                from: path.resolve(
-                    __dirname,
-                    "src/assets/general/media/hollow_talk.mp3"
-                ),
+                from: path.resolve(__dirname, "src/assets/general/media/hollow_talk.mp3"),
                 to: path.resolve(__dirname, "docs/media"),
             },
         ]),
@@ -88,7 +85,8 @@ module.exports = {
     },
 
     devServer: {
-        port: 8181,
+        port: 8001,
+        historyApiFallback: true,
     },
 
     optimization: optimization(),

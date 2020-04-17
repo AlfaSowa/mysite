@@ -1,28 +1,28 @@
 .details
-    background: var(--add-color)
-    border: 2px solid var(--add-color)
-
-    &__inner
-        padding: 5px
+    margin: 16px 0 0 0
+    height: 280px
+    border: 2px solid var(--base-color)
+    overflow: hidden
     
     &__header
         display: flex
-        margin-bottom: 16px
-    
-    &__difficulty
-        width: 24px
-        height: 24px
-        display: flex
         align-items: center
-        justify-content: center
-        margin-right: 5px
-        font-size: .9rem
-
+        padding: 0 8px
+        margin-bottom: 8px
+        background: var(--sub-add-color)
+        height: 40px
+    
     &__title
         flex: 1
-        padding: 0 5px
-        font-size: 1rem
-        display: flex
-        align-items: center
-        justify-content: space-between
         text-transform: uppercase
+
+    &__link
+        font-size: .8rem
+        cursor: pointer
+
+        &-txt
+            &:hover
+                color: var(--add-color)
+    
+    &__content
+        padding: 0 8px

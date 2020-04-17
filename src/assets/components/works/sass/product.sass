@@ -1,0 +1,24 @@
+.product
+    flex: 1 0 20%
+    max-width: 20%
+    padding: 8px
+
+    &__list
+        flex: 1
+        display: flex
+        flex-wrap: wrap
+        margin: -8px
+
+    &__inner
+        border: 1px dashed var(--sub-add-color)
+        padding: 10px
+        cursor: pointer
+        &:hover
+            border: 1px dashed var(--add-color)
+
+    &__title
+        margin: 0 0 8px 0
+        
+    &__content
+        height: 200px
+        overflow: hidden

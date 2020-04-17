@@ -1,13 +1,14 @@
-import React from 'react';
+import React from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 //info in sidebar
-import { Avatar } from '../../sidebar/jsx/Avatar.jsx';
-import { Info } from '../../sidebar/jsx/Info.jsx';
-import { Links } from '../../sidebar/jsx/Links.jsx';
+import { Avatar } from "../../sidebar/jsx/Avatar.jsx";
+import { Info } from "../../sidebar/jsx/Info.jsx";
+import { Links } from "../../sidebar/jsx/Links.jsx";
 //main content
-import Skills from '../../skills/jsx/Skills.jsx';
-import Works from '../../works/jsx/Works.jsx';
-import Stats from '../../stats/jsx/Stats.jsx';
+import Skills from "../../skills/jsx/Skills.jsx";
+import Works from "../../works/jsx/Works.jsx";
+import Stats from "../../stats/jsx/Stats.jsx";
 
 export class Main extends React.Component {
     state = {
@@ -22,66 +23,66 @@ export class Main extends React.Component {
 
     getContent = (module) => {
         switch (module) {
-            case 'skills':
+            case "skills":
                 return <Skills />;
-            case 'works':
+            case "works":
                 return <Works workDetails={this.workDetails} />;
-            case 'stats':
+            case "stats":
                 return <Stats />;
         }
     };
+
+    componentDidMount = () => {
+        let link = /\/\w*$/gi.exec(location.href);
+        this.props.getTitle(link[0]);
+    };
     render() {
         return (
-            <div className='board'>
-                <div className='board__sidebar'>
-                    <Avatar />
-                    <Info />
-                    <Links />
-                </div>
+            <React.Fragment>
+                {/* <div className="board__title">Основная информация</div> */}
 
-                <div className='board__inner'>
-                    <div className='board__title'>Основная информация</div>
-
-                    <div className='board__content'>
-                        {this.props.modules.map((item, index) => (
-                            <div key={index} className={`board__item ${item.class}`}>
-                                <h2 className='board__item-title'>{item.name}</h2>
-                                <div className='board__item-content'>{this.getContent(item.class)}</div>
-                            </div>
-                        ))}
+                <div className="board__content">
+                    <div className="board__sidebar">
+                        <Avatar />
+                        <Info />
+                        <Links />
                     </div>
 
-                    {this.state.workDetails ? <Details details={this.state.workDetails} /> : null}
+                    <div className="board__box">
+                        <div className="main">
+                            {this.props.modules.map((item, index) => (
+                                <div key={index} className={`board__item ${item.class}`}>
+                                    <h2 className="board__item-title">{item.name}</h2>
+                                    <div className="board__item-content">{this.getContent(item.class)}</div>
+                                </div>
+                            ))}
+                        </div>
+
+                        <Details details={this.state.workDetails} />
+                    </div>
                 </div>
-            </div>
+            </React.Fragment>
         );
     }
 }
 
 const Details = (props) => {
     const { details } = props;
-    const getClassDifficulty = (number) => (number == 'A' ? 'low' : number == 'B' ? 'mid' : 'high');
 
     return (
-        <div className='board__details details'>
-            <div className='details__inner'>
-                <div className='details__header'>
-                    <div className={`details__difficulty details__difficulty--${getClassDifficulty(details.difficulty)}`}>
-                        {details.difficulty}
-                    </div>
-                    <div className='details__title'>
-                        <span>{details.title}</span>
-                        <a href={details.link} target='_blank'>
-                            перейти на сайт
-                        </a>
-                    </div>
+        <div className="details">
+            <div className="details__header">
+                <div className="details__title">
+                    <span>{details.title ? details.title : "Lorem ipsum dolor sit amet consectetur adipisicing elit."}</span>
                 </div>
 
-                <div className='details__content'>
-                    {details.content.map((item, index) => (
-                        <p key={index}>{item.paragraph}</p>
-                    ))}
+                <div className="details__link">
+                    <a href="#">подробнее</a>
                 </div>
+            </div>
+
+            <div className="details__content">
+                {details.content ? details.content.map((item, index) => <p key={index}>{item.paragraph}</p>) : null}
             </div>
         </div>
     );
@@ -90,16 +91,24 @@ const Details = (props) => {
 Main.defaultProps = {
     modules: [
         {
-            name: 'навыки',
-            class: 'skills',
+            name: "навыки",
+            class: "skills",
         },
         {
-            name: 'выполненые заказы',
-            class: 'works',
+            name: "выполненые заказы",
+            class: "works",
         },
         {
-            name: 'статистика',
-            class: 'stats',
+            name: "статистика",
+            class: "stats",
         },
     ],
 };
+
+{
+    /* <div className="details__link">
+                    <a className="details__link-txt" href={`/works/${details.id}`}>
+                        подробнее
+                    </a>
+                </div> */
+}

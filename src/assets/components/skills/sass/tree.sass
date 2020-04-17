@@ -4,32 +4,42 @@
     left: 0
     bottom: 0
     right: 0
-    background: var(--main-color)
     z-index: 1000
-    padding: 50px 20px
+
+    &__inner
+        position: absolute
+        right: 0
+        width: 80%
+        display: flex
+        height: 100%
+        transform: translateX(100%)
+        opacity: 0
+        animation: wshih .4s forwards
 
     &__close
         width: 32px
         height: 32px
         cursor: pointer
-        margin-left: 8px
         fill: var(--add-color)
         transition: all .2s ease-in-out
         &:hover
             fill: var(--add-color)
 
-    &__inner
-        max-width: $sidebar-desctop-width + $content-desctop-width
-        margin: 0 auto
-        position: relative
-        display: flex
 
     &__content
         flex: 1 0
-        background: var(--add-color)
         padding: 16px
         font-size: .7rem
         font-weight: 400
         text-transform: uppercase
+        background: var(--base-color)
         >:not(:last-child)
             margin-bottom: 4px
+    
+@keyframes wshih
+    0%
+        transform: translateX(100%) 
+        opacity: 0
+    100%
+        transform: translateX(0)
+        opacity: 1
