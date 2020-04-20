@@ -48,7 +48,6 @@ export default class App extends React.Component {
                                                 <use xlinkHref={`#${item.id}`}></use>
                                             </svg>
                                         </NavLink>
-                                        <div className="menu__title">{item.name}</div>
                                     </li>
                                 ))}
                             </ul>
@@ -77,12 +76,12 @@ App.defaultProps = {
     menu: [
         {
             name: "основная информация",
-            id: "mission",
+            id: "main",
             link: "",
         },
         {
             name: "работы",
-            id: "level",
+            id: "works",
             link: "works",
         },
     ],

@@ -104,9 +104,9 @@ module.exports = {
                         loader: "babel-loader",
                         options: babelOptions(),
                     },
-                    {
-                        loader: "eslint-loader",
-                    },
+                    // {
+                    //     loader: "eslint-loader",
+                    // },
                 ],
             },
             //typescript

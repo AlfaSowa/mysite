@@ -81,8 +81,10 @@ const Details = (props) => {
                 </div>
             </div>
 
-            <div className="details__content">
-                {details.content ? details.content.map((item, index) => <p key={index}>{item.paragraph}</p>) : null}
+            <div className="details__inner">
+                <div className="details__content">
+                    {details.content ? details.content.map((item, index) => <p key={index}>{item.paragraph}</p>) : null}
+                </div>
             </div>
         </div>
     );

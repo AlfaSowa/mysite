@@ -1,0 +1,9 @@
+{
+    "name": "alfa-sowa",
+    "short_name": "Sowa",
+    "start_url": "index.html",
+    "background_color": "#17181a",
+    "theme_color": "#17181a",
+    "description": "The Progressive Portfolio",
+    "display": "standalone"
+}

@@ -1,65 +1,99 @@
 [
-	{
-		"name": "css",
-		"level": 95,
-		"branches": [
-			{ "name": "внешние/внутренние/встроенные стили" },
-			{ "name": "блочная модель" },
-			{ "name": "работа с псевдоэлементами" },
-			{ "name": "работа с текстом и шрифтами" },
-			{ "name": "работа с фоном и цветами" },
-			{ "name": "таблицы" },
-			{ "name": "понимание как работают еденицы измерения" },
-			{ "name": "адаптивная верстка" },
-			{ "name": "позиционирование элементов" },
-			{ "name": "flexbox/grid" },
-			{ "name": "Анимации, Трансформации, Переходы, Тени, Градиенты" },
-			{ "name": "Медиавыражения" },
-			{ "name": "препроцессоры (scss/sass/less)" },
-			{ "name": "Организация CSS-кода по БЭМ" },
-			{ "name": "Кросс-браузерность" }
-		]
-	},
-	{
-		"name": "html",
-		"level": 78,
-		"branches": [
-			{ "name": "DOM" },
-			{ "name": "Основные HTML-теги" },
-			{ "name": "Семантическая вёрстка" },
-			{ "name": "Работа с формами" },
-			{ "name": "Canvas" },
-			{ "name": "SVG" },
-			{ "name": "SEO" }
-		]
-	},
-	{
-		"name": "js",
-		"level": 70,
-		"branches": [
-			{ "name": "Основы языка JavaScript" },
-			{ "name": "Области видимости в JavaScript" },
-			{ "name": "Объекты и Массивы" },
-			{ "name": "try..catch" },
-			{ "name": "setTimeout и setInterval" },
-			{ "name": "Классы и наследование классов" },
-			{ "name": "Статические, приватные и защищенные свойства классов" },
-			{ "name": "call(), apply(), bind()" },
-			{ "name": "Регулярные выражения" },
-			{ "name": "es6" },
-			{ "name": "Promise" },
-			{ "name": "async/await" },
-			{ "name": "fetch" },
-			{ "name": "DOM-дерево" },
-			{ "name": "document и window" },
-			{ "name": "JSON" }
-		]
-	},
-	{
-		"name": "react",
-		"level": 60,
-		"perks": [{ "name": "" }],
-		"mainskills": [{ "name": "" }],
-		"branches": [{ "name": "jsx" }, { "name": "hooks" }]
-	}
+    {
+        "name": "css",
+        "level": 95,
+        "branches": [
+            { "name": "внешние/внутренние/встроенные стили" },
+            { "name": "блочная модель" },
+            { "name": "работа с псевдоэлементами" },
+            { "name": "работа с текстом и шрифтами" },
+            { "name": "работа с фоном и цветами" },
+            { "name": "таблицы" },
+            { "name": "понимание как работают еденицы измерения" },
+            { "name": "адаптивная верстка" },
+            { "name": "позиционирование элементов" },
+            { "name": "flexbox/grid" },
+            { "name": "Анимации, Трансформации, Переходы, Тени, Градиенты" },
+            { "name": "Медиавыражения" },
+            { "name": "препроцессоры (scss/sass/less)" },
+            { "name": "Организация CSS-кода по БЭМ" },
+            { "name": "Кросс-браузерность" }
+        ]
+    },
+    {
+        "name": "sass/scss",
+        "level": 78,
+        "branches": [
+            { "name": "DOM" },
+            { "name": "Основные HTML-теги" },
+            { "name": "Семантическая вёрстка" },
+            { "name": "Работа с формами" },
+            { "name": "Canvas" },
+            { "name": "SVG" },
+            { "name": "SEO" }
+        ]
+    },
+    {
+        "name": "html",
+        "level": 78,
+        "branches": [
+            { "name": "DOM" },
+            { "name": "Основные HTML-теги" },
+            { "name": "Семантическая вёрстка" },
+            { "name": "Работа с формами" },
+            { "name": "Canvas" },
+            { "name": "SVG" },
+            { "name": "SEO" }
+        ]
+    },
+    {
+        "name": "js",
+        "level": 70,
+        "branches": [
+            { "name": "Основы языка JavaScript" },
+            { "name": "Области видимости в JavaScript" },
+            { "name": "Объекты и Массивы" },
+            { "name": "try..catch" },
+            { "name": "setTimeout и setInterval" },
+            { "name": "Классы и наследование классов" },
+            { "name": "Статические, приватные и защищенные свойства классов" },
+            { "name": "call(), apply(), bind()" },
+            { "name": "Регулярные выражения" },
+            { "name": "es6" },
+            { "name": "Promise" },
+            { "name": "async/await" },
+            { "name": "fetch" },
+            { "name": "DOM-дерево" },
+            { "name": "document и window" },
+            { "name": "JSON" }
+        ]
+    },
+    {
+        "name": "react",
+        "level": 60,
+        "perks": [{ "name": "" }],
+        "mainskills": [{ "name": "" }],
+        "branches": [{ "name": "jsx" }, { "name": "hooks" }]
+    },
+    {
+        "name": "redux",
+        "level": 30,
+        "perks": [{ "name": "" }],
+        "mainskills": [{ "name": "" }],
+        "branches": [{ "name": "jsx" }, { "name": "hooks" }]
+    },
+    {
+        "name": "typescript",
+        "level": 20,
+        "perks": [{ "name": "" }],
+        "mainskills": [{ "name": "" }],
+        "branches": [{ "name": "jsx" }, { "name": "hooks" }]
+    },
+    {
+        "name": "other",
+        "level": 20,
+        "perks": [{ "name": "" }],
+        "mainskills": [{ "name": "" }],
+        "branches": [{ "name": "git" }, { "name": "SOLID" }, { "name": "Парадигмы программирования и ООП" }]
+    }
 ]
