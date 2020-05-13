@@ -21,7 +21,7 @@
         ]
     },
     {
-        "name": "sass/scss",
+        "name": "sass",
         "level": 78,
         "branches": [
             { "name": "DOM" },
@@ -83,7 +83,7 @@
         "branches": [{ "name": "jsx" }, { "name": "hooks" }]
     },
     {
-        "name": "typescript",
+        "name": "ts",
         "level": 20,
         "perks": [{ "name": "" }],
         "mainskills": [{ "name": "" }],

@@ -28,7 +28,7 @@ export class HeaderInfo extends React.Component {
                         </svg>
                     </div>
                     <div className="level__line">
-                        <span>LV. {result}</span>
+                        <span>lv. {result}</span>
                         <div className="level__line-count" style={{ transform: `translateX(${count}%)` }}></div>
                     </div>
                 </div>

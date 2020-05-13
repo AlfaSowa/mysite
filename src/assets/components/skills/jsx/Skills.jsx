@@ -1,6 +1,6 @@
 import React from "react";
 
-import tree from "../json/tree.json";
+import treeSkills from "../json/treeSkills.json";
 import { treeIconSvg } from "../js/svg";
 
 import Header from "./Header.jsx";
@@ -32,7 +32,6 @@ export default class Skills extends React.Component {
     };
 
     showTree = () => {
-        console.log(123123);
         this.setState({
             isShowTree: !this.state.isShowTree,
         });
@@ -43,7 +42,7 @@ export default class Skills extends React.Component {
         return (
             <React.Fragment>
                 <ul className="skills__list">
-                    {tree.map((item, index) => (
+                    {treeSkills.map((item, index) => (
                         <li key={index} className="skills__item">
                             <div
                                 onClick={(e) => this.showSkill(e, item)}
@@ -58,7 +57,7 @@ export default class Skills extends React.Component {
                 </ul>
 
                 {!isShowSkill || <SkillInfo showTree={this.showTree} skill={skill} />}
-                {!isShowTree || <Tree skill={skill} showTree={this.showTree} />}
+                {/* {!isShowTree || <Tree skill={skill} showTree={this.showTree} />} */}
             </React.Fragment>
         );
     }
@@ -90,9 +89,9 @@ const SkillInfo = (props) => {
 
             <Branches showTree={showTree} item={skill} />
 
-            <div onClick={showTree} className="skills__showtree">
+            {/* <div onClick={showTree} className="skills__showtree">
                 <div className="skills__showtree-icon">{treeIconSvg}</div>
-            </div>
+            </div> */}
         </div>
     );
 };

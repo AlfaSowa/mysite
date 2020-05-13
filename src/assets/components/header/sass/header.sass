@@ -3,13 +3,13 @@
     display: flex
     align-items: center
     justify-content: flex-end
-    margin: 60px auto 16px
+    margin: 0 auto 16px
     max-width: $sidebar-desctop-width + $content-desctop-width
 
     &__title
         flex: 1
-        text-transform: uppercase
         font-weight: 700
+        color: var(--add-color)
 
     &__inner
         display: flex
@@ -29,7 +29,6 @@
         margin: 0 0 0 24px
         padding: 5px 10px
         border: 1px dashed var(--sub-add-color)
-        font: $font-family-main
 
         &-item
             &:not(:last-child)

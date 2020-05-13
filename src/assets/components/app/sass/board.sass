@@ -1,5 +1,6 @@
 .board
-
+    min-height: 675px
+    
     &__sidebar
         @include mobile
             flex-wrap: wrap
@@ -16,7 +17,6 @@
             margin: 0 0 20px 0
     
     &__title
-        font: $font-family-main
         // position: absolute
         // top: 10px
         // left: $sidebar-desctop-width + 20px
@@ -61,11 +61,9 @@
             background: transparentize($base-color, .95)
         
         &-title
-            font: $font-family-main
-            font-size: .8rem
-            color: var(--add-color)
-            text-transform: uppercase
-            font-weight: 700
+            font-size: .9rem
+            color: var(--font-color)
+            font-weight: 400
             text-align: center
             margin: 0 0 20px 0
             @include desctop

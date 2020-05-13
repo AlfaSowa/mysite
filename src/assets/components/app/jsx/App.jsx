@@ -17,10 +17,10 @@ export default class App extends React.Component {
         let getTitle = "";
         switch (link) {
             case "/works":
-                getTitle = "мои работы";
+                getTitle = "Мои работы";
                 break;
             default:
-                getTitle = "основная информация";
+                getTitle = "Основная информация";
                 break;
         }
 
