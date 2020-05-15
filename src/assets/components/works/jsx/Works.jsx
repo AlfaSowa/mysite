@@ -17,24 +17,23 @@ export default class Works extends React.Component {
         },
     };
 
-    getWorks = async () => {
-        //mongodd
-        try {
-            const client = await new MongoClient(URL, {
-                useNewUrlParser: true,
-            });
+    // getWorks = async () => {
+    //     try {
+    //         const client = await new MongoClient(URL, {
+    //             useNewUrlParser: true,
+    //         });
 
-            console.log(client);
+    //         console.log(client);
 
-            client.connect((err) => {
-                const worksItem = client.db("alfasowa").collection("works");
-                console.log(worksItem);
-                client.close();
-            });
-        } catch (e) {
-            console.log(e);
-        }
-    };
+    //         client.connect((err) => {
+    //             const worksItem = client.db("alfasowa").collection("works");
+    //             console.log(worksItem);
+    //             client.close();
+    //         });
+    //     } catch (e) {
+    //         console.log(e);
+    //     }
+    // };
 
     componentDidMount = () => {
         //this.getWorks()

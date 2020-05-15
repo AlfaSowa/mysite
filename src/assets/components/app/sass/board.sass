@@ -6,7 +6,7 @@
             flex-wrap: wrap
         @include notdesctop
             display: flex
-            padding: 0 20px
+            padding: 0 10px
 
         @include desctop
             flex: 1 0 $sidebar-desctop-width
@@ -38,6 +38,8 @@
     
     &__content
         display: flex
+        @include notdesctop
+            flex-direction: column
 
     &__box
         flex: 1
@@ -69,9 +71,16 @@
             @include desctop
                 margin: 0 0 8px 0
                 text-align: left
+        
+        @include notdesctop
+            &:not(:first-child)
+                margin: 16px 0 0 0
 
 .main
     display: flex
     @include desctop
         flex: 1 0 $content-desctop-width
         max-width: $content-desctop-width
+    @include notdesctop
+        flex-direction: column
+        padding: 0 10px

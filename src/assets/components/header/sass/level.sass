@@ -11,6 +11,10 @@
             width: 100%
             height: 100%
             fill: var(--add-color)
+        
+        @include notdesctop
+            width: 16px
+            height: 16px
     
     &__line
         font-weight: 700
@@ -32,3 +36,7 @@
             right: 100%
             background: var(--sub-add-color)
             z-index: -1
+        
+        @include notdesctop
+            font-size: .7rem
+            width: 60px

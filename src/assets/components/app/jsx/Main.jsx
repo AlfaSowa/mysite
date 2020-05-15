@@ -58,7 +58,7 @@ export class Main extends React.Component {
                             ))}
                         </div>
 
-                        <Details details={this.state.workDetails} />
+                        {this.state.workDetails ? <Details details={this.state.workDetails} /> : null}
                     </div>
                 </div>
             </React.Fragment>
@@ -73,7 +73,7 @@ const Details = (props) => {
         <div className="details">
             <div className="details__header">
                 <div className="details__title">
-                    <span>{details.title ? details.title : "Lorem ipsum dolor sit amet consectetur adipisicing elit."}</span>
+                    <span>{details.title}</span>
                 </div>
 
                 <div className="details__link">
@@ -83,7 +83,9 @@ const Details = (props) => {
 
             <div className="details__inner">
                 <div className="details__content">
-                    {details.content ? details.content.map((item, index) => <p key={index}>{item.paragraph}</p>) : null}
+                    {details.content.map((item, index) => (
+                        <p key={index}>{item.paragraph}</p>
+                    ))}
                 </div>
             </div>
         </div>

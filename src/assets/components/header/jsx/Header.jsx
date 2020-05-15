@@ -28,7 +28,7 @@ export class HeaderInfo extends React.Component {
                         </svg>
                     </div>
                     <div className="level__line">
-                        <span>lv. {result}</span>
+                        <span>lv.{result}</span>
                         <div className="level__line-count" style={{ transform: `translateX(${count}%)` }}></div>
                     </div>
                 </div>
@@ -39,7 +39,7 @@ export class HeaderInfo extends React.Component {
                             <use xlinkHref="#credits"></use>
                         </svg>
                     </div>
-                    <div className="credits__line">999 999 999</div>
+                    <div className="credits__line">45 000</div>
                 </div>
             </div>
         );

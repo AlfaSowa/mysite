@@ -5,6 +5,9 @@
     &__icon
         width: 30px
         height: 30px
+        @include notdesctop
+            width: 20px
+            height: 20px
 
         &-svg
             width: 100%
@@ -14,3 +17,6 @@
     &__line
         font-weight: 700
         color: var(--add-color)
+        white-space: nowrap
+        @include notdesctop
+            font-size: .7rem
