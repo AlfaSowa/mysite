@@ -77,6 +77,10 @@ module.exports = {
                 from: path.resolve(__dirname, "src/manifest.json"),
                 to: path.resolve(__dirname, "docs"),
             },
+            {
+                from: path.resolve(__dirname, "CNAME"),
+                to: path.resolve(__dirname, "docs"),
+            },
         ]),
         new HtmlWebPackPlugin({ template: "./src/index.html" }),
         new MiniCssExtractPlugin(),
