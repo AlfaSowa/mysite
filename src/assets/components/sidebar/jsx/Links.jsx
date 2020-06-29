@@ -6,12 +6,8 @@ export const Links = (props) => {
             <ul className="refs__list">
                 {props.links.map((item, index) => (
                     <li key={index} className="refs__item">
-                        <span>{item.title}</span>
                         <a className="refs__link" href={item.link} target="_blank">
-                            открыть
-                            <svg className="refs__icon">
-                                <use xlinkHref="#arrow-right"></use>
-                            </svg>
+                            {item.title}
                         </a>
                     </li>
                 ))}
@@ -23,19 +19,19 @@ export const Links = (props) => {
 Links.defaultProps = {
     links: [
         {
-            title: "Мое резюме на hh",
+            title: "Резюме на hh",
             link: "https://hh.ru/resume/ffd982adff015f658b0039ed1f79534c574879",
         },
         {
-            title: "Мое резюме на LinkedIn",
+            title: "Резюме на LinkedIn",
             link: "https://www.linkedin.com/in/alexey-tamson-48ba51194/",
         },
         {
-            title: "Мой репозиторий на GitHub",
+            title: "GitHub",
             link: "https://github.com/AlfaSowa",
         },
         {
-            title: "Мой профиль на CodeWars",
+            title: "CodeWars",
             link: "https://www.codewars.com/users/AlfaSowa",
         },
     ],

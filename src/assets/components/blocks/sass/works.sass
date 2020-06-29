@@ -31,11 +31,15 @@
             border-color: var(--font-color)
             color: var(--font-color)
             cursor: pointer
+            position: relative
             &:hover
+                animation: glitch .15s cubic-bezier(.25,.46,.45,.94)
                 border-color: var(--add-color)
                 color: var(--add-color)
+
                 & + .works__dropdown
                     display: block
+
                 
     &__dropdown
         position: absolute

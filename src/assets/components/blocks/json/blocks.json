@@ -1,0 +1,152 @@
+[
+    {
+        "id": 1,
+        "title": "Game",
+        "description": {
+            "short": "Игра",
+            "full": "Игра на javascript с использованием canvas."
+        },
+        "link": "https://alfasowa.github.io/Game/dist/",
+        "repo": "https://github.com/AlfaSowa/Game",
+        "difficulty": "C",
+        "content": [
+            {
+                "paragraph": "В данный момент игра переписывается на typescript. В игре стараюсь реализовать поттерный программирования"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Landing page",
+        "description": {
+            "short": "Примеры верстки базовых элементов",
+            "full": "Сайт с примерами верстки базовых элементов - форм, модальных окон, сетки на флексах и тд. Оптимизирован под SEO и быструю загрузку"
+        },
+        "link": "https://alfasowa.github.io/-layout-best-practice/dist/",
+        "repo": "https://github.com/AlfaSowa/-layout-best-practice",
+        "difficulty": "A",
+        "content": [
+            {
+                "paragraph": "Перед версткой каждого элемента сайта досканально изучаю/ил подходы к его реализации со стороны SEO, семантики, БЭМ и оптимизации загрузки."
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "title": "TeachMe",
+        "description": {
+            "short": "Интересные места мира",
+            "full": "Сайт про разные места нашей планеты. использует стек MERN(Mongo, Express, React, Node)"
+        },
+        "link": "",
+        "repo": "",
+        "difficulty": "С",
+        "content": [
+            {
+                "paragraph": "Сайт путешествии по интересным местам"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "title": "vk174",
+        "description": {
+            "short": "Типография",
+            "full": "Многостраничный сайт написанный c использованием jango фреймворка"
+        },
+        "link": "https://alfasowa.github.io/-layout-best-practice/dist/",
+        "repo": "https://github.com/AlfaSowa/-layout-best-practice",
+        "difficulty": "A",
+        "content": [
+            {
+                "paragraph": "В данный момент игра переписывается на typescript. В игре стараюсь реализовать поттерный программирования"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "title": "03chel",
+        "description": {
+            "short": "Пункты скорой помощи",
+            "full": "Многостраничный сайт написанный c использованием jango фреймворка"
+        },
+        "link": "https://alfasowa.github.io/-layout-best-practice/dist/",
+        "repo": "https://github.com/AlfaSowa/-layout-best-practice",
+        "difficulty": "A",
+        "content": [
+            {
+                "paragraph": "has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
+            },
+            {
+                "paragraph": "has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
+            },
+            {
+                "paragraph": "has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
+            },
+            {
+                "paragraph": "has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "title": "Test",
+        "description": {
+            "short": "Test short",
+            "full": "Test full Test full Test full Test full Test full Test full Test full Test full Test full Test full"
+        },
+        "link": "test/testtest/testtesttest/",
+        "repo": "test/testtest/testtesttest/",
+        "difficulty": "A",
+        "content": [
+            {
+                "paragraph": "has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
+            },
+            {
+                "paragraph": "has been the industry's standard"
+            },
+            {
+                "paragraph": "has been theown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
+            },
+            {
+                "paragraph": "has been the industry's st andard dummy text ever since the 1500s, when an unknown printer took andard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
+            },
+            {
+                "paragraph": "has been the industry's standard dummy text ever sk a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
+            },
+            {
+                "paragraph": "en book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
+            },
+            {
+                "paragraph": "has been the indu stry's standard dummy text ever since the 1 stry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
+            },
+            {
+                "paragraph": "has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
+            },
+            {
+                "paragraph": "has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
+            },
+            {
+                "paragraph": "has been the industry's standard"
+            },
+            {
+                "paragraph": "has been theown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
+            },
+            {
+                "paragraph": "has been the industry's st andard dummy text ever since the 1500s, when an unknown printer took andard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
+            },
+            {
+                "paragraph": "has been the industry's standard dummy text ever sk a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
+            },
+            {
+                "paragraph": "en book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
+            },
+            {
+                "paragraph": "has been the indu stry's standard dummy text ever since the 1 stry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
+            },
+            {
+                "paragraph": "has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
+            }
+        ]
+    }
+]

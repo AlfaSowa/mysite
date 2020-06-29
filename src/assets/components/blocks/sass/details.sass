@@ -1,0 +1,73 @@
+$detail-inner-width: 900px
+.details
+    position: fixed
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    background: rgba(0, 0, 0, 0.8)
+    padding: 40px
+    overflow-y: auto
+    z-index: 100
+
+    &__arrow
+        position: fixed
+        top: 50%
+        width: 150px
+        height: 150px
+        cursor: pointer
+        background: var(--main-color)
+        outline: none
+        color: var(--font-color)
+        border: 1px solid var(--font-color)
+
+    &__prev
+        transform: translate(calc(-100% - 20px), -50%)
+        left: calc(50% - #{$detail-inner-width} / 2)
+    &__next
+        transform: translate(20px, -50%)
+        left: calc(50% + #{$detail-inner-width} / 2)
+
+    &__inner
+        position: relative
+        max-width: $detail-inner-width
+        background: var(--main-color)
+        margin: 0 auto
+        border: 1px solid var(--font-color)
+
+    &__header
+        display: flex
+        align-items: center
+        justify-content: center
+        padding: 0 8px
+        height: 40px
+    
+    &__title
+        text-transform: uppercase
+
+
+    &__close
+        position: fixed
+        width: 30px
+        height: 30px
+        cursor: pointer
+        top: 40px
+        left: calc(50% + #{$detail-inner-width} / 2 + 20px)
+        fill: $font-color
+        &:hover
+            fill: $dark-add
+
+    &__content
+        padding: 0 20px
+
+    &__description
+        padding: 0 0 20px 0
+        border-bottom: 1px solid var(--font-color)
+
+    &__text
+        padding: 20px 0
+        font-size: .9rem
+        p
+            &:not(:last-child)
+                margin: 0 0 8px 0
+

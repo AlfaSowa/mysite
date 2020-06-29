@@ -26,19 +26,14 @@
 
 body
     font: $font-family-main
-    background: #ee5f8c
 
 .app
     min-height: 100vh
     padding: 60px 0 20px
 
-main
-    margin-top: 60px
-
 .container
-    width: 100%
-    max-width: 1240px
-    padding: 0 20px
+    max-width: $content-desctop-width + $sidebar-desctop-width
+    padding: 0 10px
     margin: 0 auto
 
 .alarm
@@ -54,8 +49,10 @@ main
     right: 0
     bottom: 0
     left: 0
+    touch-action: none
+    pointer-events: none
     transition: .3s opacity cubic-bezier(0,0,.2,1)
-    opacity: .2
+    opacity: .02
     z-index: -100
 
     &__item
@@ -84,6 +81,19 @@ main
             background: url(./img/front_cloud.png) center center / cover
             animation: 16s linear infinite bgGrowing2
 
+.noise
+    opacity: .035
+    touch-action: none
+    pointer-events: none
+    position: fixed
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    background: url(./img/noise-1.png) repeat center / 130px 130px
+    animation: 0.2s steps(1) infinite noise
+    z-index: 9999
+
 @keyframes bgGrowing1
     0%, 100%
         transform: scale3d(1,1,1)
@@ -110,6 +120,16 @@ main
         transform: scale3d(1,1,1)
     75%
         opacity: .15
+
+@keyframes noise
+    0%, 100%
+        background-image: url(./img/noise-1.png)
+    25%
+        background-image: url(./img/noise-2.png)
+    50%
+        background-image: url(./img/noise-3.png)
+    75%
+        background-image: url(./img/noise-4.png)
 
 
 .media

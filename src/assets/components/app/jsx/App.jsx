@@ -1,88 +1,29 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, NavLink, useLocation } from "react-router-dom";
 
 //header
 import { HeaderInfo } from "../../header/jsx/Header.jsx";
 //content
-import { Main } from "./Main.jsx";
-import { Works } from "./Works.jsx";
+import { Main } from "../../pages/jsx/Main.jsx";
 import { Theme } from "../../header/jsx/Theme.jsx";
 
 export default class App extends React.Component {
-    state = {
-        title: "",
-    };
-
-    getTitle = (link) => {
-        let getTitle = "";
-        switch (link) {
-            case "/works":
-                getTitle = "Мои работы";
-                break;
-            default:
-                getTitle = "Основная информация";
-                break;
-        }
-
-        this.setState({
-            title: getTitle,
-        });
-    };
     render() {
         return (
-            <Router>
-                <header className="header">
-                    <div className="header__title">{this.state.title}</div>
+            <React.Fragment>
+                <header className="header container">
                     <div className="header__inner">
-                        <nav className="header__item menu">
-                            <ul className="menu__list">
-                                {this.props.menu.map((item, index) => (
-                                    <li key={index} className="menu__item">
-                                        <NavLink
-                                            exact={index === 0 ? true : false}
-                                            to={`/${item.link}`}
-                                            activeClassName="menu__link--active"
-                                            className="menu__link"
-                                        >
-                                            <svg className="menu__icon">
-                                                <use xlinkHref={`#${item.id}`}></use>
-                                            </svg>
-                                        </NavLink>
-                                    </li>
-                                ))}
-                            </ul>
-                        </nav>
-
                         <HeaderInfo />
 
                         <Theme />
                     </div>
                 </header>
 
-                <div className="board">
-                    <div className="board__inner">
-                        <Switch>
-                            <Route exact path="/" children={<Main getTitle={this.getTitle} />} />
-                            <Route exact path="/works" children={<Works getTitle={this.getTitle} />} />
-                        </Switch>
+                <main className="board">
+                    <div className="board__inner container">
+                        <Main />
                     </div>
-                </div>
-            </Router>
+                </main>
+            </React.Fragment>
         );
     }
 }
-
-App.defaultProps = {
-    menu: [
-        {
-            name: "основная информация",
-            id: "main",
-            link: "",
-        },
-        {
-            name: "работы",
-            id: "works",
-            link: "works",
-        },
-    ],
-};

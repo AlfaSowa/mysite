@@ -1,9 +1,21 @@
 import React from "react";
 
-const dateBorn = new Date("May 16, 1989 14:00:00");
+const dateBorn = new Date("May 16, 1989 14:00:00").getTime();
 const dateNow = new Date();
-const result = Math.floor((dateNow.getTime() - dateBorn.getTime()) / 1000 / 3600 / 24 / 365);
-const count = 83.5;
+//если true год високосный
+const isLeap = new Date(dateNow.getFullYear(), 1, 29).getMonth() == 1;
+const startCicle =
+    dateNow.getTime() < new Date(dateNow.getFullYear(), 4, 16).getTime()
+        ? new Date(dateNow.getFullYear() - 1, 4, 16).getTime()
+        : new Date(dateNow.getFullYear(), 4, 16).getTime();
+const currenDay = dateNow.getTime();
+const diff = Math.ceil((currenDay - startCicle) / 8.64e7);
+const daysInYear = () => {
+    return isLeap ? (diff / 366) * 100 : (diff / 365) * 100;
+};
+
+const result = Math.floor((currenDay - dateBorn) / 3.154e10);
+const count = daysInYear().toFixed();
 
 export class HeaderInfo extends React.Component {
     render() {
