@@ -5,38 +5,68 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
-const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
-const autoprefixer = require("autoprefixer");
 
-const isDev = process.env.NODE_ENV === "development";
+module.exports = {
+    entry: ["@babel/polyfill", "./src/index.js"],
 
-const optimization = () => {
-    const config = {};
+    output: {
+        path: path.resolve(__dirname, "./docs"),
+    },
 
-    if (!isDev) {
-        config.minimizer = [new OptimizeCSSAssetsPlugin(), new TerserPlugin()];
-    }
+    devServer: {
+        port: 8001,
+    },
 
-    return config;
-};
+    optimization: {
+        minimize: true,
+        minimizer: [
+            new TerserPlugin({
+                terserOptions: {
+                    output: {
+                        comments: false,
+                    },
+                },
+                extractComments: false,
+            }),
+            new OptimizeCSSAssetsPlugin(),
+        ],
+    },
 
-const filename = (ext) => (isDev ? `[name].${ext}` : `[name].[hash].${ext}`);
+    resolve: { extensions: [".jsx", ".js"] },
 
-const babelOptions = (preset) => {
-    const opt = {
-        presets: ["@babel/preset-env"],
-        plugins: ["@babel/plugin-proposal-class-properties"],
-    };
+    module: {
+        rules: [
+            //js, jsx
+            {
+                test: /\.jsx?$/,
+                exclude: "/node_modules/",
+                loader: {
+                    loader: "babel-loader",
+                    options: {
+                        presets: ["@babel/preset-env", "@babel/preset-react"],
+                        plugins: ["@babel/plugin-proposal-class-properties"],
+                    },
+                },
+            },
+            //styles
+            {
+                test: /\.(sa|sc|c)ss$/,
+                use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+            },
+            //images
+            {
+                test: /\.(png|jpg|jpeg|svg|gif)$/i,
+                loader: "file-loader",
+            },
+            //fonts
+            {
+                test: /\.(ttf|woff|woff2|eot)$/i,
+                loader: "file-loader",
+            },
+        ],
+    },
 
-    if (preset) {
-        opt.presets.push(preset);
-    }
-
-    return opt;
-};
-
-const plugins = () => {
-    const base = [
+    plugins: [
         new CleanWebpackPlugin(),
         new CopyWebpackPlugin([
             {
@@ -44,136 +74,11 @@ const plugins = () => {
                 to: path.resolve(__dirname, "docs"),
             },
             {
-                from: path.resolve(__dirname, "CNAME"),
-                to: path.resolve(__dirname, "docs"),
-            },
-            {
                 from: path.resolve(__dirname, "src/manifest.json"),
                 to: path.resolve(__dirname, "docs"),
             },
-            {
-                from: path.resolve(__dirname, "src/assets/general/media/hollow_talk.mp3"),
-                to: path.resolve(__dirname, "docs/media"),
-            },
         ]),
-        new HtmlWebPackPlugin({
-            template: "./index.html",
-            minify: {
-                collapseWhitespace: !isDev,
-            },
-        }),
-        new MiniCssExtractPlugin({
-            filename: filename("css"),
-        }),
-    ];
-
-    if (!isDev) {
-        base.push(new BundleAnalyzerPlugin());
-    }
-
-    return base;
-};
-
-module.exports = {
-    context: path.resolve(__dirname, "src"),
-
-    entry: ["@babel/polyfill", "./index.js"],
-
-    output: {
-        path: path.resolve(__dirname, "./docs"),
-        filename: filename("js"),
-    },
-
-    devServer: {
-        port: 8001,
-        historyApiFallback: true,
-    },
-
-    optimization: optimization(),
-
-    devtool: isDev ? false : false,
-
-    module: {
-        rules: [
-            //javascript
-            {
-                test: /\.js$/,
-                exclude: "/node_modules/",
-                use: [
-                    {
-                        loader: "babel-loader",
-                        options: babelOptions(),
-                    },
-                    // {
-                    //     loader: "eslint-loader",
-                    // },
-                ],
-            },
-            //typescript
-            {
-                test: /\.ts$/,
-                exclude: "/node_modules/",
-                loader: {
-                    loader: "babel-loader",
-                    options: babelOptions("@babel/preset-typescript"),
-                },
-            },
-            //react jsx
-            {
-                test: /\.jsx?$/,
-                exclude: "/node_modules/",
-                loader: {
-                    loader: "babel-loader",
-                    options: babelOptions("@babel/preset-react"),
-                },
-            },
-            //styles
-            {
-                test: /\.(sa|sc|c)ss$/,
-                use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader,
-                        options: {
-                            hmr: isDev,
-                            reloadAll: true,
-                        },
-                    },
-                    "css-loader",
-                    {
-                        loader: "postcss-loader",
-                        options: {
-                            plugins: [autoprefixer()],
-                        },
-                    },
-                    "sass-loader",
-                ],
-            },
-            //images
-            {
-                test: /\.(png|jpg|svg|gif)$/,
-                use: [
-                    {
-                        loader: "file-loader",
-                        options: {
-                            name: "./img/[name].[ext]",
-                        },
-                    },
-                ],
-            },
-            //fonts
-            {
-                test: /\.(ttf|woff|woff2|eot)$/i,
-                use: [
-                    {
-                        loader: "file-loader",
-                        options: {
-                            name: "./fonts/[name].[hash].[ext]",
-                        },
-                    },
-                ],
-            },
-        ],
-    },
-
-    plugins: plugins(),
+        new HtmlWebPackPlugin({ template: "./src/index.html" }),
+        new MiniCssExtractPlugin(),
+    ],
 };

@@ -1,5 +1,4 @@
 //sass
-import "normalize.css";
 import "./assets/general/style.sass";
 //react
 import React from "react";
